@@ -1,4 +1,4 @@
-public class typeCastingAndConversion {
+public class _03_TypeCastingAndConversion {
     public static void main(String args[]) {
 
         // CONVERSION - Smaller Valued variable to a Big valued Variable

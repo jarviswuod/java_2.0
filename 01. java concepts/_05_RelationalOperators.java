@@ -1,4 +1,4 @@
-public class relationalOperators {
+public class _05_RelationalOperators {
     public static void main(String args[]) {
         // < > <= >= == !=
         int firstBro = 24;

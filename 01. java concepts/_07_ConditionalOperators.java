@@ -1,4 +1,4 @@
-public class conditionalOperators {
+public class _07_ConditionalOperators {
     public static void main(String[] args) {
         int age = 37;
 

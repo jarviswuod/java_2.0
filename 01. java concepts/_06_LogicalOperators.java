@@ -1,4 +1,4 @@
-public class logicalOperators {
+public class _06_LogicalOperators {
 
     public static void main(String args[]) {
         // && || !

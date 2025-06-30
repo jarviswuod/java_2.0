@@ -1,4 +1,4 @@
-public class variablesAndDataTypes {
+public class _02_VariablesAndDataTypes {
 
     public static void main(String args[]) {
 

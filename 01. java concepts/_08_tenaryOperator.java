@@ -1,4 +1,4 @@
-public class tenaryOperator {
+public class _08_tenaryOperator {
 
     public static void main(String[] args) {
 
