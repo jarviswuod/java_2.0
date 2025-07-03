@@ -2,6 +2,7 @@ public class _23_SuperAndThisKeywords {
     public static void main(String[] args) {
         // B obj = new B();
         B obj = new B(5);
+        obj.equals(obj);
 
     }
 }
@@ -20,12 +21,13 @@ class A {
 
 class B extends A {
     public B() {
-        // super(5);
+        super();
         System.out.println("In B");
     }
 
     public B(int n) {
         // super(n);
+        this();
         System.out.println("In B int");
     }
 }
