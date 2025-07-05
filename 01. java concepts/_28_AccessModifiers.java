@@ -15,7 +15,7 @@ public class _28_AccessModifiers {
         /*
          * Protected
          * Same class
-         * Same package
+         * Same package subclass
          * Different package subclass
          */
 

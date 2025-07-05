@@ -71,79 +71,79 @@ class updatedWagonR extends WagonR { // Concrete class
 // Example 2
 // ///////////////////////////////////////////////////////////////////////////////
 // ///////////////////////////////////////////////////////////////////////////////
-// public class _33_AbstractKeywords {
-// public static void main(String[] args) {
-// // Animal animal = new Animal("Generic"); // ERROR! Cannot instantiate
-// abstract
+class _33_AbstractKeywords_ {
+    public static void main(String[] args) {
+        // Animal animal = new Animal("Generic"); // ERROR!
+        // Cannot instantiate abstract
 
-// Dog dog = new Dog("Rex");
-// Bird bird = new Bird("Tweety");
+        Dog dog = new Dog("Rex");
+        Bird bird = new Bird("Tweety");
 
-// dog.sleep();
-// dog.makeSound();
-// dog.move();
+        dog.sleep();
+        dog.makeSound();
+        dog.move();
 
-// System.out.println();
+        System.out.println();
 
-// bird.sleep();
-// bird.makeSound();
-// bird.move();
+        bird.sleep();
+        bird.makeSound();
+        bird.move();
 
-// System.out.println();
+        System.out.println();
 
-// Animal[] animals = { dog, bird };
-// for (Animal animal : animals) {
-// animal.makeSound();
-// animal.move();
-// }
-// }
-// }
+        Animal[] animals = { dog, bird };
+        for (Animal animal : animals) {
+            animal.makeSound();
+            animal.move();
+        }
+    }
+}
 
-// abstract class Animal {
+abstract class Animal {
 
-// protected String name;
+    protected String name;
 
-// public Animal(String name) {
-// this.name = name;
-// }
+    public Animal(String name) {
+        this.name = name;
+    }
 
-// public void sleep() {
-// System.out.println(name + " is sleeping");
-// }
+    public void sleep() {
+        System.out.println(name + " is sleeping");
+    }
 
-// public abstract void makeSound();
+    public abstract void makeSound();
 
-// public abstract void move();
-// }
+    public abstract void move();
+}
 
-// class Dog extends Animal {
-// public Dog(String name) {
-// super(name);
-// }
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
 
-// @Override
-// public void makeSound() {
-// System.out.println(name + " says: Woof!");
-// }
+    @Override
+    public void makeSound() {
+        System.out.println(name + " says: Woof!");
+    }
 
-// @Override
-// public void move() {
-// System.out.println(name + " runs on four legs");
-// }
-// }
+    @Override
+    public void move() {
+        System.out.println(name + " runs on four legs");
+    }
+}
 
-// class Bird extends Animal {
-// public Bird(String name) {
-// super(name);
-// }
+class Bird extends Animal {
+    public Bird(String name) {
+        super(name);
+    }
 
-// @Override
-// public void makeSound() {
-// System.out.println(name + " says: Tweet!");
-// }
+    @Override
+    public void makeSound() {
+        System.out.println(name + " says: Tweet!");
+    }
 
-// @Override
-// public void move() {
-// System.out.println(name + " flies in the sky");
-// }
-// }
+    @Override
+    public void move() {
+        System.out.println(name + " flies in the sky");
+    }
+}

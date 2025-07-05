@@ -1,3 +1,10 @@
+// Static keyword is used for memory management primarily
+// Static blocks are used to intialize static variables
+
+/* // NOTE
+ * You cannot use a static non static variable or method inside a static block or method. 
+  */
+
 public class _20_StaticBlocks {
     public static void main(String[] args) {
         Mobile mobile = new Mobile();
@@ -19,6 +26,7 @@ class Mobile {
 
     static {
         name = "Phone";
+        // brand = "featurePhone";
         System.out.println("In static block");
     }
 

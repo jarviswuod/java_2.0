@@ -29,6 +29,11 @@ public class _29_Polymophism {
         obj1.justInA();
         ((C) obj1).justInC();
         System.out.println(obj1);
+        System.out.println();
+
+        C cObj = ((C) obj1);
+        cObj.justInC();
+        System.out.println(cObj);
 
     }
 }

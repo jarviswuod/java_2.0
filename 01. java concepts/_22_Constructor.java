@@ -16,12 +16,12 @@ class Human {
     private String name;
     private int age;
 
-    public Human() {
+    public Human() { // Default constructor
         name = "Wuod";
         age = 20;
     }
 
-    public Human(int age, String name) {
+    public Human(int age, String name) { // Parameterized constructor
         this.name = name;
         this.age = age;
     }
