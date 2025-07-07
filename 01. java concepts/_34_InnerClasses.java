@@ -150,6 +150,7 @@ class OuterClassStatic {
 
     public void outerMethod() {
         System.out.println("Outer method called");
+        System.out.println(outerField);
     }
 
     public static void staticOuterMethod() {
@@ -163,6 +164,8 @@ class OuterClassStatic {
         public void innerMethod() {
             // Can only access static members of outer class
             System.out.println("Accessing: " + staticOuterField);
+            System.out.println(innerField);
+
             staticOuterMethod();
 
             // System.out.println(outerField); // ERROR! Cannot access non-static
