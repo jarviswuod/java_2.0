@@ -1,13 +1,15 @@
 public class _29_Polymophism {
     public static void main(String[] args) {
-        // A obj = new A();
-        // obj.show();
+        A objA = new A();
+        objA.show();
 
-        // obj = new B();
-        // obj.show();
+        B objB = new B();
+        objB.show();
 
-        // obj = new C();
-        // obj.show();
+        C objC = new C();
+        objC.show();
+
+        System.out.println();
 
         A obj1 = new A();
         obj1.show();
@@ -27,8 +29,12 @@ public class _29_Polymophism {
         obj1 = new C();
         obj1.show();
         obj1.justInA();
-        ((C) obj1).justInC();
         System.out.println(obj1);
+
+        System.out.println();
+        // obj1.justInC(); // This will cause a compile-time error
+        ((C) obj1).justInC();
+
         System.out.println();
 
         C cObj = ((C) obj1);

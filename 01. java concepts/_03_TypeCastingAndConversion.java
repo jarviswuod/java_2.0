@@ -12,8 +12,11 @@ public class _03_TypeCastingAndConversion {
         double ageMonths = ageYears * 12;
         System.out.println("ageMonths: " + ageMonths);
 
-        // char letter = 'C';
-        // String words = letter;
+        char letter = 'C';
+        String words1 = String.valueOf(letter);
+        String words2 = Character.toString(letter);
+        String words3 = "" + letter;
+        System.out.println("method1: " + words1 + " method2: " + words2 + " method3: " + words3);
 
         // CASTING - Bigger value variable to a small Value Variable
         double ageInMonths = 20;

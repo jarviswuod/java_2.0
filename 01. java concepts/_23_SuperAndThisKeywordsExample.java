@@ -1,4 +1,4 @@
-public class _23_superAndThis {
+public class _23_SuperAndThisKeywordsExample {
     public static void main(String[] args) {
         ColoredShape coloredShape = new ColoredShape();
 
@@ -33,6 +33,8 @@ class ColoredShape implements Drawable, Colorable {
 
     @Override
     public void draw() {
+        // Used to resolve conflicts when implementing multiple interfaces with same
+        // method names
         Drawable.super.draw(); // Call specific interface default method
         Colorable.super.draw(); // Call other interface default method
         System.out.println("Drawing colored shape with color: " + this.color);
