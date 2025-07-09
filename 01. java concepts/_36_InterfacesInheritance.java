@@ -4,7 +4,7 @@
  *
  *  NOTE:
  *  // class - class -> extends
- *  // class - class -> implements
+ *  // interface - class -> implements
  *  // interface - interface -> extends
  */
 

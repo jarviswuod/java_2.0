@@ -34,13 +34,13 @@ public class _34_InnerClasses {
         A obj = new A();
         obj.show();
 
-        A.B obj1 = new A.B();
+        A.B obj1 = new A.B(); // Static inner class instantiated without outer class
         obj1.config();
 
-        A.C obj2 = obj.new C();
+        A.C obj2 = obj.new C(); // Non-static inner class instantiated through outer class instance
         obj2.config();
 
-        A.C obj3 = new A().new C();
+        A.C obj3 = new A().new C(); // One-liner instantiation of non-static inner class
         obj3.config();
 
         A.B.showStaticInner(); // Call static methods directly
@@ -81,7 +81,7 @@ class _34_InnerClasses_1 {
         // Create outer class instance first
         OuterClass outer = new OuterClass();
 
-        // Method 1: Create inner class through outer class
+        // Method 1: Create inner class through outer class method
         outer.createInner();
 
         // Method 2: Create inner class directly
