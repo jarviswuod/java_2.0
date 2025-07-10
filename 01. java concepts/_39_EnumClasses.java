@@ -11,15 +11,6 @@
  * 
  */
 
-public class _39_EnumClasses {
-    public static void main(String[] args) {
-
-        for (Laptop laptop : Laptop.values()) {
-            System.out.println(laptop + " : " + laptop.getPrice());
-        }
-    }
-}
-
 enum Laptop {
     MacBook(2000), XPS(2000), Surface, ThinkPad(800);
 
@@ -44,4 +35,13 @@ enum Laptop {
         this.price = price;
     }
 
+}
+
+public class _39_EnumClasses {
+    public static void main(String[] args) {
+
+        for (Laptop laptop : Laptop.values()) {
+            System.out.println(laptop + " : " + laptop.getPrice());
+        }
+    }
 }

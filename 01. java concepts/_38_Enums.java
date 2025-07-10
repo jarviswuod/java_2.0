@@ -1,5 +1,9 @@
 // Enums are named constants when created
 
+enum Status {
+    Started, Running, Failed, Pending, Success;
+}
+
 public class _38_Enums {
     public static void main(String[] args) {
 
@@ -43,8 +47,4 @@ public class _38_Enums {
             System.out.println("Done");
 
     }
-}
-
-enum Status {
-    Started, Running, Failed, Pending, Success
 }
