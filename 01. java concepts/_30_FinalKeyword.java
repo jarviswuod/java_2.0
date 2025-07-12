@@ -15,9 +15,9 @@
 
 public class _30_FinalKeyword {
     public static void main(String[] args) {
-        final int age = 9;
-        // age = 11; // ERROR -> The final local variable age cannot be assigned.
-        System.out.println(age);
+        final int AGE = 9; // Uppcase because it's a now contant value
+        // AGE = 11; // ERROR -> The final local variable AGE cannot be assigned.
+        System.out.println(AGE);
 
     }
 }

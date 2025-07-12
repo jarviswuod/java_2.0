@@ -2,18 +2,18 @@
 
 // String, byte, short, int, char -> Wrapper classes (Byte, Short, Integer, Character)
 // Enum types
-// NOT SUPPORTED -> -> float, double, long, boolean
+// NOT SUPPORTED -> float, double, long, boolean
 
 /*
- * switch (expression) {
-    case value1:
-        // code block
-        break;
-    case value2:
-        // code block
-        break;
-    default:
-        // default code block
+    switch (expression) {
+        case value1:
+            // code block
+            break;
+        case value2:
+            // code block
+            break;
+        default:
+            // default code block
     }
  */
 
@@ -51,4 +51,3 @@ public class _09_SwithStatement {
         }
     }
 }
-// Re-look into this

@@ -1,4 +1,4 @@
-public class _18_AdvancedStringConcepts {
+public class _18_StringAdvanced {
 
     // STRING POOL INTERNALS AND MEMORY OPTIMIZATION
     public static void stringPoolInternals() {
