@@ -9,7 +9,7 @@
  * 
  * 
  * HashMap and Hashtable
- * Hastable is used in a synchronized version
+ * Hashtable is used in a synchronized version
  * HashMap is not
  * 
  */

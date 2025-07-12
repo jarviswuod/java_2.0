@@ -1,11 +1,11 @@
 /*
  * Create a custom exception by extending the Exception class
  * You create a constructor passing Stringm essage
- * You call the super keyword with the message because you calling the parent class constructor of the exception with the message you want returned
+ * You call the super keyword with the msg coz you calling the parent class constructor of the Exception with the msg you want returned
  * 
  * NOTE:
- * For custom Exception you should extend the parent Exception [Exception]
- * If you are accepting a message you have to pass the message to the constructor
+ * -> For custom Exception you should extend the parent Exception [Exception]
+ * -> If you are accepting a message you have to pass the message to the constructor
  * 
  */
 

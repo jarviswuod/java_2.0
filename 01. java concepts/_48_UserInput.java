@@ -26,6 +26,7 @@ public class _48_UserInput {
         int num1 = Integer.parseInt(br.readLine());
 
         System.out.println(num1);
+        br.close();
 
         // METHOD 1
         // /////////////////////////////////////////////////////////////////
