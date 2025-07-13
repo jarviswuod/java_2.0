@@ -1,4 +1,4 @@
-public class _23_SuperAndThisKeywords {
+public class _23__ThisAndSuperKeywords {
     public static void main(String[] args) {
         // B obj = new B();
         B obj = new B(5);

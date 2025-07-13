@@ -1,4 +1,4 @@
-public class _29_Polymophism {
+public class _22_Polymophism {
     public static void main(String[] args) {
         A objA = new A();
         objA.show();

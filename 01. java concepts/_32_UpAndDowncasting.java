@@ -1,4 +1,4 @@
-public class _32_UpcastingAndDowncasting {
+public class _32_UpAndDowncasting {
     public static void main(String[] args) {
         // Upcasting
         A obj = new B();

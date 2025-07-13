@@ -1,4 +1,4 @@
-public class _25_InheritanceExample {
+public class _22_InheritanceExample {
 
     public static void main(String[] args) {
         Student student1 = new Student("Stanley", 15, 1, "red");

@@ -1,13 +1,12 @@
 public class _37_InterfaceExample {
     public static void main(String[] args) {
+
+        Developer dev = new Developer();
+
         Computer lap = new Laptop();
         Computer desk = new Desktop();
 
-        Developer dev = new Developer();
         dev.devApp(lap);
-
-        System.out.println();
-
         dev.devApp(desk);
     }
 }

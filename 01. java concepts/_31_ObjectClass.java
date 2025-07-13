@@ -2,7 +2,7 @@
 // .toString()
 // .hashcode()
 
-public class _31_Objectlass {
+public class _31_ObjectClass {
     public static void main(String[] args) {
         Student student1 = new Student("Jarvis", 14, 1, "red");
         Student student2 = new Student("Becky", 22, 3, "green");

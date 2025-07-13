@@ -3,7 +3,7 @@
  * Lamda empressions can only be used on funtional interfaces
  */
 
-public class _41_FunctionalInterface {
+public class _37_FunctionalInterface {
     public static void main(String[] args) {
 
         B obj = new B() {

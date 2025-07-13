@@ -1,6 +1,6 @@
 // 4. Passing Current Object as Parameter
 
-public class _23_ThisKeywordExample_4 {
+public class _23__ThisKeywordExample_4 {
     public static void main(String[] args) {
 
     }

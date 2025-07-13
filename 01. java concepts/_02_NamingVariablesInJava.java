@@ -1,4 +1,4 @@
-public class _24_NamingVariablesInJava {
+public class _02_NamingVariablesInJava {
 
     public static void main(String[] args) {
         // Camel Casing naming convension

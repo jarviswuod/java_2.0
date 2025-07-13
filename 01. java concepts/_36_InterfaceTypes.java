@@ -17,7 +17,7 @@
  * 
  */
 
-public class _43_TypesOfInterfaces {
+public class _36_InterfaceTypes {
     public static void main(String[] args) {
 
     }
