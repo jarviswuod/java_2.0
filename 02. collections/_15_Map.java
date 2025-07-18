@@ -68,7 +68,7 @@ public class _15_Map {
         // different ways to iterate over the map
         System.out.println("Iterating over keys:");
 
-        // for each
+        // Enhanced for loop
         for (String key : studentMarks.keySet()) {
             System.out.println(key + ": " + studentMarks.get(key));
         }
