@@ -87,5 +87,13 @@ public class _15_Map {
 
         System.out.println("Iterating using Java 8 forEach:");
         studentMarks.forEach((key, value) -> System.out.println(key + ": " + value));
+
+        // Using entrySet to iterate over key-value pairs
+        System.out.println("Iterating using entrySet:");
+        for (Map.Entry<String, Integer> entry : studentMarks.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(key + ": " + value);
+        }
     }
 }

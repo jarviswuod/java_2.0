@@ -13,7 +13,7 @@ public class _06_ArrayListIteration {
         }
         System.out.println();
 
-        // Enhanced forEach loop
+        // Enhanced for loop
         for (String course : courses) {
             System.out.println(course);
         }

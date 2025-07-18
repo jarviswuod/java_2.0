@@ -28,7 +28,7 @@ public class _10_LinkedListIterationAndSearching {
         }
         System.out.println();
 
-        // Enhanced forEach loop
+        // Enhanced for loop
         for (String course : langs) {
             System.out.println(course);
         }

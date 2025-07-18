@@ -7,7 +7,7 @@ public class _13_CreatingHashSet {
 
     public static void main(String[] args) {
 
-        // Creating an HashSet object using default constructor
+        // Creating a HashSet object using default constructor
         Set<String> fruits = new HashSet<>();
 
         fruits.add("banana");
@@ -17,9 +17,9 @@ public class _13_CreatingHashSet {
 
         System.out.println(fruits);
 
-        // Creating an HashSet object using Another Collection
+        // Creating a HashSet object using Another Collection
         // 1. HashSet(Collection c) constructor
-        // 2. Adding Existing elements to a new HashSet.addAll()
+        // 2. Adding Existing elements to a new HashSet using .addAll()
 
         // Set<Integer> firstFivePrimeNumbers = new HashSet<>();
         List<Integer> firstFivePrimeNumbers = new ArrayList<>();

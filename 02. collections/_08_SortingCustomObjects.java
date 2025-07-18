@@ -14,11 +14,21 @@ public class _08_SortingCustomObjects {
         employees.add(new Employee(30, "Eunice", 23, 9890));
         employees.add(new Employee(40, "Wuod", 29, 1200));
 
-        Collections.sort(employees, new MySort_1()); // descending order with salary
+        // Collections.sort(employees, new MySort_1()); // descending order with salary
         // Collections.sort(employees, new MySort_2()); // ascending order with salary
 
-        Collections.sort(employees, (arg0, arg1) -> (int) (arg0.getName().compareTo(arg1.getName())));
-        // descending order with salary
+        // Collections.sort(employees, (arg0, arg1) -> (arg1.getAge() - arg0.getAge()));
+        // descending order with age
+
+        // Collections.sort(employees, (arg0, arg1) -> (arg0.getAge() - arg1.getAge()));
+        // ascending order with age
+
+        // Collections.sort(employees, (arg0, arg1) ->
+        // (arg0.getName().compareTo(arg1.getName())));
+        // // asscending order with name
+
+        Collections.sort(employees, (arg0, arg1) -> (arg1.getName().compareTo(arg0.getName())));
+        // descending order with name
 
         for (Employee employee : employees) {
             System.out.println(employee);

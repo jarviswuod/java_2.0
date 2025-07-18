@@ -10,7 +10,7 @@
  * 
  */
 
-// LinkedList -> Methods
+// LinkedList Methods
 // Adding -> add(), add(1, element), addFirst(), addLast()
 // Retriving -> get(), getFirst(), getLast()
 // Remove -> removeFirst(), removeLast(), clear()
@@ -29,15 +29,15 @@ public class _09_LinkedList {
         fruits.add("guavas");
         System.out.println(fruits);
 
-        // Adding an element at the specified position in the LinkedList
+        // add(index, element) -> Adding an element at the specified position
         fruits.add(3, "Watermelon");
         System.out.println(fruits);
 
-        // Adding an element at the beginning or the LinkedList
+        // addFirst() -> Adding an element at the beginning or the LinkedList
         fruits.addFirst("Strawberry");
         System.out.println(fruits);
 
-        // Adding an element at the end of the LinkedList
+        // addLast() -> Adding an element at the end of the LinkedList
         fruits.addLast("Pawpaw");
         System.out.println(fruits);
 
@@ -60,6 +60,10 @@ public class _09_LinkedList {
 
         // removeLast() -> Removing the last element in the LinkedList
         System.out.println(fruits.removeLast());
+
+        // remove() -> Removing element of a given index or element name
+        fruits.remove("banana");
+        System.out.println(fruits);
 
         // clear() -> Remove everything in a LinkedList
         fruits.clear();
