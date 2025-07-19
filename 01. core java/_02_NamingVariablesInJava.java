@@ -1,11 +1,14 @@
 public class _02_NamingVariablesInJava {
 
     public static void main(String[] args) {
-        // Camel Casing naming convension
-
-        // 1. class, interface and record - Calc, Runnable
-        // 2. varaibles & methods - marks(), show(), caluculaterAverageHeight()
-        // 3. constants - PIE, BRAND
+        /*
+         * Camel Casing naming convension
+         * 
+         * 1. class, interface and record - Calc, Runnable
+         * 2. varaibles & methods - marks(), show(), caluculaterAverageHeight()
+         * 3. constants - PIE, BRAND
+         * 
+         */
 
         /*
          * Try to use good names for your variables classes and methods so that it will

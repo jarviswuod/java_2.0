@@ -1,4 +1,13 @@
 public class _24_Encapsulation {
+
+    /*
+     * 
+     * Encapuslation refers to the act of securely accessing varibles within a class
+     * via a different method example(setName(), getName()) instead of directly
+     * accessing it
+     * 
+     */
+
     public static void main(String[] args) {
         Human obj = new Human();
 
@@ -29,5 +38,4 @@ class Human {
     public void setName(String name) {
         this.name = name;
     }
-
 }

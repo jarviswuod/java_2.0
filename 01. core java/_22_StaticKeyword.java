@@ -16,8 +16,8 @@ public class _22_StaticKeyword {
         mobile2.price = 1700;
 
         Mobile.name = "Phone"; // Static variable access
-        mobile.show();
-        mobile2.show();
+        mobile.show(); // Non static method
+        mobile2.show(); // Non static method
 
         Mobile.show1(mobile2); // Static method
 
@@ -36,5 +36,4 @@ class Mobile {
     public static void show1(Mobile obj) { // Using non static variables in a static method
         System.out.println(name + " : " + obj.price + " : " + obj.brand);
     }
-
 }

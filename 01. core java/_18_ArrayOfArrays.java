@@ -2,10 +2,9 @@ public class _18_ArrayOfArrays {
 
     public static void main(String[] args) {
 
-        // /////////////////////////////////////////////////////////////
         // METHOD 2 OF INTITIALIZING ARRAY OF ARRAYS
         // /////////////////////////////////////////////////////////////
-        int ageBrackets[][] = new int[3][5];
+        int[][] ageBrackets = new int[3][5];
 
         ageBrackets[0][0] = 01;
         ageBrackets[0][1] = 02;
@@ -32,11 +31,10 @@ public class _18_ArrayOfArrays {
             System.out.println();
         }
 
-        // /////////////////////////////////////////////////////////////
         // METHOD 1 OF INTITIALIZING ARRAY OF ARRAYS
         // /////////////////////////////////////////////////////////////
 
-        String vehicleBrandAndModel[][] = {
+        String[][] vehicleBrandAndModel = {
                 { "Prado", "Auris", "Axio", "Premio", "Crown" },
                 { "C class", "S class", "E class", },
                 { "Cx-5", "Cx-3", "Demio" },

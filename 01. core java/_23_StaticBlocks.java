@@ -37,6 +37,5 @@ class Mobile {
         brand = "";
         price = 200;
         System.out.println("In constructor");
-
     }
 }

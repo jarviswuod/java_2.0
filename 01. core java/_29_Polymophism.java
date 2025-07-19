@@ -10,6 +10,9 @@ public class _29_Polymophism {
         objC.show();
 
         System.out.println();
+        // ------------------------------------------------------------------------
+        // ------------------------------------------------------------------------
+        // ------------------------------------------------------------------------
 
         A obj1 = new A();
         obj1.show();
@@ -20,7 +23,6 @@ public class _29_Polymophism {
 
         obj1 = new B();
         obj1.show();
-        obj1.justInA();
         ((B) obj1).justInB();
         System.out.println(obj1);
 
@@ -28,7 +30,6 @@ public class _29_Polymophism {
 
         obj1 = new C();
         obj1.show();
-        obj1.justInA();
         System.out.println(obj1);
 
         System.out.println();
@@ -37,7 +38,7 @@ public class _29_Polymophism {
 
         System.out.println();
 
-        C cObj = ((C) obj1);
+        C cObj = (C) obj1;
         cObj.justInC();
         System.out.println(cObj);
 

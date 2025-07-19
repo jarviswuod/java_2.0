@@ -29,7 +29,6 @@ abstract class Human {
     public String toString() {
         return "Human [name=" + name + ", age=" + age + "]";
     }
-
 }
 
 class Student extends Human {
@@ -48,7 +47,6 @@ class Student extends Human {
     public String toString() {
         return "Student [name=" + name + ", age=" + age + ", form=" + form + ", stream=" + stream + "]";
     }
-
 }
 
 class Guardian extends Human {

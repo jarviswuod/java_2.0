@@ -1,8 +1,3 @@
-class Student {
-    String name;
-    int age;
-}
-
 public class _14_ClassesInJava {
 
     public static void main(String[] args) {
@@ -24,4 +19,9 @@ public class _14_ClassesInJava {
         System.out.println("He is : " + student2.age);
 
     }
+}
+
+class Student {
+    String name;
+    int age;
 }

@@ -1,6 +1,6 @@
 // 3. Method Chaining (Fluent Interface)
 
-public class _31__ThisKeywordExample_3 {
+public class _31_4_ThisKeyword {
     public static void main(String[] args) {
 
         // Usage:

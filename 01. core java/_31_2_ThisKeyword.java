@@ -1,6 +1,6 @@
 // 1. Basic Usage - Resolving Name Conflicts
 
-public class _31__ThisKeywordExample_1 {
+public class _31_2_ThisKeyword {
     public static void main(String[] args) {
 
     }

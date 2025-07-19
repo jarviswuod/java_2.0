@@ -1,6 +1,6 @@
 // 1. Basic Usage - Accessing Parent Class Members
 
-public class _31_SuperKeywordExample_1 {
+public class _31_6_SuperKeyword {
     public static void main(String[] args) {
         Animal animal = new Animal("Salmonela", 12);
         System.out.println(animal);
@@ -34,7 +34,6 @@ class Animal {
     public String toString() {
         return "Animal [species=" + species + ", age=" + age + "]";
     }
-
 }
 
 class Dog extends Animal {

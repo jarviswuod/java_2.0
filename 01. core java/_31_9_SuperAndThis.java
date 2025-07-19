@@ -1,4 +1,4 @@
-public class _31__ThisAndSuperKeywordsExample {
+public class _31_9_SuperAndThis {
     public static void main(String[] args) {
         ColoredShape coloredShape = new ColoredShape();
 

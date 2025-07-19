@@ -14,7 +14,7 @@ public class _19_ArrayOfObjects {
         }
     }
 }
- 
+
 class Student {
     String name;
     int age;
@@ -32,5 +32,4 @@ class Student {
     public String toString() {
         return "Student [name=" + name + ", age=" + age + ", form=" + form + ", stream=" + stream + "]";
     }
-
 }

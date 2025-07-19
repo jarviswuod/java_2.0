@@ -1,6 +1,6 @@
 // 2. Constructor Chaining with super()
 
-public class _31_SuperKeywordExample_2 {
+public class _31_7_SuperKeyword {
     public static void main(String[] args) {
 
     }

@@ -1,6 +1,17 @@
 public class _28_MethodOveriding {
-    // Overloading - same method name but different parameters
-    // Overriding - Same name, same parameter types & different behaviour
+
+    /*
+     * Method Overriding
+     * 
+     * Referes to the same method with:
+     * 1. Same name
+     * 2. Same parameter types
+     * 3. Same number of parameters
+     * 4. In different classes often inherited
+     * 5. But have a different behaviour
+     * 
+     */
+
     public static void main(String[] args) {
         veryAdvancedCalc calc = new veryAdvancedCalc();
 

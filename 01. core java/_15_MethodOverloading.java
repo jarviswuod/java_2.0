@@ -1,5 +1,16 @@
 public class _15_MethodOverloading {
 
+    /*
+     * Method Overloading
+     * 
+     * Referes to a multiple methods defined with:
+     * 1. Same method name
+     * 2. Different number of parameters
+     * 3. Different parameter types
+     * 4. Under the same class
+     * 
+     */
+
     public static void main(String[] args) {
         Calculator cal1 = new Calculator();
         Calculator cal2 = new Calculator();

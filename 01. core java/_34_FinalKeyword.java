@@ -1,18 +1,19 @@
 /*
- * final variable
- * You are creating a contant value
+    final variable
+    - You are creating a contant value
+        - Example: final int AGE = 9;
+
+
+    final class
+    - You are preventing Inheritance
+        - Example: final class Calc {};
+
+    final method
+    - You are preventing override of the method
+        - Example: final public void add() {};
+
  */
 
-/*
- * final class
- * You are preventing Inheritance
- */
-
-/*
- * final method
- * You are preventing override of the method
- */
- 
 public class _34_FinalKeyword {
     public static void main(String[] args) {
         final int AGE = 9; // Uppcase because it's a now contant value

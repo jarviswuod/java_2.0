@@ -1,9 +1,9 @@
 public class _16_ArrayIntro {
     public static void main(String[] args) {
-        // /////////////////////////////////////////////////////////////
+
         // METHOD 2 OF INTITIALIZING ARRAYS
         // /////////////////////////////////////////////////////////////
-        String vehicle[] = new String[5];
+        String[] vehicle = new String[5];
 
         vehicle[0] = "toyota";
         vehicle[1] = "Benz";
@@ -17,11 +17,11 @@ public class _16_ArrayIntro {
         }
         System.out.println();
 
-        // /////////////////////////////////////////////////////////////
         // METHOD 1 OF INTITIALIZING ARRAYS
         // /////////////////////////////////////////////////////////////
-        String names[] = { "Jarvis", "Dommy", "Annyse", "Davis" };
-        int ages[] = { 24, 23, 12, 18 };
+
+        String[] names = { "Jarvis", "Dommy", "Annyse", "Davis" };
+        int[] ages = { 24, 23, 12, 18 };
 
         for (String name : names) {
             System.out.print(name + "   ");
