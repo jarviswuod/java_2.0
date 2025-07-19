@@ -1,4 +1,3 @@
-
 public class _05_ArithmeticOperations {
 
     public static void main(String args[]) {

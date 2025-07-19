@@ -1,5 +1,7 @@
 /* 
- * Instanciating our Runnable interface with help of anonymous classes
+ 
+    Instansiating our Runnable interface with help of anonymous classes
+ 
  */
 
 public class _57_ThreadAnonymous {

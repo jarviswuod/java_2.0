@@ -1,11 +1,13 @@
 /*
- * One class can implement multiple intefaces
- * Interface can extend another interface
- *
- *  NOTE:
- *  // class - class -> extends
- *  // interface - class -> implements
- *  // interface - interface -> extends
+
+    NOTE:
+     - class - class -> extends
+     - interface - class -> implements
+     - interface - interface -> extends
+
+     - One class can implement multiple intefaces
+     - Interface can extend another interface
+
  */
 
 public class _41_InterfacesInheritance {
@@ -54,5 +56,4 @@ class B implements X, Z {
     public void config() {
         System.out.println("config() in interface X");
     }
-
 }

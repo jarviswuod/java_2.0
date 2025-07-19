@@ -4,7 +4,7 @@ enum Status {
     Started, Running, Failed, Pending, Success;
 }
 
-public class _45_Enums {
+public class _46_Enums {
     public static void main(String[] args) {
 
         Status status = Status.Running;
@@ -45,6 +45,5 @@ public class _45_Enums {
             System.out.println("Please wait");
         else
             System.out.println("Done");
-
     }
 }

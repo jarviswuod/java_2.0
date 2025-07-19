@@ -1,6 +1,8 @@
 /*
- * Functional interface is an interface with only one method
- * Lamda empressions can only be used on funtional interfaces
+    NOTE
+    - Functional interface is an interface with only one method
+    - Lamda empressions can only be used on funtional interfaces
+    
  */
 
 public class _43_FunctionalInterface {

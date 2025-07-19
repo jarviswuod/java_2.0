@@ -1,9 +1,10 @@
-// Static notes
-
-// Static means you are making something a class member and not an object member
-// Static varaibles are shared between different objects
-// You cannot use non static variables inside a static method
-// In non static methods you can use static variables
+/*
+    Static notes
+        - Static means you are making something a class member and not an object member
+        - Static varaibles are shared between different objects
+        - You cannot use non static variables inside a static method
+        - In non static methods you can use static variables
+ */
 
 public class _22_StaticKeyword {
     public static void main(String[] args) {

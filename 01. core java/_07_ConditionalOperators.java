@@ -1,5 +1,4 @@
 /*
-   
     ----------------------------------------------------------- Sample 1.
     if(expression) {
         // Execute this block of code

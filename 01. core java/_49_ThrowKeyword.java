@@ -16,6 +16,7 @@ public class _49_ThrowKeyword {
         } catch (ArithmeticException e) {
             j = 18 / 1;
             System.out.println("That's the default output " + e);
+
         } catch (Exception e) {
             System.out.println("Something went wrong " + e);
         }

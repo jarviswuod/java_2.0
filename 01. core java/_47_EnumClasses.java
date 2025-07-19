@@ -1,14 +1,8 @@
 /*
- * Inside enums, you can define/ create;
- * // 1. variables
- * // 2. constructors
- * // 3. methods
- * 
- * -> Enums extends the Enum class by defauld which explains the variables, methods, and constructors
- * 
- * NOTE:
- * -> We are creating our objects in the class itself hence making our constructor private
- * 
+    NOTE
+        - enums extends the Enum class by default which explains the variables, methods, and constructors
+        - We are creating our objects in the class itself hence making our constructor private
+    
  */
 
 enum Laptop {
@@ -34,10 +28,9 @@ enum Laptop {
     public void setPrice(int price) {
         this.price = price;
     }
-
 }
 
-public class _46_EnumClasses {
+public class _47_EnumClasses {
     public static void main(String[] args) {
 
         for (Laptop laptop : Laptop.values()) {

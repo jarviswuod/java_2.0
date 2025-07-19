@@ -1,33 +1,27 @@
-// /////////////////////////////////////////////////////////////////////////////////////////
-// Types of Inner Classes
+/*
+    Types of Inner Classes
+        1. Non-static Inner Classes (Member Inner Classes)
+        2. Static Inner Classes (Static Nested Classes)
+        3. Method Local Inner Classes
+        4. Anonymous Inner Classes
 
-// 1. Non-static Inner Classes (Member Inner Classes)
-// 2. Static Inner Classes (Static Nested Classes)
-// 3. Method Local Inner Classes
-// 4. Anonymous Inner Classes
+    Key Points to Remember
+        1. Non-static inner classes -> hold a reference to the outer class instance
+        2. Static inner classes -> don't hold outer class reference - more memory efficient
+        3. Method local classes -> can access local variables only if they're final or effectively final
+        4. Anonymous classes -> are great for one-time use implementations
+        5. Inner classes can have any access modifier (private, protected, public, default)
+        6. You can have multiple inner classes in one outer class
 
-// /////////////////////////////////////////////////////////////////////////////////////////
-// Key Points to Remember
-
-// 1. Non-static inner classes -> hold a reference to the outer class instance
-// 2. Static inner classes -> don't hold outer class reference - more memory efficient
-// 3. Method local classes -> can access local variables only if they're final or effectively final
-// 4. Anonymous classes -> are great for one-time use implementations
-// 5. Inner classes can have any access modifier (private, protected, public, default)
-// 6. You can have multiple inner classes in one outer class
-
-// /////////////////////////////////////////////////////////////////////////////////////////
-// When to Use Inner Classes
-
-// -> Non-static: When the inner class needs access to outer class instance members
-// -> Static: When you want to group related classes together but don't need outer class access
-// -> Method local: For temporary, method-specific functionality
-// -> Anonymous: For quick implementations, especially with functional interfaces
+    When to Use Inner Classes
+        - Non-static: When the inner class needs access to outer class instance members
+        - Static: When you want to group related classes together but don't need outer class access
+        - Method local: For temporary, method-specific functionality
+        - Anonymous: For quick implementations, especially with functional interfaces
+ */
 
 // /////////////////////////////////////////////////////////////////////////////////////////
-// /////////////////////////////////////////////////////////////////////////////////////////
-// MAIN EXAMPLE
-// /////////////////////////////////////////////////////////////////////////////////////////
+// EXAMPLE 1
 // /////////////////////////////////////////////////////////////////////////////////////////
 public class _38_InnerClasses {
     public static void main(String[] args) {
@@ -72,11 +66,9 @@ class A {
 }
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+// 1. Non-Static Inner Classes (Member Inner Classes)
 // /////////////////////////////////////////////////////////////////////////////////////////
-// // 1. Non-Static Inner Classes (Member Inner Classes)
-// /////////////////////////////////////////////////////////////////////////////////////////
-// /////////////////////////////////////////////////////////////////////////////////////////
-class _34_InnerClasses_1 {
+class _34_1_InnerClasses {
     public static void main(String[] args) {
         // Create outer class instance first
         OuterClass outer = new OuterClass();
@@ -129,11 +121,9 @@ class OuterClass {
 }
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+// 2. Static Inner Classes (Static Nested Classes)
 // /////////////////////////////////////////////////////////////////////////////////////////
-// // 2. Static Inner Classes (Static Nested Classes)
-// /////////////////////////////////////////////////////////////////////////////////////////
-// /////////////////////////////////////////////////////////////////////////////////////////
-class _34_InnerClasses_2 {
+class _34_2_InnerClasses {
     public static void main(String[] args) {
         // No need to create outer class instance
         OuterClassStatic.StaticInnerClass staticInner = new OuterClassStatic.StaticInnerClass();
@@ -179,11 +169,9 @@ class OuterClassStatic {
 }
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+// 3. Method Local Inner Classes
 // /////////////////////////////////////////////////////////////////////////////////////////
-// // 3. Method Local Inner Classes
-// /////////////////////////////////////////////////////////////////////////////////////////
-// /////////////////////////////////////////////////////////////////////////////////////////
-class _34_InnerClasses_3 {
+class _34_3_InnerClasses {
     private String outerField = "Outer field";
 
     public void outerMethod() {
@@ -209,17 +197,15 @@ class _34_InnerClasses_3 {
     }
 
     public static void main(String[] args) {
-        _34_InnerClasses_3 example = new _34_InnerClasses_3();
+        _34_3_InnerClasses example = new _34_3_InnerClasses();
         example.outerMethod();
     }
 }
 
 // /////////////////////////////////////////////////////////////////////////////////////////
+// 4. Anonymous Inner Classes
 // /////////////////////////////////////////////////////////////////////////////////////////
-// // 4. Anonymous Inner Classes
-// /////////////////////////////////////////////////////////////////////////////////////////
-// /////////////////////////////////////////////////////////////////////////////////////////
-class _34_InnerClasses_4 {
+class _34_4_InnerClasses {
     public static void main(String[] args) {
         // Anonymous class implementing interface
         Greeting greeting = new Greeting() {

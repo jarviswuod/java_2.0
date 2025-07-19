@@ -1,5 +1,6 @@
 public class _58_ThreadLamdaExpression {
     public static void main(String[] args) {
+
         Runnable objA = () -> {
             for (int i = 0; i < 100; i++) {
                 System.out.println("Hi");

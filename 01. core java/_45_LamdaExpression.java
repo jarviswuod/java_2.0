@@ -1,11 +1,12 @@
 /*
- * With lamda expression we can simplify anonymous classes
+    With lamda expression we can simplify anonymous classes
+
  */
 
 //  /////////////////////////////////////////////////////////////////////////////////////
-//  EXAMPLE 1
+//  EXAMPLE 2
 //  /////////////////////////////////////////////////////////////////////////////////////
-public class _47_LamdaExpression {
+public class _45_LamdaExpression {
     public static void main(String[] args) {
 
         A obj = () -> System.out.println("In show");
@@ -19,9 +20,9 @@ interface A {
 }
 
 // /////////////////////////////////////////////////////////////////////////////////////
-// EXAMPLE 2
+// EXAMPLE 1
 // /////////////////////////////////////////////////////////////////////////////////////
-class _42_LamdaExpression_ {
+class _45_LamdaExpression_ {
     public static void main(String[] args) {
 
         // WITHOUT THE LAMDA EXPRESSION
@@ -35,7 +36,7 @@ class _42_LamdaExpression_ {
         System.out.println(obj1.add(18, 23));
 
         // WITH LAMDA
-        B obj2 = (int i, int j) -> i + j;
+        B obj2 = (i, j) -> i + j;
         System.out.println(obj2.add(21, 5));
 
     }

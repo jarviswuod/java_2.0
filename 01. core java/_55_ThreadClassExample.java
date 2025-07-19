@@ -1,8 +1,10 @@
 /*
- * class extends Thread
- * run() defined
- * start() on class instance
- * 
+    HOW TO ACHIEVE THREADING USING Thread class:
+      - class extends Thread
+      - run() defined
+      - start()
+      - Thread.sleep(10);
+
  */
 
 public class _55_ThreadClassExample {

@@ -1,17 +1,19 @@
 /*
- * 
- * class implements Runnable
- * run() defined
- * Runnable objA = new A(); -->|<-- Runnable reference type on class object type
- * Thread t1 = new Thread(objA); -->|<-- Creating new Thread object with runnable object
- * start() on created thread instance
- *
- * 
- * NOTE:
- * -> Runnable objA = new A();
- * -> Thread t1 = new Thread(objA);
- * -> t1.start();
- *  
+
+    HOW TO ACHIEVE THREADING USING Thread class:
+      - class extends Thread
+      - run() defined
+      - start()
+      - Thread.sleep(10);
+
+
+    HOW TO ACHIEVE THREADING USING Runnable interface:
+      - class implements Runnable
+      - run() defined
+      - Runnable objA = new A();
+      - Thread t1 = new Thread(objA);
+      - t1.start();
+
  */
 
 public class _56_ThreadInterfaceExample {

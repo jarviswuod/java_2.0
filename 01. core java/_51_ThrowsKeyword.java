@@ -1,10 +1,10 @@
 /*
- * Throws send the error up the ladder (Ducking the exception)
- * 
- * NOTE:
- * -> Never throw the exception in the main method coz the main method is called by JVM which causes the program to stop
- * -> You can throw exception to classes and methods
- * 
+        
+    NOTE:
+        - Throws send the error up the ladder (Ducking the exception)
+        - You can throw exception to classes and methods
+        - Never throw the exception in the main method coz the main method is called by JVM which causes the program to stop
+    
  */
 
 class A {

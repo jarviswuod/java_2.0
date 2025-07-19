@@ -1,28 +1,26 @@
 /*
- * Most of the time threads will be created automatically for us via framework but sometimes we can explicitly want  to create 2 or multiple threads say 6-10 depending on our application
- * 
- * NOTE:
- * Threads & mutation together is not a good idea
- * -> Threads --> t1, t2
- * -> Mutation --> int i = 5; i++; i = 6;
- * 
- * If you working with thread. Make sure you are working with;
- * 1. Variables which are not mmutable or
- * 2. Use Thread safe
- * 
- * Thread safe
- * -> Is a condition where only one thread can work with a variable at a particular one point
- * 
- */
+    NOTE:
+      - Most of the time threads will be created automatically for us via framework 
+      - We can explicitly want to create 2 or multiple threads depending on our application
+      - Threads & mutation together is not a good idea
+          - Threads --> t1, t2
+          - Mutation --> int i = 5; i++; i = 6;
+    
+      - If you working with thread. Make sure you are working with;
+          - 1. Variables which are not mmutable or
+          - 2. Use Thread safe
+    
+      - thread-safe
+          - This is a condition where only one thread can work with a variable at a particular one point
+    
 
-/*
- * This methods are going back to the main thread before taking the final reading
- * If not availed, the final reading is greatly affected.
- * 
- * public synchronized
- *  -> The keyword helps call the method ones at a time preventing any multiple calls concurrently.
- *  -> It ensures only one Thread is called at a time.
- * 
+      - This methods are joning back to the main thread using .join() before taking the final reading
+      - If .join() is not availed, the final reading greatly varies.
+
+      - public synchronized
+      -  The "synchronized" keyword helps call the method ones at a time preventing any multiple concurrent calls
+      -  It ensures only one Thread is called at a time.
+
  */
 
 public class _59_ThreadConditions {

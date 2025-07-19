@@ -1,8 +1,9 @@
-// Data Types Supported:
-
-// String, byte, short, int, char -> Wrapper classes (Byte, Short, Integer, Character)
-// Enum types
-// NOT SUPPORTED -> float, double, long, boolean
+/*
+    Data Types Supported:
+        - String, byte, short, int, char -> Wrapper classes (Byte, Short, Integer, Character)
+        - Enum types
+        - NOT SUPPORTED -> float, double, long, boolean
+ */
 
 /*
     switch (expression) {

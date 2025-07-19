@@ -1,12 +1,12 @@
 /*
- * Erros and Types
- * 1. Compli-time error <Syntax>
- * 2. Runtime error <Exceptions>
- * 3. Logical error <bugs>
- * 
- * 
- * NOT
- * Parent exception should be at the bottom/end of the block to allow executing the children exceptions first
+    NOTE
+        - Errors and Types
+            1. Compli-time error <Syntax>
+            2. Runtime error <Exceptions>
+            3. Logical error <bugs>
+            
+        - Parent exception should be at the bottom/end of the block to allow executing the children exceptions first
+
  */
 
 public class _48_ErrorsAndExceptions {

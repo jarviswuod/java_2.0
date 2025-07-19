@@ -1,33 +1,27 @@
-///  Key Rules for Abstract Classes
-/////////////////////////////////////////////////////////////////////////////
+/*
+    Key Rules for Abstract Classes
+        1. Cannot be instantiated: You can't use new with abstract classes
+        2. Can have constructors: Used when subclasses call super()
+        3. Can have concrete methods: Regular methods with implementation
+        4. Can have abstract methods: Methods without implementation
+        5. Subclasses must implement all abstract methods: Unless the subclass is also abstract
+        6. Can have fields: Both static and instance variables
 
-// 1. Cannot be instantiated: You can't use new with abstract classes
-// 2. Can have constructors: Used when subclasses call super()
-// 3. Can have concrete methods: Regular methods with implementation
-// 4. Can have abstract methods: Methods without implementation
-// 5. Subclasses must implement all abstract methods: Unless the subclass is also abstract
-// 6. Can have fields: Both static and instance variables
+    When to use abstract classes:
+        1. To share common code among related classes
+        2. To force subclasses to implement certain methods
+        3. To a base class that shouldn't be instantiated directly
+        4. To provide default implementations for some methods
 
-/////////////////////////////////////////////////////////////////////////////
-// Use abstract classes when:
-
-// 1. You want to share common code among related classes
-// 2. You want to force subclasses to implement certain methods
-// 3. You have a base class that shouldn't be instantiated directly
-// 4. You want to provide default implementations for some methods
-
-/////////////////////////////////////////////////////////////////////////////
-// Differences Btwn Abstract and interfaces:
-
-// 1. Abstract classes can have constructors, interfaces cannot
-// 2. Abstract classes can have concrete methods, interfaces mainly have abstract methods (except default/static methods)
-// 3. A class can extend only one abstract class but implement multiple interfaces
-// 4. Abstract classes can have any access modifier, interface methods are public by default
+    Differences Btwn Abstract and interfaces:
+        1. Abstract classes can have constructors, interfaces cannot
+        2. Abstract classes can have concrete methods, interfaces mainly have abstract methods (except default/static methods)
+        3. A class can extend only one abstract class but implement multiple interfaces
+        4. Abstract classes can have any access modifier, interface methods are public by default
+ */
 
 // ///////////////////////////////////////////////////////////////////////////////
-// ///////////////////////////////////////////////////////////////////////////////
-// MAIN EXAMPLE
-// ///////////////////////////////////////////////////////////////////////////////
+// EXAMPLE 1
 // ///////////////////////////////////////////////////////////////////////////////
 public class _37_AbstractKeywords {
     public static void main(String[] args) {
@@ -67,9 +61,7 @@ class updatedWagonR extends WagonR { // Concrete class
 }
 
 // ///////////////////////////////////////////////////////////////////////////////
-// ///////////////////////////////////////////////////////////////////////////////
 // Example 2
-// ///////////////////////////////////////////////////////////////////////////////
 // ///////////////////////////////////////////////////////////////////////////////
 class _33_AbstractKeywords_ {
     public static void main(String[] args) {

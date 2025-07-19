@@ -1,4 +1,3 @@
-
 public class _39_AnonymousClasses {
     public static void main(String[] args) {
         A obj1 = new A() {
@@ -28,7 +27,6 @@ public class _39_AnonymousClasses {
 
         obj2.config();
         obj2.show();
-
     }
 }
 
