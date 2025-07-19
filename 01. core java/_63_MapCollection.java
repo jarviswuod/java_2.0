@@ -1,17 +1,16 @@
 /*
- * Map is a collection of key and value pair
- * It's a collection of a Set and a List
- * 
- * 
- * .put() and .add()
- *  -> .add() - adds a new key & value
- *  -> .puts() - checks if the key is present then modifies or adds it afresh
- * 
- * 
- * HashMap and Hashtable
- * Hashtable is used in a synchronized version
- * HashMap is not
- * 
+    NOTE:
+      - Map is a collection of key and value pair
+      - It's a collection of a Set and a List
+       
+      - Difference between put() and add()
+         - add() - adds a new key & value
+         - puts() - checks if the key is present then modifies or adds it afresh
+       
+      - HashMap and Hashtable
+         - Hashtable is used in a synchronized version
+         - HashMap is not
+
  */
 
 import java.util.HashMap;
@@ -35,6 +34,5 @@ public class _63_MapCollection {
         for (String key : students.keySet()) {
             System.out.println(key + " : " + students.get(key));
         }
-
     }
 }

@@ -1,7 +1,8 @@
 /*
- * You can replace the collection with List. 
- * -> Reason? List has lots of other methods at disposal
- * 
+    NOTE:
+      - You can replace the collection with List. 
+      - Reason? List has lots of other methods at disposal
+
  */
 
 import java.util.ArrayList;

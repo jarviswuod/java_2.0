@@ -1,13 +1,10 @@
 /*
- * A set is a collection of unique values
- * 
- * Set will not give value in a sorted format
- * It does have index value
- * 
- * 
- * NOTE:
- * Treeset -> sorts sets and can be replaced by Hashset
- * 
+    NOTE:
+      - A set is a collection of unique values
+      - Set does not give value in a sorted format
+      - Set does not have index value
+      - Treeset sorts sets and can be replaced by Hashset
+
  */
 
 import java.util.HashSet;

@@ -7,17 +7,17 @@ public class _65_StreamAPI {
 
         List<Integer> nums = Arrays.asList(4, 7, 6, 1, 9, 3);
 
-        // Method 1 looping
+        // Basic for loop
         for (int i = 0; i < nums.size(); i++) {
             System.out.print(nums.get(i) + "  ");
         }
 
-        // Method 2 looping
+        // Enhanced for loop
         for (int num : nums) {
             System.out.print(num + "  ");
         }
 
-        // Method 3 looping
+        // forEach loop
         nums.forEach(n -> System.out.print(n + "  "));
 
         int sum = 0;

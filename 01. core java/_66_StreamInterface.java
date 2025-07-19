@@ -1,19 +1,17 @@
 /*
- * Stream is an interface
- * 
- * nums.stream() -> returns an object of stream
- * With this new variable you can perform any operation and its not gonna affect
- * the original values (preventing mutation of the origin values)
- * 
- * NOTE:
- * -> Once you use a stream you can't reuse it again
- * 
- * Benefits of stream
- * -> It provides a lot of methods you can work with example
- * --> filter, map, reduce, sorted
- * 
- * "parrallelStream" can be used for threads
- * 
+    NOTE:
+      - Stream is an interface
+      - nums.stream() -> returns an object of stream
+      - Once you use a stream you can't reuse it again
+      - With new variable each time you don't affect original value
+      - In short, stream() prevents mutation of the origin values
+
+      - Benefits of stream
+         - It provides a lot of methods you can work with example
+         - filter, map, reduce, sorted
+
+      - "parrallelStream" can be used for threads
+
  */
 
 import java.util.Arrays;

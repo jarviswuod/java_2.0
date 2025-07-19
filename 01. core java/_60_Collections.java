@@ -1,25 +1,22 @@
 /*
- * Collections
- * -------------------------------
- * Collections API -> Concept
- * Collection -> interface
- * Collections -> class
- * 
- * 
- * Collection
- * -> List --> ArrayList, LinkedList
- * -> Queue --> Dequeue
- * -> Set --> Hashset, LinkedHashSet
- * -> Map --> Hashtable, HashMap
- * 
- */
 
-/*
- * By default collection sreceive object types (not integers, not String) Hence
- * -> You hace to explicitly use <Integer> object when initiating the collection
- *     --> 1. To prevent errors (Syntax)
- *     --> 2.  Iteration down the line
- * 
+    NOTES:
+      - Collections
+         - Collections API -> Concept
+         - Collection -> interface
+         - Collections -> class
+    
+      - Collection
+         - List -> ArrayList, LinkedList
+         - Queue -> Dequeue
+         - Set -> Hashset, LinkedHashSet
+         - Map -> Hashtable, HashMap
+    
+      - By default collections receive object types (int, char)
+      - You hace to explicitly use <Integer> object when initiating the collection
+         1. To prevent errors (Syntax)
+         2.  Iteration down the line
+
  */
 
 import java.util.ArrayList;

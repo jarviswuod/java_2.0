@@ -1,6 +1,7 @@
 /*
- * Comparator is an interface using which you can specify comparison on your own logic for sorting
- * 
+    NOTE:
+      - Comparator is an interface using which you can specify a custom comparison logic for sorting
+
  */
 
 import java.util.ArrayList;
