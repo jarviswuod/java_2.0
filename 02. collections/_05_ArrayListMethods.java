@@ -1,3 +1,17 @@
+/*
+
+    NOTE:
+    ArrayList methods
+     - isEmpty() -> Check if an ArrayList is empty
+     - size() -> Find the size of an ArrayList
+     - get() -> Retrieve elements at a given index
+     - set() -> Modify elements at a given index
+     - remove() -> Remove elements at a given index
+     - removeAll() -> Remove multiple elements in a list
+     - clear() -> Remove everything in ArrayList
+
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,7 +20,7 @@ public class _05_ArrayListMethods {
 
         List<String> programmingLangs = new ArrayList<>();
 
-        // isEmpty() -> Check if an ArrayList is empty
+        // isEmpty()
         System.out.println(programmingLangs.isEmpty());
 
         programmingLangs.add("C");
@@ -21,24 +35,24 @@ public class _05_ArrayListMethods {
 
         System.out.println(programmingLangs);
 
-        // .size() -> FInd the size of an ArrayList
+        // size()
         System.out.println(programmingLangs.size());
 
-        // .get() -> Retrive elements at a given index
+        // get()
         System.out.println(programmingLangs.get(3));
         System.out.println(programmingLangs.get(4));
         System.out.println(programmingLangs.get(2));
 
-        // .set() -> Modify elements at a given index
+        // set()
         programmingLangs.set(4, "Typescript");
         System.out.println(programmingLangs.get(4));
 
-        // .remove() -> Remove elements at a given index
+        // remove()
         programmingLangs.remove(4);
         programmingLangs.remove("C++");
         System.out.println(programmingLangs);
 
-        // .removeAll() -> Remove multiple elements in a list
+        // removeAll()
         List<String> frameworks = new ArrayList<>();
         frameworks.add("nodeJs");
         frameworks.add("django");
@@ -48,7 +62,7 @@ public class _05_ArrayListMethods {
         programmingLangs.removeAll(frameworks);
         System.out.println(programmingLangs);
 
-        // .clear() -> Remove everything in ArrayList
+        // clear()
         programmingLangs.clear();
         frameworks.clear();
         System.out.println(programmingLangs);

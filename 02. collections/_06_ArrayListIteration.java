@@ -38,7 +38,7 @@ public class _06_ArrayListIteration {
         courses.stream().forEach(course -> System.out.println(course));
         System.out.println();
 
-        // Java * forEach + lamda example
+        // Java 8 forEach + lamda example
         courses.forEach(course -> System.out.println(course));
         System.out.println();
     }

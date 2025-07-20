@@ -1,13 +1,20 @@
-public class _01_Intro {
+/*
 
+    NOTE:
+    - Limitations of primitive data types
+        1. You cannot store multiple data sets
+
+    - Limitations of an array
+        1. Arrays are fixed in size
+        2. Arrays can ONLY hold homogenous data (int, String, char)
+        3. Arrays lack ready made API's support for convenience
+
+ */
+
+public class _01_Intro {
     public static void main(String[] args) {
 
-        // Limitations of primitive data types
-        // ////////////////////////////////////////////////////
-        // ////////////////////////////////////////////////////
-        // ////////////////////////////////////////////////////
-
-        // 1. You cannot store multiple data sets
+        // 1. You cannot store multiple data sets with primitive data types
         int a = 10;
         int b = 10;
         int c = 10;
@@ -16,16 +23,11 @@ public class _01_Intro {
 
         System.out.println(a + b + c + d + e);
 
-        // ////////////////////////////////////////////////////
-        // ////////////////////////////////////////////////////
-        // ////////////////////////////////////////////////////
-        // Limitations of an array
-
         // 1. Arrays are fixed in size
         int[] array = new int[10000];
         System.out.println(array);
 
-        // 2. Arrays can ONLY hold homogenous data elements
+        // 2. Arrays can ONLY hold homogenous data (int, String, char)
         Student[] students = new Student[10];
 
         students[0] = new Student();

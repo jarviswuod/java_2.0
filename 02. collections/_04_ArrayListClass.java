@@ -1,14 +1,14 @@
 /*
- * 
- * ArrayList/ dynamic array Class Overview
- * 
- * An ArrayList is a re-sizable array. It grows it's size to accomodate new lements and shrinks the size when the elements are removed
- * Just like arrays you can retrive elements by their index
- * Java ArrayList allos duplicate and null values
- * Java ArrayList is an ordred collection (Maintains insertion order or elements)
- * You cannot create an ArrayList of primitive types (int & char). You use boxed types like Interger, Character, Boolean
- * Java ArrayList is not sycnhronized. If multiple threads thry to modify an ArrayList at the same time, the final outcome will be non-deterministic. You must explicitly sychronize access to an ArrayList if multiple threads are gonna modity it.
- * 
+    NOTES:
+
+    ArrayList(dynamic array) Class Overview
+     - An ArrayList is a re-sizable array. It grows and shrinks in size
+     - Just like arrays you can retrive elements by their index
+     - Java ArrayList allows duplicate and null values
+     - Java ArrayList is an ordered collection (Maintains insertion order or elements)
+     - You cannot create an ArrayList of primitive types (int & char). You use boxed types like Interger, Character, Boolean
+     - Java ArrayList is not sycnhronized. You must explicitly sychronize it's access
+
  */
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class _04_ArrayListClass {
 
         // Creating an ArrayList object using Another Collection
         // 1. ArrayList(Collection c) constructor
-        // 2. Adding Existing elements to a new ArrayList .addAll ()
+        // 2. Adding Existing elements to a new ArrayList .addAll()
 
         List<Integer> firstFivePrimeNumbers = new ArrayList<>();
         firstFivePrimeNumbers.add(2);

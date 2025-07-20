@@ -1,30 +1,31 @@
 /*
- * Collection Hierarchy
- * --> List
- * --- --- ArrayList
- * --- --- LinkedList
- * --- --- Vector
- * --- --- Stack
- * 
- * --> Queue
- * --- --- PriorityQueue
- * ---> Deque
- * --- --- ArrayDeque
- * 
- * --> Set
- * --- --- HashSet
- * --- --- LinkedHashSet
- * ---> SortedSet
- * --- --- TreeSet
- * 
- * 
- * Map Hierarchy
- * --- --- HashMap
- * --- --- LinkedHashMap
- * --- --- Hashtable
- * ---> SortedMap
- * --- --- TreeMap
- * 
+    NOTES:
+    - Collection Hierarchy
+        - List
+             - ArrayList
+             - LinkedList
+             - Vector
+             - Stack
+
+        - Queue
+             - PriorityQueue
+             - Deque
+                - ArrayDeque
+
+        - Set
+             - HashSet
+             - LinkedHashSet
+                - SortedSet
+                     - TreeSet
+
+
+    - Map Hierarchy
+         - HashMap
+         - LinkedHashMap
+         - Hashtable
+            - SortedMap
+                 - TreeMap
+
  */
 
 import java.util.ArrayList;
