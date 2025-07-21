@@ -1,8 +1,21 @@
+/*
+
+    NOTE:
+
+    Iterating over an HashSet
+        1. Enhanced forEach loop
+        2. Basic loop with iterator
+        3. Iterator with while loop
+        4. Java 8 stream() + lamda example
+        5. Java * forEach() + lamda example
+
+ */
+
 import java.util.Iterator;
 import java.util.HashSet;
 import java.util.Set;
 
-public class _14_LoopingSets {
+public class _16_LoopingSets {
 
     public static void main(String[] args) {
 

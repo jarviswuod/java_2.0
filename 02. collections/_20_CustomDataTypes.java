@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class _16_CustomDataTypes {
+public class _20_CustomDataTypes {
     public static void main(String[] args) {
 
         // Creating a custom object in a HashMap

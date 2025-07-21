@@ -1,8 +1,22 @@
+/*
+
+    NOTE:
+
+    Iterating over an ArrayList
+        1. Basic for loop
+        2. Enhanced for loop
+        3. Basic loop with iterator
+        4. Iterator with while loop
+        5. Java 8 stream + lamda example
+        6. Java 8 forEach + lamda example
+
+ */
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class _06_ArrayListIteration {
+public class _07_ArrayListIteration {
     public static void main(String[] args) {
 
         List<String> courses = Arrays.asList("C", "C++", "Java", "Spring", "C#");

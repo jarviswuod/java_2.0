@@ -1,11 +1,21 @@
+/*
+
+    NOTES
+
+    Sorting primitive datatype
+     - sort()
+     - reverse()
+
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class _07_SortingArrayList {
+public class _08_SortingArrayList {
     public static void main(String[] args) {
 
-        // Sorting Primitive Datatype
+        // Sorting primitive Datatype
         List<Integer> list = new ArrayList<Integer>();
 
         list.add(12);

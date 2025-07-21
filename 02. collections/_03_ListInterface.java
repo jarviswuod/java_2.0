@@ -1,5 +1,6 @@
 /*
-    NOTE:
+
+    NOTES:
 
     List Interface Overview
      - List is an ordered collection (maintains insertion order)

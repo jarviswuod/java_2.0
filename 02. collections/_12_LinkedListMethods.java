@@ -1,23 +1,17 @@
-
 /*
- * NOTE
- * LinkedList class Overview
- * 1. Java LinkedList class can contain duplicate elements
- * 2. Java LinkedList class maintains insertion order
- * 3. The LinkedList class implements Queue and Deque interfaces
- * 4. It can be used as a Queue, Deque or Stack coz ^^^
- * 5. Java LinkedList is not thread-safe. You must explicity synchronize concurrent modifications to the LinkedList in a multi-threaded environment.
- * 
- */
 
-// LinkedList Methods
-// Adding -> add(), add(1, element), addFirst(), addLast()
-// Retriving -> get(), getFirst(), getLast()
-// Remove -> removeFirst(), removeLast(), clear()
+    NOTES:
+    
+    LinkedList Methods
+        - Adding -> add(), add(1, element), addFirst(), addLast()
+        - Retriving -> get(), getFirst(), getLast()
+        - Remove -> remove(), removeFirst(), removeLast(), clear()
+
+ */
 
 import java.util.LinkedList;
 
-public class _09_LinkedList {
+public class _12_LinkedListMethods {
 
     public static void main(String[] args) {
 

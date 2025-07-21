@@ -1,9 +1,20 @@
+/*
+
+    NOTES:
+
+    Sorting Custom Objects
+      1. Using Comparator interface
+          - compare()
+          - Converting compare() method to lamda expression
+
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class _08_SortingCustomObjects {
+public class _09_SortingCustomObjects {
 
     public static void main(String[] args) {
 

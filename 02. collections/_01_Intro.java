@@ -1,6 +1,6 @@
 /*
 
-    NOTE:
+    NOTES:
     - Limitations of primitive data types
         1. You cannot store multiple data sets
 

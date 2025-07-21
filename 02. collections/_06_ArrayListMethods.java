@@ -1,6 +1,7 @@
 /*
 
-    NOTE:
+    NOTES:
+    
     ArrayList methods
      - isEmpty() -> Check if an ArrayList is empty
      - size() -> Find the size of an ArrayList
@@ -9,13 +10,15 @@
      - remove() -> Remove elements at a given index
      - removeAll() -> Remove multiple elements in a list
      - clear() -> Remove everything in ArrayList
+     - indexOf() -> Find the first occurrence of an element
+     - lastIndexOf() -> Find the last occurrence of an element
 
  */
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class _05_ArrayListMethods {
+public class _06_ArrayListMethods {
     public static void main(String[] args) {
 
         List<String> programmingLangs = new ArrayList<>();
@@ -34,6 +37,12 @@ public class _05_ArrayListMethods {
         programmingLangs.add("react");
 
         System.out.println(programmingLangs);
+
+        // indexOf()
+        System.out.println(programmingLangs.indexOf("Python"));
+
+        // lastIndexOf()
+        System.out.println(programmingLangs.lastIndexOf("django"));
 
         // size()
         System.out.println(programmingLangs.size());

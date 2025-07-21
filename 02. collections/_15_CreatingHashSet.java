@@ -1,9 +1,21 @@
+/*
+
+    NOTES:
+    
+    Creating an HashSet
+        1. Using default constructor
+        2. Using another Collection
+            a) HashSet(Collection c) constructor
+            b) Using HashSet .addAll()
+
+ */
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class _13_CreatingHashSet {
+public class _15_CreatingHashSet {
 
     public static void main(String[] args) {
 
@@ -17,10 +29,6 @@ public class _13_CreatingHashSet {
 
         System.out.println(fruits);
 
-        // Creating a HashSet object using Another Collection
-        // 1. HashSet(Collection c) constructor
-        // 2. Adding Existing elements to a new HashSet using .addAll()
-
         // Set<Integer> firstFivePrimeNumbers = new HashSet<>();
         List<Integer> firstFivePrimeNumbers = new ArrayList<>();
         firstFivePrimeNumbers.add(2);
@@ -29,6 +37,8 @@ public class _13_CreatingHashSet {
         firstFivePrimeNumbers.add(7);
         firstFivePrimeNumbers.add(11);
 
+        // Creating a HashSet object using Another Collection
+        // 1. HashSet(Collection c) constructor
         Set<Integer> firstTenPrimeNumbers = new HashSet<>(firstFivePrimeNumbers);
 
         // Set<Integer> nextFivePrimeNumbers = new HashSet<>();
@@ -39,6 +49,7 @@ public class _13_CreatingHashSet {
         nextFivePrimeNumbers.add(7);
         nextFivePrimeNumbers.add(11);
 
+        // 2. Adding Existing elements to a new HashSet using .addAll()
         firstTenPrimeNumbers.addAll(nextFivePrimeNumbers);
         System.out.println(firstTenPrimeNumbers);
     }

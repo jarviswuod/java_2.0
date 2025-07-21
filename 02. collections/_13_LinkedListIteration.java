@@ -1,8 +1,22 @@
+/*
+
+    NOTE:
+
+    Iterating over an LinkedList
+        1. Basic for loop
+        2. Enhanced for loop
+        3. Basic loop with iterator
+        4. Iterator with while loop
+        5. Java 8 stream + lamda example
+        6. Java 8 forEach + lamda example
+
+ */
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class _10_LinkedListIterationAndSearching {
+public class _13_LinkedListIteration {
     public static void main(String[] args) {
 
         List<String> langs = new LinkedList<>();
@@ -15,13 +29,6 @@ public class _10_LinkedListIterationAndSearching {
         langs.add("django");
         langs.add("react");
 
-        // Find the first occurrence of an element in the LinkedList
-        System.out.println(langs.indexOf("Python"));
-
-        // Find the last occurrence of an element in the LinkedList
-        System.out.println(langs.lastIndexOf("django"));
-
-        // LinkedList iteration methods
         // Basic for loop
         for (int i = 0; i < langs.size(); i++) {
             System.out.println(langs.get(i));
