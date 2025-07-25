@@ -1,36 +1,24 @@
 /*
     NOTES:
-      - Comparable interface
-      - Comparator interface
+      - Intentionally using both total ordering and partial ordering
+      - In my case im using total ordering to pick the top 3 elements (in physics marks)
+      - Natural ordering is doing it's ordering to pick bottom 3 elements (in math marks)
+      - By default, right now, total ordering is implemented in the class via the lambda expression   
 
 
-    @Override
-    public int compareTo(StudentsMarks arg0) {
-        
-        current obj < other obj return -1;
-        current obj > other obj return 1;
-        current obj == other obj return 0;
-       
+      CHANGING THE NATURAL ORDER I.E FROM INCREASING TO DECREASING ORDER
 
-        if (this.maths < arg0.maths)
-            return -1;
-        if (this.maths > arg0.maths)
-            return 1;
-        if (this.maths == arg0.maths)
-            return 0;
-
-        return this.maths - arg0.maths;
  */
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class _10_PriorityQueueInCustomClass {
+public class _12_ComparatorOnCustomClass {
 
     public static void main(String[] args) {
 
-        // Get me the top students according to their maths marks
+        // Get me the top students according to their physics marks
 
         List<StudentsMarks> marks = new ArrayList<>();
         marks.add(new StudentsMarks(70, 80));
@@ -39,7 +27,11 @@ public class _10_PriorityQueueInCustomClass {
         marks.add(new StudentsMarks(40, 88));
         marks.add(new StudentsMarks(97, 19));
 
-        PriorityQueue<StudentsMarks> priority = new PriorityQueue<>(marks);
+        PriorityQueue<StudentsMarks> priority = new PriorityQueue<>((s1, s2) -> s2.getPhysics() - s1.getPhysics());
+
+        for (StudentsMarks student : marks) {
+            priority.offer(student);
+        }
 
         List<StudentsMarks> top3 = new ArrayList<>();
         int index = 0;

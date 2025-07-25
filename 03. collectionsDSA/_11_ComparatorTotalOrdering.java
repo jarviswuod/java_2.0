@@ -1,12 +1,11 @@
-
 /*
     NOTES:
      - Natural ordering -> Whatever ordering the class is implementing
      - Total ordering -> Whatever ordering you are passing to the PriorityQueue
      - Total ordering always has preference over Natural ordering
 
-
  */
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -15,7 +14,11 @@ import java.util.PriorityQueue;
 public class _11_ComparatorTotalOrdering {
 
     public static void main(String[] args) {
+        // Using a custom comparator to define total ordering
         PriorityQueue<Integer> priority = new PriorityQueue<>(new MyCustomComparator());
+
+        // Alternatively, you can use a lambda expression for the comparator
+        PriorityQueue<Integer> priority2 = new PriorityQueue<>((a, b) -> b - a);
 
         priority.offer(11);
         priority.offer(22);
@@ -35,6 +38,7 @@ public class _11_ComparatorTotalOrdering {
 
         System.out.println(top2);
         System.out.println(priority);
+        System.out.println(priority2);
     }
 }
 
