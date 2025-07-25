@@ -6,7 +6,8 @@
      - In the case of several elments having the same priority, one of them is chosen arbitrarily
      - Elements of a PriorityQueue are not sorted
      - The queue only guaranteed that elements can be removed in priority order, and any traversal using interator does not
-     
+
+     - Travers NOT iterate over the PriorityQueue
  */
 
 import java.util.ArrayList;
@@ -24,18 +25,18 @@ public class _09_PriorityQueue {
         priority.offer(33);
         priority.offer(44);
 
-        // TOP 2 ELEMENTS
-        List<Integer> top2 = new ArrayList<>();
+        // BOTTOM 2 ELEMENTS
+        List<Integer> bottom2 = new ArrayList<>();
         int index = 0;
 
         while (!priority.isEmpty()) {
             if (index == 2)
                 break;
-            top2.add(priority.poll());
+            bottom2.add(priority.poll());
             index++;
         }
 
-        System.out.println(top2);
+        System.out.println(bottom2);
         System.out.println(priority);
     }
 }
