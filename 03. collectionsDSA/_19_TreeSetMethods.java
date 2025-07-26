@@ -1,3 +1,16 @@
+/*
+    NOTES:
+     - floor
+     - higher
+     - lower
+     - ceiling
+    
+    - The above methods do not work with Set class hence could not work with set1 in the example below. 
+    - They only work under NavigableSet interface as they part of the methods
+
+
+ */
+
 import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
