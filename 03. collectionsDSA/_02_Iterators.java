@@ -1,21 +1,22 @@
 /*
+
     NOTES:
-    - We are creating a generic list, nothing much than a normal list
-    Whenever we will trying to instanciate our generic list, we will need to say it's a generic list for which datat type
+    - We are creating a generic list (just as a normal list)
+    - Whenever we will trying to instanciate our generic list, we will need to say it's a generic list for which data type
     - <T> is placeholder and the compiler will replace it with a type that a user is calling it with. 
          - Example: OurGenericList<Integer>
-    - Our generic list can be for any type (under instansiation)
-    - items = (T[]) new Object[100] -> Instanciating our arraylist to a list of 100
-    - With only the constuctor with add, and getItemAtIndex methods, we re still unable to interate over our 'list'
-    - ^^ this is becuase potentially private T[] items 'list' an instance os OurGenericList is private. We could make it public but that means we violate one of encapsulation policy.
+    - items = (T[]) new Object[100] -> Instanciating our arraylist, item, to a size of 100
+    - With only the constuctor, add, and getItem methods, we are still unable to iterate over our 'list'
+    - ^^ this is because potentially private T[] items 'list' an instance os OurGenericList is private. We could make it public but that means we violate encapsulation policy.
 
-    - You should not expose the internal implementation detail, and you can change it infuture how you want it without affecting the clients code. Say change from array to arrayList means you wont have access to some methods
-    - ^^ Expost the functionality not the internal implmentation details
+    - Encapsulation policy -> You should not expose the internal implementation details as you can always change it in future if you want without affecting the clients code.
+         - Example, In our case changing from array to ArrayList means you won't have access to some methods
+    - Encapsulation policy -> Only expose the functionality not the internal implementation details
 
-    - Iterable interface comes in super handy to help with iterating over the list
-    - After implemeting OurGenericList with Iterable, it means we can use a for loop to iterate
+    - Iterable interface -> comes in super handy to help with iterating over the list
+    - After implemeting OurGenericList with Iterable, it means we can use a for loop to iterate sequentially
 
-    - The collection interface extends the Iterable interface because, a collection interace want all the classes implmenting the collecion iterface to actually implment the methods of Iterable interface i.e hasNext() and .next()
+    - The collection interface extends the Iterable interface because, a collection interface wants all the classes implementing the collecion interface to actually implement the methods of Iterable interface i.e hasNext() and .next()
 
  */
 
@@ -58,7 +59,7 @@ class OurGenericList<T> implements Iterable {
         items[size++] = item;
     }
 
-    public T getItemAtIndex(int index) {
+    public T getItem(int index) {
         return items[index];
     }
 
