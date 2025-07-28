@@ -1,6 +1,27 @@
+/*
+    NOTES:
+    - We are creating a generic list, nothing much than a normal list
+    Whenever we will trying to instanciate our generic list, we will need to say it's a generic list for which datat type
+    - <T> is placeholder and the compiler will replace it with a type that a user is calling it with. 
+         - Example: OurGenericList<Integer>
+    - Our generic list can be for any type (under instansiation)
+    - items = (T[]) new Object[100] -> Instanciating our arraylist to a list of 100
+    - With only the constuctor with add, and getItemAtIndex methods, we re still unable to interate over our 'list'
+    - ^^ this is becuase potentially private T[] items 'list' an instance os OurGenericList is private. We could make it public but that means we violate one of encapsulation policy.
+
+    - You should not expose the internal implementation detail, and you can change it infuture how you want it without affecting the clients code. Say change from array to arrayList means you wont have access to some methods
+    - ^^ Expost the functionality not the internal implmentation details
+
+    - Iterable interface comes in super handy to help with iterating over the list
+    - After implemeting OurGenericList with Iterable, it means we can use a for loop to iterate
+
+    - The collection interface extends the Iterable interface because, a collection interace want all the classes implmenting the collecion iterface to actually implment the methods of Iterable interface i.e hasNext() and .next()
+
+ */
+
 import java.util.Iterator;
 
-public class _01_Iterators {
+public class _02_Iterators {
     public static void main(String[] args) {
 
         OurGenericList<Integer> list = new OurGenericList<>();
@@ -21,7 +42,6 @@ public class _01_Iterators {
         for (Object value : list) {
             System.out.println(value);
         }
-
     }
 }
 

@@ -1,5 +1,6 @@
 /*
     NOTES:
+
       - Collection interface methods
          - boolean containsAll(Collection<?> c) 
          - boolean addAll(Collection<? extends E > c) 
@@ -20,17 +21,16 @@
          - E remove(int index)
 
       - Implementations of List:
-         - Three implementations of the List interface are provided in the java.util package:
-             - ArrayList
-             - LinkedList
-             - Vector
+          - ArrayList
+          - LinkedList
+          - Vector
 
       - ArrayList:
          - ArrayList is a dynamic array
-         - To be used when we dont know what is going to be the size of the array
+         - To be used when we don't know what is going to be the size of the array
          - Internally it uses a normal array , set to some default capacity
          - When the capacity is reached, it will create a new array of bigger size(50% of its curent capacity) and copied all the elements from the old array to the new array
-         - New array,s refrerence for its internal usage
+         - New array's reference for it's internal usage
          - As the old array is no longer in use, it will be garbage collected in teh next garbae collection
 
       - Vector:
@@ -55,8 +55,9 @@
          
  */
 
-public class _02_CollectionFramework {
-    public static void main(String[] args) {
+public class _03_CollectionFramework {
 
-    }
+   public static void main(String[] args) {
+
+   }
 }
