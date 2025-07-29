@@ -29,13 +29,13 @@
 
 public class _07_ConditionalOperations {
 
-    public static void main(String[] args) {
-        boolean raining = false;
+     public static void main(String[] args) {
+          boolean raining = false;
 
-        if (raining) {
-            System.out.println("Carry an umbrella");
-        } else {
-            System.out.println("Carry a water bottle");
-        }
-    }
+          if (raining) {
+               System.out.println("Carry an umbrella");
+          } else {
+               System.out.println("Carry a water bottle");
+          }
+     }
 }
