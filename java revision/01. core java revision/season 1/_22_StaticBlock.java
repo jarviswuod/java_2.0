@@ -1,4 +1,5 @@
 /*
+
    NOTES:
      - A static block is used to initialize static variables.
      - It runs ONCE when the class is loaded, before any object is created.
