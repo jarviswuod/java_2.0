@@ -1,14 +1,16 @@
 /*
- 
-OFFHEAD NOTES:
- try {} catch(Execption e){}
- Exception e comes -> last as its the parent of all excpetion
 
- Error types:
- runtime - compile time
- syntax
- bugs
+    NOTES:
 
+    - Types of Errors:
+        1. Compile-time Error → Syntax issues detected during compilation
+        2. Runtime Error → Exceptions that occur while the program is running
+        3. Logical Error(bugs) → Code runs but produces incorrect results
+
+    - Exception Handling Rule:
+        - Catch more specific (child) exceptions before general (parent) ones
+        - Parent exceptions (like Exception or Throwable) should be last in the catch chain
+        - try { ... } catch (Exception e) { ... }
 
  */
 

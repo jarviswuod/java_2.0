@@ -1,9 +1,9 @@
 /*
 
- NOTES:
-    - FunctionalInterface -> Single method
-    - Normal interface -> multiple abstract methods
-    - Marker interface -> no method
+    OFFHEAD NOTES:
+          - FunctionalInterface -> Single method
+          - Normal interface -> multiple abstract methods
+          - Marker interface -> no method
 
  */
 

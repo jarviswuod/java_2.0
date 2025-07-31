@@ -1,8 +1,9 @@
 /*
- 
-OFFHEAD NOTES:
-getting the eror before the compiler does it first, write a custom message if need be
-throw new ArithmeticException("NOT by zero chief");
+
+    OFFHEAD NOTE:
+        - `throw` is used to explicitly throw an exception
+        - Used for manual/custom exception handling
+        - Syntax: throw new ExceptionType("Custom Message");
 
  */
 

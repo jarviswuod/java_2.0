@@ -1,8 +1,9 @@
 /*
- OFFHEAD NOTES:
- extend Exception class
- contructor
- super(message)
+
+    OFFHEAD NOTES:
+      - extend Exception class
+      - contructor
+      - super(message)
 
  */
 

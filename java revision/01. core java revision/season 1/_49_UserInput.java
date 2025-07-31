@@ -1,3 +1,14 @@
+/*
+
+    OFFHEAD NOTES:
+       - InputStreamReader()
+       - BufferedReader()
+       - scanner.nextInt();
+       - scanner.close();
+       - Integer.parseInt(br.readLine());
+
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

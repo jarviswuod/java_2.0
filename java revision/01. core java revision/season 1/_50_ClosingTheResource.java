@@ -1,7 +1,7 @@
 /*
 
- OFFHEAD NOTES:
- try{} finally{} coz finally is executed weather or not there is an exception
+    OFFHEAD NOTES:
+       - try{} finally{} coz finally is executed weather or not there is an exception
 
  */
 
