@@ -28,8 +28,7 @@
         - addAll()
         - removeAll()
         - clear()
-        - set()
-        - set(int , position)
+        - set(pos, value)
         - 2 ways of creating Collection  class
             - Using the contructor -> new ArrayList<>();
             - Using any collection interface set class new ArrayList<>(Collection collection);
