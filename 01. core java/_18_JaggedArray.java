@@ -1,4 +1,13 @@
-public class _17_JaggedArray {
+/*
+
+    NOTES:
+       - jagged Array is a special array of arrays with different lengths
+       - Example
+           - int[][] ages = new int[3][];
+
+ */
+
+public class _18_JaggedArray {
 
     public static void main(String[] args) {
 

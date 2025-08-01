@@ -1,3 +1,11 @@
+/*
+
+    NOTES:
+       - Java is a strong OOP Language where everything is represented inform of objects
+       - We create the object with help of classes
+
+ */
+
 public class _14_ClassesInJava {
 
     public static void main(String[] args) {

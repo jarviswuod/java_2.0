@@ -1,4 +1,15 @@
-public class _18_ArrayOfArrays {
+/*
+
+    NOTES:
+       - Creating an array that stores different arrays inside of it.
+       - Either same of different lengths
+       - 2 ways of creating array of arrays
+          - int[][] ages = new int[3][5];
+          - int[][] ages = {{...}, {...}, {...}};
+
+ */
+
+public class _17_ArrayOfArrays {
 
     public static void main(String[] args) {
 

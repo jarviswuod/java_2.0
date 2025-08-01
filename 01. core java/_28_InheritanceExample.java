@@ -1,4 +1,4 @@
-public class _27_InheritanceExample {
+public class _28_InheritanceExample {
 
     public static void main(String[] args) {
         Student student1 = new Student("Stanley", 15, 1, "red");
@@ -16,7 +16,7 @@ public class _27_InheritanceExample {
     }
 }
 
-abstract class Human {
+class Human {
     protected String name;
     protected int age;
 
@@ -25,7 +25,6 @@ abstract class Human {
         this.age = age;
     }
 
-    @Override
     public String toString() {
         return "Human [name=" + name + ", age=" + age + "]";
     }
@@ -65,6 +64,6 @@ class Guardian extends Human {
     @Override
     public String toString() {
         return "Guardian [name=" + name + ", age=" + age + ", phone=" + phone + ", idNumber=" + idNumber
-                + ", relationship=" + relationship + ", toString()=" + super.toString() + "]";
+                + ", relationship=" + relationship + "]";
     }
 }

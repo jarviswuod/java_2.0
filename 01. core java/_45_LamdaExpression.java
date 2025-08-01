@@ -1,5 +1,17 @@
 /*
-    With lamda expression we can simplify anonymous classes
+
+    NOTES:
+       - Lambda expressions
+           - Used to simplify code for functional interfaces (interfaces with one abstract method)
+           - Replaces anonymous class implementations with concise syntax
+           - Improves readability and reduces boilerplate
+           
+           
+           EXAMPLE 2:
+           - Interface A has one method `show()` → lambda: () -> System.out.println("In show")
+           
+           EXAMPLE 1:
+           - Interface B has one method → can be replaced with a lambda: (i, j) -> i + j
 
  */
 

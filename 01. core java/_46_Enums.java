@@ -1,4 +1,12 @@
-// Enums are named constants when created
+/*
+
+    NOTES:
+       - Enums are special classes for fixed sets of constants
+       - Enum constants are implicitly `public`, `static`, and `final`
+       - Useful for predefined values like days, states, levels, etc.
+       - Enums can be used in switch statements and if conditions
+
+ */
 
 enum Status {
     Started, Running, Failed, Pending, Success;

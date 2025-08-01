@@ -1,3 +1,19 @@
+/*
+
+    NOTES:
+    - Primitive datatypes
+         - char
+         - int
+         - long
+         - float
+         - double
+         - boolean
+
+    - Reference datatype
+         - String
+
+ */
+
 public class _03_VariablesAndDataTypes {
 
     public static void main(String args[]) {

@@ -1,11 +1,12 @@
 /*
-    Data Types Supported:
+
+    NOTES: 
+    - Data Types Supported:
         - String, byte, short, int, char -> Wrapper classes (Byte, Short, Integer, Character)
         - Enum types
         - NOT SUPPORTED -> float, double, long, boolean
- */
 
-/*
+
     switch (expression) {
         case value1:
             // code block
@@ -16,6 +17,7 @@
         default:
             // default code block
     }
+
  */
 
 public class _10_SwithStatement {

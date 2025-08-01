@@ -1,16 +1,17 @@
-public class _28_MethodOveriding {
+/*
 
-    /*
-     * Method Overriding
-     * 
-     * Referes to the same method with:
-     * 1. Same name
-     * 2. Same parameter types
-     * 3. Same number of parameters
-     * 4. In different classes often inherited
-     * 5. But have a different behaviour
-     * 
-     */
+    NOTES:
+    - Method Overriding
+        - Referes to the same method with:
+            1. Same name
+            2. Same parameter types
+            3. Same number of parameters
+            4. In different classes often inherited
+            5. But have a different behaviour
+
+ */
+
+public class _29_MethodOveriding {
 
     public static void main(String[] args) {
         veryAdvancedCalc calc = new veryAdvancedCalc();

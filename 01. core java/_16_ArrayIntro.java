@@ -1,7 +1,16 @@
+/*
+
+    NOTES:
+       - 2 ways of initializing an array
+           - int[] ageSample1 = { ... };
+           - int[] ageSample2 = new int[4];
+
+ */
+
 public class _16_ArrayIntro {
     public static void main(String[] args) {
 
-        // METHOD 2 OF INTITIALIZING ARRAYS
+        // METHOD 2 OF INITIALIZING ARRAYS
         // /////////////////////////////////////////////////////////////
         String[] vehicle = new String[5];
 
@@ -17,7 +26,7 @@ public class _16_ArrayIntro {
         }
         System.out.println();
 
-        // METHOD 1 OF INTITIALIZING ARRAYS
+        // METHOD 1 OF INITIALIZING ARRAYS
         // /////////////////////////////////////////////////////////////
 
         String[] names = { "Jarvis", "Dommy", "Annyse", "Davis" };

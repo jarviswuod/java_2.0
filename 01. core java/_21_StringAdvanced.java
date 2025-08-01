@@ -1,3 +1,36 @@
+/*
+
+    NOTES:
+    - Memory efficiency
+          - trimToSize() -> to achieve memory efficiency
+
+    - ADVANCED STRING MANIPULATION TECHNIQUES
+          - reverse()
+          - setCharAt()
+          - insert()
+          - delete()
+          - subSequence()
+          - indexOf()
+          - replace()
+
+
+    - MEMORY LEAK SCENARIOS AND PREVENTION
+          - Scenario 1: Large StringBuilder/StringBuffer retention
+          - Solution: trim or create new string then release the large buffer
+          - Releasing large buffer by;
+                -  Setting it to null
+                     - Example:
+                        - largeBuilder = null;
+
+
+    - EDGE CASES AND GOTCHAS
+          - Gotcha 1: String concatenation with empty string vs with null
+          - Gotcha 2: StringBuilder sharing references
+          - Gotcha 3: toString() returns new String each time
+          - Gotcha 4: Capacity vs length confusion
+
+ */
+
 public class _21_StringAdvanced {
 
     // STRING POOL INTERNALS AND MEMORY OPTIMIZATION

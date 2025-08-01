@@ -1,4 +1,5 @@
 /*
+
     1. Normal Interface
         - Is an interface with 2 or more methods
     
@@ -14,6 +15,7 @@
             
                 - Deserialization
                     - Taking values from hard drive
+
  */
 
 public class _42_InterfaceTypes {

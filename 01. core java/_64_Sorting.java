@@ -1,6 +1,17 @@
 /*
-    NOTE:
-      - Comparator is an interface using which you can specify a custom comparison logic for sorting
+
+    NOTES:
+      - Comparator is a functional interface used to define custom sorting logic
+      - Useful when:
+          - You don’t want to or can't modify the original class (e.g. Integer, String)
+          - You want multiple ways to sort the same data
+
+      - compare(T o1, T o2) returns:
+          - positive -> o1 > o2
+          - negative -> o1 < o2
+          - zero     -> equal
+
+      - Collections.sort(List, Comparator) sorts list using given logic
 
  */
 

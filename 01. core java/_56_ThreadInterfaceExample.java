@@ -1,20 +1,22 @@
 /*
 
-    HOW TO ACHIEVE THREADING USING Thread class:
-      - class extends Thread
-      - run() defined
-      - start()
-      - Thread.sleep(10);
+    NOTES:
+        USING Runnable:
+          - Create class that implements Runnable
+          - Override run() method with task logic
+          - Pass instance to Thread: new Thread(runnableObj)
+          - Call start() on thread to begin execution
 
+        EXAMPLE:
+            class MyTask implements Runnable {
+                public void run() {...}
+            }
 
-    HOW TO ACHIEVE THREADING USING Runnable interface:
-      - class implements Runnable
-      - run() defined
-      - Runnable objA = new A();
-      - Thread t1 = new Thread(objA);
-      - t1.start();
+            Runnable r1 = new MyTask();
+            Thread t1 = new Thread(r1);
+            t1.start();
 
- */
+*/
 
 public class _56_ThreadInterfaceExample {
     public static void main(String[] args) {
@@ -30,6 +32,7 @@ public class _56_ThreadInterfaceExample {
 }
 
 class A implements Runnable {
+
     public void run() {
         for (int i = 0; i < 100; i++) {
             System.out.println("Hi");
@@ -38,6 +41,7 @@ class A implements Runnable {
 }
 
 class B implements Runnable {
+
     public void run() {
         for (int i = 0; i < 100; i++) {
             System.out.println("Hello");

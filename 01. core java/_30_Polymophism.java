@@ -1,4 +1,16 @@
-public class _29_Polymophism {
+/*
+
+    NOTES:
+    - Polymophism
+        - Means "many forms"
+        - Allows one interface to be used for different underlying forms (data types)
+        - Achieved via method overriding (runtime) and method overloading (compile time)
+        - Enhances flexibility and scalability
+        - Core to dynamic method dispatch in inheritance
+
+ */
+
+public class _30_Polymophism {
     public static void main(String[] args) {
         A objA = new A();
         objA.show();

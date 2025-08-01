@@ -1,3 +1,12 @@
+/*
+
+    NOTES:
+        for(;;){
+            // execute the block infinity times
+        }
+
+ */
+
 public class _11_ForLoop {
 
     public static void main(String[] args) {

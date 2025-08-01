@@ -1,10 +1,14 @@
 /*
-    NOTE:
-      - finally block (keyword) in try catch is always executed irrespective of exception
-      - Suitable spot for closing the resource
+
+    NOTES:
+      - try {...} finally { ... } syntax used to handle resources
+      - 'finally' block is always executed irrespective of exception suitable spot for closing the resource
     
-      - Try-with-resources automatically closes resources (BufferedReader)
+      - try () {...}
+      - Resources are objects that implement the AutoCloseable interface example BufferedReader
+      - Try-with-resources automatically closes resources (BufferedReader), no need for `finally`
       - Hence no need for finally block
+      - Ensures cleaner, safer resource management
 
  */
 

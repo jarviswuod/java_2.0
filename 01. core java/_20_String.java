@@ -1,3 +1,36 @@
+/*
+
+    NOTES:
+    - String methods
+         - length()
+         - charAt(index)
+         - substring(start, end)
+         - toLowerCase()/ toUpperCase()
+         - equals(str)/ equalsIgnoreCase(str)
+         - contains(str)
+         - indexOf(str)/ lastIndexOf(str)
+         - startsWith(str)/ endsWith(str)
+         - trim()
+         - replace(old, new)
+         - split(delimiter)
+         - isEmpty()
+         - join(delimiter, elements)
+         - format(format, args...)
+
+
+    - StringBuilder/StringBuffer methods:
+         - length()
+         - append(str)
+         - insert(offset, str)
+         - replace(start, end, str)
+         - delete(start, end)
+         - reverse()
+         - toString()
+         - capacity()/ ensureCapacity(min)
+         - charAt(index)/ setCharAt(index, char)
+
+ */
+
 public class _20_String {
     public static void main(String[] args) {
 

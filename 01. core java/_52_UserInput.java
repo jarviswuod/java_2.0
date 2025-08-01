@@ -1,9 +1,10 @@
 /*
-    NOTE:
-     - BufferedReader is accessing InputStreamReader
-     - Beauty of BuffereReader is that it can take input from anywhere not just the system keyboard input.
-     - BuffereReader can also take it from file, from the network and anywhere else really
-     - BufferedReader is a resource hence open File, DbConnection, Network should be closed
+
+    NOTES:
+      - BufferedReader is accessing InputStreamReader
+      - Beauty of BuffereReader is that it can take input from anywhere not just the system keyboard input.
+      - BuffereReader can also take it from file, from the network and anywhere else really
+      - BufferedReader is a resource hence open File, DbConnection, Network should be closed
 
  */
 
@@ -21,20 +22,22 @@ public class _52_UserInput {
 
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(input);
-        int num1 = Integer.parseInt(br.readLine());
-
-        System.out.println(num1);
+        int num = Integer.parseInt(br.readLine());
         br.close();
 
-        // METHOD 1
-        // /////////////////////////////////////////////////////////////////
+        System.out.println("Input from user using InputStreamReader class : " + num);
+    }
+}
+
+class _52_UserInput_Scanner {
+    public static void main(String[] args) throws IOException {
+
         System.out.print("Enter another number > ");
 
         Scanner scanner = new Scanner(System.in);
-        int num2 = scanner.nextInt();
-
-        System.out.println(num2);
+        int num = scanner.nextInt();
         scanner.close();
 
+        System.out.println("Input from user using Scanner class : " + num);
     }
 }

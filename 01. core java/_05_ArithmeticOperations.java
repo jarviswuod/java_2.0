@@ -1,17 +1,19 @@
+/*
+
+    NOTES:
+       - Operation precendence
+
+       - Parentheses -> Exponents (Math.pow) -> Multiplication/Division/Modulus
+
+       - Start with: ()
+       - Then followed by: * / %
+       - Finally: + -
+
+ */
+
 public class _05_ArithmeticOperations {
 
     public static void main(String args[]) {
-
-        /*
-         * Operation precendence
-         * 
-         * Parentheses -> Exponents (Math.pow) -> Multiplication/Division/Modulus
-         * 
-         * Start with: ()
-         * Then followed by: * / %
-         * Finally: + -
-         * 
-         */
 
         int num1 = 12;
         int num2 = 9;

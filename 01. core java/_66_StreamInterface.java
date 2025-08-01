@@ -1,5 +1,6 @@
 /*
-    NOTE:
+
+    NOTES:
       - Stream is an interface
       - nums.stream() -> returns an object of stream
       - Once you use a stream you can't reuse it again

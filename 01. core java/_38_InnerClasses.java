@@ -1,23 +1,26 @@
 /*
-    Types of Inner Classes
-        1. Non-static Inner Classes (Member Inner Classes)
-        2. Static Inner Classes (Static Nested Classes)
-        3. Method Local Inner Classes
-        4. Anonymous Inner Classes
 
-    Key Points to Remember
-        1. Non-static inner classes -> hold a reference to the outer class instance
-        2. Static inner classes -> don't hold outer class reference - more memory efficient
-        3. Method local classes -> can access local variables only if they're final or effectively final
-        4. Anonymous classes -> are great for one-time use implementations
-        5. Inner classes can have any access modifier (private, protected, public, default)
-        6. You can have multiple inner classes in one outer class
+    NOTES:
+    - Types of Inner Classes
+         1. Non-static Inner Classes (Member Inner Classes)
+         2. Static Inner Classes (Static Nested Classes)
+         3. Method Local Inner Classes
+         4. Anonymous Inner Classes
 
-    When to Use Inner Classes
-        - Non-static: When the inner class needs access to outer class instance members
-        - Static: When you want to group related classes together but don't need outer class access
-        - Method local: For temporary, method-specific functionality
-        - Anonymous: For quick implementations, especially with functional interfaces
+    - Key Points to Remember
+         1. Non-static inner classes -> hold a reference to the outer class instance
+         2. Static inner classes -> don't hold outer class reference - more memory efficient
+         3. Method local classes -> can access local variables only if they're final or effectively final
+         4. Anonymous classes -> are great for one-time use implementations
+         5. Inner classes can have any access modifier (private, protected, public, default)
+         6. You can have multiple inner classes in one outer class
+
+    - When to Use Inner Classes
+         - Non-static: When the inner class needs access to outer class instance members
+         - Static: When you want to group related classes together but don't need outer class access
+         - Method local: For temporary, method-specific functionality
+         - Anonymous: For quick implementations, especially with functional interfaces
+
  */
 
 // /////////////////////////////////////////////////////////////////////////////////////////
@@ -130,6 +133,7 @@ class _34_2_InnerClasses {
         staticInner.innerMethod();
 
         // Can call static methods directly
+        OuterClassStatic.staticOuterMethod();
         OuterClassStatic.StaticInnerClass.staticInnerMethod();
     }
 }

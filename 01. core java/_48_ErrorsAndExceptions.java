@@ -1,11 +1,16 @@
 /*
-    NOTE
-        - Errors and Types
-            1. Compli-time error <Syntax>
-            2. Runtime error <Exceptions>
-            3. Logical error <bugs>
-            
-        - Parent exception should be at the bottom/end of the block to allow executing the children exceptions first
+
+    NOTES:
+       - Types of Errors:
+           1. Compile-time Error → Syntax issues detected during compilation
+           2. Runtime Error → Exceptions that occur while the program is running
+           3. Logical Error(bugs) → Code runs but produces incorrect results
+
+       - Exception Handling Rule:
+           - Catch more specific (child) exceptions before general (parent) ones
+           - Parent exceptions (like Exception or Throwable) should be last in the catch chain
+       - Exception Handling Syntax:
+           - try {...} catch (SpecificException e) {...} catch (AnotherException e) {...} catch (Exception e) {...}
 
  */
 

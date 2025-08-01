@@ -1,9 +1,16 @@
 /*
-    Static notes
-        - Static means you are making something a class member and not an object member
-        - Static varaibles are shared between different objects
-        - You cannot use non static variables inside a static method
-        - In non static methods you can use static variables
+
+    NOTES:
+       - `static` makes a member belong to the class, not to instances (objects).
+       - It's mainly used for memory efficiency and shared access.
+       - Static variables are shared across all instances of the class.
+       - Static methods cannot access non-static variables directly.
+       - Non-static methods can access both static and non-static members.
+       - Examples: 
+           - Static method -> public static void methodName() { ... }
+           - Static variable -> static String name = "";
+           - Static block -> static { ... }
+
  */
 
 public class _22_StaticKeyword {

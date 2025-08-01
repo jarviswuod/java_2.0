@@ -1,9 +1,24 @@
 /*
-    NOTE:
-      - A set is a collection of unique values
+
+    NOTES:
+      - A set is a collection of unique values (Does not allow duplicates or muliple null values)
       - Set does not give value in a sorted format
       - Set does not have index value
-      - Treeset sorts sets and can be replaced by Hashset
+      - Treeset does sorting of sets values and can be used in place of Hashset
+
+    SET METHODS:
+      - add()
+      - remove()
+      - addAll()
+      - removeAll()
+      - clear()
+      - contains()
+      - containsAll()
+      - retainAll()
+      - isEmpty()
+      - size()
+      - iterator()
+      - toArray()
 
  */
 

@@ -1,4 +1,14 @@
-public class _26_Inheritance {
+/*
+
+    NOTES:
+    - Inheritance
+        - Allows one class (child) to inherit fields and methods from another (parent)
+        - Use `extends` keyword
+        - Child class can override parent methods using `@Override`
+
+ */
+
+public class _27_Inheritance {
 
     public static void main(String[] args) {
         veryAdvancedCalc calc = new veryAdvancedCalc();

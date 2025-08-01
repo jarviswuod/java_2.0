@@ -1,7 +1,24 @@
 /*
-    NOTE:
+
+    NOTES:
       - You can replace the collection with List. 
       - Reason? List has lots of other methods at disposal
+
+    LIST METHODS:
+      - add()
+      - remove()
+      - addAll()
+      - removeAll()
+      - clear()
+      - set(pos, value)
+      - get()
+      - contains()
+      - containsAll()
+      - retainAll()
+      - isEmpty()
+      - size()
+      - toArray()
+      - iterator()
 
  */
 
@@ -13,8 +30,8 @@ public class _61_ListCollection {
 
     public static void main(String[] args) {
 
-        Collection<Integer> numsCollection = new ArrayList<Integer>();
-        List<Integer> numsList = new ArrayList<Integer>();
+        Collection<Integer> numsCollection = new ArrayList<>();
+        List<Integer> numsList = new ArrayList<>();
 
         numsCollection.add(6);
 

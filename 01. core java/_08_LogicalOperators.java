@@ -1,15 +1,16 @@
+/*
+
+    NOTES:
+    - Logical operations
+         - AND represented by: &&
+         - OR represented by: ||
+         - NOT represented by: !
+
+ */
+
 public class _08_LogicalOperators {
 
     public static void main(String args[]) {
-
-        /*
-         * Logical operations
-         * 
-         * AND represented by: &&
-         * OR represented by: ||
-         * NOT represented by: !
-         * 
-         */
 
         int age = 20;
         boolean hasLicense = false;

@@ -1,4 +1,6 @@
-public class _31_9_SuperAndThis {
+// 4. Resolving Same Interface Method Names Conflicts
+
+public class _33_9_SuperAndThis {
     public static void main(String[] args) {
         ColoredShape coloredShape = new ColoredShape();
 

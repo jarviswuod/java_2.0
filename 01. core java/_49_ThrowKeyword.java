@@ -1,3 +1,17 @@
+/*
+
+    NOTES:
+       - Used to manually throw an exception
+       - Syntax: throw new ExceptionType("message");
+       - Must be followed by a matching catch block or declared with `throws`
+
+       EXAMPLE:
+       if (age < 18) {
+           throw new IllegalArgumentException("Underage not allowed");
+       }
+
+ */
+
 public class _49_ThrowKeyword {
 
     public static void main(String[] args) {

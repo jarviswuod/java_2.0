@@ -1,5 +1,11 @@
 /*
- * Execute atleast once before stoping otherwise
+
+    NOTES:
+    - Executes the block atleast once before stopping
+        do {
+             // execute the code block
+        } while(condition);
+
  */
 
 public class _13_DoWhileLoop {

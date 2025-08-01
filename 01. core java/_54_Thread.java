@@ -1,17 +1,26 @@
 /*
-    
-    NOTE:
-     - Thread is the smallest unit in which we can divide a task into 
-     - We can tun multiple threads at the same time
-     - In most frameworks thread is mainly handled automatically
-    
-    
-    HOW TO ACHIEVE THREADING USING Thread class:
-     - class extends Thread
-     - run() defined
-     - Thread.sleep(10);
-    
- */
+
+    NOTES:
+       - Thread: smallest unit of execution
+       - Multiple threads can run concurrently
+       - Threading handled automatically in most frameworks
+       - start() runs thread in parallel, internally calls run()
+       - sleep(ms) pauses execution
+     
+
+    Creating threads using Thread class:
+       - Extend Thread class
+       - Override run() method
+       - Call start() to begin execution
+
+
+    Creating threads using Runnable interface:
+       - Create class that implements Runnable
+       - Override run() method with task logic
+       - Pass instance to Thread: new Thread(runnableObj)
+       - Call start() on thread to begin execution
+
+*/
 
 public class _54_Thread {
     public static void main(String[] args) {

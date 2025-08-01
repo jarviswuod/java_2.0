@@ -1,27 +1,28 @@
 /*
-    ----------------------------------------------------------- Sample 1.
+
+    -------------------------------- Sample 1.
     if(expression) {
-        // Execute this block of code
+        // code block
     }
 
-    
-    ----------------------------------------------------------- Sample 2.
+
+    -------------------------------- Sample 2.
     if(expression) {
-        // Execute this block of code
+        // code block
     } else {
-        // Execute this other block of code
+        // code block
     }
-  
-    
-    ----------------------------------------------------------- Sample 3.
+
+
+    -------------------------------- Sample 3.
     if(expression) {
-        // Execute this block of code
+        // code block
     } else if(second expression){
-        // Execute this other block of code
+        // code block
     } else {
-        // Execute this block of code
+        // code block
     }
-    
+
  */
 
 public class _07_ConditionalOperators {

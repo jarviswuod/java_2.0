@@ -1,11 +1,22 @@
 /*
-    HOW TO ACHIEVE THREADING USING Thread class:
-      - class extends Thread
-      - run() defined
-      - start()
-      - Thread.sleep(10);
 
- */
+    NOTES:
+        USING Thread class:
+           - Create class that extends Thread
+           - Override run() method with task logic
+           - Create a Thread object
+           - Call start() to begin execution
+
+
+        EXAMPLE:
+            class MyTask extends Thread {
+                public void run() {...}
+            }
+
+            MyTask t1 = new MyTask();
+            t1.start();
+
+*/
 
 public class _55_ThreadClassExample {
     public static void main(String[] args) {

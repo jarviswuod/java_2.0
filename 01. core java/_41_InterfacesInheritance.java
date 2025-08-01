@@ -1,12 +1,13 @@
 /*
 
-    NOTE:
-     - class - class -> extends
-     - interface - class -> implements
-     - interface - interface -> extends
-
-     - One class can implement multiple intefaces
-     - Interface can extend another interface
+    NOTES:
+       - extends → class to class (inheritance)
+       - extends → interface to interface (interface inheritance)
+       - implements → class to interface (implementation)
+   
+       - A class can implement multiple interfaces
+       - An interface can extend multiple interfaces
+       - A class can only extend one class (no multiple class inheritance)
 
  */
 

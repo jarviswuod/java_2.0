@@ -1,6 +1,9 @@
 /* 
- 
-    Instansiating our Runnable interface with help of anonymous classes
+
+    NOTES:
+       - Anonymous class lets you create a class and its object at the same time
+       - Used here to implement Runnable without creating a separate class
+       - Common in threading when logic is short and used once
  
  */
 

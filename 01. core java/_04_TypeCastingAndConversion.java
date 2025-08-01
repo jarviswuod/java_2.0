@@ -1,8 +1,16 @@
+/*
+
+    NOTES:
+    - Casting
+        - Explicit -> From a bigger valued variable to a smaller valued variable
+        - Implicit/ Conversion
+
+    - Conversion -> From smaller valued variable to a bigger valued variable
+
+ */
+
 public class _04_TypeCastingAndConversion {
     public static void main(String args[]) {
-
-        // CONVERSION - Smaller Valued variable to a Big valued Variable
-        // Also called implicit type casting
 
         float points = 15.4f;
         double morePoints = points;

@@ -1,5 +1,6 @@
 /*
-    NOTE:
+
+    NOTES:
       - Map is a collection of key and value pair
       - It's a collection of a Set and a List
        
@@ -10,6 +11,22 @@
       - HashMap and Hashtable
          - Hashtable is used in a synchronized version
          - HashMap is not
+
+
+    MAPS METHODS:
+      - put()
+      - get()
+      - remove()
+      - containsKey()
+      - containsValue()
+      - keySet()
+      - values()
+      - entrySet()
+      - clear()
+      - size()
+      - isEmpty()
+      - putAll()
+      - replace()
 
  */
 

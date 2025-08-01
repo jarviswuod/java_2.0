@@ -1,6 +1,6 @@
 // 1. Basic Usage - Accessing Parent Class Members
 
-public class _31_6_SuperKeyword {
+public class _33_6_SuperKeyword {
     public static void main(String[] args) {
         Animal animal = new Animal("Salmonela", 12);
         System.out.println(animal);

@@ -1,8 +1,18 @@
-// .equals()
-// .toString()
-// .hashcode()
+/*
 
-public class _35_ObjectClass {
+    NOTES:
+       - equals() → checks logical equality between objects
+       - hashCode() → returns an int hash used in collections like HashMap
+       - toString() → returns string representation of the object
+
+       - getClass() → returns the runtime class of the object
+       - clone() → creates a copy of the object (needs Cloneable interface)
+       - finalize() → called by garbage collector before object is destroyed
+       - wait(), notify(), notifyAll() → used for thread synchronization
+
+ */
+
+public class _36_ObjectClass {
     public static void main(String[] args) {
         Student student1 = new Student("Jarvis", 14, 1, "red");
         Student student2 = new Student("Becky", 22, 3, "green");
@@ -16,7 +26,7 @@ public class _35_ObjectClass {
             System.out.println(student);
         }
     }
-} 
+}
 
 class Student {
     private String name;

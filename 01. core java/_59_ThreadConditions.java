@@ -1,25 +1,26 @@
 /*
-    NOTE:
-      - Most of the time threads will be created automatically for us via framework 
+
+    NOTES:
+      - Most of the time threads will be created automatically for us via framework
       - We can explicitly want to create 2 or multiple threads depending on our application
       - Threads & mutation together is not a good idea
           - Threads --> t1, t2
           - Mutation --> int i = 5; i++; i = 6;
-    
+
       - If you working with thread. Make sure you are working with;
           - 1. Variables which are not mmutable or
           - 2. Use Thread safe
-    
+
       - thread-safe
           - This is a condition where only one thread can work with a variable at a particular one point
-    
 
-      - This methods are joning back to the main thread using .join() before taking the final reading
-      - If .join() is not availed, the final reading greatly varies.
+      - 'synchronized' keyword
+            -  It makes our threads-safe calling a method ones at a time preventing any multiple concurrent calls
+            -  It ensures only one Thread is called at a time
 
-      - public synchronized
-      -  The "synchronized" keyword helps call the method ones at a time preventing any multiple concurrent calls
-      -  It ensures only one Thread is called at a time.
+      - join() method
+            - Subthreads should always join back to the main thread using .join() before taking the final reading
+            - If join() is not availed, the final reading greatly varies
 
  */
 

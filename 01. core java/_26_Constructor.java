@@ -1,4 +1,18 @@
-public class _25_Constructor {
+/*
+
+    NOTES:
+       - Two main types of constructors in Java:
+           - Default constructor: takes no arguments
+           - Parameterized constructor: takes arguments to initialize fields
+       - If no constructor is defined, Java provides a default one automatically
+       - Constructors must have the same name as the class
+       - Constructors do NOT have a return type
+       - Can be overloaded (multiple constructors with different parameters)
+
+ */
+
+public class _26_Constructor {
+
     public static void main(String[] args) {
         Human obj = new Human();
         Human obj2 = new Human(24, "Jarvis");

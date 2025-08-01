@@ -1,11 +1,19 @@
 /*
-        
-    NOTE:
-        - Throws send the error up the ladder (Ducking the exception)
-        - You can throw exception to classes and methods
-        - Never throw the exception in the main method coz the main method is called by JVM which causes the program to stop
-    
- */
+
+    NOTES:
+       - `throws` sends the exception up the call stack (Exception Ducking)
+       - Lets the caller decide how to handle the exception
+       - Can be used in methods and constructors
+       - Avoid using `throws` in `main()` as unhandled exceptions will crash the program (JVM handles `main`)
+
+   SYNTAX:
+       - void methodName() throws Exception1, Exception2 { ... }
+
+   EXAMPLE:
+       - public void readFile() throws IOException { ... }
+       - public void connectToDatabase() throws SQLException { ... }
+
+*/
 
 class A {
     public void show() throws ClassNotFoundException {

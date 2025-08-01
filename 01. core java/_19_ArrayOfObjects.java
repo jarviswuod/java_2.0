@@ -1,35 +1,54 @@
+/*
+
+    NOTES:
+       - Array of objects stores multiple object instances of a class in a single variable
+       - 2 ways of creating array of objects
+            - Student[] students = new Student[3];
+            - Student[] students = { student1, student2, student3 };
+
+ */
+
 public class _19_ArrayOfObjects {
 
     public static void main(String[] args) {
-        Student student1 = new Student("Jarvis", 14, 1, "red");
-        Student student2 = new Student("Becky", 22, 3, "green");
-        Student student3 = new Student("Annie", 23, 2, "champ");
-        Student student4 = new Student("Alfred", 11, 1, "winners");
-        Student student5 = new Student("Chris", 12, 4, "east");
 
-        Student[] students = { student1, student2, student3, student4, student5 };
+        Student[] students = new Student[3];
+        // Student[] students = { student1, student2, student3 };
+
+        Student student1 = new Student();
+        Student student2 = new Student();
+        Student student3 = new Student();
+
+        students[0] = student1;
+        students[1] = student2;
+        students[2] = student3;
+
+        student1.name = "Jarvis";
+        student1.stream = "4 East";
+        student1.age = 21;
+
+        student2.name = "Wuod";
+        student2.stream = "4 West";
+        student2.age = 24;
+
+        student3.name = "Annabel";
+        student3.stream = "3 South";
+        student3.age = 18;
 
         for (Student student : students) {
             System.out.println(student);
         }
+
     }
 }
 
 class Student {
     String name;
-    int age;
-    int form;
     String stream;
-
-    public Student(String name, int age, int form, String stream) {
-        this.name = name;
-        this.age = age;
-        this.form = form;
-        this.stream = stream;
-    }
+    int age;
 
     @Override
     public String toString() {
-        return "Student [name=" + name + ", age=" + age + ", form=" + form + ", stream=" + stream + "]";
+        return "Student [name=" + name + ", stream=" + stream + ", age=" + age + "]";
     }
 }

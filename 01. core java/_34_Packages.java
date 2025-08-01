@@ -1,14 +1,22 @@
 /*
+
+    NOTES:
+       - A package groups related Java classes/interfaces for better organization
+       - Declared at the top of the file (before imports)
+       - Helps avoid naming conflicts and supports access control
+       - Nested packages (e.g., tools.math) reflect folder structure
+
+
     ///////////////////////////////// Project file Structure
     codes
     - db
     - other
-    - - tools
-    - - - AdvancedCalc.java
-    - - - Calc.java
-    - - A.java
+        - tools
+             - AdvancedCalc.java
+             - Calc.java
+        - A.java
     - Demo.java
-    
+
 
     ///////////////////////////////// A.java 
     package other;
@@ -26,7 +34,7 @@
             // code block
         }
     }
-    
+
 
     ///////////////////////////////// AdvancedCalc.java 
     package other.tools;
@@ -43,7 +51,7 @@
 // import other.*;
 // import other.tools.*;
 
-public class _32_Packages {
+public class _34_Packages {
     public static void main(String[] args) {
 
     }

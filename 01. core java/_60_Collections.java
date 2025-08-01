@@ -1,21 +1,31 @@
 /*
 
     NOTES:
-      - Collections
-         - Collections API -> Concept
-         - Collection -> interface
-         - Collections -> class
-    
-      - Collection
-         - List -> ArrayList, LinkedList
-         - Queue -> Dequeue
-         - Set -> Hashset, LinkedHashSet
-         - Map -> Hashtable, HashMap
-    
-      - By default collections receive object types (int, char)
-      - You hace to explicitly use <Integer> object when initiating the collection
-         1. To prevent errors (Syntax)
-         2.  Iteration down the line
+        - Collections: Utility class with static methods to work on Collection types
+        - Collection: Root interface for List, Set, and Queue
+
+        1. List (ordered, allows duplicates)
+            - ArrayList
+            - LinkedList
+
+        2. Set (no duplicates, unordered or sorted)
+            - HashSet
+            - TreeSet
+
+        3. Queue (FIFO or customized ordering)
+            - ArrayDeque
+            - LinkedList
+
+        4. Map (key-value pairs, not part of Collection)
+            - HashMap
+            - TreeMap
+            - Hashtable
+
+
+        - By default collections receive object types (Integer, String, Character, etc.)
+        - You hace to explicitly use <Integer> object when initiating the collection
+             1. To prevent errors (Syntax)
+             2.  Iteration down the line
 
  */
 

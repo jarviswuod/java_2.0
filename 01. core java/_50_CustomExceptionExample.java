@@ -1,13 +1,13 @@
 /*
 
-    NOTE:
-        - For custom Exception you should extend the parent Exception class
-        - super() keyword with message calls the parent class Exception constructor to return the message
+    NOTES:
+       - For custom Exception you should extend the parent Exception class
+       - super() keyword with message calls the parent class Exception constructor to return the message
         
     HOW TO CREATE A CUSTOM EXCEPTION:
-        1. Create a custom exception by extending the Exception class
-        2. Create a constructor passing String message
-        3. Call the super keyword with message
+       1. Create a custom exception by extending the Exception class
+       2. Create a constructor passing String message
+       3. Call the super keyword with message
 
  */
 
