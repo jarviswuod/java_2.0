@@ -5,7 +5,7 @@
          - A collection allows a group of objects to be treated as a single unit
          - The Java Collections Framework provides 3 main parts:
              - The core interfaces
-             - Concrete classes(Implementation of core interfaces)
+             - Concrete classes(Implementations of core interfaces)
              - Static utility methods for sorting, searching, or creating collections
 
     - Collection heavily leverages the concept of interfaces(core java concept)

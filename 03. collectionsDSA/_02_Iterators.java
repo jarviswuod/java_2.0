@@ -7,7 +7,7 @@
          - Example: OurGenericList<Integer>
     - items = (T[]) new Object[100] -> Instanciating our arraylist, item, to a size of 100
     - With only the constuctor, add, and getItem methods, we are still unable to iterate over our 'list'
-    - ^^ this is because potentially private T[] items 'list' an instance os OurGenericList is private. We could make it public but that means we violate encapsulation policy.
+    - ^^ this is because potentially private T[] items 'list' an instance of OurGenericList is private. We could make it public but that means we violate encapsulation policy.
 
     - Encapsulation policy -> You should not expose the internal implementation details as you can always change it in future if you want without affecting the clients code.
          - Example, In our case changing from array to ArrayList means you won't have access to some methods

@@ -1,4 +1,5 @@
 /*
+
     NOTES:
       - Intentionally using both total ordering and partial ordering
       - In my case im using total ordering to pick the top 3 elements (in physics marks)
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class _12_ComparatorOnCustomClass {
+public class _14_ComparatorOnCustomClass {
 
     public static void main(String[] args) {
 
@@ -74,5 +75,4 @@ class StudentsMarks implements Comparable<StudentsMarks> {
     public int compareTo(StudentsMarks arg0) {
         return this.maths - arg0.maths;
     }
-
 }

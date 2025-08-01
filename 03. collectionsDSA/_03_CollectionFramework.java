@@ -27,6 +27,18 @@
                - TreeSet
 
 
+   - Map Interface:
+      - HashMap
+      - LinkedHashMap
+      - SortedMap Interface:
+         - NavigableMap Interface:
+               - TreeMap
+
+
+   - Collections Utility Class:
+      - Provides static methods for sorting, searching, and creating collections
+      - Example: Collections.sort(List<T> list)
+
  */
 
 public class _03_CollectionFramework {

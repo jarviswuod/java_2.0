@@ -1,4 +1,5 @@
 /*
+
     NOTES:
      - Natural ordering -> Whatever ordering the class is implementing
      - Total ordering -> Whatever ordering you are passing to the PriorityQueue
@@ -11,7 +12,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class _11_ComparatorTotalOrdering {
+public class _13_ComparatorTotalOrdering {
 
     public static void main(String[] args) {
         // Using a custom comparator to define total ordering
@@ -50,34 +51,34 @@ class MyCustomComparator implements Comparator<Integer> {
     }
 }
 
-// class StudentsMarks {
-// private int maths;
-// private int physics;
+class StudentsMarks {
+    private int maths;
+    private int physics;
 
-// public StudentsMarks(int maths, int physics) {
-// this.maths = maths;
-// this.physics = physics;
-// }
+    public StudentsMarks(int maths, int physics) {
+        this.maths = maths;
+        this.physics = physics;
+    }
 
-// public int getMaths() {
-// return maths;
-// }
+    public int getMaths() {
+        return maths;
+    }
 
-// public int getPhysics() {
-// return physics;
-// }
+    public int getPhysics() {
+        return physics;
+    }
 
-// @Override
-// public String toString() {
-// return "StudentsMarks [maths=" + maths + ", physics=" + physics + "]";
-// }
+    @Override
+    public String toString() {
+        return "StudentsMarks [maths=" + maths + ", physics=" + physics + "]";
+    }
 
-// }
+}
 
-// class MyCustomComparator_ implements Comparator<StudentsMarks> {
+class MyCustomComparator_ implements Comparator<StudentsMarks> {
 
-// @Override
-// public int compare(StudentsMarks arg0, StudentsMarks arg1) {
-// return arg0.getMaths() - arg1.getMaths();
-// }
-// }
+    @Override
+    public int compare(StudentsMarks arg0, StudentsMarks arg1) {
+        return arg0.getMaths() - arg1.getMaths();
+    }
+}
