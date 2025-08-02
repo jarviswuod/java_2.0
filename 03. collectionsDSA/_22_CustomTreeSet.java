@@ -1,7 +1,7 @@
 import java.util.Set;
 import java.util.TreeSet;
 
-public class _20_CustomClassTreeSet {
+public class _22_CustomTreeSet {
     public static void main(String[] args) {
 
         // Set<StudentsMarks> treeset = new TreeSet<>(); // By default it sorts based on
