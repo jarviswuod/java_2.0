@@ -27,27 +27,27 @@ public class _11_PriorityQueue {
 
     public static void main(String[] args) {
 
-        PriorityQueue<Integer> priority = new PriorityQueue<>();
+        PriorityQueue<Integer> ordered = new PriorityQueue<>();
 
-        priority.offer(11);
-        priority.offer(44);
-        priority.offer(33);
-        priority.offer(22);
+        ordered.offer(11);
+        ordered.offer(44);
+        ordered.offer(33);
+        ordered.offer(22);
 
-        System.out.println(priority); // [11, 22, 33, 44]
+        System.out.println(ordered); // [11, 22, 33, 44]
 
         // Get bottom 2 elements from the PriorityQueue
-        List<Integer> bottom2 = new ArrayList<>();
+        List<Integer> bottom2List = new ArrayList<>();
         int index = 0;
 
-        while (!priority.isEmpty()) {
+        while (!ordered.isEmpty()) {
             if (index == 2)
                 break;
-            bottom2.add(priority.poll());
+            bottom2List.add(ordered.poll());
             index++;
         }
 
-        System.out.println("List : " + bottom2); // [11, 22]
-        System.out.println("PriorityQueue : " + priority); // [33, 44]
+        System.out.println("Bottom 2 List : " + bottom2List); // [11, 22]
+        System.out.println("Ordered Integer : " + ordered); // [33, 44]
     }
 }

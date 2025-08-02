@@ -1,25 +1,20 @@
 /*
 
     NOTES:
-      - Intentionally using both total ordering and partial ordering
-      - In my case im using total ordering to pick the top 3 elements (in physics marks)
-      - Natural ordering is doing it's ordering to pick bottom 3 elements (in math marks)
-      - By default, right now, total ordering is implemented in the class via the lambda expression   
-
-
-      CHANGING THE NATURAL ORDER I.E FROM INCREASING TO DECREASING ORDER
-
+    - Intentionally using both Comparable Interface(Natural ordering) and Comparator Interface(Total ordering)
+        - Total ordering to pick the bottom 3 elements (in math marks)
+        - Natural ordering to pick top 3 elements (in physics marks)
+    
  */
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
 public class _14_ComparatorOnCustomClass {
 
     public static void main(String[] args) {
-
-        // Get me the top students according to their physics marks
 
         List<StudentsMarks> marks = new ArrayList<>();
         marks.add(new StudentsMarks(70, 80));
@@ -28,24 +23,31 @@ public class _14_ComparatorOnCustomClass {
         marks.add(new StudentsMarks(40, 88));
         marks.add(new StudentsMarks(97, 19));
 
-        PriorityQueue<StudentsMarks> priority = new PriorityQueue<>((s1, s2) -> s2.getPhysics() - s1.getPhysics());
+        PriorityQueue<StudentsMarks> classMarks = new PriorityQueue<>(new MyCustomComparator());
+        PriorityQueue<StudentsMarks> lamdaMarks = new PriorityQueue<>((s1, s2) -> s1.getMaths() - s2.getMaths());
 
         for (StudentsMarks student : marks) {
-            priority.offer(student);
+            classMarks.offer(student);
+            lamdaMarks.offer(student);
         }
 
-        List<StudentsMarks> top3 = new ArrayList<>();
+        List<StudentsMarks> bottom3 = new ArrayList<>();
         int index = 0;
 
-        while (!priority.isEmpty()) {
+        while (!lamdaMarks.isEmpty()) {
             if (index == 3)
                 break;
-            top3.add(priority.poll());
+            bottom3.add(lamdaMarks.poll());
             index++;
         }
 
-        System.out.println(top3);
-        System.out.println(priority);
+        System.out.println("bottom 3 Physics students : " + bottom3);
+        System.out.println();
+
+        System.out.println("Lambda marks : " + lamdaMarks);
+        System.out.println();
+
+        System.out.println("ComparatorClass marks : " + classMarks);
     }
 }
 
@@ -73,6 +75,14 @@ class StudentsMarks implements Comparable<StudentsMarks> {
 
     @Override
     public int compareTo(StudentsMarks arg0) {
-        return this.maths - arg0.maths;
+        return this.physics - arg0.physics;
+    }
+}
+
+class MyCustomComparator implements Comparator<StudentsMarks> {
+
+    @Override
+    public int compare(StudentsMarks arg0, StudentsMarks arg1) {
+        return arg0.getMaths() - arg1.getMaths();
     }
 }
