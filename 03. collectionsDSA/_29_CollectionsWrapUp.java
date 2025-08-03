@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class _27_CollectionsWrapUp {
+public class _29_CollectionsWrapUp {
 
     public static void main(String[] args) {
 
