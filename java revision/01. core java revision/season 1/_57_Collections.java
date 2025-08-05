@@ -10,7 +10,7 @@
             
         Sets
             HashSet
-            SortedSet Interface -> MaviagableSet Interface -> TreeSet class
+            SortedSet Interface -> NavigableSet Interface -> TreeSet class
 
         Queue
             Deque -> ArrayDeque

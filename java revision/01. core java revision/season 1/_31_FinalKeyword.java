@@ -21,7 +21,8 @@ public class _31_FinalKeyword {
     }
 }
 
-final class Random {
+// final class Random {
+class Random {
     protected final String name = "Jarvis";
 
     public String getName() {
@@ -37,11 +38,12 @@ final class Random {
     }
 
 }
+
 // The type AnotherRandomClass cannot subclass the final class
-// class AnotherRandomClass extends Random {
-// @Override
-// public void anyMethod() {
-// System.out.println("From main sub-class");
-// super.anyMethod();
-// }
-// }
+class AnotherRandomClass extends Random {
+    @Override
+    public void anyMethod() {
+        System.out.println("From main sub-class");
+        super.anyMethod();
+    }
+}

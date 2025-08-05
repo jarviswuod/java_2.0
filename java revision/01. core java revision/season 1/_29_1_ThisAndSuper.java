@@ -6,6 +6,9 @@
           2. Constructor Chaining with this()
           3. Method Chaining (Fluent Interface)
           4. Passing Current Object as Parameter
+          5. Inside Inner Classes to Refer to Outer Class
+          6. Synchronize on the Current Object (Multithreading)
+          7. Method Reference to Current Object
 
      - super usecases
           1. Basic Usage - Accessing Parent Class Members
@@ -45,7 +48,6 @@
            - super("Canine", age); // Call parent constructor
            - super.makeSound(); // Call parent method first
            - System.out.println("Species: " + super.species); // Access parent field
-           - super.sleep(); // Call protected parent method
         - Constructor Chaining with super()
            - super(make, model, year); // Must be first statement
            - super(make, model); // Calls parent's two-parameter constructor

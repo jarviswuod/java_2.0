@@ -1,11 +1,11 @@
 /*
- NOTES:
+
+    NOTES:
     - Upcasting - Reference class is a super class and the object class is a subclass
-    - Downcasting - TO be able to access subclass specific methods
+    - Downcasting - To be able to access subclass specific methods
 
-    Reference class
-    Object class
-
+        - Reference class
+        - Object class
 
  */
 

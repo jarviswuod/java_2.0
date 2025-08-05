@@ -4,7 +4,7 @@
 
      - By default, interface methods are public and abstract
      - Every variable in interfaces are final & static
-     - By default every interface method is a public static
+     - By default every interface method is a public and static
      - Use `default` or `static` to define concrete methods in interfaces (Java 8+)
      - Concrete classes use `implements` to implement interfaces
      - A class can implement multiple interfaces (multiple inheritance support)
