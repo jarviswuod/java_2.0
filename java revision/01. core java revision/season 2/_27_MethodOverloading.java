@@ -1,4 +1,4 @@
-public class _26_Inheritance {
+public class _27_MethodOverloading {
 
     public static void main(String[] args) {
         Animal animal = new Animal();
@@ -6,6 +6,7 @@ public class _26_Inheritance {
 
         animal.sayName();
         cat.sayName();
+
         cat.catOnly();
 
     }
@@ -30,6 +31,10 @@ class Animal {
 }
 
 class Cat extends Animal {
+    public void sayName() {
+        System.out.println("Cat by default");
+    }
+
     public void catOnly() {
         System.out.println("Cat Only");
     }
