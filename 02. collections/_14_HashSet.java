@@ -1,16 +1,15 @@
 /*
     
     NOTES:
-
-    HashSet class Overview
-     - HashSet implements Set interface.
+    HashSet
+     - HashSet implements Set interface
      - HashSet internally uses a HashMap to store the elements
      - HashSet allows only one null value
      - HashSet cannot contain duplicate elements
-     - HashSet is an unordered collection. It does not maintain the order in which elements are added
-     - Hashset is not thread-safe. You must explicitly synchronize access.
-     - HashSet is faster than TreeSet than LinkedHashSet because it does not maintain the order of elements.
-    
+     - HashSet is an unordered collection(insertion order not maintained)
+     - Hashset is not thread-safe. You must explicitly synchronize access
+     - HashSet is faster than TreeSet and LinkedHashSet because it does not maintain the order of elements
+
  */
 
 import java.util.HashSet;

@@ -1,8 +1,8 @@
 /*
 
-    NOTES:
 
-    LinkedList class Overview
+    NOTES:
+    - LinkedList
          - The LinkedList class implements Queue and Deque interfaces
          - It can be used as a Queue, Deque or Stack coz ^^^
          - Java LinkedList class can contain duplicate elements

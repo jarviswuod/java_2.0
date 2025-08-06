@@ -6,7 +6,7 @@
         1. Using default constructor
         2. Using another Collection
             a) ArrayList(Collection c) constructor
-            b) Using ArrayList .addAll()
+            b) Using Collection .addAll(Collection c)
 
  */
 

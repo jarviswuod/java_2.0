@@ -1,7 +1,6 @@
 /*
 
     NOTES:
-
     Map Methods
       - put() -> Adding key-value pairs to the map
       - isEmpty() -> Checking if the map is empty
@@ -24,7 +23,7 @@ public class _18_MapMethods {
 
     public static void main(String[] args) {
 
-        // Creating a Map using HashMap
+        // Using default HashMap constructor
         Map<String, Integer> studentMarks = new HashMap<>();
 
         // Adding key-value pairs to the map

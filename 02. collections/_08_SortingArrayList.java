@@ -1,10 +1,9 @@
 /*
 
     NOTES
-
-    Sorting primitive datatype
-     - sort()
-     - reverse()
+    - Sorting primitive datatype
+        - sort()
+        - reverse()
 
  */
 

@@ -1,11 +1,10 @@
 /*
 
     NOTES:
-    
     LinkedList Methods
-        - Adding -> add(), add(1, element), addFirst(), addLast()
-        - Retriving -> get(), getFirst(), getLast()
-        - Remove -> remove(), removeFirst(), removeLast(), clear()
+        - Adding -> add(elementName), add(index, elementName), addFirst(), addLast()
+        - Retriving -> get(index), getFirst(), getLast()
+        - Remove -> remove(index or elementName), removeFirst(), removeLast(), clear()
 
  */
 
@@ -46,7 +45,7 @@ public class _12_LinkedListMethods {
 
         // Getting all elements in a LinkedList
         for (String fruit : fruits) {
-            System.out.println(fruit);
+            System.out.print(fruit + "  ");
         }
 
         // removeFirst() -> Removing the first element in the LinkedList

@@ -23,9 +23,9 @@ public class _03_ListInterface {
 
         // List allows you to add duplicate elements
         names.add("Jarvis");
+        names.add("Wuod");
         names.add("Jarvis");
-        names.add("Jarvis");
-        names.add("Jarvis");
+        names.add("Wuod");
         System.out.println(names);
 
         // List allows you to have "null" elements elements

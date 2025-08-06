@@ -1,17 +1,17 @@
 /*
 
     NOTES:
-    
+
     ArrayList methods
      - isEmpty() -> Check if an ArrayList is empty
      - size() -> Find the size of an ArrayList
-     - get() -> Retrieve elements at a given index
-     - set() -> Modify elements at a given index
-     - remove() -> Remove elements at a given index
-     - removeAll() -> Remove multiple elements in a list
+     - get(index) -> Retrieve elements at a given index
+     - set(index, elementName) -> Modify elements at a given index
+     - remove(index or elementName) -> Remove elements at a given index
+     - removeAll(Collection ) -> Remove multiple elements in a list
      - clear() -> Remove everything in ArrayList
-     - indexOf() -> Find the first occurrence of an element
-     - lastIndexOf() -> Find the last occurrence of an element
+     - indexOf(elementName) -> Find the first occurrence of an element
+     - lastIndexOf(elementName) -> Find the last occurrence of an element
 
  */
 

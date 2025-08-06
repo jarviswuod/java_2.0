@@ -1,7 +1,6 @@
 /*
 
     NOTE:
-
     Iterating over an LinkedList
         1. Basic for loop
         2. Enhanced for loop

@@ -1,8 +1,7 @@
 /*
 
     NOTE:
-
-    Iterating over an ArrayList
+    - Iterating over an ArrayList
         1. Basic for loop
         2. Enhanced for loop
         3. Basic loop with iterator

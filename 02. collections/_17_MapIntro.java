@@ -1,13 +1,12 @@
 /*
 
     NOTES:
-
-    Map KeyPoints
-      - Java HashMap is a hashtable based implementation of the Map interface.
-      - A HashMap  cannot contain duplicate keys.
-      - Java HashMap allows null values and one null key.
-      - Java HashMap is an unordered collection.
-      - Java HashMap is not thread-safe. You must explicitly synchronize concurrent modifications to the HashMap.
+    Map
+      - Java HashMap is a hashtable based implementation of the Map interface
+      - A HashMap  cannot contain duplicate keys
+      - Java HashMap allows null values and one null key
+      - Java HashMap is an unordered collection
+      - Java HashMap is not thread-safe. You must explicitly synchronize concurrent modifications to the HashMap
 
  */
 
@@ -18,7 +17,7 @@ public class _17_MapIntro {
 
     public static void main(String[] args) {
 
-        // Creating a Map using HashMap
+        // Using default HashMap constructor
         Map<String, Integer> studentMarks = new HashMap<>();
 
         // Adding key-value pairs to the map

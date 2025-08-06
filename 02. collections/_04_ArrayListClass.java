@@ -2,7 +2,7 @@
 
     NOTES:
 
-    ArrayList(dynamic array) Class Overview
+    ArrayList(dynamic array)
      - An ArrayList is a re-sizable array. It grows and shrinks in size
      - Just like arrays you can retrive elements by their index
      - Java ArrayList allows duplicate and null values

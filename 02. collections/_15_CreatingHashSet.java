@@ -1,12 +1,11 @@
 /*
 
     NOTES:
-    
-    Creating an HashSet
+    Creating a HashSet
         1. Using default constructor
         2. Using another Collection
             a) HashSet(Collection c) constructor
-            b) Using HashSet .addAll()
+            b) Using HashSet .addAll(Collection c)
 
  */
 
@@ -19,7 +18,7 @@ public class _15_CreatingHashSet {
 
     public static void main(String[] args) {
 
-        // Creating a HashSet object using default constructor
+        // Using default constructor
         Set<String> fruits = new HashSet<>();
 
         fruits.add("banana");
@@ -37,7 +36,7 @@ public class _15_CreatingHashSet {
         firstFivePrimeNumbers.add(7);
         firstFivePrimeNumbers.add(11);
 
-        // Creating a HashSet object using Another Collection
+        // Using Another Collection
         // 1. HashSet(Collection c) constructor
         Set<Integer> firstTenPrimeNumbers = new HashSet<>(firstFivePrimeNumbers);
 
@@ -49,7 +48,7 @@ public class _15_CreatingHashSet {
         nextFivePrimeNumbers.add(7);
         nextFivePrimeNumbers.add(11);
 
-        // 2. Adding Existing elements to a new HashSet using .addAll()
+        // 2. Using .addAll(Collection c)
         firstTenPrimeNumbers.addAll(nextFivePrimeNumbers);
         System.out.println(firstTenPrimeNumbers);
     }

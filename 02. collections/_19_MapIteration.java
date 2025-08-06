@@ -4,14 +4,13 @@
 
     Iterating Map
       - forEach
-      - Removing an entry from the map
       - get only the keys
       - get only the values
       - different ways to iterate over the map
-      - Enhanced for loop
-      - Using iterator
-      - Using java 8 stream
-      - Using entrySet to iterate over key-value pairs
+        - Enhanced for loop
+        - Using iterator
+        - Using java 8 stream
+        - Using entrySet to iterate over key-value pairs
 
  */
 
@@ -34,10 +33,6 @@ public class _19_MapIteration {
 
         // forEach
         studentMarks.forEach((name, marks) -> System.out.println(name + ": " + marks));
-
-        // Removing an entry from the map
-        studentMarks.remove("Charlie");
-        System.out.println("After removing Charlie: " + studentMarks);
 
         // get only the keys
         Set<String> keys = studentMarks.keySet();

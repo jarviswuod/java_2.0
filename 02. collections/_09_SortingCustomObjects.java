@@ -1,11 +1,9 @@
 /*
 
     NOTES:
-
-    Sorting Custom Objects
-      1. Using Comparator interface
-          - compare()
-          - Converting compare() method to lamda expression
+    - Sorting Custom Objects Using Comparator interface
+        - compare()
+        - Converting compare() method to lambda expression
 
  */
 
