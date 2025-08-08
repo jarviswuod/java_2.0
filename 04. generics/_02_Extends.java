@@ -1,17 +1,17 @@
 /*
 
     NOTES:
-    - Home<T> -> unbounded parameter
-    - What this means is that you can initialize Home to any kind of class you want, say Integer, String, Dog, or Cat to our Home class
+    - Home<T> -> unbounded Type parameter
+    - What this means is that you can initialize Home to any kind of class you want; say Dog, Cat, an Integer, a String to our Home class
             Home<Dog> dogHome = new Home(new Dog(), new Dog());
             Home<Cat> catHome = new Home(new Cat(), new Cat());
 
             Home<String> stringHome = new Home(new String(), new String());
 
 
-    - Home<T extends Animal> --> setting upperBound parameter
-    - What this means is typically , you can instciate you Home class to any Variable really, what you have to ensure is that it's either Animal class or it's subclasses (lower than Animal) Example ; Dog(), Cat(), IndianCat() or Husky()
-    - At this point when you try to instanciate Home with any other bound, it will cause bound exception saying "Bound mismatch"
+    - Home<T extends Animal> - This is setting an upperBound parameter
+    - What this means is typically is, you can instanciate your Home class to any variable really. What you have to ensure is that the variable is either Animal class or Animal subclass; Dog(), Cat(), IndianCat() or Husky()
+    - At this point when you try to instanciate Home class with any other bound; say String(),Object(), Integer(), it will cause an exception saying "Bound mismatch"
     - When you try to get something above the Animal say 'Creature' or 'Object', You'll also get the same error "Bound mismatch"
     - Extends is used to specify the upperbound
 

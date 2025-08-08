@@ -1,5 +1,5 @@
 /*
- Producer Extend Super (PESC) Consumer rule
+ Producer Extend Consumer Super (PECS) rule
  In what type of Collection where only reading is allowed,
  In what type of Collection you will only be able to write,
  In what type of collection is both read and write possible
@@ -13,8 +13,9 @@
     - Upper
     - Lower
 
-   Lower Bound Type parameter
-   Lower Bounded Wildcards
+ - Bounded Type parameter
+    - Lower
+    - Upper
 
    - Type safety
 
