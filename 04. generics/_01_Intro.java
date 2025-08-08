@@ -1,5 +1,6 @@
 /*
  Producer Extend Consumer Super (PECS) rule
+ Get Put method rule
  In what type of Collection where only reading is allowed,
  In what type of Collection you will only be able to write,
  In what type of collection is both read and write possible
@@ -10,12 +11,12 @@
   - Invariant
 
  - Bounded Wildcards
-    - Upper
-    - Lower
+    - Upper (? extends Type)
+    - Lower (? super Type)
 
  - Bounded Type parameter
-    - Lower
-    - Upper
+    - Lower (T extends Type)
+    - Upper (T super Type)
 
    - Type safety
 
