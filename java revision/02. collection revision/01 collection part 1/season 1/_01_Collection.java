@@ -10,8 +10,8 @@
     - Queue
         - PriorityQueue
         - Deque
-        - ArrayDeque
-        - LinkedList
+            - ArrayDeque
+            - LinkedList
 
     - Set
         - HashSet
