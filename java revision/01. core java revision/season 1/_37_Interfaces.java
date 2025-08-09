@@ -3,8 +3,7 @@
     OFFHEAD NOTES:
 
      - By default, interface methods are public and abstract
-     - Every variable in interfaces are final & static
-     - By default every interface method is a public and static
+     - Every variable in interfaces are public, static, and final
      - Use `default` or `static` to define concrete methods in interfaces (Java 8+)
      - Concrete classes use `implements` to implement interfaces
      - A class can implement multiple interfaces (multiple inheritance support)
@@ -12,7 +11,7 @@
      TYPES:
        - Functional Interface (@FunctionalInterface): exactly one abstract method
        - Normal Interface: one or more abstract methods
-       - Marker Interface (empty): no methods; used for tagging (e.g., Serializable)
+       - Marker Interface (empty): no methods; used for tagging (e.g. Serializable)
 
      - Interfaces support abstraction, loose coupling, and contract enforcement
 

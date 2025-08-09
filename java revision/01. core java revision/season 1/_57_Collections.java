@@ -29,9 +29,9 @@
         - removeAll()
         - clear()
         - set(pos, value)
-        - 2 ways of creating Collection  class
-            - Using the contructor -> new ArrayList<>();
-            - Using any collection interface set class new ArrayList<>(Collection collection);
+        - 2 ways of creating Collection object
+            - Using default constructor -> new ArrayList<>();
+            - Using parametized constructor -> new ArrayList<>(Collection collection);
 
 
         ADDED:

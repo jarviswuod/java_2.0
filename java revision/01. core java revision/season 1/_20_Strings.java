@@ -26,8 +26,7 @@
          - toString()
          - capacity()
          - ensureCapacity(min)
-         - setCharAt(index, char)
-         - charAt(index)
+         - charAt(index)/ setCharAt(index, char)
          - length()
 
 
