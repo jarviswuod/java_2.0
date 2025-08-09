@@ -8,7 +8,7 @@
      - get(index) -> Retrieve elements at a given index
      - set(index, elementName) -> Modify elements at a given index
      - remove(index or elementName) -> Remove elements at a given index
-     - removeAll(Collection ) -> Remove multiple elements in a list
+     - removeAll(Collection c) -> Remove multiple elements in a list
      - clear() -> Remove everything in ArrayList
      - indexOf(elementName) -> Find the first occurrence of an element
      - lastIndexOf(elementName) -> Find the last occurrence of an element
@@ -30,6 +30,7 @@ public class _06_ArrayListMethods {
         programmingLangs.add("Java");
         programmingLangs.add("Javascript");
         programmingLangs.add("Python");
+        programmingLangs.add("C#");
         programmingLangs.add("C++");
         programmingLangs.add(".net");
         programmingLangs.add("nodeJs");
@@ -58,7 +59,7 @@ public class _06_ArrayListMethods {
 
         // remove()
         programmingLangs.remove(4);
-        programmingLangs.remove("C++");
+        programmingLangs.remove("C#");
         System.out.println(programmingLangs);
 
         // removeAll()

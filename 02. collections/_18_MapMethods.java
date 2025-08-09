@@ -2,13 +2,13 @@
 
     NOTES:
     Map Methods
-      - put() -> Adding key-value pairs to the map
+      - put(key, value) -> Adding key-value pairs to the map
       - isEmpty() -> Checking if the map is empty
       - size() -> Checking the size of the map
-      - get() -> Accessing a value using its key
-      - containsKey() -> Checking if a key exists
-      - containsValue() -> Checking if a value exists
-      - remove() -> Removing an entry from the map
+      - get(key) -> Accessing a value using its key
+      - containsKey(key) -> Checking if a key exists
+      - containsValue(value) -> Checking if a value exists
+      - remove(key) -> Removing an entry from the map
       - keySet() -> get only the keys
       - values() -> get only the values
 

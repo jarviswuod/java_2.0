@@ -57,11 +57,6 @@ public class _19_MapIteration {
             System.out.println(key + ": " + studentMarks.get(key));
         }
 
-        // Using java 8 stream
-        System.out.println("Iterating using Java 8 stream:");
-        studentMarks.entrySet().stream()
-                .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
-
         System.out.println("Iterating using Java 8 forEach:");
         studentMarks.forEach((key, value) -> System.out.println(key + ": " + value));
 
