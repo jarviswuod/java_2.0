@@ -1,4 +1,11 @@
 /*
+    package jarvis;
+    
+    class Randomlass {
+    }
+
+    import jarvis.*;
+    import jarvis.shopping.*;
 
  */
 
