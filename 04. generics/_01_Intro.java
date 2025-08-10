@@ -1,22 +1,23 @@
 /*
- Producer Extend Consumer Super (PECS) rule
- Get Put method rule
- In what type of Collection where only reading is allowed,
- In what type of Collection you will only be able to write,
- In what type of collection is both read and write possible
 
- What you mean by;
-  - Covariant
-  - Contra variant
-  - Invariant
+   NOTES:
+   - Producer Extend Consumer Super (PECS) / Get Put method rule
+       - In what type of Collection is BOTH READ and WRITE possible
+       - In what type of Collection where ONLY READ is allowed
+       - In what type of Collection you will ONLY be able to WRITE
 
- - Bounded Wildcards
-    - Upper (? extends Type)
-    - Lower (? super Type)
+   - What you mean by;
+       - Covariant
+       - Contra variant
+       - Invariant
 
- - Bounded Type parameter
-    - Lower (T extends Type)
-    - Upper (T super Type)
+   - Bounded Wildcards
+       - Upper (? extends Type)
+       - Lower (? super Type)
+
+   - Bounded Type parameter
+       - Lower (T extends Type)
+       - Upper (T super Type)
 
    - Type safety
 
