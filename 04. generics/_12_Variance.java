@@ -1,4 +1,5 @@
 /*
+
     NOTES:
     Invariance vs Covariance vs Contravariance
         - Invariance -> No type flexibility; must match exactly.
@@ -6,7 +7,7 @@
         - Contravariance -> Allows assigning a more general (supertype) to a more specific reference.
 
     Invariance:
-        Generics (strict type match):
+        Generics (strict type match):   // exact type match required
             - List<Dog> dogList = new ArrayList<Dog>(); // YES
             - List<Dog> dogList = new ArrayList<Husky>(); // NO
             - List<Husky> dogList = new ArrayList<Husky>(); // YES
@@ -17,13 +18,13 @@
             - Number numDoub = new Double(10.5);
             - Number numFloat = new Float(10.4f);
 
-        Generics (`? extends`):
+        Generics (`? extends`): // (read-only, subtypes allowed)
             - List<? extends Dog> dogList = new ArrayList<Husky>(); // YES
             - List<? extends Animal> animalList = new ArrayList<Dog>(); // YES
             - List<? extends Animal> catList = new ArrayList<Cat>(); // YES
 
     Contravariance:
-        Generics (`? super`):
+        Generics (`? super`):   // (write-only, supertypes allowed)
             - List<? super Dog> dogList = new ArrayList<Animal>(); // YES
             - List<? super Animal> animalList = new ArrayList<Object>(); // YES
             - List<? super Animal> creatureList = new ArrayList<Creature>(); // YES
@@ -35,13 +36,13 @@
 
 
     KEY:
-        - In generics, default is invariant — exact type match required
-        - Use `extends` for covariance (read-only, subtypes allowed)
-        - Use `super` for contravariance (write-only, supertypes allowed)
-
         - <? super Type> (lower-bounded wildcard):
             - Accepts `Type` or its supertypes.
             - Opposite of covariance, which accepts `Type` or its subtypes.
+
+        - <? extends Type> (upper-bounded wildcard):
+            - Accepts `Type` or its subtypes.
+            - Opposite of contravariance, which accepts `Type` or its supertypes.
 
  */
 

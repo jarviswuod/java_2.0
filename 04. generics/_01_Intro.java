@@ -7,17 +7,17 @@
        - In what type of Collection you will ONLY be able to WRITE
 
    - What you mean by;
-       - Covariant
-       - Contra variant
        - Invariant
-
-   - Bounded Wildcards
-       - Upper (? extends Type)
-       - Lower (? super Type)
+       - Covariant
+       - Contravariant
 
    - Bounded Type parameter
        - Lower (T extends Type)
        - Upper (T super Type)
+
+   - Bounded Wildcards
+       - Upper (? extends Type)
+       - Lower (? super Type)
 
    - Type safety
 

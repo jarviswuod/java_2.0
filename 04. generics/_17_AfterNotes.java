@@ -32,6 +32,22 @@
                 doglist.add(new Husky()); // WRITE ONLY
             }
 
+    SUMMARY:
+        - Generics in java are invariant
+        - We make Generics covariant by introducting;
+               - The bounded Type parameter(generic signature) - <T extends Number>
+               - The upper bounded wildcard - List<? extends Number>
+
+
+    WILDCARD:
+        - <? super Type> (lower-bounded wildcard):
+            - Accepts `Type` or its supertypes.
+            - Opposite of covariance, which accepts `Type` or its subtypes.
+
+        - <? extends Type> (upper-bounded wildcard):
+            - Accepts `Type` or its subtypes.
+            - Opposite of contravariance, which accepts `Type` or its supertypes.
+
  */
 
 import java.util.ArrayList;

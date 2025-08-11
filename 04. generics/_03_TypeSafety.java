@@ -12,7 +12,7 @@
 
         Dog animal2 = dogHuskyHome.getAnimal2();
         System.out.println(animal2);
-        
+
         Dog dog1 = new Husky();     // Same thing as
 
              - Type safety is not only putting staff inside the bound limit but also retrieving it. Whenever you want to retrive a value weather Dog or Husky, it will be cast to what you defined as the upperbound.

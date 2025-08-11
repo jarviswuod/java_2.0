@@ -1,37 +1,37 @@
 /*
 
     NOTES:
-        - List<?> numberList; can be: 
-            - List<Integer>
-            - List<Object>
-            - List<Animal>
-            - List<Student>
-            - List<String>
-            - List<Number>
-            
-            The question mark <?> basically allows for any type
+    - List<?> numberList; can be: 
+        - List<Integer>
+        - List<Object>
+        - List<Animal>
+        - List<Student>
+        - List<String>
+        - List<Number>
+        
+        The question mark <?> basically allows for any type
 
-        - List<? extends Number> numberList; restrics to only allowing Number class or subclasses
-            - List<Integer>
-            - List<Number>
-            - List<Float>
-            - List<Double>
+    - List<? extends Number> numberList; restrics to ONLY allowing Number class or subclass
+        - List<Integer>
+        - List<Number>
+        - List<Float>
+        - List<Double>
 
-    List.of()  -->  Generics concept
-        - The List.of() casts any datatype passed to it to match whatever is on the left side of the expression, i.e Where it's being assigned to hence if List is changed to Integer, then List.of() changes the elements to match the Integer object, same rule applies when it's change it to Double, Floas, etc.
-        - Simple rule, whatever is on the left is what on the right will be.
+    - List.of()  -->  Generics concept
+        - List.of() casts any datatype passed to it to match whatever is on the left side of the expression. Example; If a List is changed to Integer then List.of() changes the elements to match Integer objects, same rule applies if List is changed to Double, Floas, etc.
 
+        - Simple rule, whatever is on the left is what will be assigned on the right
             - List<Integer> listIntegers = List.of(1, 2, 3, 4, 5);
-            - List<Double> listIntegers = List.of(1, 2, 3, 4, 5);
-            - List<Float> listIntegers = List.of(1, 2, 3, 4, 5);
-            - List<Number> listIntegers = List.of(1, 2, 3, 4, 5);
+            - List<Double> listDouble = List.of(1, 2, 3, 4, 5);
+            - List<Float> listFloat = List.of(1, 2, 3, 4, 5);
+            - List<Number> listNumber = List.of(1, 2, 3, 4, 5);
 
 
     METHOD EXPLANATION:
         void displayNumbers(List<? extends Number> numberList) {
 
             Number number = numberList.get(0);
-                - For type safety reasons, Whatever number you try to read it will cast to Number and nothing ELSE
+                - For type safety reasons, Whatever number you try to read it will cast to Number object type
 
 
             Double number = numberList.get(0); // Type mismatch: cannot convert ? extends Number to Double

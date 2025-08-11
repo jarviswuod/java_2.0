@@ -5,13 +5,14 @@
     - Let's say you are writing the method
         - public static void addAnimal(List<? super Animal> animalList) {...}
 
-    - What you are really saying over here is that, the List passed here will be either a animalList, or creatureList or objectList, those are the 3 possible probabilities of objects we will be accpeting in the runtime
-    - Logically, it's actually safe to add a list of any subclass of Animal inside the method, say Cat or Dog
+    - What you are really saying is, the List passed here be either an animalList, creatureList or objectList, those are the 3 possible probabilities of objects we will be accepting in runtime
+    - Logically, it means it's safe to add a list of any subclass of Animal inside the method, say Cat or Dog
             - animalList.add(new Cat());
             - animalList.add(new Dog());
 
 
-    - This is because, we know whatever will be coming to this List will be something probably larger/ bigger than what we pass in this case; Animal, Creature, or Object. All this will be able to hold our subclasses. Example;
+    - Reason, we know whatever will be coming to this List will be larger/ bigger/ super than what we pass. In this case; Animal, Creature, or Object Lists will be able to hold our subclasses.
+    - Example;
             public void addAnimal(List<? super Animal> animalList) {
                 animalList.add(new Animal());
                 animalList.add(new Cat());

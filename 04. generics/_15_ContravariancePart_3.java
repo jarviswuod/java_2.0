@@ -1,19 +1,19 @@
 /*
 
     NOTES:
-    - When we introduce the super keyword/ change the extends keyword to 'super'
+    - When we introduce the 'super' keyword
         - public static void addAnimal(List<? super Animal> animalList) {...}
-    - Observation made is;
-        - Some method calls don't work any more (Any subclass below the Animal class)
+    - Observations made are;
+        - Some method calls don't work any more (Any subclass to Animal class)
             - addAnimal(dogList);
             - addAnimal(catList);
 
-        - Some methods now work pretty good (Any super class methods above the Animal class)
+        - Some methods now work pretty good (Any super class to Animal class)
             - addAnimal(animalList);
             - addAnimal(objectList);
             - addAnimal(creatureList);
 
-        - We are not able to read from the list anymore
+        - We are not able to READ from the list anymore
             for (Animal animal : animalList) {
                 System.out.println(animal);
             }
@@ -25,12 +25,12 @@
         - In layman language;
             - Animal animal = new Creature(); // NOT POSSIBLE
 
-    - The same concept applies if we have the List set to 'Creature' class and we try to pass in an 'objectList'
+    - The same concept applies if the List is set to 'Creature' class and we try to pass in an 'objectList'
         - List<? super Animal> animalList
-        - addAnimal(objectList); // NOT POSSIBLE
+        - addAnimal(objectList);    // Type mismatch:
         
         - Animal animal = animalList.get(0);
-            - In layman language again;
+            - In layman language;
                 - Creature creature = new Object(); // NOT POSSIBLE
 
  
@@ -40,11 +40,12 @@
 
             for (Object animal : animalList) {
                 System.out.println(animal);
+            }
 
 
     SUMMARY:
-        - super means, If we ever gonna retrieve elements from a list, it's gonna be given back to the elements inform of Objects ONLY. This is because, you don't know what list you will always be getting, it might be from the highest end begin the Object class it's self based on super being set to the lower bound
-        - In reality we don't always use 'super' for retriving values. We use extends to retrieve. This is because with extends, we can retrieve things as a specific type i.e as a Dog, a Cat or say Animal. In 'super' we do it with Object as we don't know what the type might be
+        - 'super' means, If we ever gonna retrieve elements from a list, it's gonna be given back to the elements inform of Objects ONLY. This is because, complier doesn't know what list you will always be getting, it might be from the highest end begin the Object class it's self based on super being set to the lower bound
+        - In reality we don't always use 'super' for retrieving values. We use 'extends' keyword instead. This is because with 'extends', can retrieve things as a specific type i.e as a Dog, a Cat or say Animal. In 'super' we do it with Object as we don't know what the type might be
 
     - The super keyword is used for adding elements, the limitation faced with 'extends' keyword
 

@@ -15,12 +15,12 @@
              - Home<Cat> catHome = new Home(new Cat(), new Cat());  // Works perfect
 
 
-        - At this point when you try to instanciate 'Home' class with any other bound; say String(), Object(), Integer(), it will cause an exception saying "Bound mismatch"
+        - At this point when you try to instanciate 'Home' class with any other bound; say String(), Object(), Integer(), it will cause a "Bound mismatch" exception 
              - Home<String> stringHome = new Home(new String(), new String()); // Bound mismatch
              - Home<Integer> integerHome = new Home(new Integer(10), new Integer(10)); // Bound mismatch
 
 
-        - When you try to get something above the 'Animal' say 'Creature' or 'Object', You'll also get the same error "Bound mismatch"
+        - When you try to get something above the 'Animal' say 'Creature' or 'Object', You'll also get the same "Bound mismatch"
              - Home<Creature> creatureHome = new Home(new Creature(), new Creature()); // Bound mismatch
              - Home<Object> objectHome = new Home(new Object(), new Object()); // Bound mismatch
 

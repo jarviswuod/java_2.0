@@ -1,7 +1,7 @@
 /*
 
     NOTES:
-    - Having ( List<Animal> ) means our List variable has to be exactly of type Animal ONLY.
+    - List<Animal> means our List variable has to be exactly of type Animal
          -  public static void addAnimal(List<Animal> animalList) {...}
 
     - This is a good method as you can;
@@ -19,10 +19,16 @@
                  - animalList.add(new Dog()); // sub class
 
     - The upside of invariance is that you can add and retrieve also from the same List.
-        - You read the values
-        - You write too, add()
-    - The downside however is you can NOT pass any other type other than the required one, Example passing a List of Dog causes an issue ;
-            - The method addAnimal(List<Animal>) is not applicable for the arguments (ArrayList<Dog>)
+    - The downside however is you can NOT pass any other List type other than the required one, Example passing a List of Dog causes an Type mismatch Exception as """
+            The method addAnimal(List<Animal>) is not applicable for the arguments (ArrayList<Dog>);
+            """
+
+            ArrayList<Dog> dogList = new ArrayList<>();
+                dogList.add(new Dog());
+                dogList.add(new Husky());
+
+            addAnimal(dogList); // DOES NOT WORK
+    
 
     - We can bypass this issue by introducing the 'extends' keyword
 

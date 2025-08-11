@@ -1,7 +1,7 @@
 /*
 
     NOTES:
-    Method Inheritance on bounded Type parameter
+    - Method Inheritance on bounded Type parameter
         - If you haven't defined any bound at your Home level then you are limited by what you can do interms of accessing methods under the inheritance 'tree'. Example;
         - In our Animal class we can set any general method and by inheritance laws the method should automatically be accessed by any Animal subclass.
         - However, in generics, not setting 'bound' to Animal class makes it impossible to make any Animal specific method call. Example; If we try to access makesound(), it won't be possible despite having the the method under 'Animal', the superclass. Reason:

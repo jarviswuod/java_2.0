@@ -3,26 +3,18 @@
     NOTES:
     Wild Cards <?>
         - Introducing unbounded wild card (List<?> listOfAnyVal)
-        - This is an alternative for solving the generics invariance issue in generics, we ignore the generics method signature
+        - This is an alternative for solving the generics invariance issue in generics, ignoring the generics method signature
             - public static Double sumAnyValues(List<?> listOfAnyVal) {...}
-        - This means the List can be of any type we pass in.
+        - This means the List can be of any Type we pass in.
 
         Problem:
-            - The issue here is, just like under unbounded type( <T> ), you will be able to pass in a List of Object, String or anything else which will cause type safety.
+            - The issue here is, just like under unbounded type parameter( <T> ), you will be able to pass in a List of Object, String or anything else which causes type safety.
+
         Solution:
             - We can solve this issue by setting a bounded wild card. List of unknown type that extends Number
                 - public Double sumAnyValues(List<? extends Number> listOfAnyVal) {...}
 
             - This is called upper bounded Wild card
-
-
-    SUMMARY:
-     - Generics in java are invariant
-     - We make Generics covariant by introducting;
-            - The bounded Type parameter(generic signature) - <T extends Number>
-            - The upper bounded wildcard - List<? extends Number>
-
-     - We have achieved covariance using 'extends Number' keyword but we have to pass a little cost for its
 
  */
 

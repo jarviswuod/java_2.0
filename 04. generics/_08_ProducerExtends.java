@@ -2,16 +2,16 @@
 
     NOTES:
         - Generics by default is invaraint and this means that you only need to input the exact required datatype   
-            - List<Number> listOfValues = new ArrayList<Number>(); // works
-            - List<Number> listOfValues = new ArrayList<Integer>(); // Won't work
-            - List<Number> listOfValues = new ArrayList<Double>(); // Won't work
+            - List<Number> listOfValues = new ArrayList<Number>();      // Works Perfect
+            - List<Number> listOfValues = new ArrayList<Integer>();     // Won't work
+            - List<Number> listOfValues = new ArrayList<Double>();      // Won't work
 
         - We can achieve covariance concept in generics by using the 'extends' keyword where whatever we specify as the upperbound we can accept either that exact type or subclass of that type
-            - List<? extends Number> listOfVal = new ArrayList<Integer>(); // works
-            - List<? extends Number> listOfVal = new ArrayList<Number>(); // works
-            - List<? extends Number> listOfVal = new ArrayList<Double>(); // works
-            - List<? extends Number> listOfVal = new ArrayList<String>(); // Doesnot work
-            - List<? extends Number> listOfVal = new ArrayList<Object>(); // Doesnot work
+            - List<? extends Number> listOfVal = new ArrayList<Integer>();      // Works Perfect
+            - List<? extends Number> listOfVal = new ArrayList<Number>();       // Works Perfect
+            - List<? extends Number> listOfVal = new ArrayList<Double>();       // Works Perfect
+            - List<? extends Number> listOfVal = new ArrayList<String>();       // Doesnot work
+            - List<? extends Number> listOfVal = new ArrayList<Object>();       // Doesnot work
 
 
         - Covariance in java --> Works perfectly
@@ -19,13 +19,13 @@
             - Number doub = new Double(10);
 
         - Achieving covariance in generics
-            - List<? extends Number> listOfVal = new ArrayList<Integer>();Number int = new Integer(10);
-            - List<? extends Number> listOfVal = new ArrayList<Number>();Number doub = new Double(10);
+            - List<? extends Number> listOfVal = new ArrayList<Integer>();
+            - List<? extends Number> listOfVal = new ArrayList<Number>();
             - List<? extends Number> listOfVal = new ArrayList<Double>();
 
 
     PROBLEM:
-        - The downside of covarianve in generics is that you can't (WRITE), add any element as you can in normal List/ ArrayList
+        - The downside of covariance in generics is that you can't (WRITE), add any element as you can in a normal List/ ArrayList
             List<Number> numberList;
                 - numberList.add(1);
                 - numberList.add(4.5f);
@@ -44,8 +44,8 @@
             // listOfNumbs.add(36L);
 
     SOLUTION:
-        - What you can safely do to the list is to READ from the list and that's how the 'extends' keyword is getting used.
-        - The list is some kind of mystery box where we can have any kind; say Integer, Double, Long, or Number. Whenever we are going to fetch something we can get Number only, thats the guarantee the complier is giving us because the complier is giving us the types of T/unknown.
+        - What you can safely do to the list is to READ from the list and that's how the 'extends' keyword is getting used
+        - The list is some kind of mystery box where we can have any kind of List; say Integer, Double, Long, or Number. Whenever we are going to fetch something we can get Number only, that's the guarantee the complier is giving us.
 
                 for (Number number : listOfNumbs) {
                     System.out.println(number);
@@ -57,7 +57,7 @@
                     System.out.println(number);
                 }
             
-        - Because, it causes a Type mismatch as we have defined a List of Number to our generic List, meaning any Number could have been passed not only Integers
+        - This causes a Type mismatch as we have defined a List of Number to our generic List, meaning any Number could have been passed not only Integers
 
  */
 
