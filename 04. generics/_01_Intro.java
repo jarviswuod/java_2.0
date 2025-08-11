@@ -12,8 +12,8 @@
        - Contravariant
 
    - Bounded Type parameter
-       - Lower (T extends Type)
-       - Upper (T super Type)
+       - Upper (T extends Type)
+       - Lower (T super Type)
 
    - Bounded Wildcards
        - Upper (? extends Type)
