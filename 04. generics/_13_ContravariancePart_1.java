@@ -1,27 +1,30 @@
 /*
- Having our list set as
- -  public static void addAnimal(List<Animal> animalList) {...}
- This means our List variable has to be exactly of type Animal ONLY.
- This is a good method as you can;
-    - READ from the List
-        1.) Animal animal1 =  animalList.get(0);
-        
-        2.) for (Animal animal : animalList) {
-               System.out.println(animal);
-            }
 
-    - WRITE to the List
-        - You can also add a new Animal to the List. This can be of any subtype of animal;
-             - animalList.add(new Animal()); // super class
-             - animalList.add(new Cat()); // sub class
-             - animalList.add(new Dog()); // sub class
+    NOTES:
+    - Having ( List<Animal> ) means our List variable has to be exactly of type Animal ONLY.
+         -  public static void addAnimal(List<Animal> animalList) {...}
 
- - You can add and retrieve also from the same List. This is the upside of the method.
-    - You read the values
-    - You write too, add() -> either the superclass itself or sublclass
- - The downside of this however you can NOT pass any other type other than the required one, Example passing a List of Dog causes an issue ;
-        - The method addAnimal(List<Animal>) in the type _13_ContravariancePart_1 is not applicable for the arguments (ArrayList<Dog>)
- - We can bypass this issue by introducing the 'extends' keyword
+    - This is a good method as you can;
+         - READ from the List
+             1.) Animal animal1 =  animalList.get(0);
+             
+             2.) for (Animal animal : animalList) {
+                    System.out.println(animal);
+                 }
+
+         - WRITE to the List
+             - You can also add a new Animal to the List. This can be of any subtype of animal;
+                 - animalList.add(new Animal()); // super class
+                 - animalList.add(new Cat()); // sub class
+                 - animalList.add(new Dog()); // sub class
+
+    - The upside of invariance is that you can add and retrieve also from the same List.
+        - You read the values
+        - You write too, add()
+    - The downside however is you can NOT pass any other type other than the required one, Example passing a List of Dog causes an issue ;
+            - The method addAnimal(List<Animal>) is not applicable for the arguments (ArrayList<Dog>)
+
+    - We can bypass this issue by introducing the 'extends' keyword
 
  */
 
@@ -35,13 +38,10 @@ public class _13_ContravariancePart_1 {
         ArrayList<Animal> animalList = new ArrayList<>();
         animalList.add(new Dog());
         animalList.add(new Dog());
-        animalList.add(new Dog());
 
         animalList.add(new Cat());
         animalList.add(new Cat());
-        animalList.add(new Cat());
 
-        animalList.add(new Animal());
         animalList.add(new Animal());
         animalList.add(new Animal());
 

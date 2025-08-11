@@ -1,35 +1,42 @@
 /*
- - The method works perfect and allows for both adding and reading values from the List we provide.(No subclasses allowed)
- - The downside of this is that you are only allowed to provide the EXACT match required (Animal in this case)
-    - public static void addAnimal(List<Animal> animalList) {...}
 
- We add the extends keyword over here to help out with passing not only the Animal class but also Animal subclasses too, say Dog, Cat etc
-    - public static void addAnimal(List<? extends Animal> animalList) {...}
-    
- Now what this means is that we can now accept not only the Animal class but also it's subclasses (Dog, Cat, Husky) to operate on.
- This makes it possible to retrive things but not able to add them to the List you provide.
- You CANNOT add to the list.
-        // animalList.add(new Cat());
-        // animalList.add(new Dog());
- This makes it possible to ONLY READ from our Animal List of it's subclass
-    addAnimal(dogList);
-    addAnimal(animalList);
-    addAnimal(catList);
+    NOTES:
+    - The method below works perfect and allows both adding and reading values from Animal List provided.(No subclass)
+            - public static void addAnimal(List<Animal> animalList) {...}
 
- Other than only reading from the List someone cannot pass a class higher than the one we state, that is;
-    - List<? extends Animal> cannot accept any Creature or Object
-    - List<? extends Dog> cannot accept any Animal, Creature or Object
-    - List<? extends IndianCat> cannot accept any Cat, Animal, Creature or Object
+    - The downside of this is that you are only allowed to provide the EXACT match required (Animal in this case)
+            ArrayList<Dog> dogList = new ArrayList<>();
+                dogList.add(new Dog());
+                dogList.add(new Husky());
 
- NOTE:
-    We cannot do any data above the super class provided under the extends
-        - addAnimal(objectList);
-        - addAnimal(creatureList);
+            addAnimal(dogList); // DOES NOT WORK
 
-        -ERROR:
-            - The method addAnimal(List<? extends Animal>) in the type _14_ContravariancePart_2 is not applicable for the arguments (ArrayList<Object>)
+    - We add the extends keyword over here to help out with passing a List of Animal class subclasses; say Dog, Cat etc
+        - public static void addAnimal(List<? extends Animal> animalList) {...}
 
- - To go for a more general option, we introduce the 'super' keyword
+    - This makes it possible to ONLY READ from our Animal List of it's subclass
+        addAnimal(dogList);
+        addAnimal(animalList);
+        addAnimal(catList);
+
+    - This makes it possible to retrive things but not able to add them to the List you provide.
+            animalList.add(new Cat()); // You CANNOT add to the list
+            animalList.add(new Dog()); // You CANNOT add to the list
+
+    - Other than only reading from the List someone cannot pass a class higher than the one we state, that is;
+        - List<? extends Animal>      // cannot accept any Creature or Object
+        - List<? extends Dog>     // cannot accept any Animal, Creature or Object
+        - List<? extends IndianCat>   // cannot accept any Cat, Animal, Creature or Object
+
+
+
+    PROBLEM:
+        - We cannot do any data above the super class provided under the extends
+            - addAnimal(objectList);
+            - addAnimal(creatureList);
+
+            - ERROR:
+                - The method addAnimal(List<? extends Animal>) is not applicable for the arguments (ArrayList<Object>)
 
  */
 

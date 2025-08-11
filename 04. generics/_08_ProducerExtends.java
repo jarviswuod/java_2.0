@@ -1,62 +1,63 @@
 /*
- We can achieve covariance in generics by use of extends keyword.
- Generics by default is invaraint and this means that you only need to input the exact required datatype into it   
-    - List<Number> listOfValues = new ArrayList<Number>(); // works
-    - List<Number> listOfValues = new ArrayList<Integer>(); // Won't work
-    - List<Number> listOfValues = new ArrayList<Double>(); // Won't work
- We can achieve covaraince concept in generics by using the extends keyword where whatever we specify as the upperbound we can accpet either that exact type or subclass of that type
-    List<? extends Number> listOfVal = new ArrayList<Integer>(); // works
-    List<? extends Number> listOfVal = new ArrayList<Number>(); // works
-    List<? extends Number> listOfVal = new ArrayList<Double>
-    (); // works
-    List<? extends Number> listOfVal = new ArrayList<String>(); // Doesnot work
-    List<? extends Number> listOfVal = new ArrayList<Object>(); // Doesnot work
- By this we can assign a list of Integer, Double, Long, Float to a List of Number. This is called covariance
- List of any unknown type that extends Number. Where a more general type is accepted as a NUmber, we can give a substitute. offer a more specific type
 
-    - Covariance in java --> Works perfect
-        - Number int = new Integer(10);
-        - Number doub = new Double(10);
+    NOTES:
+        - Generics by default is invaraint and this means that you only need to input the exact required datatype   
+            - List<Number> listOfValues = new ArrayList<Number>(); // works
+            - List<Number> listOfValues = new ArrayList<Integer>(); // Won't work
+            - List<Number> listOfValues = new ArrayList<Double>(); // Won't work
 
-    - Achieving covariance in generics
-        - List<? extends Number> listOfVal = new ArrayList<Integer>();Number int = new Integer(10);
-        - List<? extends Number> listOfVal = new ArrayList<Number>();Number doub = new Double(10);
-        - List<? extends Number> listOfVal = new ArrayList<Double>();
-
- This however comes at a cost
- You cannot add any element as you could with normal List or ArrayList
-    List<Number> numberList;
-    numberList.add(1);
-    numberList.add(4.5f);
-    numberList.add(4L);
-    numberList.add(23.0);
-
- If you are using 'extends' you cannot WRITE to the list, all you ca be able to do is to READ from the List
- You cannot add to the list because, the compiler doesnot know what type of data you will be adding, you might decide to add different lists, example, add a Double to a List of integers, which will loose it from type safety
+        - We can achieve covariance concept in generics by using the 'extends' keyword where whatever we specify as the upperbound we can accept either that exact type or subclass of that type
+            - List<? extends Number> listOfVal = new ArrayList<Integer>(); // works
+            - List<? extends Number> listOfVal = new ArrayList<Number>(); // works
+            - List<? extends Number> listOfVal = new ArrayList<Double>(); // works
+            - List<? extends Number> listOfVal = new ArrayList<String>(); // Doesnot work
+            - List<? extends Number> listOfVal = new ArrayList<Object>(); // Doesnot work
 
 
-    List<? extends Number> listOfNumbs; // = listNumbers;
-    // listOfNumbs.add(1.2);
-    // listOfNumbs.add(12);
-    // listOfNumbs.add(2.4f);
-    // listOfNumbs.add(36L);
+        - Covariance in java --> Works perfectly
+            - Number int = new Integer(10);
+            - Number doub = new Double(10);
 
- What you can safely do to the list is to READ from the list. That;s how the 'extends' keyword is getting used, the list is some kind of mystery box where we can have any kind, say Integer,, Double, Long, or Number>. Whenever we are going to fetch something we can get Number only, thats the guarantee teh complier is giving us because the complier is giving us the types of T/unknown.
+        - Achieving covariance in generics
+            - List<? extends Number> listOfVal = new ArrayList<Integer>();Number int = new Integer(10);
+            - List<? extends Number> listOfVal = new ArrayList<Number>();Number doub = new Double(10);
+            - List<? extends Number> listOfVal = new ArrayList<Double>();
 
-    for (Number number : listOfNumbs) {
-        System.out.println(number);
-    }
 
- You cannot however say
+    PROBLEM:
+        - The downside of covarianve in generics is that you can't (WRITE), add any element as you can in normal List/ ArrayList
+            List<Number> numberList;
+                - numberList.add(1);
+                - numberList.add(4.5f);
+                - numberList.add(4L);
+                - numberList.add(23.0);
 
-    for (Integer number : listOfNumbs) { // Type mismatch:
-        System.out.println(number);
-    }
-        
- Beacause it causea a Type mismatch it causes a mismatch aas we have defined a list of Number to our generic List, meaning any Number could have been passed not only Integers
 
- NOTE:
- - 'extends' is used for reading purpose/used as a producer
+    REASON:
+        - The compiler doesn't know what type of data you will be adding, you might decide to add different lists. Example;
+            - Add a Double to a List of integers, which will loose it from type safety
+
+            List<? extends Number> listOfNumbs; // = listNumbers;
+            // listOfNumbs.add(1.2);
+            // listOfNumbs.add(12);
+            // listOfNumbs.add(2.4f);
+            // listOfNumbs.add(36L);
+
+    SOLUTION:
+        - What you can safely do to the list is to READ from the list and that's how the 'extends' keyword is getting used.
+        - The list is some kind of mystery box where we can have any kind; say Integer, Double, Long, or Number. Whenever we are going to fetch something we can get Number only, thats the guarantee the complier is giving us because the complier is giving us the types of T/unknown.
+
+                for (Number number : listOfNumbs) {
+                    System.out.println(number);
+                }
+
+        - You cannot however say
+
+                for (Integer number : listOfNumbs) { // Type mismatch:
+                    System.out.println(number);
+                }
+            
+        - Because, it causes a Type mismatch as we have defined a List of Number to our generic List, meaning any Number could have been passed not only Integers
 
  */
 

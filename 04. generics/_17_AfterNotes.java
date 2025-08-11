@@ -1,32 +1,36 @@
 /*
- invariant -> both read and write
- covaraint -> only read
- contravariant -> only write
 
- invariant:
-    - By default generics is invariant, i.e allowing both read and write methods:
-        public static void displayAnimal(List<Dog> doglist) {
-            for (Dog animalDog : doglist) {
-                System.out.println(animalDog); // ONLY READ
+    NOTES:
+    - Invariant vs Covariant vs Contravariant
+        - Invariant -> both read and write
+        - Covariant -> only read
+        - Contravariant -> only write
+
+    - Invariant:
+        - By default generics is Invariant, i.e allowing both read and write methods:
+            public static void displayAnimal(List<Dog> doglist) {
+                for (Dog animalDog : doglist) {
+                    System.out.println(animalDog); // ONLY READ
+                }
+
+                doglist.add(new Dog());  // WRITE
+                doglist.add(new Husky()); // WRITE
             }
 
-            doglist.add(new Dog());  // WRITE
-            doglist.add(new Husky()); // WRITE
-        }
-
- covariant:
-    - We make generics in java covariant by introducing the 'extends' keyword
-        public static void displayAnimal(List<? etends Dog> doglist) {
-            for (Dog animalDog : doglist) {
-                System.out.println(animalDog); // ONLY READ
+    - Covariant:
+        - We make generics in java Covariant by introducing the 'extends' keyword
+            public static void displayAnimal(List<? extends Dog> doglist) {
+                for (Dog animalDog : doglist) {
+                    System.out.println(animalDog); // ONLY READ
+                }
             }
-        }
- contravarint:
-    - We make generics in java covariant by introducing the 'extends' keyword
-        public static void displayAnimal(List<? super Dog> doglist) {
-            doglist.add(new Dog());  // WRITE ONLY
-            doglist.add(new Husky()); // WRITE ONLY
-        }
+
+    - Contravariant:
+        - We make generics in java Contravariant by introducing the 'super' keyword
+            public static void displayAnimal(List<? super Dog> doglist) {
+                doglist.add(new Dog());  // WRITE ONLY
+                doglist.add(new Husky()); // WRITE ONLY
+            }
 
  */
 

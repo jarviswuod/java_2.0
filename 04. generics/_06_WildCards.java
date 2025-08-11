@@ -1,22 +1,35 @@
 /*
-Introducing unbounded wild card (List<?> listOfAnyVal)
- Another alternative for solving the generics invariance issue is ignoring the generics method signature.
- This can be as shown in 'sumAnyValues()' method
-    - public static Double sumAnyValues(List<?> listOfAnyVal) {...}
-Having List set to a question mark basically mean that the list can be of any type we pass in. The issue here is that you will be able to pass in a List of Object, String or anything else which will cause type safety.
 
-We can solve this issue by setting a bounded wild card
-    - public Double sumAnyValues(List<? extends Number> listOfAnyVal) {...}
-This is called upper bounded Wild card (List<? extends Number> listOfAnyVal)
+    NOTES:
+    Wild Cards <?>
+        - Introducing unbounded wild card (List<?> listOfAnyVal)
+        - This is an alternative for solving the generics invariance issue in generics, we ignore the generics method signature
+            - public static Double sumAnyValues(List<?> listOfAnyVal) {...}
+        - This means the List can be of any type we pass in.
 
-List of unknown type that extends Number
+        Problem:
+            - The issue here is, just like under unbounded type( <T> ), you will be able to pass in a List of Object, String or anything else which will cause type safety.
+        Solution:
+            - We can solve this issue by setting a bounded wild card. List of unknown type that extends Number
+                - public Double sumAnyValues(List<? extends Number> listOfAnyVal) {...}
+
+            - This is called upper bounded Wild card
+
+
+    SUMMARY:
+     - Generics in java are invariant
+     - We make Generics covariant by introducting;
+            - The bounded Type parameter(generic signature) - <T extends Number>
+            - The upper bounded wildcard - List<? extends Number>
+
+     - We have achieved covariance using 'extends Number' keyword but we have to pass a little cost for its
 
  */
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class _05_WildCards {
+public class _06_WildCards {
 
     public static void main(String[] args) {
 
@@ -54,11 +67,21 @@ public class _05_WildCards {
 
 class MathTest {
 
-    public static Double sumAnyValues(List<? extends Number> listOfAnyVal) {
+    public static Double sumAnyValu(List<? extends Number> listOfAnyVal) {
 
         double sum = 0;
         for (Number values : listOfAnyVal) {
             sum += values.doubleValue();
+        }
+
+        return sum;
+    }
+
+    public static Double sumAnyValues(List<?> listOfAnyVal) {
+
+        double sum = 0;
+        for (Object values : listOfAnyVal) {
+            // sum += values.doubleValue();
         }
 
         return sum;

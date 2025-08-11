@@ -1,50 +1,53 @@
 /*
- When we introduce the super keyword/ change the extends keyword to 'super'
-    - public static void addAnimal(List<? super Animal> animalList) {
- Observation made is;
-    Some method calls don't work any more
-        Any subclass below the Animal class
+
+    NOTES:
+    - When we introduce the super keyword/ change the extends keyword to 'super'
+        - public static void addAnimal(List<? super Animal> animalList) {...}
+    - Observation made is;
+        - Some method calls don't work any more (Any subclass below the Animal class)
             - addAnimal(dogList);
             - addAnimal(catList);
 
-    Some methods now work pretty good
-        Any super class methos above the Animal class
+        - Some methods now work pretty good (Any super class methods above the Animal class)
             - addAnimal(animalList);
             - addAnimal(objectList);
             - addAnimal(creatureList);
 
-    We are not able to read from the list anymore
-        for (Animal animal : animalList) {
-            System.out.println(animal);
-        }
+        - We are not able to read from the list anymore
+            for (Animal animal : animalList) {
+                System.out.println(animal);
+            }
 
- The reading part is fair because how can we READ the animalList as an 'Animal'. Keep in mind the animalList can contain a 'creatureList' or above, you cannot get the Creature object and then set it to animal, NOT POSSIBLE
-    - Animal animal = animalList.get(0);
- In layman language;
-    - Animal animal = new Creature(); // NOT POSSIBLE
 
- The same concept applies if we have the List set to 'Creature' class and we try to pass in an 'objectList'
-    List<? super Animal> animalList
-    addAnimal(objectList); // NOT POSSIBLE
-    - Animal animal = animalList.get(0);
- In layman language again;
-    - Creature creature = new Object(); // NOT POSSIBLE
+    - The reading part is fair because how can we READ the animalList as an 'Animal'. Keep in mind the animalList can contain a 'creatureList' or above, you cannot get the Creature object and then cast it to animal
+        - Animal animal = animalList.get(0);
+
+        - In layman language;
+            - Animal animal = new Creature(); // NOT POSSIBLE
+
+    - The same concept applies if we have the List set to 'Creature' class and we try to pass in an 'objectList'
+        - List<? super Animal> animalList
+        - addAnimal(objectList); // NOT POSSIBLE
+        
+        - Animal animal = animalList.get(0);
+            - In layman language again;
+                - Creature creature = new Object(); // NOT POSSIBLE
 
  
- To be on the safer side, you need to provide an Object ALWAYS
-    - Object animal = animalList.get(0);
-    - Object animal = new Object();
+    - To be on the safer side, you need to provide an Object ALWAYS
+        - Object animal = animalList.get(0);
+        - Object animal = new Object();
 
-         for (Object animal : animalList) {
-            System.out.println(animal);
-        }
- NOTE:
-    - super means, If we ever gonna retrive elements from a list, it's gonna be give back the elements inform of Objects ONLY. This is because, you dont know what list you will always be getting, it might be from the highest end begin the object class it's self based on super being set to the lower bound.
-    - In reality we dont always use 'super' for retriving values. We use extends to retrieve. This is because with extends, we can retrieve things as a specific type i.e as a Dog, a Cat or say Animal. In 'super' we do it with Object as we dont know what the type might be.
-    - Whenever we have extends we cannot add elements to the list.
+            for (Object animal : animalList) {
+                System.out.println(animal);
 
- - The super keyword is used for adding elements, the issue we face with 'extends'
- 
+
+    SUMMARY:
+        - super means, If we ever gonna retrieve elements from a list, it's gonna be given back to the elements inform of Objects ONLY. This is because, you don't know what list you will always be getting, it might be from the highest end begin the Object class it's self based on super being set to the lower bound
+        - In reality we don't always use 'super' for retriving values. We use extends to retrieve. This is because with extends, we can retrieve things as a specific type i.e as a Dog, a Cat or say Animal. In 'super' we do it with Object as we don't know what the type might be
+
+    - The super keyword is used for adding elements, the limitation faced with 'extends' keyword
+
  */
 
 import java.util.List;

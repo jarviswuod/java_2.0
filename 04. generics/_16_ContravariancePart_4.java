@@ -1,24 +1,29 @@
 /*
- - The super keyword is used for adding elements, the issue we face with 'extends'
- Let's say you are writing the method
-    - public static void addAnimal(List<? super Animal> animalList) {...}
- What you are really saying over here is that, the List passed here will be either a animalList, or creatureList or objectList, those are the 3 possible probability of objects we will be accpeting in the runtime.
- Don't you think that logically, it's actually safe to add a list of any subclass of Animal inside the method, say Cat or Dog
-     - animalList.add(new Cat());
-     - animalList.add(new Dog());
-    
- This is because, we know whatever will be coming to this List will be something probably larger, or bigger that what we pass in , in this case Animal, Creature, or Object. All this will be able to hold our subclasses we have here. Example;
-    public void addAnimal(List<? super Animal> animalList) {
-        animalList.add(new Animal());
-        animalList.add(new Cat());
-        animalList.add(new Dog());
-    }
 
- This is all the same as;
-    List<? super Animal> animalList =  new ArrayList<Animal>();
-    List<? super Animal> animalList =  new ArrayList<Creature>();
-    List<? super Animal> animalList =  new ArrayList<Object>();
- All the arrayLists will and can contain a new Cat, Dog, IndianCat or Husky
+    NOTES:
+    - The super keyword is used for adding elements, the limitation faced with 'extends' keyword
+    - Let's say you are writing the method
+        - public static void addAnimal(List<? super Animal> animalList) {...}
+
+    - What you are really saying over here is that, the List passed here will be either a animalList, or creatureList or objectList, those are the 3 possible probabilities of objects we will be accpeting in the runtime
+    - Logically, it's actually safe to add a list of any subclass of Animal inside the method, say Cat or Dog
+            - animalList.add(new Cat());
+            - animalList.add(new Dog());
+
+
+    - This is because, we know whatever will be coming to this List will be something probably larger/ bigger than what we pass in this case; Animal, Creature, or Object. All this will be able to hold our subclasses. Example;
+            public void addAnimal(List<? super Animal> animalList) {
+                animalList.add(new Animal());
+                animalList.add(new Cat());
+                animalList.add(new Dog());
+            }
+
+    - This is all the same as;
+            List<? super Animal> animalList =  new ArrayList<Animal>();
+            List<? super Animal> animalList =  new ArrayList<Creature>();
+            List<? super Animal> animalList =  new ArrayList<Object>();
+
+        All the arrayLists will and can contain; Cat(), Dog(), IndianCat() or Husky()
 
  */
 
