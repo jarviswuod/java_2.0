@@ -44,22 +44,25 @@ public class _10_QueuesAndStacksInAction {
         queue.offer(22);
         queue.offer(33);
 
-        System.out.println(queue.peek()); // peek(): front of queue
-        System.out.println(queue.poll()); // poll(): removes front
-        System.out.println(queue.peek()); // peek(): new front
-
-        System.out.println(queue.isEmpty()); // isEmpty(): still has 2 elements
+        System.out.println(queue); // [11, 22, 33]
+        System.out.println(queue.peek()); // 11: front of queue
+        System.out.println(queue.poll()); // removes and returns 11
+        System.out.println(queue.peek()); // 22: new front
+        System.out.println(queue); // [22, 33]
 
         System.out.println("---- Stack is starting here ----");
         // LIFO queue
         Stack<Integer> stack = new Stack<>();
-        stack.push(11); // peek(): top
-        stack.push(22); // peek() after pop
+        stack.push(11);
+        stack.push(22);
+        stack.push(33);
+        stack.push(44);
 
-        while (!stack.isEmpty()) {
-            System.out.println(stack.peek());
-            stack.pop();
-        }
+        System.out.println(stack); // [11, 22, 33, 44]
+        System.out.println(stack.peek()); // 44
+        System.out.println(stack.pop()); // removes and returns 44
+        System.out.println(stack.peek()); // 33
+        System.out.println(stack); // [11, 22, 33]
 
         System.out.println("---- Deque is starting here ----");
         // Double-ended queue

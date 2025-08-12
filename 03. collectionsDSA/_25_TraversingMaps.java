@@ -6,6 +6,14 @@
         - entrySet()
         - keySet()
 
+    - KEY:
+        - entrySet()
+            - getKey()
+            - getValue()
+
+        - keySet()
+            - get(key)
+
  */
 
 import java.util.HashMap;

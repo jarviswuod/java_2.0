@@ -10,7 +10,11 @@
             - retainAll(Collection<?> c) (intersection)
             - clear() (empty the set)
 
-    - HashSet, LinkedHashSet, TreeSet
+
+    - Implementation of Set:
+            - HashSet
+            - LinkedHashSet
+            - TreeSet
 
  */
 

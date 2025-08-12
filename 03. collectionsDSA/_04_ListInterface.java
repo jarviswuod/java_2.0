@@ -13,7 +13,7 @@
            - E get(int index)
            - E set(int index, E element)
            - void add(int index, E element)
-           - boolea addAll(int index, Collection<? extends E > c)
+           - boolean addAll(int index, Collection<? extends E > c)
            - E remove(int index)
 
             NOTE:

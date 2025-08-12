@@ -1,18 +1,20 @@
 /*
 
     NOTES:
-    - equals: -> Compares the content of the object/reference
-    - hashcode: -> Memory address of the object
-    - contains()
+    - Custom HashSet
+        - Whenever you insert an element into a HashSet, a hashcode for that element is being generated and then mapped to a particular bucket and then from the bucket it checks the hashcode of all other elements. If it finds a match, it checks the equals() method to see if the content is same or not.
+            2 things happen here:
+                - 1. If the hashcode matches, it checks the equals() method
+                - 2. If the hashcode does not match, it will not check the equals() method and will just insert the element into the HashSet
+        - If you don't override equals() and hashcode() methods, the default implementation will be used which is based on the memory address of the object. This means that even if two objects have the same content, they will be considered different if they are not the same object in memory.
+        - If you override equals() method, you must also override hashcode() method to maintain the contract between equals() and hashcode() methods. If two objects are equal according to equals() method, they must have the same hashcode.
 
-    - Always override equals() and hashcode() of your custom class before using it in a HashSet
+        - contains() process:
+            - hashcode: -> Memory address of the object
+            - equals: -> Compares the content of the object/reference
 
-    - Whenever you insert an element into a HashSet,  hashcode for that element is being generated and then mapped to a particular bucket and then from the bucket it checks the hashcode of all other elements. If it finds a match, it checks the equals() method to see if the content is same or not.
-        2 things happen here:
-             - 1. If the hashcode matches, it checks the equals() method
-             - 2. If the hashcode does not match, it will not check the equals() method and will just insert the element into the HashSet
-    - If you don't override equals() and hashcode() methods, the default implementation will be used which is based on the memory address of the object. This means that even if two objects have the same content, they will be considered different if they are not the same object in memory.
-    - If you override equals() method, you must also override hashcode() method to maintain the contract between equals() and hashcode() methods. If two objects are equal according to equals() method, they must have the same hashcode.
+    - KEY:
+        - Always override equals() and hashcode() of your custom class before using it in a HashSet
 
  */
 
@@ -21,7 +23,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class _18_CustomHashSet {
+public class _17_CustomHashSet {
 
     public static void main(String[] args) {
 

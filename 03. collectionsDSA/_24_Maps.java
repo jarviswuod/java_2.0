@@ -1,7 +1,6 @@
 /*
 
     NOTES:
-    - Map must always be defined in key, value pair
     - Map methods:
         - get() -> retrives values from a map but not safe for chaining
         - getOrDefault() -> Solves the exception that arises by seeking a non existing key in a map

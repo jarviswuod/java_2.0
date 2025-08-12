@@ -9,7 +9,7 @@
 
     - You can use Deque as either a LIFO or  FIFO
     - Instead of using a Stack go for a Deque
-    - For a normal queue too you can also use Dequeue or also use a LinkedList for it as well
+    - For a normal queue too you can also use Deque or also use a LinkedList for it as well
     - ^^ Reason, LinkedList also implements a queue
 
 

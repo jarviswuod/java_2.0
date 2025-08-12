@@ -37,7 +37,9 @@
 
    - Collections Utility Class:
       - Provides static methods for sorting, searching, and creating collections
-      - Example: Collections.sort(List<T> list)
+      - Example:
+            - Collections.sort(List<T> list)
+            - Collections.reverse(List<T> list)
 
  */
 

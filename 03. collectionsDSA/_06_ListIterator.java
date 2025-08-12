@@ -38,7 +38,7 @@ public class _06_ListIterator {
         list.add(33);
         list.add(44);
 
-        // [1, 2, 3, 4]
+        // [11, 22, 33, 44]
         ListIterator iterator = list.listIterator();
 
         System.out.println(iterator.next()); // 11

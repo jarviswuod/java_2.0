@@ -1,11 +1,12 @@
 /*
 
     NOTES:
-    - LinkedHashSet: It is a combination of HashSet and LinkedList
-    - It maintains the insertion order of elements
-    - It is slower than HashSet but faster than TreeSet
-    - It uses a doubly linked list to maintain the order of elements
-    - It is useful when you want to maintain the order of elements while still having the benefits of a HashSet
+    - LinkedHashSet:
+        - Is a combination of HashSet and LinkedList
+        - It maintains the insertion order of elements
+        - It is slower than HashSet but faster than TreeSet
+        - It uses a doubly linked list to maintain the order of elements
+        - Useful when you want to maintain the order of elements while still having the benefits of a HashSet
 
  */
 
@@ -13,7 +14,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class _17_LinkedHashSet {
+public class _18_LinkedHashSet {
 
     public static void main(String[] args) {
         Set<Integer> hashSet = new HashSet<>();

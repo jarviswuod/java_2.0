@@ -4,7 +4,7 @@
     - Intentionally using both Comparable Interface(Natural ordering) and Comparator Interface(Total ordering)
         - Total ordering to pick the bottom 3 elements (in math marks)
         - Natural ordering to pick top 3 elements (in physics marks)
-    
+
  */
 
 import java.util.ArrayList;
