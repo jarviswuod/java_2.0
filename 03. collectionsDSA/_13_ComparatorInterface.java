@@ -44,7 +44,7 @@
                 - PriorityQueue<StudentsMarks> orderedMarks = new PriorityQueue<>(marks);
 
         - Comparator interface
-            - This is ordering are passing to the PriorityQueue
+            - This is ordering passed to the PriorityQueue
             - It's also called Total ordering
             - compare() method override
                 - PriorityQueue<Integer> classMarks = new PriorityQueue<>(new MyCustomComparator());

@@ -4,7 +4,7 @@
     - The ListIterator interface is bidirectional iterator for lists
     - It extends the iterator interface and allows the list to be traversed in either directions using the next() and prev()
 
-    - Whenever you are using a LinkedList feel free to use ListItartor interface coz you might require
+    - Whenever you are using a LinkedList feel free to use ListIterator interface coz you might require
 
         interface ListIterator<E> extends Iterator<E> {
             boolean hasNext();

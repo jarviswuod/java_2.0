@@ -41,8 +41,6 @@
         - HashSet cannot be sorted
         - HashSet does not allow duplicate elements
 
-
-
  */
 
 import java.util.ArrayList;
