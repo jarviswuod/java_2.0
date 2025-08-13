@@ -53,6 +53,6 @@
 
  */
 
-public class _06_PriorityQueue {
+public class _09_PriorityQueue {
 
 }
