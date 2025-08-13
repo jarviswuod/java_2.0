@@ -81,7 +81,7 @@
         LL -> Large size(dt, nx,pr),  AL -> el only
         LL -> doubly linked list, AL -> dynamic array
         LL -> fast, AL -> slow coz of dynamic arrays
-        LL -> manupulating, LL -> Storing
+        LL -> manipulating, LL -> Storing
 
  */
 
