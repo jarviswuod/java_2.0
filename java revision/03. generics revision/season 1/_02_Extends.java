@@ -22,7 +22,6 @@
  */
 
 public class _02_Extends {
-
     public static void main(String[] args) {
 
         Home<Animal> animalObjects = new Home<>(new Cat(), new Dog());
@@ -35,7 +34,6 @@ public class _02_Extends {
         // System.out.println(stringObjects);
 
     }
-
 }
 
 class Home<T extends Animal> {
@@ -60,7 +58,6 @@ class Home<T extends Animal> {
     public String toString() {
         return "Home [animal1=" + animal1 + ", animal2=" + animal2 + "]";
     }
-
 }
 
 class Creature {

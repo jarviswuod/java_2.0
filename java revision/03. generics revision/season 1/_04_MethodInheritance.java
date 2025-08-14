@@ -46,7 +46,6 @@ class Home<T extends Animal> {
     public String toString() {
         return "Home [animal1=" + animal1 + ", animal2=" + animal2 + "]";
     }
-
 }
 
 class Creature {

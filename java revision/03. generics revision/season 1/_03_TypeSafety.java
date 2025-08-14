@@ -1,34 +1,30 @@
 /*
 
     NOTES:
-    - Type safety:
+    - Type safety is not only putting staff inside the bound limit but also retrieving it. Whenever you want to retrive a value weather Dog or Husky, it will be cast to what you defined as the upperbound.
+    - For type safety reasons, if you set it your bound to Dog and have Husky inside the Home instance, then if you retrieve the values you will get Dog and not 'Husky', this is because the compiler doesnot know if you gonna put a Dog class or any or it's subclass
 
-        - Type safety is not only putting staff inside the bound limit but also retrieving it. Whenever you want to retrive a value weather Dog or Husky, it will be cast to what you defined as the upperbound.
-        - For type safety reasons, if you set it your bound to Dog and have Husky inside the Home instance, then if you retrieve the values you will get Dog and not 'Husky', this is because the compiler doesnot know if you gonna put a Dog class or any or it's subclass
+        Home<Dog> dogHuskyHome = new Home<>(new Dog(), new Husky());
 
-            Home<Dog> dogHuskyHome = new Home<>(new Dog(), new Husky());
-
-            Dog animal2 = dogHuskyHome.getAnimal2(); ===  Dog dog1 = new Husky();
-            System.out.println(animal2);
+        Dog animal2 = dogHuskyHome.getAnimal2(); ===  Dog dog1 = new Husky();
+        System.out.println(animal2);
 
 
+            class Home<T extends Husky> {...} // Object extracted as of type Husky
+            class Home<T extends IndianCat> {...} // Object extracted as of type IndianCat
 
-        class Home<T extends Husky> {...} // Object extracted as of type Husky
-        class Home<T extends IndianCat> {...} // Object extracted as of type IndianCat
+            class Home<T extends Dog> {...} // Object extracted as of type Dog
+            class Home<T extends Cat> {...} // Object extracted as of type Cat
 
-        class Home<T extends Dog> {...} // Object extracted as of type Dog
-        class Home<T extends Cat> {...} // Object extracted as of type Cat
+            class Home<T extends Creature> {...} // Object extracted as of type Creature
+            class Home<T extends Object> {...} // Object extracted as of type Object
 
-        class Home<T extends Creature> {...} // Object extracted as of type Creature
-        class Home<T extends Object> {...} // Object extracted as of type Object
-
-        class Home<T extends String> {...} // Object extracted as of type String
-        class Home<T extends Integer> {...} // Object extracted as of type Integer
+            class Home<T extends String> {...} // Object extracted as of type String
+            class Home<T extends Integer> {...} // Object extracted as of type Integer
 
  */
 
 public class _03_TypeSafety {
-
     public static void main(String[] args) {
 
         Home<Animal> animalHome = new Home<>(new Animal(), new Dog());
@@ -46,7 +42,6 @@ public class _03_TypeSafety {
         Husky animal1Husky = huskyHome.getAnimal1();
         System.out.println(animal1Husky);
     }
-
 }
 
 class Home<T extends Animal> {
@@ -70,7 +65,6 @@ class Home<T extends Animal> {
     public String toString() {
         return "Home [animal1=" + animal1 + ", animal2=" + animal2 + "]";
     }
-
 }
 
 class Creature {

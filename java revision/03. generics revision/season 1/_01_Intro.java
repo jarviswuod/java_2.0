@@ -14,13 +14,13 @@
 
     - Invariance
         - Strict
-        - Does both read and write
+        - Does both READ and WRITE
 
     - Covariance
-        - Does ONLY read
+        - Does only READ
 
     - Contravariance
-        - Does ONLY write
+        - Does only WRITE
 
  */
 
