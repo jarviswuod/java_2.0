@@ -20,7 +20,7 @@
 
 
         - Why MultiThreading?
-            - In a single-threaded environment, only one task at a time can be performed, CPU cycles are wasted.
+            - In a single-threaded environment, only one task at a time can be performed wasting CPU cycles
             - Multitasking allows idle CPU time to be put to good use.
 
  */
