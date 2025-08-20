@@ -6,7 +6,7 @@
              - ArrayList
              - LinkedList
              - Vector
-             - Stack
+                 - Stack
 
         - Queue
              - PriorityQueue
