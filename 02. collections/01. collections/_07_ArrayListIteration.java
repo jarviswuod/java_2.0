@@ -33,7 +33,7 @@ public class _07_ArrayListIteration {
         System.out.println();
 
         // Basic loop with iterator
-        for (Iterator iterator = courses.iterator(); iterator.hasNext();) {
+        for (Iterator<String> iterator = courses.iterator(); iterator.hasNext();) {
             String course = (String) iterator.next();
             System.out.println(course);
         }

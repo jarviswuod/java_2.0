@@ -41,7 +41,7 @@ public class _13_LinkedListIteration {
         System.out.println();
 
         // Basic loop with iterator
-        for (Iterator iterator = langs.iterator(); iterator.hasNext();) {
+        for (Iterator<String> iterator = langs.iterator(); iterator.hasNext();) {
             String course = (String) iterator.next();
             System.out.println(course);
         }
