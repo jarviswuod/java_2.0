@@ -34,7 +34,6 @@
             - List<? super Animal> animalList = new ArrayList<Husky>(); // NO
 
 
-
     KEY:
         - <? super Type> (lower-bounded wildcard):
             - Accepts `Type` or its supertypes.
@@ -47,10 +46,6 @@
  */
 
 public class _12_Variance {
-
-    public static void main(String[] args) {
-
-    }
 }
 
 class Creature {

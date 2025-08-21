@@ -124,6 +124,8 @@ class MathTest {
         double sum = 0;
         for (T values : listOfAnyVal) {
             // sum += values.doubleValue(); // unbounded type
+            System.out.println(values);
+
         }
 
         return sum;

@@ -74,6 +74,7 @@ class MathTest {
         double sum = 0;
         for (Object values : listOfAnyVal) {
             // sum += values.doubleValue();
+            System.out.println(values);
         }
 
         return sum;

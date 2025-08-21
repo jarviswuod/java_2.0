@@ -4,7 +4,7 @@
     - Type safety:
         class Home<T extends Dog> {...}
 
-        Home<Dog> dogHuskyHome = new Home(new Dog(), new Husky());
+        Home<Dog> dogHuskyHome = new Home<>(new Dog(), new Husky());
 
              - If you set the upperbound to Dog, it means you can have either Dog or Dog subclasses, in this case that will be Husky class.
              - Under Home you can now have both Dog and Husky set at the same time, it's all Type safe. But you cannot add type Cat or IndianCat, it leads to compile error since Home it set to Upperbound of Dog class only
@@ -23,7 +23,7 @@
 public class _03_TypeSafety {
     public static void main(String[] args) {
 
-        Home<Dog> dogHuskyHome = new Home(new Dog(), new Husky());
+        Home<Dog> dogHuskyHome = new Home<>(new Dog(), new Husky());
         Dog animal1 = dogHuskyHome.getAnimal1();
         Dog animal2 = dogHuskyHome.getAnimal2();
 
@@ -33,10 +33,10 @@ public class _03_TypeSafety {
         Dog dog1 = new Husky();
         System.out.println(dog1);
 
-        Home<Animal> animalHome = new Home(new Animal(), new Animal());
-        Home<Dog> dogHome = new Home(new Dog(), new Dog());
-        Home<Cat> catHome = new Home(new Cat(), new Cat());
-        Home<Husky> huskyHome = new Home(new Husky(), new Husky());
+        Home<Animal> animalHome = new Home<>(new Animal(), new Animal());
+        Home<Dog> dogHome = new Home<>(new Dog(), new Dog());
+        Home<Cat> catHome = new Home<>(new Cat(), new Cat());
+        Home<Husky> huskyHome = new Home<>(new Husky(), new Husky());
 
         animalHome.getAnimal1();
         dogHome.getAnimal1();

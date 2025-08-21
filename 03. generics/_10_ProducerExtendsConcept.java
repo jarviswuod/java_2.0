@@ -7,7 +7,7 @@ public class _10_ProducerExtendsConcept {
 
         sendEmail(listOfEmployees);
         System.out.println();
-        sendEmail(listOfEmployees);
+        sendEmail(listOfStudents);
 
     }
 

@@ -22,10 +22,10 @@
 public class _04_MethodInheritance {
     public static void main(String[] args) {
 
-        Home<Animal> animalHome = new Home(new Animal(), new Animal());
-        Home<Dog> dogHome = new Home(new Dog(), new Dog());
-        Home<Cat> catHome = new Home(new Cat(), new Cat());
-        Home<Husky> huskyHome = new Home(new Husky(), new Husky());
+        Home<Animal> animalHome = new Home<>(new Animal(), new Animal());
+        Home<Dog> dogHome = new Home<>(new Dog(), new Dog());
+        Home<Cat> catHome = new Home<>(new Cat(), new Cat());
+        Home<Husky> huskyHome = new Home<>(new Husky(), new Husky());
 
         animalHome.getAnimal1().makeSound();
         dogHome.getAnimal1().makeSound();

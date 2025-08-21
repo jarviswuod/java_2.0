@@ -15,7 +15,7 @@
 
     - Other than only reading from the List, one cannot pass a object List higher than highlighted one, i.e;
         - List<? extends Animal>      // cannot accept any Creature or Object
-        - List<? extends Dog>          // cannot accept any Animal, Creature or Object
+        - List<? extends Dog>         // cannot accept any Animal, Creature or Object
         - List<? extends IndianCat>   // cannot accept any Cat, Animal, Creature or Object
 
 
