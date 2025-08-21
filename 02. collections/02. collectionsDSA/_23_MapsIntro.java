@@ -53,8 +53,4 @@
  */
 
 public class _23_MapsIntro {
-
-    public static void main(String[] args) {
-
-    }
 }

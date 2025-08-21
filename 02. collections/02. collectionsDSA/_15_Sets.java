@@ -19,8 +19,4 @@
  */
 
 public class _15_Sets {
-
-    public static void main(String[] args) {
-
-    }
 }

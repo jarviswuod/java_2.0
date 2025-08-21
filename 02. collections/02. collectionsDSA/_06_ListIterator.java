@@ -22,7 +22,7 @@
 
 /*
     NOTES:
-      - Any sort of data structure that requires an array or list we, should always gor for ArrayList
+      - Any sort of data structure that requires an array or list we, should always go for ArrayList
  */
 
 import java.util.LinkedList;
@@ -39,7 +39,7 @@ public class _06_ListIterator {
         list.add(44);
 
         // [11, 22, 33, 44]
-        ListIterator iterator = list.listIterator();
+        ListIterator<Integer> iterator = list.listIterator();
 
         System.out.println(iterator.next()); // 11
         System.out.println(iterator.next()); // 22

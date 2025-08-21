@@ -33,7 +33,4 @@
  */
 
 public class _26_TreeMapIntro {
-    public static void main(String[] args) {
-
-    }
 }

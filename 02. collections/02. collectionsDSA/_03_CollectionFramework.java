@@ -44,8 +44,4 @@
  */
 
 public class _03_CollectionFramework {
-
-   public static void main(String[] args) {
-
-   }
 }

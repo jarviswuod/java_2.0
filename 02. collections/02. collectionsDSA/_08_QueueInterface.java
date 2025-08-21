@@ -19,7 +19,4 @@
  */
 
 public class _08_QueueInterface {
-    public static void main(String[] args) {
-
-    }
 }

@@ -34,7 +34,7 @@ public class _17_CustomHashSet {
         marks.add(new StudentsMarks(40, 88));
         marks.add(new StudentsMarks(97, 19));
 
-        Set<StudentsMarks> marksHashSet = new HashSet(marks);
+        Set<StudentsMarks> marksHashSet = new HashSet<>(marks);
 
         for (StudentsMarks student : marksHashSet) {
             System.out.println(student);

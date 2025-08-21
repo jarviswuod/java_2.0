@@ -10,8 +10,4 @@
  */
 
 public class _19_SortedSet {
-
-    public static void main(String[] args) {
-
-    }
 }

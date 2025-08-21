@@ -32,9 +32,9 @@
 
     - TreeSet Methods:
         - ceiling() → least element >= given value
-        - higher() → least element > given value
-
         - floor() → greatest element <= given value
+        
+        - higher() → least element > given value
         - lower() → greatest element < given value
 
     - The above methods do not work with Set class hence could not work with set1 in the example below

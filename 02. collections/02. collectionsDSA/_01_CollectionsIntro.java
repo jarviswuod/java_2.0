@@ -11,8 +11,4 @@
  */
 
 public class _01_CollectionsIntro {
-
-    public static void main(String[] args) {
-
-    }
 }

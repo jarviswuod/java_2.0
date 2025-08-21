@@ -52,8 +52,4 @@
  */
 
 public class _09_DequeInterface {
-
-    public static void main(String[] args) {
-
-    }
 }

@@ -46,7 +46,7 @@ public class _02_Iterators {
     }
 }
 
-class OurGenericList<T> implements Iterable {
+class OurGenericList<T> implements Iterable<T> {
     private T[] items;
     private int size;
 

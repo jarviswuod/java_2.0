@@ -18,8 +18,4 @@
  */
 
 public class _20_NavigableSet {
-
-    public static void main(String[] args) {
-
-    }
 }
