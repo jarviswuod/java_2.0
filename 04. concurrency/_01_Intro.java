@@ -1,5 +1,5 @@
 /*
- 
+
     NOTES:
     - Multitasking
         - Multitasking refers to handling multiple tasks at the same time, can be achieved in computers too.

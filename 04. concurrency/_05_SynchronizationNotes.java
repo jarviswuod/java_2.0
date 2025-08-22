@@ -1,10 +1,10 @@
 /*
 
     NOTES:
-    - Synchronized Methods:
+    - synchronized keyword:
         - While a thread is inside a synchronized method of an object, all other threads that wish to execute this synchronized method or any other synchronized method of the object will have to wait
-        - This restriction does not apply to the thread that already has the lock and is executing a synchronized method of the object
-        - Such a method can invoke other synchronized methods of the object without being blocked
+        - This restriction does not apply to a thread that already has the lock and is executing on a synchronized method of the object
+        - Such a thread can invoke other synchronized methods of the object without being blocked
         - The non-synchronized methods of the object can always be called at any time by any thread
 
 
@@ -12,7 +12,7 @@
         - A thread must acquire the object lock associated with a shared resource before it can enter the shared resource
         - The runtime system ensures that no other thread can enter a shared resource if another thread already holds the object lock associated with it
         - If a thread cannot immediately acquire the object lock, it is blocked, i.e, it must wait for the lock to become available
-        - When a thread exits a shared resource, the runtime system ensures that the object lock is also relinquished. If another thread is waiting for this object lock, it can try to acruire the lock in order to gain access to the shared resource
+        - When a thread exits a shared resource, the runtime system ensures that the object lock is also relinquished. If another thread is waiting for this object lock, it can try to acquire the lock in order to gain access to the shared resource
         - It should be made clear that programs should not make any assumptions about the order in which threads are granted ownership of a lock
 
 
@@ -25,13 +25,13 @@
         - In other words, synchronization of static methods in a class is independent from synchronization of instance methods on object of the class
         - A subclass decides whether the new definition of any inherited synchronized method will remain synchronized in the subclass
 
-        
+
     - Race Condition:
-        - It occures when two or more threads simultaneously update the same value(StackkTop) and, as a consequence, leave the value in an undefined or inconsistent state
+        - It occurs when two or more threads simultaneously update the same value(StackTop) and, as a consequence, leave the value in an undefined or inconsistent state
 
 
     - Synchronized Blocks:
-        - Whereas execution of synchronized methods of an object is synchronized on the lock of the object, the synchronized block allows execution of an arbitrary code to be synchronized on the lock of aribtrary object.
+        - Whereas execution of synchronized methods of an object is synchronized on the lock of the object, the synchronized block allows execution of an arbitrary code to be synchronized on the lock of arbitrary object.
         - The general form of the synchronized statement is as follows:
             - synchronized(object ref expression) {...}
 
@@ -40,9 +40,9 @@
 
     - Summary:
         - A thread can hold a lock on an object:
-            - By executing a syncrhonized instance method of the object. (this)
+            - By executing a synchronized instance method of the object. (this)
             - By executing the body of a synchronized block that synchronizes on the object. (this)
-            - By executing a synchronized statit method of a class or a block inside a static method(in which case the object is the Class object representing the class in the JVM)
+            - By executing a synchronized static method of a class or a block inside a static method(in which case the object is the Class object representing the class in the JVM)
 
 
     - Thread Safety:
@@ -70,7 +70,6 @@ public class _05_SynchronizationNotes {
         }, "Popper").start();
 
         System.out.println("Main is exiting ...");
-
     }
 }
 

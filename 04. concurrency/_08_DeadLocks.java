@@ -2,7 +2,7 @@
 
     NOTES:
     - A deadlock is situation where a thread is waiting for an object lock that another thread holds, and this second thread is waiting for an object lock that the first thread holds
-    - Since each thread is waiting for the other to relinquish a lock, they both remain waiting forever in the Blocked-for-lock acquisition state
+    - Since each thread is waiting for the other to relinquish a lock, they both remain waiting forever in the 'blocked-for-lock-acquisition' state
     - The threads are said to be deadlocked
 
  */

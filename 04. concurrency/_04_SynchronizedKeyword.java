@@ -5,9 +5,10 @@
     - However, there are critical situation where it is desirable that only one thread at a time has access to a shared resource
 
     - Exception in thread "Pusher" java.lang.ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 5
+
  */
 
-public class _04_Synchronization {
+public class _04_SynchronizedKeyword {
     public static void main(String[] args) {
 
         System.out.println("Main is starting ...");
@@ -18,12 +19,14 @@ public class _04_Synchronization {
             int counter = 0;
             while (++counter < 10)
                 System.out.println("Pushed " + stack.push(100));
+
         }, "Pusher").start();
 
         new Thread(() -> {
             int counter = 0;
             while (++counter < 10)
                 System.out.println("Popped " + stack.pop());
+
         }, "Popper").start();
 
         System.out.println("Main is exiting ...");
@@ -55,8 +58,10 @@ class Stack {
 
         try {
             Thread.sleep(5000);
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
         array[stackTop] = element;
         return true;
     }
@@ -70,8 +75,8 @@ class Stack {
 
         try {
             Thread.sleep(1000);
-        } catch (Exception e) {
-
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         stackTop--;
         return obj;
@@ -96,23 +101,20 @@ class StackStaticMethods {
     }
 
     // public static boolean push(int element) {
-    public boolean push(int element) {
+    public boolean push(int element) throws InterruptedException {
         synchronized (StackStaticMethods.class) {
             if (isFull())
                 return false;
             ++stackTop;
 
-            try {
-                Thread.sleep(5000);
-            } catch (Exception e) {
-            }
+            Thread.sleep(5000);
             array[stackTop] = element;
             return true;
         }
     }
 
     // public static int pop() {
-    public int pop() {
+    public int pop() throws InterruptedException {
         synchronized (StackStaticMethods.class) {
             if (isEmpty())
                 return Integer.MAX_VALUE;
@@ -120,11 +122,7 @@ class StackStaticMethods {
             int obj = array[stackTop];
             array[stackTop] = Integer.MIN_VALUE;
 
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-
-            }
+            Thread.sleep(1000);
             stackTop--;
             return obj;
         }
@@ -148,36 +146,29 @@ class StackSyncMethod {
         return stackTop >= array.length - 1;
     }
 
-    public synchronized boolean push(int element) {
+    public synchronized boolean push(int element) throws InterruptedException {
         if (isFull())
             return false;
         ++stackTop;
 
-        try {
-            Thread.sleep(5000);
-        } catch (Exception e) {
-        }
+        Thread.sleep(5000);
         array[stackTop] = element;
         return true;
     }
 
-    public synchronized int pop() {
+    public synchronized int pop() throws InterruptedException {
         if (isEmpty())
             return Integer.MAX_VALUE;
 
         int obj = array[stackTop];
         array[stackTop] = Integer.MIN_VALUE;
 
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-
-        }
+        Thread.sleep(1000);
         stackTop--;
         return obj;
     }
 
-    public int popSameAss() {
+    public int popSameAss() throws InterruptedException {
         synchronized (this) {
             // Happens Internally when you use synchronized method
             if (isEmpty())
@@ -186,11 +177,8 @@ class StackSyncMethod {
             int obj = array[stackTop];
             array[stackTop] = Integer.MIN_VALUE;
 
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
+            Thread.sleep(1000);
 
-            }
             stackTop--;
             return obj;
         }
@@ -218,23 +206,20 @@ class StackMultiSyncBlock {
     }
 
     // t1, t2, t3
-    public boolean push(int element) {
+    public boolean push(int element) throws InterruptedException {
         synchronized (lock1) {
             if (isFull())
                 return false;
             ++stackTop;
 
-            try {
-                Thread.sleep(5000);
-            } catch (Exception e) {
-            }
+            Thread.sleep(5000);
             array[stackTop] = element;
             return true;
         }
     }
 
     // t1, t4, t5
-    public int pop() {
+    public int pop() throws InterruptedException {
         synchronized (lock2) {
             if (isEmpty())
                 return Integer.MAX_VALUE;
@@ -242,11 +227,7 @@ class StackMultiSyncBlock {
             int obj = array[stackTop];
             array[stackTop] = Integer.MIN_VALUE;
 
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-
-            }
+            Thread.sleep(1000);
             stackTop--;
             return obj;
         }
@@ -272,22 +253,19 @@ class StackSyncBlock {
         return stackTop >= array.length - 1;
     }
 
-    public boolean push(int element) {
+    public boolean push(int element) throws InterruptedException {
         synchronized (lock) {
             if (isFull())
                 return false;
             ++stackTop;
 
-            try {
-                Thread.sleep(5000);
-            } catch (Exception e) {
-            }
+            Thread.sleep(5000);
             array[stackTop] = element;
             return true;
         }
     }
 
-    public int pop() {
+    public int pop() throws InterruptedException {
         synchronized (lock) {
             if (isEmpty())
                 return Integer.MAX_VALUE;
@@ -295,17 +273,13 @@ class StackSyncBlock {
             int obj = array[stackTop];
             array[stackTop] = Integer.MIN_VALUE;
 
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-
-            }
+            Thread.sleep(1000);
             stackTop--;
             return obj;
         }
     }
 
-    public int popBlock() {
+    public int popBlock() throws InterruptedException {
         synchronized (lock) { // int NOT USED
             // new Interger() or new String("ss") or new Object() YES
             if (isEmpty())
@@ -314,11 +288,7 @@ class StackSyncBlock {
             int obj = array[stackTop];
             array[stackTop] = Integer.MIN_VALUE;
 
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-
-            }
+            Thread.sleep(1000);
             stackTop--;
             return obj;
         }
@@ -342,31 +312,24 @@ class StackNoSync {
         return stackTop >= array.length - 1;
     }
 
-    public boolean push(int element) {
+    public boolean push(int element) throws InterruptedException {
         if (isFull())
             return false;
         ++stackTop;
 
-        try {
-            Thread.sleep(5000);
-        } catch (Exception e) {
-        }
+        Thread.sleep(5000);
         array[stackTop] = element;
         return true;
     }
 
-    public int pop() {
+    public int pop() throws InterruptedException {
         if (isEmpty())
             return Integer.MAX_VALUE;
 
         int obj = array[stackTop];
         array[stackTop] = Integer.MIN_VALUE;
 
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-
-        }
+        Thread.sleep(1000);
         stackTop--;
         return obj;
     }
