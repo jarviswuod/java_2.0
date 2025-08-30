@@ -38,6 +38,10 @@
 
         - stream.foreach():
 
+    - Sorting Lists:
+        - Collections.sort()
+        - Collections.reverse()
+
     - Diff btwn LinkedList vs ArrayList:
         - Internally uses doubly Linked List to store elements, internally uses dynamic array to store elements
         - Fast in data manipulation(delete, update), Not fast because elements have to be manually adjusted every time
