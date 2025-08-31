@@ -67,7 +67,7 @@
         - It causes an Exception when something is violated example ;;; Type mismatch Exception issue
 
 
-    - LOWER BOUNDED WILDCARD EXAMPLE:
+    - UPPER BOUNDED WILDCARD EXAMPLE:
         - In the example below is you have the wildcard as unbounded the you loose the ability to call methods specific to the class type you have.
         - The only methods you have access to are the Object class methods only
         - Setting the lower bound however gives you more room to make method call that are specific in our case or ones that are defined in the bound class or higher, example;
@@ -100,7 +100,7 @@
         }
 
 
-    - UPPER BOUNDED WILDCARD EXAMPLE:
+    - LOWER BOUNDED WILDCARD EXAMPLE:
         - We are allowed to add values/ call write methods to the upper bound class because, what this wildcards means is essentially, what will be accepted will either be the upper class or its super classes;
             - By java rules, polymorphism, we can add a subclass to a super class with not issues
         
