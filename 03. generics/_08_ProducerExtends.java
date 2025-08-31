@@ -1,7 +1,7 @@
 /*
 
     NOTES:
-        - Generics by default is invaraint and this means that you only need to input the exact required datatype   
+        - Generics by default is invariant and this means that you only need to input the exact required datatype   
             - List<Number> listOfValues = new ArrayList<Number>();      // Works Perfect
             - List<Number> listOfValues = new ArrayList<Integer>();     // Won't work
             - List<Number> listOfValues = new ArrayList<Double>();      // Won't work
@@ -34,7 +34,7 @@
 
 
     REASON:
-        - The compiler doesn't know what type of data you will be adding, you might decide to add different lists. Example;
+        - The compiler doesn't know what type of data you will be adding, you might decide to add different type to a different list. Example;
             - Add a Double to a List of integers, which will loose it from type safety
 
             List<? extends Number> listOfNumbs; // = listNumbers;

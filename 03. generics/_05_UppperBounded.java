@@ -32,7 +32,7 @@
             - values.doubleValue();
 
         ISSUE:
-        - Even though an Integer is a Number subtype. This method ONLY works with with a List of Number objects and nothing else NOT a List of Integer or Double.
+        - Even though an Integer is a Number subtype. This method ONLY works with a List of Number objects and nothing else NOT a List of Integer or Double.
             - MathTest.sumNumValues(listNumbers) -> Works
             - MathTest.sumNumValues(listDouble) -> Error
             - MathTest.sumNumValues(listIntegers) -> Error
@@ -48,7 +48,7 @@
             - ArrayList<Number> doubList = new ArrayList<Double>(); // Type mismatch:
 
     - Covariance;
-        - Invariance in generics are not possible directly in java, this leads to introduction of unbounded Type parameter
+        - Invariance in generics is not possible directly in java, this leads to introduction of unbounded Type parameter
             - public <T> Double sumAnyValues(List<T> listOfAnyVal) {...}
 
         - What this means is that the List can take in any Number datatype and progress it as opposed to ONLY passing the specified data. You can currently pass in a Number, Float, Double, String; basically any datatype you would wish under the same method
