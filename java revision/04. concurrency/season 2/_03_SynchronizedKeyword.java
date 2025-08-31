@@ -70,7 +70,7 @@ class Stack<T> {
 
     public T peek() {
         System.out.println(size);
-        return list[2];
+        return this.list[this.size];
         // if (!isFull())
         // return list[size - 1];
         // else if (isEmpty())
