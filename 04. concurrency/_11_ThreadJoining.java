@@ -2,10 +2,9 @@
 
     NOTES:
     - Thread Joining:
-        - Thread once created and is in the 'running' state, it always runs asynchronously(in parallel)  with other threads(example main thread.)
-        -  If you want the thread to stop being executed asynchronously and want one particular thread to complete before you handle the other thread.
-        - This is where thread.join() method comes into play, what this method does is to pause other threads until it's execution is done before it can resume other thread execution.
-        -  Thread is in a 'ready-to-run" state, once it's given priority to execute and you call the join() method, you are simply pausing the asynchronous nature of thread execution and to a 'Blocked-for-join-completion' state.
+        - Thread once created and started (is in the 'running' state), it always runs asynchronously (in parallel) with other threads, e.g main thread
+        - thread.join() method comes into play, when we want to pause other threads until it's execution is done before other threads resume execution(main thread)
+        -  Thread is in a 'ready-to-run" state, once it's given priority to execute and you call the join() method, you are simply pausing the asynchronous nature of thread execution and to a 'blocked-for-join-completion' state
         - Whatever is returned can be one of the 3;
             - Join compeleted: once the thread execution is complete
             - Time elapsed: you can set timeout when calling the join method
@@ -31,8 +30,10 @@
 
     - Thread scheduler:
         - Schedulers in JVM implementations usually employ one of the two following strategies;
-            - Preemptive scheduling; setPriority(10)
-            - Time-sliced or round-robin scheduling; yield()
+            - Preemptive scheduling;
+                - setPriority(10)
+            - Time-sliced or round-robin scheduling;
+                - yield()
 
  */
 

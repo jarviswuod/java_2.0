@@ -19,7 +19,7 @@
         - The runtime environment distinguishes between user threads and daemon threads
         -  Calling the setDaemon(boolean) method in the Thread class (before it's started) marks the status of the thread as either daemon or user
         - As long as a user thread is alive, the JVM doesnot terminate
-        - A daemon thread is stopped if there are not more user threads running thus terminating the program
+        - A daemon thread can be stopped if there are not more user threads running thus terminating the program
 
 
     - Thread Creation:

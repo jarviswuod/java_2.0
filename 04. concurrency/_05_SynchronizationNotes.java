@@ -11,7 +11,7 @@
     - Rules of Synchronization:
         - A thread must acquire the object lock associated with a shared resource before it can enter the shared resource
         - The runtime system ensures that no other thread can enter a shared resource if another thread already holds the object lock associated with it
-        - If a thread cannot immediately acquire the object lock, it is blocked, i.e, it must wait for the lock to become available
+        - If a thread cannot immediately acquire the object lock, it is blocked, and it must wait for the lock to become available
         - When a thread exits a shared resource, the runtime system ensures that the object lock is also relinquished. If another thread is waiting for this object lock, it can try to acquire the lock in order to gain access to the shared resource
         - It should be made clear that programs should not make any assumptions about the order in which threads are granted ownership of a lock
 

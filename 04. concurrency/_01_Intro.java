@@ -15,8 +15,8 @@
 
         - Threads vs Process:
             - Threads share the same address space
-            - Context switching between threads is usually less expensice than between processes since they share same address
-            - The cost of communication between threads is realtively low because of sharing same space address between threads
+            - Context switching between threads is usually less expensive than between processes since they share same address
+            - The cost of communication between threads is relatively low because of sharing same space address between threads
 
 
         - Why MultiThreading?

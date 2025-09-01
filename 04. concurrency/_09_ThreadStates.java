@@ -2,23 +2,21 @@
 
   created -> new
                |
-     (started) |
+     started() |
                |
-           ready-to-run  <------------------------------
-      |   |    ^                                        | Leaving non-runnable
-      |   |    |                |-----------------------------------------------------------|
-      |   |    |                | sleeping            blocked-for-        blocked-          |
-      |  Scheduling             |                   join-completion       for-I/O           |
-      |   |    |                |                                                           |
-      |   |    |                |                                                           |
-      |   |    |                |                                                           |
-      |   |    |    Entering    | waiting-for-     on notification         blocked-for      |
-      |   v    |  non-runnable  | notification    --------------->      lock-acquisition    |
-      |    Running----------->  |                                                           |
-      |        |                |-----------------------------------------------------------|
-      v        v
-       completed/Terminated
-               |
+        ready-to-run  <----------------------------------
+               ^                                        | Leaving non-runnable
+               |                                        |
+               |                |-----------------------------------------------------------|
+               |                | sleeping            blocked-for-        blocked-          |
+               |                |                   join-completion       for-I/O           |
+               |    Entering    |                                                           |
+               |  non-runnable  |                                                           |
+           Running----------->  | waiting-for-     on notification         blocked-for      |
+               |                | notification    --------------->      lock-acquisition    |
+               v                |                                                           |
+        Completed/Terminated    |-----------------------------------------------------------|
+               |                
                v
               Dead
 
@@ -31,7 +29,7 @@
     - Sleeping and Waking up:
         - A thread calls the start() method, and hence the thread is in the 'ready-to-run' state and then the CPU schedules a particular thread to run and now it is in the 'runnable' or 'running' state, and then we call sleep() method.
         - Whenever, we call the sleep() method, the thread goes to the 'sleeping' state and it can only be awakened on 2 conditions;
-            - Time elapsed(Example after a minute sleep)
+            - Time elapsed. E.g 1 minute
             - Thread interrupted(some other thread interrupted this thread when sleeping, it won't wait for the time elapse, it will go to the 'ready-to-run' state and when it gets to the 'running' state it will throw an interrupted exception). Hence need to wrap the sleep method with exception. Same for the wait() method as well, it will not throw immediately but will once it gets to the 'running' state
 
             - After either condition the thread will go to the 'ready-to-run' state to start it's execution

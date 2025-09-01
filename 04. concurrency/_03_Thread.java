@@ -6,17 +6,18 @@
             - class Program extends Thread {...}
 
             - Custom Thread name
-                - new Program("program thread")
-                - public Program(String name) {
+                Thread t1 = new Program("program thread")
+                public Program(String name) {
                     super(name);
                 }
+                
                 - Thread.currentThread().getName()
 
 
         - Using Runnable interface
 
     - Whatever code you want executed in a Thead, you write it under the run() method you override when extending the Thread class.
-    - start() methods does not start immediately, it's an asynhronous method and returns immediately. It's now upto JVM to start the Thread execution when it wants to
+    - start() methods does not start immediately, it's an asynhronous method that returns immediately. It's now upto JVM to start the Thread execution when it wants to
     - Parent child relationship between 2 threads, main begin the parent of other threads
     - No order for execution of Threads
     - If JVM finds no user threads running, it might allow the Deamon threads to run or not. However the program doesnot terminate then there is even a single user thread running
