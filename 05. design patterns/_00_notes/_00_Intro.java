@@ -41,7 +41,4 @@
  */
 
 public class _00_Intro {
-    public static void main(String[] args) {
-
-    }
 }

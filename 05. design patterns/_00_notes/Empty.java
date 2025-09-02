@@ -8,11 +8,11 @@
 
 
     - Advantages and Disadvantages
-        - Advatanges:
+        - Advantages:
             - 
 
 
-        - Disadvatanges:
+        - Disadvantages:
             - 
 
  */

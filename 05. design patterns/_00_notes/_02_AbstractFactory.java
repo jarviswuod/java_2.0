@@ -17,14 +17,14 @@
 
 
     - Advantages and Disadvantages
-        - Advatanges:
+        - Advantages:
             - Consistency: It promotes consistency by ensuring that products genrerated by the factory are compatible and consistent with each other
             - Separation of Responsibility: It enables the isolation of object creation, this means that client code remains isolated from the specifics of object creation contributing to high level of abstraction
             - Flexibility: It offers flexibility as you fcan easily introduce new product families by creating new concrete Factory classes without changing existing client code
             - Loose coupling: It encourages separation, Clients rely on the abstract interfaces of factories and products which reduces dependecy on concrete classes
 
 
-        - Disadvatanges:
+        - Disadvantages:
             - Complexity: It introduces increased complexity to the code base particularly when managing multiple factories and products families. As more type of product and factories are added, the number of classes and interactions can grow substantially potentially making the code hanrder to understand and maintain
             - Limited Scope: It's most suitalbe when dealing with a specific set of related product families. If the application requires creation of individual objects with unique chacteristcs, other creation patterns like Factory Method or Builder might be more appropriate
 

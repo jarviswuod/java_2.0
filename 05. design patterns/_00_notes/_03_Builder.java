@@ -18,7 +18,7 @@
 
 
     - Advantages and Disadvantages
-        - Advatanges:
+        - Advantages:
             - Common Approach: It promotes the separation of concerns efectively segregating the building process from the client code, this separation simplfies teh management of complex creation and respresentation
 
             - Configurability: It enables the creation of objects with favious configurations while using the same building process
@@ -26,7 +26,7 @@
             - Improved Readability: It enhances code readability as primary code primarily concentrates on high level object construction rather than delving into detailed construction steps
 
 
-        - Disadvatanges:
+        - Disadvantages:
             - Increased code Complexity: This complexity arises from the creation of multiple classes and interfaces which can make the overall code base more intricate. This can be probematic for smaller projects where the benefits of the pattern might not be fully realised
             - Potential for inconsistency: This arises because the pattern involves constructing an object step by step, if the builder is not used correctly there is a possibility of introducing inconsistencies. For instance forgetting to send the required property or setting property in the wrong order could result in an object that is invalid or unexpected state
 

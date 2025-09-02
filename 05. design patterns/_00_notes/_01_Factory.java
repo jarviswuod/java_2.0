@@ -16,12 +16,12 @@
             - This is a product subclass that implements the specific fucntions of the created objects
 
     - Advantages and Disadvantages
-        - Advatanges:
+        - Advantages:
             - Flexibility to introduce new types of products without changing with the existing client code
             - Weak coupling: It reduces the coupling between client code and concrete implementations providing loose coupling because clients depend on the factory interface ranter than the concrete classes
             - Separation of Responsibility: The method separates object creation from te rest of the code making it easier to manage changes to the object creation logic
 
-        Disadvantages:
+        - Disadvantages:
             - Complexity: Creating separate concrete Facotry classes for each object type can result in more classes and potentially more complex relationships between them
             - COde duplication: If creating logic for multiple products is similar you may end up duplicating code across implementations of a particular factory
 

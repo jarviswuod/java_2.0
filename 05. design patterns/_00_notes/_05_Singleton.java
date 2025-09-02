@@ -10,14 +10,14 @@
 
 
     - Advantages and Disadvantages
-        - Advatanges:
+        - Advantages:
             - Global access: It provides a single wellpdefined access point to an instance ensuring global access and making it easy to manage and use throughout the application
             - Resource Management: It can control the allocation and release of resources guranetting there efficient use
             - State management: It's capable of maintaining a unique state within an application which is particulalry useful for storing configurations settings or shared data that needs to be accessed by various componenets
             - Lazy Intialization: It can support lazy initialization meaning the resources can be loaded on demand. This improves performance by defering the load of the resources until it's needed.
 
 
-        - Disadvatanges:
+        - Disadvantages:
             - Testing: The pattern can be a challenging task due to tight coupling and global nature of a singlton, making the codebase difficult to test
             - Race conditions: In multithreaded environment there's an added complexity as the creation of a singleton must be thread safe to prevent race conditions ensuring the instance is created only once even when multiple threads attempt to create it simultaneously
             - Anti-pattern: It's seen as an antipattern because it adds complexity to the code and is very difficult to resuse or test
