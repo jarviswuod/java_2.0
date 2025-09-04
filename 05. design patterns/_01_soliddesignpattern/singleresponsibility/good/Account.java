@@ -1,12 +1,11 @@
-package _01_soliddesignpattern.singleresponsibility;
+package _01_soliddesignpattern.singleresponsibility.good;
 
 import java.math.BigDecimal;
 
 public class Account {
-
     private int accountNumber;
     private String firstName;
-    private BigDecimal totalNumber;
+    private BigDecimal totalAmount;
 
     public int getAccountNumber() {
         return accountNumber;
@@ -24,12 +23,11 @@ public class Account {
         this.firstName = firstName;
     }
 
-    public BigDecimal getTotalNumber() {
-        return totalNumber;
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setTotalNumber(BigDecimal totalNumber) {
-        this.totalNumber = totalNumber;
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
-
 }
