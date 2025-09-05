@@ -1,4 +1,4 @@
-package _01_soliddesignpattern.openclosed;
+package _01_soliddesignpattern.openclosed.good;
 
 public class SubstractOperation implements Operation {
 

@@ -7,4 +7,8 @@ public class CreditCardLoan implements LoanPayment {
         // Logic goes here
     }
 
+    @Override
+    public void doRepayment(int amount) {
+        // Logic here
+    }
 }

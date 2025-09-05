@@ -14,7 +14,6 @@ public class CreditCardLoan implements LoanPayment {
 
     @Override
     public void doRepayment(int amount) {
-        throw new UnsupportedOperationException("Repayment is not allowed.");
+        // Logic goes here
     }
-
 }

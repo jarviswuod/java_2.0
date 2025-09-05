@@ -6,6 +6,10 @@ package _01_soliddesignpattern.dependencyinversion;
     - Dependency Inversion: This means we should not be having any dependencies on any modules or any submodules. SO high lvel modules should not be having dependecy on low level modules or any classes or objects of it. 
     - We should design it such that it doesnot have dependencies on each other on different classes and objects
 
+    - BAD EXAMPLE EXPLANATION:
+    - GOOD EXAMPLE EXPLANATION:
+
+    
     - Code Example:
         - Under the bad design, we have the Calculator, we have calculate method() and itn this calculate method we have a swith statement for passing the operation we want, if we pass the "add" we are creating the AddOperation (using th new keyword) and when we pass the "sub" we are creating the SubOperation too. We have the SubOperation and AddOperation classes
         - With this design, there is a flaw because, your high level module should not have dependency on low level modules, over here a high level module is Calculator {}, the calculate() method, this calculate() method have dependecy on AddOperation and SubOperation class this is because, we are creating new insantances of the classes themselves. i.e you need an isntance of AddOperation to be created to be able to use it yin our method, violating the Dependency Inversion, you have the dependecy that you need or you creating one on your own.

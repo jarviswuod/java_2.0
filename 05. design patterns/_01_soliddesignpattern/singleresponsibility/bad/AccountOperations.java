@@ -1,18 +1,6 @@
 package _01_soliddesignpattern.singleresponsibility.bad;
 
-/*
-
-    NOTES:
-    - The deposit method should not be part of AccountOperations
-        public void deposit(int amount, int accountNumber) {}
-
-        - Reason is account operations are responsible for doing operation for account like add account, update account get account. However deposit is something called as transaction which eventually not responsible by account. Adding this method violates Single Responsibility principle
-        
-        N/B:
-        - Create new class which actually does TransactionOperations.
-
- */
-
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +19,15 @@ public class AccountOperations {
         return accountMap.get(accountNumber);
     }
 
-    public void deposit(int amount, int accountNumber) {
-        // Move this method to different class
+    // Move this method to different class
+    public void deposit(BigDecimal amount, int accountNumber) {
+        Account account = getAccount(accountNumber);
+        account.setTotalAmount(account.getTotalAmount().add(amount));
+    }
+
+    // Move this method to different class
+    public void withdraw(BigDecimal amount, int accountNumber) {
+        Account account = getAccount(accountNumber);
+        account.setTotalAmount(account.getTotalAmount().subtract(amount));
     }
 }

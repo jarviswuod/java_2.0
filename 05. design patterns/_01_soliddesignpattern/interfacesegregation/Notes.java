@@ -6,6 +6,10 @@ package _01_soliddesignpattern.interfacesegregation;
     - Interface Segregation: It states that we should create an interface in such a way that those intefaces should have better method that needs to be implemented
     - You should not create a interface with 100's of methdos that are not needed by the client
 
+    - BAD EXAMPLE EXPLANATION:
+    - GOOD EXAMPLE EXPLANATION:
+
+    
     - Example Explanation:
         - Over here we have the DAOInterface interface with 4 methods we need to override then we implement the interface. We have created it in such a way that it can access the file system as well as DB system both all them either it can do the file as well or it can open the Db connection as well, after that it can create or delete a record
         - If we go to the DBDaoConnection concrete class, we implement the  DAOInterface for extentions with the DB, we can do everything/ovveried every method until we are only left with openFile() method. We cannot openFile() because this is an open DB connection, we are throwing the UnsupportedOperationException

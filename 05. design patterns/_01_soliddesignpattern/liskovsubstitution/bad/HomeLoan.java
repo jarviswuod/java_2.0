@@ -16,5 +16,4 @@ public class HomeLoan implements LoanPayment {
     public void doRepayment(int amount) {
         // Logic goes here
     }
-
 }

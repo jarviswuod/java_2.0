@@ -1,14 +1,5 @@
 package _01_soliddesignpattern.singleresponsibility.bad;
 
-/*
-
-    NOTES:
-    - Single responsibility principle states that whatever class you create should have only have a single responsibility/ have only one reason to change 
-    - Whatever classes you have should have only one responsibility and that responsibility should only be followed by that class
-    - To know if the principle is followed just ask one question, what the responsibility it does and when you discover "and" that means it's not a solid design principle
-
- */
-
 import java.math.BigDecimal;
 
 public class Main {
@@ -24,7 +15,7 @@ public class Main {
         accountOperations.addAccount(account);
 
         // BAD - SINGLETON RULE BROKEN
-        accountOperations.deposit(123, 1230);
+        accountOperations.deposit(BigDecimal.valueOf(123), 123);
 
     }
 }
