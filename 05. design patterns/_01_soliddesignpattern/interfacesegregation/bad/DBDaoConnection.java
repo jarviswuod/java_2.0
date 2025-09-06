@@ -9,7 +9,7 @@ public class DBDaoConnection implements DAOInterface {
 
     @Override
     public void openFile() {
-        // We are in DB COnnection so no need to support open file
+        // We are in DB Connection so no need to support open file
         throw new UnsupportedOperationException("Open File is not supported");
     }
 
