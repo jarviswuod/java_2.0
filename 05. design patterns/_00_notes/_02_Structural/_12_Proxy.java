@@ -1,3 +1,4 @@
+package _02_Structural;
 /*
 
     NOTES:

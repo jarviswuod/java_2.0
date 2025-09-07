@@ -2,18 +2,14 @@
 
     NOTES:
     - Pattern Types:
-        - Creational:
-            - Def:
-                The different ways to create objects
+        - Creational: The different ways to create objects
             - Factory Method
-            - Abstract Method
-            - BUillder
+            - Abstract Factory Method
+            - Builder
             - Prototype
             - Singleton
 
-        - Structural:
-            - Def:
-                The relationship between created objects
+        - Structural: The relationship between created objects
             - Adapter
             - Bridge
             - Composite
@@ -22,9 +18,7 @@
             - Flyweight
             - Proxy
 
-        - Behavioural:
-            - Def:
-                The interation/communication between objects
+        - Behavioural: The interation/communication between objects
             - Chain of Responsibility
             - Command
             - Interpreter
