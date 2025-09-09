@@ -67,6 +67,11 @@ package _03_SOLID.D;
 
         - The advantage of this method is that it provides as with the flexibility because whenever we create a Car object at runtime we can pass in any type of Engine we want the Car to be built with
 
+        - Advantages of Dependecy Injection;
+            1. It promotes loose coupling between components by removing direct dependecies so that the componenets rely on abstractions rather than concrete implementations making them more indepedent and easy to maintain
+            2. It simplifies unit testing by allowing componenets to be easily replaced with mock or stub implemetation during testing this enables isolated testing of individual componenets without relying on dependecies
+            3. It impoves flexiblity because we could swap out dependecies at runtime
+
  */
 
 public class Notes {
