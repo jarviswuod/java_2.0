@@ -3,7 +3,7 @@ package _03_SOLID.L;
 /*
 
     NOTES:
-    - Objects of a superclass should be replaceable with objects of its subclass without affecting the correctness of the program
+    - Liskov Substitution Principle: Objects of a superclass should be replaceable with objects of its subclass without affecting the correctness of the program
     - This principle ensures that inheritance hierachies are well designed and sub classes adhere to their super classes contracts.
     - Violation of this principle can lead to unexpected behviour or errors when substituting the objects making the code harder to reason about and maintain
 

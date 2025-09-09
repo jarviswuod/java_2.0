@@ -3,7 +3,7 @@ package _03_SOLID.O;
 /*
 
     NOTES:
-    - Software entities (classes, modules, functions, etc) should be open for extenstion but closed for modifications
+    - Open-closed Principle: Software entities (classes, modules, functions, etc) should be open for extenstion but closed for modifications
     - THis principle promotes the idea that existing code should be able to be extended with new fucntionality without  modifing it's source code.
     - It encourages the user of abstraction and polymorphism to achieve it's goal
 
