@@ -1,15 +1,16 @@
-package _03_SOLID.I;
+package _03_SOLID.D;
 
 /*
 
     NOTES:
-    - Clients should not be forced to depend on interfaces they do not use
+    - High-level modules should not depend on low-level modules. Both should depend on abstractions
 
     - BAD CODE EXPLAINED:
         - 
 
     - GOOD CODE EXPLAINED:
         - 
+
 
  */
 
