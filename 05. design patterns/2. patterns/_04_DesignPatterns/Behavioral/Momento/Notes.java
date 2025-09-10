@@ -103,7 +103,90 @@ package _04_DesignPatterns.Behavioral.Momento;
 
 
     - CODE EXPLANATION:
-        - 
+        - The EditorState class is a made final with both it's 2 variables final too;
+                public final class EditorState {
+                    private final String title;
+                    private final String content;
+                    private final Instant createdAt;
+                    ...
+                }
+
+        - The reason for this is to ensure robustness, once an EditorState object is created, it cannot be changed
+        - Al fields are final and only have a getter method; this is because will need this 'states'/ detials when we will restore the content and title to the previous states, i.e we will be restoring the Editor class with details we snapped earlier
+                public String getTitle() {
+                    return title;
+                }
+
+                public String getContent() {
+                    return content;
+                }
+
+        - We have the extra field and method of createdAt, this enables to take the state meta data at that particular moment to give us a little information abou tthe state/ when it was backed up
+                private final Instant createdAt;
+                public EditorState(String title, String content) {
+                    this.title = title;
+                    this.content = content;
+                    this.createdAt = Instant.now();
+                }
+                public Instant getCreatedAt() {
+                    return createdAt;
+                }
+
+        - Inside our Editor class we have a couple of methods
+            - This methods takes a snap with Editor's current title and content to help create an EditorState which will be stored in our History (Caretaker)
+                    public EditorState createState() {
+                        return new EditorState(title, content);
+                    }
+
+            - To restore our Editor to our previous state, we create a restore method which takes in an EditorState object and we can simply take values from that State back to our Editor. The restore method restores the Editor to any kind of state
+                    public void restore(EditorState state) {
+                        title = state.getTitle();
+                        content = state.getContent();
+                    }
+
+
+        - Inside out History class (Caretaker), we have a deque which stores a list of all previous EditorState
+        We also make reference to our Editor object and then when we construct the History object we need to pass in Editor that the History class is refereing to
+                public class History {
+
+                    private final Deque<EditorState> states = new ArrayDeque<>();
+                    private final Editor editor;
+
+                    public History(Editor editor) {
+                        this.editor = editor;
+                    }
+                    ***
+                }
+
+        - Our backup() methods adds onto the states list the currect state of the Editor, of which we have a createState() method to help us in that
+                public void backup() {
+                    states.push(editor.createState());
+                }
+
+        - The undo() method allows us to restore the editor to it's last backed up state. Just as a safety measure we have to check for any previous EditorState to revert to preventing any runtime Expcetion
+
+                public void undo() {
+                    if (states.isEmpty())
+                        return;
+
+                    editor.restore(states.pop());
+                }
+                
+        - ShowHistory lists all the backed-up EditorState of our Editor
+
+                public void showHistory() {
+                    System.out.println("History: Here is the list of Mementos");
+
+                    for (EditorState editorState : states) {
+                        System.out.println(editorState.toString());
+                    }
+                }
+
+        - We test our Memento solution for the Editor. We pass the Editor into the Histoy object
+                public static void main(String[] args) {
+                    Editor editor = new Editor();
+                    History history = new History(editor);
+                }
 
 
     - AI IMPROVEMENTS MADE:
