@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Title: " + editor.getTitle());
         System.out.println("Content: " + editor.getContent());
 
-        // history.showHistory();
+        history.showHistory();
 
         history.undo();
         System.out.println("Title: " + editor.getTitle());

@@ -30,7 +30,7 @@ public class History {
         System.out.println("History: Here is the list of Mementos");
 
         for (EditorState editorState : states) {
-            editorState.showName();
+            System.out.println(editorState.showName());
         }
     }
 }

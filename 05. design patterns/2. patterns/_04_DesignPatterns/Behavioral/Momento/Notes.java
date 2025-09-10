@@ -72,7 +72,7 @@ package _04_DesignPatterns.Behavioral.Momento;
         - This is the Memento pattern; The abstract names that each class would be in the memento pattern:
 
                 |----------------------|                |----------------------|
-                |  Originator          |                |  EditorState         |
+                |  Originator          |                |  Memento             |
                 |----------------------|--------------->|----------------------|
                 |  Content: String     |                |  Content: String     |
                 |----------------------|                |----------------------|
@@ -90,6 +90,7 @@ package _04_DesignPatterns.Behavioral.Momento;
                                                         |  pop():           |
                                                         |  push():          |
                                                         |-------------------|
+
             - These abstract names for the classes in the Memento Pattern come rom the original Gang of Four(GoF) book. Note that our solution differs slightly from the above pattern, as our Caretaker class, History, also has a field that stores a reference to the Editor, so that the Histroy class can restroe the Editor's state when the user clickes undo    
             
         - When to use the Memento Pattern:
@@ -101,6 +102,8 @@ package _04_DesignPatterns.Behavioral.Momento;
             -  The app might consume a lot of RAM if lots of Mementos are created
 
 
+    - CODE EXPLANATION:
+        - 
 
 
  */

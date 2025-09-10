@@ -29,6 +29,6 @@ public class EditorState {
     }
 
     public String showName() {
-        return stateCreatedAt + "/" + title;
+        return stateCreatedAt + "/ " + title;
     }
 }
