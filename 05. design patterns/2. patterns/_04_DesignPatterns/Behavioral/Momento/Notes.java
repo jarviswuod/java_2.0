@@ -106,6 +106,33 @@ package _04_DesignPatterns.Behavioral.Momento;
         - 
 
 
+    - AI IMPROVEMENTS MADE:
+        - EditorState:
+            - final class and fields
+            - Instance for timestamp
+
+        - History:
+            - Swapping Stack for Deque interface
+
+            - New:
+                public void undo() {
+                    if (states.size() <= 0) {
+                        return;
+                    }
+
+                    EditorState prevState = states.peek();
+                    states.pop();
+                    editor.restore(prevState);
+                }
+
+            - Old:
+                public void undo() {
+                    if (states.isEmpty())
+                        return;
+
+                    editor.restore(states.pop());
+                }
+
  */
 
 public class Notes {

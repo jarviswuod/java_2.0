@@ -1,19 +1,17 @@
 package _04_DesignPatterns.Behavioral.Momento.good;
 
-import java.util.Date;
+import java.time.Instant;
 
 // Memento
-public class EditorState {
-    private String title;
-    private String content;
-
-    // State meta data
-    private Date stateCreatedAt;
+public final class EditorState {
+    private final String title;
+    private final String content;
+    private final Instant createdAt;
 
     public EditorState(String title, String content) {
         this.title = title;
         this.content = content;
-        // this.stateCreatedAt = Date.now();
+        this.createdAt = Instant.now();
     }
 
     public String getTitle() {
@@ -24,11 +22,12 @@ public class EditorState {
         return content;
     }
 
-    public Date getStateCreatedAt() {
-        return stateCreatedAt;
+    public Instant getCreatedAt() {
+        return createdAt;
     }
 
-    public String showName() {
-        return stateCreatedAt + "/ " + title;
+    @Override
+    public String toString() {
+        return createdAt + " / " + title;
     }
 }

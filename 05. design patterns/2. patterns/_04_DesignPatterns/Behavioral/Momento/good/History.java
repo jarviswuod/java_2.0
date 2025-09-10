@@ -1,12 +1,13 @@
 package _04_DesignPatterns.Behavioral.Momento.good;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 // Caretaker
 public class History {
 
-    private Stack<EditorState> states = new Stack<>();
-    private Editor editor;
+    private final Deque<EditorState> states = new ArrayDeque<>();
+    private final Editor editor;
 
     public History(Editor editor) {
         this.editor = editor;
@@ -17,20 +18,17 @@ public class History {
     }
 
     public void undo() {
-        if (states.size() <= 0) {
+        if (states.isEmpty())
             return;
-        }
 
-        EditorState prevState = states.peek();
-        states.pop();
-        editor.restore(prevState);
+        editor.restore(states.pop());
     }
 
     public void showHistory() {
         System.out.println("History: Here is the list of Mementos");
 
         for (EditorState editorState : states) {
-            System.out.println(editorState.showName());
+            System.out.println(editorState.toString());
         }
     }
 }

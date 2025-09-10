@@ -2,8 +2,8 @@ package _04_DesignPatterns.Behavioral.Momento.good;
 
 // Originator
 public class Editor {
-    private String title;
-    private String content;
+    private String title = "";
+    private String content = "";
 
     public EditorState createState() {
         return new EditorState(title, content);
