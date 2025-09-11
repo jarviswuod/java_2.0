@@ -26,9 +26,54 @@ package _04_DesignPatterns.Behavioral.State;
 
             - The Document class will store a reference to one of the state classes to represent the current state that it is in. Then, instead of Document implementing state-specific behavioir by itself, it delegate al the state-realated work to the state object that it has a reference to:
 
+                |----------------------|            |----------------------|
+                |  Document            |            |  State               |
+                |----------------------|<>--------->|----------------------|
+                |  state               |            |  publish():          |
+                |  currentUserRole     |            |----------------------|
+                |----------------------|                   ^
+                |  publish():          |                   |
+                |----------------------|                   |
+                                                    |-------------------|
+                                                    |  Draft            |
+                                                    |-------------------|-|
+                                                    |  document         | |-|
+                                                    |-------------------| | |-|
+                                                    |  publish():       | | | |
+                                                    |-------------------| | | |  
+                                                      |-------------------| | |  
+                                                        |-------------------| |
+                                                          |-------------------|
 
+        - Above, 'Document' keeps reference to (is composed of) a State object. Notice that we are using polymorphism, as the 'state' field can be any of the concrete state classes (Draft, Moderation, Published), as we are coding to an interface, not concrete classes
 
-        
+        - In Document, the publish() method calls state.publish() - it delegates the work to the concrete state object. Why is this good? Because our solution now satisfies the Open/Closed Principle: if we want to add a new state, we create state class that implements the 'State' interface -  we extend our codebase (add new classes) without having to modify any current classes ('Document' in our case)
+
+        - 
+
+                |----------------------|            |-----------------|
+                |  Context             |            |  State          |
+                |----------------------|<>--------->|-----------------|
+                |  - state             |            |  doThis():      |
+                |----------------------|            |  doThat():      |
+                |  + context()         |            |-----------------|
+                |  + setState():       |                   ^
+                |  + doThis():         |                   |
+                |  + doThat():         |                   |
+                |----------------------|            |--------------------------|
+                                                    |  ConcreteStates          |
+                                                    |--------------------------|-|
+                                                    |  - context               | |-|
+                                                    |--------------------------| | |-|
+                                                    |  + setContext(context):  | | | |
+                                                    |  + doThis():             | | | |
+                                                    |  + doThat():             | | | |
+                                                    |  + doThat():             | | | |
+                                                    |--------------------------| | | |
+                                                      |--------------------------| | |
+                                                        |--------------------------| |
+                                                          |--------------------------|
+    - 
 
  */
 
