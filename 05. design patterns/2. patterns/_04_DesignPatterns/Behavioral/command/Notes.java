@@ -92,6 +92,10 @@ package _04_DesignPatterns.Behavioral.command;
 
         - The Command Pattern solves this issue b breaking the app into layers, following the good software desgn principl called "principle of separation of concerns". The Command Pattern breaks the app into two layers; the GUI is responsible for rendering things on the screen, capturing user input, and showing results. Then when it comes to the Important stuff, such as validating the info from a contact form and sending an email, the GUI delegates that task to the underlying layer of business logic
 
+        - GoF UML:
+        
+
+
  */
 
 public class Notes {
