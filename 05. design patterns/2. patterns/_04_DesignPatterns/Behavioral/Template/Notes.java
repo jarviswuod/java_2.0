@@ -148,8 +148,6 @@ package _04_DesignPatterns.Behavioral.Template;
             - Some clients may be limited by the provided template
             - Template methods can be hard to maintain if they have lots of steps
 
-
-
  */
 
 public class Notes {

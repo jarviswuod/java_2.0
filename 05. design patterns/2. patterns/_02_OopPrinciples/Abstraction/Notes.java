@@ -3,13 +3,61 @@ package _02_OopPrinciples.Abstraction;
 /*
 
     NOTES:
-    - This is a concept used to reduce the complexity by hiding uncessary details of a class to a user of that class.
-        - Example when pressing a button a TV remote, you dont have to worry about all the interraction with the internal circuit board
+    - Abstraction;
+        - Is an OOP principle used to reduce the complexity by hiding uncessary details of a class to a user of that class.
+            - Example when pressing a button a TV remote, you don't have to worry about all the interaction with the internal circuit board of the remote
 
-    - Without abstraction the user needs to know more information and understand the internal logic involved in sending an email, if any of those implementations are changed e.g adding a URL as parameter to any of the methods, then all classes using the email service will then have to change, risking adding bugs to the previously working code. but with abstractions, we just the parameter to one method and we good to go
+    - BAD CODE EXPLANATION:
+        - This is a simple class example without abstraction; we have a load of public methods to any user of the EmailService class
+
+            public class EmailService {
+                public void sendEmail() {...}
+                public void connect() {...}
+                public void authenticate() {...}
+                public void disconnect() {...}
+            }
+
+        - With this example, if we want to send an email, we have to; Create an EmailService object instance, Connect to the email server, Authenticate that it's us, Send the email mesage we wanted then, remeber to Disconnect from the email server
+
+            public static void main(String[] args) {
+
+                EmailService emailService = new EmailService();
+                emailService.connect();
+                emailService.authenticate();
+                emailService.sendEmail();
+                emailService.disconnect();
+            }
+        - ISSUE:
+            - The issue with this solution is that all the users have to follow all the steps in a specific order and incase another method is added to the class then all the users of the class have to update their codes as well
+
+        - SOLUTION:
+            - A better solution is to make the  methods private and only expose one method to the users of the class
+
+
+    - GOOD CODE EXPLANATION:
+        - Over here we make all the methods private except the sendEmail() method. This makes it easy to make method call as we only have a single method to interact with
+
+            public class EmailService {
+                public void sendEmail() {
+                    connect();
+                    authenticate();
+                    System.out.println("Sending email...");
+                    disconnect();
+                }
+                ...
+                ...
+            }
+            
+        - With this users of the EmailService class dont have to worry about the internal implementations details involved in sending an email
+            public static void main(String[] args) {
+
+                EmailService emailService = new EmailService();
+                emailService.sendEmail();
+            }
+
+        - With this  solution, you dont have to worry about  adding multiple methods, you can safely add a method, make it private and calll it too under sendEmail(). This reduces chances of introducing bugs inside a working software solution
 
  */
 
 public class Notes {
-
 }

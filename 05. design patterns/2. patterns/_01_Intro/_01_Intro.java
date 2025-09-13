@@ -25,7 +25,7 @@ package _01_Intro;
                     6. Flyweight
                     7. Proxy
 
-                - Behavioural Patterns: The interaction or communication between those objects
+                - Behavioral Patterns: The interaction/ communication between those objects
                     1. Chain of Responsibility
                     2. Command
                     3. Interpreter
@@ -38,15 +38,31 @@ package _01_Intro;
                     10. Template Method
                     11. Visitor
 
-            - What are design Patterns and why should you learn them?
+            - What are design Patterns and why learn them?
                 1. Reusable solutions
+                    - Help promote and provide proven solutions to recurring problems in software design, instead of reinventing the wheel developer can leverage these patterns to solve common issues efficiently, Example;
+                        - Undo operation can be achieve by use of Memento pattern
+
                 2. Standardised terminology
+                    - Provide a commom language for developers to communicate efficiently and effectively about software designs, this commom vocub enhances collaboration and understanging between team members
+
                 3. Scalability
+                    - Promote scalable designs by proving flexible and adaptable solutions solutions allowing systems to evolve over time without extensive rework or architectureal overhaul
+
                 4. Maintainability
+                    - Results in more maintable code as patterns encapsulate design decisions and promote modular loosely coupled architectures making it easier to understand modify and extend codebases
+
                 5. Performance
+                    - Some patterns can help to improve performance by optimizing resource usage, reducing overhead and facilitating efficient algorigthms
+
                 6. Documentation
+                    - They serve as a form of documentation for software design. By employing well-known patterns designers can convey design intent more effectively making codebases easier to understand for both current and future contributors
+
                 7. Best Practices
+                    - They embody best practices and principle of software design, encapsulating years of collective knowledge and expericne guiding devs towards more reliable, robust and maintable solutions
+
                 8. Cross-Domain Applicability
+                    - Many pattens are agnostic of programming languages/ domain, meaning they can be used across different programming languages essentially and they can be applied across different technologies and industries making them valuable tools for devs working in diverse environment
 
  */
 

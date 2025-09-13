@@ -42,5 +42,4 @@ public class Car extends Vehicle {
         return "Car [brand=" + brand + ", numberOfDoors=" + numberOfDoors + ", model=" + model + ", numberOfWheels="
                 + numberOfWheels + ", year=" + year + "]";
     }
-
 }

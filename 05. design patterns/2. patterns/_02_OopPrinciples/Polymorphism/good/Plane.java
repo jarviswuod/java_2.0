@@ -32,5 +32,4 @@ public class Plane extends Vehicle {
         return "Plane [brand=" + brand + ", numberOfDoors=" + numberOfDoors + ", model=" + model + ", year=" + year
                 + "]";
     }
-
 }
