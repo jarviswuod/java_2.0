@@ -2,11 +2,20 @@ package _03_SOLID.L.bad;
 
 public class Square extends Rectangle {
 
-    // super.length = super.width;
-    // super().width = super.length;
+    @Override
+    public void setLength(double length) {
+        super.setLength(length);
+        super.setWidth(length);
+    }
+
+    @Override
+    public void setWidth(double width) {
+        super.setWidth(width);
+        super.setLength(width);
+    }
 
     @Override
     public double area() {
-        return length * width;
+        return getLength() * getWidth();
     }
 }

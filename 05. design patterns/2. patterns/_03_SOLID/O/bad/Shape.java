@@ -7,7 +7,7 @@ public class Shape {
     public double length;
     public double width;
 
-    public double calculateArea() {
+    public double calculateArea(ShapeType shapeType) {
         switch (shapeType) {
             case Rectangle:
                 return length * width;

@@ -3,43 +3,110 @@ package _03_SOLID.I;
 /*
 
     NOTES:
-    - Interface Segregation Principle: Clients should not be forced to depend on interfaces they do not use
-    - This principle encourages the creation of interfaces that only contain the methods required by the clients that use them.
-    - It leads to creation oc cleaner and more maintainable code
+    - Interface Segregation Principle:
+        - It states that clients should NOT be FORCED to depend on interfaces they do not use
+        - This principle encourages the creation of interfaces that only contain the methods required by the clients that use them
+        - It leads to creation of cleaner and more maintainable code
+
 
     - BAD CODE EXPLAINED:
-        - We create an interface having 2 properties
-            public interface IShape {
-                double area();
-                double volume();
-            }
+        - We are considering an example involving 2D and 3D shapes. Initially we gonna violate this principle
+        - First we create an interface called Shape with 2 methods
 
-        - We implement the interface to Circle and Sphere
+                public interface IShape {
 
-            public class Circle implements IShape {...}
-            public class Sphere implements IShape {...}
+                    double area();
+                    double volume();
+                }
 
-        - We notice an issue with Circle class since it has no volume, the volume() method throws an exception
-            @Override
-            public double volume() {
-                throw new NullPointerException("Volume not applicable for 2D shapes");
-            }
+        - We create concrete classes implementing the interface Interface
+
+                public class Circle implements IShape {
+
+                    private double radius;
+
+                    ...
+
+                    @Override
+                    public double area() {...}
+
+                    @Override
+                    public double volume() {...}
+
+                }
+
+                public class Sphere implements IShape {
+
+                    private double radius;
+
+                    ...
+
+                    @Override
+                    public double area() {...}
+
+                    @Override
+                    public double volume() {...}
+
+                }
+
+
+        - Logically it makes no sense for Circle to have volume() methos, this is because it's 2D shaped, this forces us to throw an exeption as we are also forced to overide it through implementing IShape interface
+
+                public class Circle implements IShape {
+
+                    private double radius;
+                    ...
+
+                    @Override
+                    public double volume() {
+                        throw new NullPointerException("Volume not applicable for 2D shapes");
+                    }
+                }
         
         - ISSUE:
-            - We are basically forcing the Circle class to implement the volume methods, even though we really dont need it as we don't have a 3D shape to measure it's volume
-            - This is a violation of Interface Segregation Principle and is introducing bug into our program
+            - When we run the program we face an en exception thrown from volume() method. We are forced to override the method as a result of implmenting IShape interface, a violation of Interface Segregation Principle as it introduces bug into our program
+        
+        - SOLUTION:
+            - We will refactor our code segregating the IShape interface into IShape2D and IShape3D interfaces and only implementing appropriate interface as required of by conrete classes
+
 
 
     - GOOD CODE EXPLAINED:
-        - We solve for the issue by segregating our interface more into IShape2D and IShape3D with 2D only having area and 3D having volume
-            public interface IShape2D {
-                double area();
-            }
+        - We break down the IShape interface to IShape2D and IShape3D interfaces and only having the required methods with them
 
-            public interface IShape3D extends IShape2D {
-                double volume();
-            }
-        - We then implement the interfaces to Cicle and Sphere classes
+                public interface IShape2D {
+                    double area();
+                }
+
+                public interface IShape3D extends IShape2D {
+                    double volume();
+                }
+
+        - We then implement the interfaces to Circle and Sphere classes
+                public class Circle implements IShape2D {
+
+                    private double radius;
+
+                   ...
+
+                    @Override
+                    public double area() {...}
+                }
+
+                public class Sphere implements IShape3D {
+
+                    private double radius;
+
+                    ...
+
+                    @Override
+                    public double area() {...}
+
+                    @Override
+                    public double volume() {...}
+                }
+                
+        - We segregated the IShape interface into smaller fine grained/ more specific interface rather than having a more general one
 
  */
 

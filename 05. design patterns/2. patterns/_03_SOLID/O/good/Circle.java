@@ -1,7 +1,5 @@
 package _03_SOLID.O.good;
 
-import _03_SOLID.O.bad.Shape;
-
 public class Circle extends Shape {
 
     private double radius;
@@ -9,5 +7,13 @@ public class Circle extends Shape {
     @Override
     public double calculateArea() {
         return Math.PI * Math.pow(radius, 2);
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 }

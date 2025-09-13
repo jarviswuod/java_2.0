@@ -5,7 +5,7 @@ public class User {
     private String username;
     private String email;
 
-    public void register() {
+    public void register(String email) {
         // Register user logic ...
 
         // Send email

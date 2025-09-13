@@ -4,16 +4,16 @@ public class Main {
     public static void main(String[] args) {
 
         Rectangle rect = new Rectangle();
+        rect.setLength(10);
+        rect.setWidth(5);
 
-        rect.length = 10;
-        rect.width = 5;
         System.out.println("Expected area : 10 * 5 = 50");
         System.out.println("Calculated area : " + rect.area());
 
         Square square = new Square();
+        square.setLength(10);
+        square.setWidth(5);
 
-        square.length = 10;
-        square.width = 5;
         System.out.println("Expected area : 10 * 5 = 50");
         System.out.println("Calculated area : " + square.area());
     }

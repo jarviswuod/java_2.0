@@ -3,48 +3,68 @@ package _03_SOLID.L;
 /*
 
     NOTES:
-    - Liskov Substitution Principle: Objects of a superclass should be replaceable with objects of its subclass without affecting the correctness of the program
-    - This principle ensures that inheritance hierachies are well designed and sub classes adhere to their super classes contracts.
-    - Violation of this principle can lead to unexpected behviour or errors when substituting the objects making the code harder to reason about and maintain
+    - Liskov Substitution Principle:
+        - It states that objects of a superclass should be replaceable with objects of it's subclass without affecting the correctness of the program
+        - Violation of this principle can lead to unexpected behviour or errors when substituting the objects making the code harder to reason about and maintain
 
     - BAD CODE EXPLAINED:
-        - Over here we have Shape as abstract class where we Rectangle as a concrete class
-            public abstract class Shape {
+        - Lets consider an exmaple with a Rectangle class and Square class which inherit from a common Shape class, initially we will violate teh Liskov principle by not following it
+                public abstract class Shape {
 
-                public abstract double area();
-            }
+                    public abstract double area();
+                }
 
-            public class Rectangle extends Shape {
-                private double length;
-                private double width;
-            }
+                public class Rectangle extends Shape {
+                    private double length;
+                    private double width;
+                }
 
         - We also have a Square class, which inherits a Rectangle class this is based on assumption that a Square is a unique Rectangle with all sides equal to each other
-            public class Square extends Rectangle {...}
+                public class Square extends Rectangle {...}
 
         - ISSUE:
-            - When we follow the Liskov substitution principle, we find that when we replace Rectangle with Square, we tend to have completely different results to what we expect in terms or area;
-            
-                Rectangle rect = new Rectangle();
-                rect.length = 10;
-                rect.width = 5;
-        
-                Square square = new Square();
-                square.length = 10;
-                square.width = 5;
+            - From Liskov substitution principle, when we substitute Rectangle for Square the program should just work fine. Over here instead we have completely different results in comparison to what we expect in terms or area. This should not be the case and it makes it easier for our system to contain bugs
+
+                    public class Main {
+                        public static void main(String[] args) {
+
+                            Rectangle rect = new Rectangle();
+                            rect.setLength(10);
+                            rect.setWidth(5);
+
+                            System.out.println("Expected area : 10 * 5 = 50");
+                            System.out.println("Calculated area : " + rect.area());
+
+                            Square square = new Square();
+                            square.setLength(10);
+                            square.setWidth(5);
+
+                            System.out.println("Expected area : 10 * 5 = 50");
+                            System.out.println("Calculated area : " + square.area());
+                        }
+                    }
+                
+        - SOLUTION:
+            - We refactor our program to follow the Liskov Substitution. We'll basically modify our Square class such that it no longer extends the Rectangle class instead extends the Shape class directly
+
 
     - GOOD CODE EXPLAINED:
-        - We need to refactor our solution to meet the liskov substitution principle
-        - What we will change is we inherit the Shape abstract class directly to Square rather than inheriting Rectangle class the override area() logic
-            public class Square extends Shape {
-                protected double sideLength;
-            }
-        - With this everything works corectly
-        and as expected;
-            public static void main(String[] args) {
-                Shape rect = new Rectangle(5, 4);
-                Shape square = new Square(5);
-            }
+        - Once we inherit Shape abstract class it no longer makes sence to have both **legth** and **width**, instead we'll make adjustments to only have sideLength which satisfies the Square requirements for calcualting area
+
+                public class Square extends Shape {
+
+                    protected double sideLength;
+                }
+
+        - With this everything works corectly and as expected;
+
+                public class Main {
+                    public static void main(String[] args) {
+
+                        Shape rect = new Rectangle(5, 4);
+                        Shape square = new Square(5);
+                    }
+                }
 
         - We have redesigned the square class to directly set the sideLength and now it's correctly modeled as a subclass or Shape and it adhears to liskov princple coz all shapes are substitutable with each other and they calcualte there areas correctly
 

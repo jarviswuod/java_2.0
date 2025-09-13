@@ -3,78 +3,98 @@ package _03_SOLID.O;
 /*
 
     NOTES:
-    - Open-closed Principle: Software entities (classes, modules, functions, etc) should be open for extenstion but closed for modifications
-    - THis principle promotes the idea that existing code should be able to be extended with new fucntionality without  modifing it's source code.
-    - It encourages the user of abstraction and polymorphism to achieve it's goal
+    - Open-closed Principle:
+        - States that a software entities (classes, modules, functions, etc) should be open for extenstion but closed for modifications
+        - This principle promotes the idea that existing code should be able to be extended with new functionality without  modifing it's existing source code
+        - It encourages the use of abstraction and polymorphism to achieve it's goal
+
 
     - BAD CODE EXPLAINED:
-        - In this example, the Shape class has a calculateArea() method of calculating the area of a shape based on the ShapeType enum
-            public class Shape {
+        - Over here we have a Shape class hierarchy that calcualtes the area of different shapes. At this phase we will violating the OPen-closed princinple because when we ad new shapes we will have to modifying already existing code.
+        
+        - First we have an enum class type that stores our type of shape with only a Circle and Rectangle shapes only
 
-                public ShapeType shapeType;
-                public double radius;
-                public double length;
-                public double width;
+                public enum ShapeType {
 
-                public double calculateArea() {
-                    switch (shapeType) {
-                        case Rectangle:
-                            return length * width;
+                    Circle, Rectangle;
+                }
 
-                        case Circle:
-                            return Math.PI * Math.pow(radius, 2);
+        - Then we have Shape class, it stores the shape type, the radius, length and width, basically different shapes with their corresponding formula for calculating areas
+        - calculateArea() method of calculating the area of a shape based on the enum ShapeType
 
-                        default:
-                            throw new NullPointerException("Shape is invalid");
-                    }
-                } 
-            }
+                public class Shape {
+
+                    public ShapeType shapeType;
+                    public double radius;
+                    public double length;
+                    public double width;
+
+                    public double calculateArea() {
+                        switch (shapeType) {
+                            case Rectangle:
+                                return length * width;
+
+                            case Circle:
+                                return Math.PI * Math.pow(radius, 2);
+
+                            default:
+                                throw new NullPointerException("Shape is invalid");
+                        }
+                    } 
+                }
 
         - ISSUE:
-            - If we add a new ShapeType, say a Triangle and we wanted to support calculating the area of a triangle, we will require modifying the existing Shape class, from adding new proporties and then we have add a switch statement case for it too under the calculateArea() method
+            - If we add a new ShapeType, say 'Triangle' and want to calculate it's area, we'll need to modify the existing Shape class. From adding new properties to switching the case under calculateArea() method
 
-            - The class is gonna keep on being modified everytime we add a new Shape, every time we add a new Shape we risk adding bugs to already existing and working code
+            - In short, Shape class will always be modified everytime we add a new ShapeType risking bugs to already existing and working codebase
+
+        - SOLUTION:
+            - We need to refactor the code follwing the Open-closed princple such that we don't have to modify any existing code instead extend already existing class
 
 
     - GOOD CODE EXPLAINED:
-        - We want to allow for extensions i.e adding a new class to our code base say by extending the Shape instead of having to modify the existing Shape class
-            public abstract class Shape {
+        - To allow for extensions we make Shape class abstract and make the calcualteArea() too. So any classes that inherit the Shape class have to provide their own implementations of calulateArea method
 
-                public abstract double calculateArea();
-            }
-        - We can then inherit the abstract class and override the abstract method too, example;
+                public abstract class Shape {
 
-            public class Circle extends Shape {
-                private double radius;
-
-                @Override
-                public double calculateArea() {
-                    return Math.PI * Math.pow(radius, 2);
+                    public abstract double calculateArea();
                 }
-            }
 
-            public class Rectangle extends Shape {
-                private double length;
-                private double width;
+        - We then extend the Shape class to have our concrete class with our custom calculateArea() method
 
-                @Override
-                public double calculateArea() {
-                    return length * width;
+                public class Circle extends Shape {
+                    private double radius;
+
+                    @Override
+                    public double calculateArea() {
+                        return Math.PI * Math.pow(radius, 2);
+                    }
                 }
-            }
 
-        - We have refactored the code to having individual Shape classes rather than having one class to manage all the Shapes;
-        - With this new solution we can add new Shapes with no pressure, i.e;
-        Triangle, Square, etc, without modifying already existing code, all we have to do it to extend the Shape abstract class only and override the calculateArea() method
-            public class Triangle extends Shape {
-                private double height;
-                private double base;
+                public class Rectangle extends Shape {
+                    private double length;
+                    private double width;
 
-                @Override
-                public double calculateArea() {
-                    return (1 / 2 * base * height);
+                    @Override
+                    public double calculateArea() {
+                        return length * width;
+                    }
                 }
-            }
+
+        - Our Shape class now follows the Single responsibility principle as it only gives a hint of what we need and not calualte area for all shapes we have or want to add
+
+        - With this new solution we can add new Shapes with no pressure, Example;
+            - We can add Triangle, Square, etc without modifying the already existing code. All we have to do is to extend the Shape abstract class and override the calculateArea() method
+
+                    public class Triangle extends Shape {
+                        private double height;
+                        private double base;
+
+                        @Override
+                        public double calculateArea() {
+                            return (1 / 2 * base * height);
+                        }
+                    }
 
  */
 

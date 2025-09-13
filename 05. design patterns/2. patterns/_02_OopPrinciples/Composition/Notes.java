@@ -77,10 +77,10 @@ package _02_OopPrinciples.Composition;
                 - Inheritance create a strong coupling between the super and sub. Any changes made to the super can potentially affect the behaviour of all sub classes
 
             2. Limited Extensibility:
-                - The Fragile Base problem limites the extensibility of software systems, as modifications to the base class can become increasingly risky and costly over time. Developers may avoid making necessary changes due to the fear of breaking existing fucntionality -- Brittle software
+                - The Fragile-Base problem limites the extensibility of software systems, as modifications to the base class can become increasingly risky and costly over time. Developers may avoid making necessary changes due to the fear of breaking existing fucntionality -- Brittle software
             
         Prevention/ overcoming/ Mitigation Strategies:
-            - To mitigate the Fragile Base Class problem, software developers can use design principle such as Open/ Closed Principle and dependency Inversion Principle, as well as design patterns like Composition over inheritance. These approaches promote loose coupling, encapsulation and moduler design, reducing the impact of changes in base classes
+            - To mitigate the Fragile-Base Class problem, software developers can use design principle such as Open/ Closed Principle and dependency Inversion Principle, as well as design patterns like Composition over inheritance. These approaches promote loose coupling, encapsulation and moduler design, reducing the impact of changes in base classes
 
 
 */

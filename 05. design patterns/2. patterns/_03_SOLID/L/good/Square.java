@@ -12,4 +12,12 @@ public class Square extends Shape {
     public double area() {
         return sideLength * sideLength;
     }
+
+    public double getSideLength() {
+        return sideLength;
+    }
+
+    public void setSideLength(double sideLength) {
+        this.sideLength = sideLength;
+    }
 }
