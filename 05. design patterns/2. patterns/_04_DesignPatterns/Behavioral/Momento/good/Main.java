@@ -2,6 +2,7 @@ package _04_DesignPatterns.Behavioral.Momento.good;
 
 public class Main {
     public static void main(String[] args) {
+
         Editor editor = new Editor();
         History history = new History(editor);
 
@@ -14,7 +15,7 @@ public class Main {
         editor.setContent("Hello there, my name is Jarvis");
         history.backup();
 
-        editor.setContent("The life of a dev: my moments");
+        editor.setContent("The life of a dev, my Memories");
         history.backup();
 
         System.out.println("Title: " + editor.getTitle());
