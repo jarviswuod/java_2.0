@@ -83,7 +83,7 @@ package _04_DesignPatterns.Behavioral.Momento;
 
 
     - MEMENTO PATTERN UML:
-        - This is the Memento pattern; The abstract names that each class would be in the memento pattern:
+        - This is the Memento pattern; The abstract names that each class would be in the Memento pattern:
 
                 ________________________             ________________________
                 |  Originator          |             |  Memento             |

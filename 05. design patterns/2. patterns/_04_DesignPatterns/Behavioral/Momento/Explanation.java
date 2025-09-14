@@ -164,7 +164,7 @@ package _04_DesignPatterns.Behavioral.Momento;
         - History:
             - Swapping Stack for Deque interface
 
-            - New:
+            - OLD:
                 public void undo() {
                     if (states.size() <= 0) {
                         return;
@@ -175,7 +175,7 @@ package _04_DesignPatterns.Behavioral.Momento;
                     editor.restore(prevState);
                 }
 
-            - Old:
+            - NEW:
                 public void undo() {
                     if (states.isEmpty())
                         return;

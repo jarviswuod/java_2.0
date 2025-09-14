@@ -1,4 +1,4 @@
-package _04_DesignPatterns.Behavioral.State.overskill;
+package _04_DesignPatterns.Behavioral.State.overkill;
 
 public class Stopwatch {
 
