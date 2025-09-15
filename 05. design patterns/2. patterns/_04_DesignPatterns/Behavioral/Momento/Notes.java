@@ -108,6 +108,7 @@ package _04_DesignPatterns.Behavioral.Momento;
             - NOTE:
                 - Our solution differs slightly from the above pattern, as our Caretaker(History) class also has a field that stores a reference to the Editor; this mean the Histroy class can restore the Editor's state when the user clicks 'undo'
 
+
     - WHEN TO USE THE MEMENTO PATTERN:
         - To be used when you want to produce snapshots of an object's state to be able to restore the object to a previous state
         - It's commonly used pattern for implementing the 'undo' feature, and so provides a common solution that a team of developers can quickly understand and get on the same page with

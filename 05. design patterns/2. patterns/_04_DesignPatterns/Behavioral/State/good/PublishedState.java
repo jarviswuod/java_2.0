@@ -12,5 +12,4 @@ public class PublishedState implements State {
     public void publish() {
         // Do nothing if already in published state
     }
-
 }

@@ -49,7 +49,7 @@ package _04_DesignPatterns.Behavioral.State;
 
         - Above, 'Document' keeps reference to (is composed of) a State object. Notice that we are using polymorphism, as the 'state' field can be any of the concrete state classes (Draft, Moderation, Published), as we are coding to an interface, not concrete classes
 
-        - In Document, the publish() method calls state.publish() - it delegates the work to the concrete state object. Why is this good? Because our solution now satisfies the Open/Closed Principle: if we want to add a new state, we create state class that implements the 'State' interface -  we extend our codebase (add new classes) without having to modify any current classes ('Document' in our case)
+        - In Document, the publish() method calls state.publish() - it delegates the work to the concrete state object. Why is this good? Because our solution now satisfies the Open/Closed Principle: if we want to add a new state, we create state class that implements the 'State' interface - we extend our codebase (add new classes) without having to modify any current classes ('Document' in our case)
 
 
 
@@ -74,12 +74,19 @@ package _04_DesignPatterns.Behavioral.State;
                                           |  + setContext(context):  | | |
                                           |  + doThis():             | | |
                                           |  + doThat():             | | |
-                                          |  + doThat():             | | |
                                           |__________________________| | |
                                             |__________________________| |
                                               |__________________________|
 
-    - 
+
+    - WHEN TO USE A STATE PATTERN:
+      - A good indication of when you should use a State pattern is when you have a class that behaves differently depending on it's state and you have a large number of conditionals/ if else statements in the methods. A state pattern can be used with abstract classes to reduce duplication
+
+
+    - PROS AND CONS OF STATE PATTERN:
+      - The state pattern can be an overkill (consider a simple stop watch with one boolean variable)
+
+      + It improves readablility and simplicitly of the context class by eliminating conditionals that satisfies the Single Responsibility Principle by abstrating state specific logic into separate classes plus it also satisfies the Open-Closed Pringple because we can introduce new states without modifying existing classes
 
  */
 

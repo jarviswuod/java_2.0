@@ -14,5 +14,4 @@ public class ModerationState implements State {
             document.setState(new PublishedState(document));
         }
     }
-
 }
