@@ -12,7 +12,7 @@ package _03_SOLID.S;
     - BAD CODE EXPLAINED:
         - We have 2 fields **username** and **email** then we have a method called register() that registers a user to our platform;
         - Under the register() method is registration logic like;
-            - Fecthing the user from the DB by their email
+            - Fetching the user from the DB by their email
             - If they already exist we could redirect them to the login page
             - Saving registered users to the DB
 
@@ -44,14 +44,16 @@ package _03_SOLID.S;
         - We use the sendEmail() method to send an email successfully after successfuly user registration
 
         - ISSUE:
-            - In this example the User class is violating the Single responsibility principle because it manages user data; email, username, passowrd. Then it also contains user registration logic
+            - In this example the User class is violating the Single responsibility principle because it manages user data; email, username, password. Then it also contains user registration logic
             - For this has, the User class has more than one reason to change (It 2 reasons to change)
                 1. We can make modifications to our User data management, i.e add more fields such as firstName, lastName, age, hobby
                 2. Another reason to modify the class is if we need to change the logic for registering a user. Example; we may choose to fetch user from the DB by email instead of username
 
+
         - SOLUTION:
-            - We solve for this issue by introducing a new class UserService, which holds all the business logic related to a user
-       
+            - We solve for this issue by introducing a new class UserService, which holds all the business logic related to a User
+
+
 
     - GOOD CODE EXPLAINED:
         - We have a separate class UserService which holds all the business logic related to a user, i.e 
@@ -74,7 +76,7 @@ package _03_SOLID.S;
                     }
                 }
 
-        - With this clear separation, now the User class has ONLY ONE purpose, representing User data while UserService class handles User business logic like user regsitration, it might as well contain login() and update() methods for the User
+        - With this clear separation, now the User class has ONLY ONE purpose, representing User data while UserService class handles User business logic like user registration, it might as well contain login() and update() methods for the User
 
  */
 

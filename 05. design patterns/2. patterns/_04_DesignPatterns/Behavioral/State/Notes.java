@@ -40,7 +40,7 @@ package _04_DesignPatterns.Behavioral.State;
                                               ____________________
                                               |  Draft           |
                                               |__________________|-|
-                                              |  document        | |-|
+                                              |  doc: Document   | |-|
                                               |__________________| | |
                                               |  publish():      | | |
                                               |__________________| | |
@@ -49,7 +49,7 @@ package _04_DesignPatterns.Behavioral.State;
 
         - Above, 'Document' keeps reference to (is composed of) a State object. Notice that we are using polymorphism, as the 'state' field can be any of the concrete state classes (Draft, Moderation, Published), as we are coding to an interface, not concrete classes
 
-        - In Document, the publish() method calls state.publish() - it delegates the work to the concrete state object. Why is this good? Because our solution now satisfies the Open/Closed Principle: if we want to add a new state, we create state class that implements the 'State' interface - we extend our codebase (add new classes) without having to modify any current classes ('Document' in our case)
+        - In Document, the publish() method calls state.publish() - it delegates the work to the concrete state object. Why is this good? Because our solution now satisfies the Open-Closed Principle: if we want to add a new state, we create state class that implements the 'State' interface - we extend our codebase (add new classes) without having to modify any current classes ('Document' in our case)
 
 
 
@@ -69,7 +69,7 @@ package _04_DesignPatterns.Behavioral.State;
                                           ____________________________
                                           |  ConcreteStates          |
                                           |__________________________|-|
-                                          |  - context               | |-|
+                                          |  - context: Context      | |-|
                                           |__________________________| | |
                                           |  + setContext(context):  | | |
                                           |  + doThis():             | | |

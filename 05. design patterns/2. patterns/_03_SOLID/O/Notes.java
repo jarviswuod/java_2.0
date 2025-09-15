@@ -10,10 +10,9 @@ package _03_SOLID.O;
 
 
     - BAD CODE EXPLAINED:
-        - Over here we have a Shape class hierarchy that calcualtes the area of different shapes. At this phase we will violating the OPen-closed princinple because when we ad new shapes we will have to modifying already existing code.
+        - Over here we have a Shape class hierarchy that calculates the area of different shapes. At this phase we are violating the Open-closed Princinple because when we add new shapes we will have to modifying already existing code.
         
         - First we have an enum class type that stores our type of shape with only a Circle and Rectangle shapes only
-
                 public enum ShapeType {
 
                     Circle, Rectangle;
@@ -43,18 +42,18 @@ package _03_SOLID.O;
                     } 
                 }
 
-        - ISSUE:
-            - If we add a new ShapeType, say 'Triangle' and want to calculate it's area, we'll need to modify the existing Shape class. From adding new properties to switching the case under calculateArea() method
 
-            - In short, Shape class will always be modified everytime we add a new ShapeType risking bugs to already existing and working codebase
+        - ISSUE:
+            - If we add a new ShapeType, say 'Triangle' and want to calculate it's area, we'll need to modify the existing Shape class. From adding new properties to switching the case under calculateArea() method risking bugs to already existing and working codebase
+
 
         - SOLUTION:
-            - We need to refactor the code follwing the Open-closed princple such that we don't have to modify any existing code instead extend already existing class
+            - We need to refactor the code following the Open-closed princple such that we don't have to modify any existing code instead extend already existing class
+
 
 
     - GOOD CODE EXPLAINED:
         - To allow for extensions we make Shape class abstract and make the calcualteArea() too. So any classes that inherit the Shape class have to provide their own implementations of calulateArea method
-
                 public abstract class Shape {
 
                     public abstract double calculateArea();
@@ -81,7 +80,7 @@ package _03_SOLID.O;
                     }
                 }
 
-        - Our Shape class now follows the Single responsibility principle as it only gives a hint of what we need and not calualte area for all shapes we have or want to add
+        - Our Shape class now follows the Single responsibility principle as it only gives a hint of what we need and not calculate area for all shapes we have or want to add
 
         - With this new solution we can add new Shapes with no pressure, Example;
             - We can add Triangle, Square, etc without modifying the already existing code. All we have to do is to extend the Shape abstract class and override the calculateArea() method

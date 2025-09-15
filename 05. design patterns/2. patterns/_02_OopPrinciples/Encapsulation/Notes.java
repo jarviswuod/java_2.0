@@ -4,27 +4,31 @@ package _02_OopPrinciples.Encapsulation;
 
     NOTES:
     - Encapsulation;
-        - Is hiding the internal implementations details of a class and only exposing the necessary functionalities
+        - Referes to hiding the internal implementations details of a class and only exposing the necessary functionalities
         - Encapsulation allows for a clear separation between the public interface and the internal implemetation of a class providing users with a simplified and intuitive way to interact with objects while hiding the complexity of how interactions are handled internally
 
 
     - BAD CODE EXPLANATION:
         - This is a bad example with no encapsulation
                 public class BankAccount {
+
                     public double balance;
                 }
 
         - Over here we only have one fiels called **balance** which is public, the issue with this is since it;s public all clients that use the class *BankAccount* can directly change the balance field into whatever value they want incluvise of a negative balance which is not logically correct
 
-                public static void main(String[] args) {
+                public class Main {
+                    public static void main(String[] args) {
 
-                    BankAccount account = new BankAccount();
-                    account.balance = 100;
-                    account.balance = -50;
+                        BankAccount account = new BankAccount();
+                        account.balance = 100;
+                        account.balance = -50;
+                    }
                 }
 
+
     - GOOD CODE EXPLANATION:
-        - Over here *BankAccount* class encapulates the **account** field which is now private preventing direct access from outside of the class
+        - Over here *BankAccount* class encapsulates the **account** field which is now private preventing direct access from outside of the class
                 public class BankAccount {
                     private double balance;
                 }

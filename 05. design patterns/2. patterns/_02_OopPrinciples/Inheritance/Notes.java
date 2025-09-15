@@ -29,6 +29,7 @@ package _02_OopPrinciples.Inheritance;
             - We solve for all this issue by introducing inheritacne, since all the methods and fields are to be same across all classes as they are in Vehicle
 
 
+
     - GOOD CODE EXPLANATION:
         - We inherit by using the *extends* keyword the superclass (Vehicle)
 

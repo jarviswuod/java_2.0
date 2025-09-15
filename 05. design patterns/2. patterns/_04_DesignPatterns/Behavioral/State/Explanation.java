@@ -17,7 +17,7 @@ package _04_DesignPatterns.Behavioral.State;
                 }
 
         - Then we create a Document class
-            - In here we store the current DocumentStates
+            - In here we refer to current DocumentStates
             - Same case with current UserRole
 
                     public class Document {
@@ -54,23 +54,23 @@ package _04_DesignPatterns.Behavioral.State;
 
 
             - Testing
-                - Testing the solution:
-                    - Observation made; if you set the UserRoles to anything lower than 'Admin' you cannot proceed to "publish" the Document i.e upgrade the doc state to publish
+                - Observation made; if you set the UserRoles to anything lower than 'Admin' you cannot proceed to "publish" the Document i.e upgrade the doc state to publish
 
-                        public class Main {
-                            public static void main(String[] args) {
+                    public class Main {
+                        public static void main(String[] args) {
 
-                                Document document = new Document();
+                            Document document = new Document();
 
-                                document.setState(DocumentStates.Moderation);
-                                //   document.setCurrentUserRole(UserRoles.Admin);
-                                document.setCurrentUserRole(UserRoles.Editor);
-                                System.out.println(document.getState());
+                            document.setState(DocumentStates.Moderation);
+                            //   document.setCurrentUserRole(UserRoles.Admin);
+                            document.setCurrentUserRole(UserRoles.Editor);
 
-                                document.publish();
-                                System.out.println(document.getState());
-                            }
+                            System.out.println(document.getState());
+
+                            document.publish();
+                            System.out.println(document.getState());
                         }
+                    }
 
 
             - ISSUE:

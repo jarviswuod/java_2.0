@@ -4,7 +4,7 @@ package _02_OopPrinciples.Polymorphism;
 
     NOTES:
     - Polymorphism;
-        - Polymorphism is the ability of an object to take many forms
+        - Refers to the ability of an object to take many forms
             - Poly -> many
             - Morph -> forms
 
@@ -42,10 +42,11 @@ package _02_OopPrinciples.Polymorphism;
                 }
             }
 
-        - We are using the concept of polymorphism here as we are treating all kinds of objects the same as vehicle, we can call all of them and treat them all the same
+            - We are using the concept of polymorphism here as we are treating all kinds of objects the same as vehicle, we can call all of them and treat them all the same
+
 
         - SUMMARY:
-            - In this example, we have a list of both instances of Motorcycle and Car. We then iterate through the Vehicle list and we perform a general inspection that is starting a vehicle.
+            - In this example, we have a list of both instances of Motorcycle and Car. We then iterate through the Vehicle list and perform a general inspection, starting a vehicle
             - Despite the vehicles being of different types, polymorphism allows us to treat them all as instances of Vehicle class even though the implementation of start() and stop() methods are all invoked dynamically at runtime based on the actual type of vehicle.
             - Because the List only contains Vehicle class, all the classes wills have some common fields and methods we can safely call within the client code without having to worry about each specific vehicle type
 

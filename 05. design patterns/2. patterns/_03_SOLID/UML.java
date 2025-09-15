@@ -36,7 +36,8 @@ package _03_SOLID;
                 |__________________|            public class Animal() {...}
                          ^
                          |
-                _________|__________            public class Dog extends Animal() {
+                         |
+                ____________________            public class Dog extends Animal() {
                 |     Dog          |                private String name;
                 |__________________|                
                 |  - name:String   |                public void bark() {

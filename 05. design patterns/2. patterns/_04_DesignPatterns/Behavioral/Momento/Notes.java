@@ -8,6 +8,7 @@ package _04_DesignPatterns.Behavioral.Momento;
             - Example:
                 - Implementing an undo feature used in most text editors, such as Microsoft(MS) word
 
+
     - CHALLENGE:
         - Sample example to implement
                 1. Add a title to the document: "Test Title"
@@ -69,8 +70,8 @@ package _04_DesignPatterns.Behavioral.Momento;
                                                      <>
                                              _____________________
                                              |  History          |     backup():
-                                             |___________________|         - states.add(editor.saveState())
-                                             |  state: List      |
+                                             |___________________|         - states.add(editor.createState())
+                                             |  states: List     |
                                              |  editor: Editor   |     undo():
                                              |___________________|         - last = states.last()
                                              |  backup():        |         - states.remove(last)
@@ -99,14 +100,14 @@ package _04_DesignPatterns.Behavioral.Momento;
                                                       _____________________
                                                       |  Caretaker        |
                                                       |___________________|
-                                                      |  state: List      |
+                                                      |  states: List     |
                                                       |___________________|
                                                       |  push():          |
                                                       |  pop():           |
                                                       |___________________|
 
             - NOTE:
-                - Our solution differs slightly from the above pattern, as our Caretaker(History) class also has a field that stores a reference to the Editor; this mean the Histroy class can restore the Editor's state when the user clicks 'undo'
+                - Our solution differs slightly from the above pattern, as our Caretaker(History) class also has a field that stores a reference to the Editor; this mean the History class can restore the Editor's state when the user clicks 'undo'
 
 
     - WHEN TO USE THE MEMENTO PATTERN:
@@ -115,7 +116,7 @@ package _04_DesignPatterns.Behavioral.Momento;
 
 
     - PROS AND CONS OF MEMENTO PATTERN:
-        +  You can sinmpligy the originator's code by letting the caretaker maintain the history of the originator's state, satiying the Singleton Responsiblity Principle
+        +  You can simplify the Originator's code by letting the Caretaker maintain the history of the Originator's state, satisfying the Singleton Responsiblity Principle
 
         -  The app might consume a lot of RAM if lots of Mementos are created
 

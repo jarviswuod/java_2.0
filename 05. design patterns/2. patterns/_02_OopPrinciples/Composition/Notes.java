@@ -4,13 +4,13 @@ package _02_OopPrinciples.Composition;
 
     NOTES:
     - Composition;
-        - Composition involves creating complex objects by combining simpler objects or components.
-        - In composition, objects are assembled together to form large strctures, with each component object maintaining it's own state and behaviour
+        - Composition involves creating complex objects by combining simpler objects or components
+        - In composition, objects are assembled together to form large structures with each component's object maintaining it's own state and behaviour
         - Composition is often described in terms of a 'has-a' relationship
 
 
     - GOOD CODE EXPLANATION:
-        - In this example we have a load of items/parts that make up example a chassis, Wheels, Engine. All this an individual and complete Objects on their own(can contain both fields and complete methods)
+        - In this example we have a load of items/parts that make up a Car i.e chassis, Wheels, Engine. All this are individual and complete Objects on their own containing both fields and complete methods
                 public class Chassis {
                     public void support() {...}
                 }
@@ -23,7 +23,7 @@ package _02_OopPrinciples.Composition;
                     public void rotate() {...}
                 }
 
-        - All this are parts that a Car is compose of. Under the Car class we see that the Car uses composition of all the individual classes above. The car class basically uses composition to assemble it's componenets, with each componenet being a separate class that does an independet role
+        - The Chassis, Engine, Wheels, Seats etc are all things that make up a Car, this means that under the Car class we use all the individual classes above with each component being a separate class doing an independent role
 
                 public class Car {
 
@@ -33,20 +33,20 @@ package _02_OopPrinciples.Composition;
                     private Seats seats = new Seats();
 
                     ...
-                    ...
                 }
-                
-        - A Car uses all this instances of the compnenents to delegate tasks to them inside the startCar() method rather than doing all that work itself
+
+        - The Car class delegates tasks to the indiviaul components rather than doing all that work itself
 
                 public void startCar() {
                     engine.start();
                     wheels.rotate();
                     chassis.support();
                     seats.sit();
+
                     System.out.println("Car started");
                 }
-                
-        - All we have to do is to create a Car instances and call the startCar() method and every componenet will be delegated it's designated role and the car starts
+
+        - This means that when we create a Car instance and call the startCar() method every component will be delegated it's role and the car starts successfully
 
                 public class Main {
                     public static void main(String[] args) {
@@ -56,32 +56,31 @@ package _02_OopPrinciples.Composition;
                     }
                 }
 
-    - COMPOSITION VS. INHERITANCE:
+    - COMPOSITION VS INHERITANCE:
         - When to use Composition:
             - When you need more flexibility in constructing objects by assembling smaller, reusable components
             - When there is no clear 'is-a' relationship between classes, and a 'has-a' relationship is more appropriate
             - When you want to avoid the limitation of inheritance, such as tight coupling and the Fragile-Base class problem
 
-
         - When to use inheritance:
             - When there is a clear 'is-a' relationship between classes, and subclass objects can be treated as instances of their superclass
             - When you want to promote code by inheriting properties and behaviours from existing classes
-            - When you want to leverage polymorphism to allow objects of different subclasses to be treated uniformly through their common superclass interface
+            - When you want to leverage polymorphism allowing subclasses' objects to be treated uniformly through their common superclass interface
 
 
-    - Fragile-Base class problem:
-        - Fragine Base class problem is a software design issue that arises in object-oriented programming when changes made to a base class can advertently break the functionality of derived classes. This problem occurs due to the tight coupling between base and derived classes in inheritance hierarchies
+    - WHY CHOOSE COMPOSITION OVER INHERITANCE:
+        1. Inheritance coupling:
+            - Inheritance create a strong coupling between the super and sub. Any changes made to the super can potentially affect the behaviour of all sub classes
 
-        - Why choose composition over Inheritance:
-            1. Inheritance coupling:
-                - Inheritance create a strong coupling between the super and sub. Any changes made to the super can potentially affect the behaviour of all sub classes
+        2. Limited Extensibility:
+            - The Fragile-Base limits the extensibility of software systems, as modifications to the base class can become increasingly risky and costly over time. Developers may avoid making necessary changes due to the fear of breaking existing functionality -- Brittle software
 
-            2. Limited Extensibility:
-                - The Fragile-Base problem limites the extensibility of software systems, as modifications to the base class can become increasingly risky and costly over time. Developers may avoid making necessary changes due to the fear of breaking existing fucntionality -- Brittle software
-            
-        Prevention/ overcoming/ Mitigation Strategies:
-            - To mitigate the Fragile-Base Class problem, software developers can use design principle such as Open/ Closed Principle and dependency Inversion Principle, as well as design patterns like Composition over inheritance. These approaches promote loose coupling, encapsulation and moduler design, reducing the impact of changes in base classes
 
+    - FRAGILE-bASE CLASS:
+        - Fragile-Base class is a software design issue that arises in object-oriented programming when changes made to a base class can advertently break the functionality of derived classes. This problem occurs due to the tight coupling between base and derived classes in inheritance hierarchies
+
+        - Fragile-Base class Prevention Strategies:
+            - To mitigate the Fragile-Base Class problem, software developers can use design principle such as Open-Closed Principle and Dependency Inversion Principle, as well as design patterns like Composition over inheritance. These approaches promote loose coupling, encapsulation and moduler design, reducing the impact of changes in base classes
 
 */
 

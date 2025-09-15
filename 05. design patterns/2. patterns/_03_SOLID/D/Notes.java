@@ -4,7 +4,7 @@ package _03_SOLID.D;
 
     NOTES:
     - Dependecy Inversion Principle:
-        - High-level modules should not depend on low-level modules. Both should depend on abstractions
+        - States that high-level modules should not depend on low-level modules. Both should depend on abstractions
         - It's a strategy of depending upon interfaces/ abstract classes rather than upon concrete classes
         - It promotes decoupling between modules and promotes the use of interfaces/ abstract to define dependency allowing for more flexible and testable code
 
@@ -50,13 +50,15 @@ package _03_SOLID.D;
             - We have a Car class which has a dependency on concrete Engine class
             - The car class directly creates an instance of the Engine class, leading to a tight coupling between Car and Engine. This means if something under the Engine class changes, it my affect the Car class changes. This is violation of Dependency Injection
 
+
         - SOLUTION:
             - To solve the issue we'll introduce an interface or abstract class between the Engine and Car class.
             - This allows Car to depend on abstraction instead of concrete Engine implementation
 
 
+
     - GOOD CODE EXPLAINED:
-        - We create an interface callsed IEngine which has a start() method as all engines should
+        - We create an interface called IEngine which has a start() method as all engines should
 
                 public interface IEngine {
 

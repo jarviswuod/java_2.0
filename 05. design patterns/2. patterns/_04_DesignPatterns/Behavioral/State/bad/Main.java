@@ -8,6 +8,7 @@ public class Main {
         document.setState(DocumentStates.Moderation);
         // document.setCurrentUserRole(UserRoles.Admin);
         document.setCurrentUserRole(UserRoles.Editor);
+
         System.out.println(document.getState());
 
         document.publish();

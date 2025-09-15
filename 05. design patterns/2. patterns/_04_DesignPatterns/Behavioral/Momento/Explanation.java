@@ -15,10 +15,9 @@ package _04_DesignPatterns.Behavioral.Momento;
                         ...
                     }
 
-            - All fields have a getter method as we will need the details/states when we restore the Editor class to the previous state we snapped earlier
+            - All fields have ONLY getter methods as we will need the details/states when we restore the Editor class to the previous state we snapped earlier
 
                     public final class EditorState {
-                        ...
 
                         public String getTitle() {
                             return title;
@@ -62,7 +61,7 @@ package _04_DesignPatterns.Behavioral.Momento;
                         ...
                     }
 
-            - We create a couple of 2 methods(createState, restore)
+            - We create a couple of 2 methods (createState, restore)
 
                     public class Editor {
 
@@ -77,11 +76,11 @@ package _04_DesignPatterns.Behavioral.Momento;
 
                         ...
                     }
-                    
+
                 - createState():
                     - Returns an EditorState object and this EditorState takes **title** and **content** of the current Editor state
-                    - This mean whenever we create a state, we are just returning the curent title and current content of the Editor class
-                    - This method create a backup with the curernt state of the current Editor object
+                    - This mean whenever we create a state, we are just returning the current title & content of the Editor class
+                    - This method create a backup with the current state of the current Editor object
 
                 - restore():
                     - It takes in an EditorState object and simply sets the **title** to the EditorState object's **title** and sets **content** to the EditorState object's **content**
@@ -92,7 +91,7 @@ package _04_DesignPatterns.Behavioral.Momento;
             - Here we store a list of all the previous states
             - We will make reference to the Editor class *editor* object
             - When we construct the History object we need to pass in the Editor that History class is refering to
-            
+
                     public class History {
 
                         private final Deque<EditorState> states = new ArrayDeque<>();
@@ -101,20 +100,20 @@ package _04_DesignPatterns.Behavioral.Momento;
                         public History(Editor editor) {
                             this.editor = editor;
                         }
-                        
+
                         ...
                     }
 
             - We need to create our backup method; What will do over here it just to add to the states list the curent state of our Editor
                 - Keep in mind we already have createState() method we created under our Editor to help us with the heavy lifting
-            
+
                     public void backup() {
                         states.push(editor.createState());
                     }
 
             - We also have undo() method which allows to restore the Editor to it's last backed-up state
-                - We need to perform a check to see if we actaully have any backed-up states and then get the last state of our Editor from the states. The restore() method we have is from the Editor class to help us tranfer the title and content to the Editor class
-                - We then remove this our 'current' state from the states list list
+                - We need to perform a check to see if we actually have any backed-up states and then get the last state of our Editor from the states. The restore() method we have is from the Editor class to help us transfer the title and content to the Editor class
+                - We then remove this our 'current' state from the states list
                     - NOTE:
                         - Just as a safety measure we have to check for any previous EditorState to revert to preventing any runtime Exceptions
 
@@ -124,7 +123,7 @@ package _04_DesignPatterns.Behavioral.Momento;
 
                         editor.restore(states.pop());
                     }
-                    
+
             - We also created the showHistory() method to help visualize a list of all the backed-up EditorState of our Editor
 
                     public void showHistory() {
@@ -134,6 +133,7 @@ package _04_DesignPatterns.Behavioral.Momento;
                             System.out.println(editorState.toString());
                         }
                     }
+
 
         - TESTING:
             - We test our Memento solution for the Editor. We pass the Editor into the Histoy object. It all works great

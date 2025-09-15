@@ -10,7 +10,7 @@ package _03_SOLID.I;
 
 
     - BAD CODE EXPLAINED:
-        - We are considering an example involving 2D and 3D shapes. Initially we gonna violate this principle
+        - We are considering an example involving 2D and 3D shapes. Initially we violate the principle
         - First we create an interface called Shape with 2 methods
 
                 public interface IShape {
@@ -50,7 +50,7 @@ package _03_SOLID.I;
                 }
 
 
-        - Logically it makes no sense for Circle to have volume() methos, this is because it's 2D shaped, this forces us to throw an exeption as we are also forced to overide it through implementing IShape interface
+        - Logically it makes no sense for Circle to have volume() method, this is because it's 2D shaped, this forces us to throw an exeption as we are also forced to overide it through implementing IShape interface
 
                 public class Circle implements IShape {
 
@@ -64,10 +64,11 @@ package _03_SOLID.I;
                 }
         
         - ISSUE:
-            - When we run the program we face an en exception thrown from volume() method. We are forced to override the method as a result of implmenting IShape interface, a violation of Interface Segregation Principle as it introduces bug into our program
+            - When we run the program an exception thrown from volume() method under Circle. We are forced to override the method as a result of implementing IShape interface, a violation of Interface Segregation Principle as it introduces bug into our program
+
         
         - SOLUTION:
-            - We will refactor our code segregating the IShape interface into IShape2D and IShape3D interfaces and only implementing appropriate interface as required of by conrete classes
+            - We will refactor our code segregating the IShape interface into IShape2D and IShape3D interfaces and only implementing appropriate interface as required of by concrete classes
 
 
 
@@ -105,8 +106,10 @@ package _03_SOLID.I;
                     @Override
                     public double volume() {...}
                 }
-                
-        - We segregated the IShape interface into smaller fine grained/ more specific interface rather than having a more general one
+
+        
+        - NOTE:
+            - We segregated the IShape interface into smaller fine grained/ more specific interface rather than having a more general one
 
  */
 
