@@ -17,7 +17,7 @@ package _04_DesignPatterns.Behavioral.State;
                 }
 
         - Then we create a Document class
-            - In here we refer to current DocumentStates
+            - In here we store reference to current DocumentStates
             - Same case with current UserRole
 
                     public class Document {
@@ -78,27 +78,29 @@ package _04_DesignPatterns.Behavioral.State;
 
                     1. The publish() method has got lots of if-else conditions; This means we are violating the open-closed principle because if we add any other states we gonna have to modify lots of methods not only publish(). Example if we add another UserRole, we gonna have to bloat our methods even further
 
-                    - With more states this Document class is gonna bloated, unwiedly and difficult to understand and the code witll be very difficult to maintan becasue any changes in logic may require changing states conditionals
+                    - With more states this Document class becomes bloated, unwiedly and difficult to understand to maintan becasue any changes in logic may require changing states conditionals
 
             - SOLUTION:
-                - We solve for this issue with introduction of State Pattern which suggests that we should create state classes for each possible state of the Document object, and extract all state-specific logic into these classes ( Draft, Moderation, Published)
+                - We solve for this issue with State Pattern which suggests that we should create state classes for each possible state of the Document object, and have all state-specific logic into these classes (Draft, Moderation, Published)
 
-                - The Document class will store a reference to one of the state classes to represent the current state that it is in then, instead of Document implementing state-specific behaviour by itself, it delegates all the state-related work to the state object that it has a reference to
+                - The Document class will store a reference to one of the state classes to represent the current Document state. Instead of Document implementing all state-specific behaviour by itself, it delegates all the state-related work to the state object that it has a reference to
 
 
 
     - SOLUTION 2: State Pattern;
         - State
-            - First we create State interface which only has publish() method, if it was a real Document, we would love much more methods
+            - First we create State interface which only has publish() method
+                - NOTE:
+                    - If it was a real Document, we would have much more methods
 
-                    public interface State {
+                        public interface State {
 
-                        void publish();
-                    }
+                            void publish();
+                        }
 
 
         - Document
-            - Second thing is creating a Document; we give it a property of State for cupsturing current state of the document, then we also need the currentUserRole to
+            - Second thing is creating a Document; we give it a property of State for capturing current state of the document, then we also need the currentUserRole
 
                     public class Document {
 
@@ -108,7 +110,7 @@ package _04_DesignPatterns.Behavioral.State;
                         ...
                     }
 
-            - We then create a constructor passing in UserRole and intilaizing the State to the first Document state we need *DraftState* instance passing in 'this' keyword. We also initialize **currentUserRole** too inside the constructor
+            - We then create a constructor passing in UserRole and intializing the State to the first Document state we need *DraftState* instance passing in 'this' keyword. We also initialize *currentUserRole* too
 
                     public class Document {
                         public Document(UserRoles currentUserRoles) {
@@ -116,23 +118,23 @@ package _04_DesignPatterns.Behavioral.State;
                             state = new DraftState(this);
                             this.currentUserRoles = currentUserRoles;
                         }
-                        ...
+
                         ...
                     }
 
             - We create publish() method, where we call state.publish() delegating all the state specific work to these concrete State objects we are creating
 
                     public class Document {
-
                         public void publish() {
                             state.publish();
                         }
+
                         ...
                     }
 
 
         - DraftState:
-            - We create a DraftState implementing State interface and all States need a reference to the Document object and a contructor
+            - We create a DraftState implementing State interface. All States need a reference to the Document object and a contructor
 
                     public class DraftState implements State {
                         private Document document;
@@ -142,9 +144,9 @@ package _04_DesignPatterns.Behavioral.State;
                         }
                     }
 
-            - If we are in DraftState and the user clicks publish, at that point we should change the State of Document from DraftState to ModerationState; (so that the admin can review the document)
+            - If we are in DraftState and the user clicks publish(), at that point we should change the State of Document from DraftState to ModerationState
                 NOTE:
-                    - We need the 'document' passed becasue in each and every state we have the ability to change the State field within the documents
+                    - We need the 'document' passed because in each and every state we have the ability to change the State field within the documents
 
                     public class DraftState implements State {
 
@@ -157,7 +159,7 @@ package _04_DesignPatterns.Behavioral.State;
 
         - ModerationState:
             - We create ModerationState class where we still need to store reference to the Document plus a constructor which sets Document
-                - Over here within the publish() method we add our logic where we check the currentUserRole as only Admins are allowed to upgrade the state to "Published"
+                - At this document state level within the publish() method we add a logic where we check the currentUserRole as only Admins are allowed to upgrade the document's state to "published"
 
                     public class ModerationState implements State {
 
@@ -177,7 +179,7 @@ package _04_DesignPatterns.Behavioral.State;
 
 
         - PublishState:
-            - We create PublishState class and the same principe as DraftState and MederationState applies, the unique thing here is that, If we area already in the pushc state snd a under clicks 'publish' button we do nothing
+            - We create PublishState class and the same principe in DraftState and ModerationState applies, the only unique thing is we are already in the document 'publish' state hence we do nothing under 'publish' button clicks
 
                     public class PublishedState implements State {
 
@@ -217,21 +219,25 @@ package _04_DesignPatterns.Behavioral.State;
 
                         document.publish();
                         System.out.println(document.getState()); // PublishState
-                    }
-                }
-
-
-            - It's also possible to change the document state directly to any state
-                public class Main {
-                    public static void main(String[] args) {
 
                         document.setState(new DraftState(document));
-                        System.out.println(document.getState());
+                        System.out.println(document.getState()); // DraftState
                     }
                 }
 
+
+            - NOTE:
+                - It's also possible to change the document state directly to any state
+                    public class Main {
+                        public static void main(String[] args) {
+
+                            document.setState(new DraftState(document));
+                            System.out.println(document.getState());
+                        }
+                    }
+
         - Observation:
-            - Now it we create a new Document state we dont have to modify the Document class as the publish() method (Inside Document class) delegates the work to a concrete class (Via help of State interface)
+            - Now it we create a new Document state we don't have to modify the Document class as the publish() method (Inside Document class) delegates the work to a concrete class (Via help of State interface)
 
  */
 
