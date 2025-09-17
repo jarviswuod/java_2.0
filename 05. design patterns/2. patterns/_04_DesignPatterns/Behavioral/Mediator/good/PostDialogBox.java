@@ -39,5 +39,4 @@ public class PostDialogBox extends DialogBox {
         titleTextBox.setText(postListBox.getSelection());
         saveButton.setEnabled(true);
     }
-
 }

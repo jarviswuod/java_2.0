@@ -228,7 +228,7 @@ package _04_DesignPatterns.Behavioral.Mediator;
                                           |       | 
                                           v       v
                                     _______________________
-                       |----------> | PostsDialogBox       |
+                       |----------> | PostsDialogBox      |
                        |            |_____________________|
                        |            | changed(UIControl)  |
                        |            |_____________________|
