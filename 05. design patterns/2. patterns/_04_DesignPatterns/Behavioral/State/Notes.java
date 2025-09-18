@@ -23,8 +23,8 @@ package _04_DesignPatterns.Behavioral.State;
 
 
 
-    - SOLUTION 2:
-        - Solution with State Pattern:
+    - SOLUTION 2: STATE PATTERN
+        - Intro:
             - The State Pattern suggests that we should create state classes for each possible state of the Document object, and extract all state-specific logic into these classes (Draft, Moderation, Published)
 
             - The Document class will store a reference to one of the state classes to represent the current state that it is in then, instead of Document implementing state-specific behaviour by itself, it delegates all the state-related work to the state object that it has a reference to:

@@ -3,7 +3,7 @@ package _04_DesignPatterns.Behavioral.State;
 /*
 
     NOTES:
-    - SOLUTION 1: If else;
+    - SOLUTION 1: Conditional If else;
         - First we create an enum class called DocumentState
                 public enum DocumentStates {
 
@@ -30,7 +30,7 @@ package _04_DesignPatterns.Behavioral.State;
 
             - Then we create our publish() method
                 - This method is responsible for updating or upgrading the state of the Document(DocumentState) to the next stage
-                    - Here we need to check  the current UserROle as only admins are allowed to post/publish Documents
+                    - Here we need to check  the current UserRole as only admins are allowed to post/publish Documents
 
                     public class Document {
 
@@ -87,8 +87,8 @@ package _04_DesignPatterns.Behavioral.State;
 
 
 
-    - SOLUTION 2: State Pattern;
-        - State
+    - SOLUTION 2: STATE PATTERN;
+        - State class: State
             - First we create State interface which only has publish() method
                 - NOTE:
                     - If it was a real Document, we would have much more methods
@@ -99,24 +99,24 @@ package _04_DesignPatterns.Behavioral.State;
                         }
 
 
-        - Document
+        - Document class: Context
             - Second thing is creating a Document; we give it a property of State for capturing current state of the document, then we also need the currentUserRole
 
                     public class Document {
 
                         private State state;
-                        private UserRoles currentUserRoles;
+                        private UserRoles currentUserRole;
 
                         ...
                     }
 
-            - We then create a constructor passing in UserRole and intializing the State to the first Document state we need *DraftState* instance passing in 'this' keyword. We also initialize *currentUserRole* too
+            - We then create a constructor passing in UserRole and initializing the State to the first Document state we need *DraftState* instance passing in 'this' keyword. We also initialize *currentUserRole* too
 
                     public class Document {
-                        public Document(UserRoles currentUserRoles) {
+                        public Document(UserRoles currentUserRole) {
 
                             state = new DraftState(this);
-                            this.currentUserRoles = currentUserRoles;
+                            this.currentUserRole = currentUserRole;
                         }
 
                         ...
@@ -133,7 +133,7 @@ package _04_DesignPatterns.Behavioral.State;
                     }
 
 
-        - DraftState:
+        - DraftState class: ConcreteStates
             - We create a DraftState implementing State interface. All States need a reference to the Document object and a contructor
 
                     public class DraftState implements State {
@@ -157,7 +157,7 @@ package _04_DesignPatterns.Behavioral.State;
                     }
 
 
-        - ModerationState:
+        - ModerationState class: ConcreteStates
             - We create ModerationState class where we still need to store reference to the Document plus a constructor which sets Document
                 - At this document state level within the publish() method we add a logic where we check the currentUserRole as only Admins are allowed to upgrade the document's state to "published"
 
@@ -171,14 +171,14 @@ package _04_DesignPatterns.Behavioral.State;
 
                         @Override
                         public void publish() {
-                            if (document.getCurrentUserRoles() == UserRoles.Admin) {
+                            if (document.getCurrentUserRole() == UserRoles.Admin) {
                                 document.setState(new PublishedState(document));
                             }
                         }
                     }
 
 
-        - PublishState:
+        - PublishState class: ConcreteStates
             - We create PublishState class and the same principe in DraftState and ModerationState applies, the only unique thing is we are already in the document 'publish' state hence we do nothing under 'publish' button clicks
 
                     public class PublishedState implements State {
@@ -196,7 +196,7 @@ package _04_DesignPatterns.Behavioral.State;
                     }
 
 
-        - UserRoles:
+        - UserRoles: enum
             - We create the UserRoles enum;
                     public enum UserRoles {
 

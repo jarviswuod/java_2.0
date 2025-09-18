@@ -3,11 +3,11 @@ package _04_DesignPatterns.Behavioral.State.good;
 public class Document {
 
     private State state;
-    private UserRoles currentUserRoles;
+    private UserRoles currentUserRole;
 
-    public Document(UserRoles currentUserRoles) {
+    public Document(UserRoles currentUserRole) {
         state = new DraftState(this);
-        this.currentUserRoles = currentUserRoles;
+        this.currentUserRole = currentUserRole;
     }
 
     public void publish() {
@@ -22,12 +22,12 @@ public class Document {
         this.state = state;
     }
 
-    public UserRoles getCurrentUserRoles() {
-        return currentUserRoles;
+    public UserRoles getCurrentUserRole() {
+        return currentUserRole;
     }
 
-    public void setCurrentUserRoles(UserRoles currentUserRoles) {
-        this.currentUserRoles = currentUserRoles;
+    public void setCurrentUserRole(UserRoles currentUserRole) {
+        this.currentUserRole = currentUserRole;
     }
 
 }

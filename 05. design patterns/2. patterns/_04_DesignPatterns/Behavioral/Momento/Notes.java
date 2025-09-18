@@ -55,28 +55,28 @@ package _04_DesignPatterns.Behavioral.Momento;
 
 
 
-    - SOLUTION 3:
+    - SOLUTION 3: MEMENTO PATTERN
         - We should take all the state management stuff out of Editor and put it somewhere else
 
-            ________________________         ________________________
-            |  Editor              |         |  EditorState         |
-            |______________________|-------->|______________________|
-            |  title: String       |         |  title: String       |
-            |  content: String     |         |  content: String     |
-            |______________________|         |______________________|
-            |  createState():      |                 ^
-            |  restore(state):     |                 |
-            |______________________|                 |
+            ________________________       ____________________
+            | Editor               |       | EditorState      |
+            |______________________|------>|__________________|
+            | title: String        |       | title: String    |
+            | content: String      |       | content: String  |
+            |______________________|       |__________________|
+            | createState():       |                ^
+            | restore(EditorState) |                |
+            |______________________|                |
                                                      <>
-                                             _____________________
-                                             |  History          |     backup():
-                                             |___________________|         - states.add(editor.createState())
-                                             |  states: List     |
-                                             |  editor: Editor   |     undo():
-                                             |___________________|         - last = states.last()
-                                             |  backup():        |         - states.remove(last)
-                                             |  undo():          |         - editor.restore(last)
-                                             |___________________|
+                                             __________________
+                                             | History        |     backup():
+                                             |________________|         - states.add(editor.createState())
+                                             | states: List   |
+                                             | editor: Editor |     undo():
+                                             |________________|         - last = states.last()
+                                             | backup():      |         - states.remove(last)
+                                             | undo():        |         - editor.restore(last)
+                                             |________________|
 
 
             - The createState() method returns an EditorState object, hence the dotted line arrow (dependency relationship). History has a field with a list of EditorStates, hence the diamond acrosss(composition relationship)
@@ -86,25 +86,25 @@ package _04_DesignPatterns.Behavioral.Momento;
     - MEMENTO PATTERN UML:
         - This is the Memento pattern; The abstract names that each class would be in the Memento pattern:
 
-                ________________________             ________________________
-                |  Originator          |             |  Memento             |
-                |______________________|------------>|______________________|
-                |  content: String     |             |  content: String     |
-                |______________________|             |______________________|
-                |  createState():      |             |                      |
-                |  restore(state):     |             |______________________|
+                ________________________             ____________________
+                | Originator           |             | Memento          |
+                |______________________|------------>|__________________|
+                | content: String      |             | content: String  |
+                |______________________|             |__________________|
+                | createState():       |             |                  |
+                | restore(EditorState) |             |__________________|
                 |______________________|                       ^
                                                                |
                                                                |
                                                                <>
-                                                      _____________________
-                                                      |  Caretaker        |
-                                                      |___________________|
-                                                      |  states: List     |
-                                                      |___________________|
-                                                      |  push():          |
-                                                      |  pop():           |
-                                                      |___________________|
+                                                      _________________
+                                                      | Caretaker     |
+                                                      |_______________|
+                                                      | states: List  |
+                                                      |_______________|
+                                                      | push():       |
+                                                      | pop():        |
+                                                      |_______________|
 
             - NOTE:
                 - Our solution differs slightly from the above pattern, as our Caretaker(History) class also has a field that stores a reference to the Editor; this mean the History class can restore the Editor's state when the user clicks 'undo'
