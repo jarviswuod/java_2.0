@@ -2,9 +2,9 @@ package _04_DesignPatterns.Behavioral.Command.good;
 
 public class RemoteControl {
 
-    private ICommand command;
+    private Command command;
 
-    public RemoteControl(ICommand command) {
+    public RemoteControl(Command command) {
         this.command = command;
     }
 
@@ -12,8 +12,7 @@ public class RemoteControl {
         command.execute();
     }
 
-    public void setCommand(ICommand command) {
+    public void setCommand(Command command) {
         this.command = command;
     }
-
 }

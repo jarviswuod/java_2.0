@@ -1,7 +1,6 @@
 package _04_DesignPatterns.Behavioral.Command.undo;
 
 public class Main {
-
     public static void main(String[] args) {
 
         HtmlDocument htmlDoc = new HtmlDocument();

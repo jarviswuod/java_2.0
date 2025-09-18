@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Command.undo;
 
-public class ItalicCommand implements IUndoableCommand {
+public class ItalicCommand implements UndoableCommand {
 
     private HtmlDocument document;
     private String prevContent = "";

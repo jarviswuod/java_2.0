@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Command.good;
 
-public class TurnDimCommand implements ICommand {
+public class TurnDimCommand implements Command {
 
     private Light light;
 
@@ -12,5 +12,4 @@ public class TurnDimCommand implements ICommand {
     public void execute() {
         light.dim();
     }
-
 }

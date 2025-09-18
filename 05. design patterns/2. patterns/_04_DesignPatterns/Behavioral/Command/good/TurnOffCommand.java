@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Command.good;
 
-public class TurnOffCommand implements ICommand {
+public class TurnOffCommand implements Command {
 
     private Light light;
 
@@ -12,5 +12,4 @@ public class TurnOffCommand implements ICommand {
     public void execute() {
         light.turnOff();
     }
-
 }

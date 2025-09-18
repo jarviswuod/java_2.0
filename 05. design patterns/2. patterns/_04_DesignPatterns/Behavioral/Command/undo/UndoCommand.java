@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Command.undo;
 
-public class UndoCommand implements ICommand {
+public class UndoCommand implements Command {
 
     private History history;
 
@@ -11,9 +11,8 @@ public class UndoCommand implements ICommand {
     @Override
     public void execute() {
         if (history.size() > 0) {
-            IUndoableCommand lastCommand = history.pop();
+            UndoableCommand lastCommand = history.pop();
             lastCommand.unexecute();
         }
     }
-
 }

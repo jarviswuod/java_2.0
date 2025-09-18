@@ -5,15 +5,17 @@ import java.util.Deque;
 
 public class History {
 
-    private Deque<IUndoableCommand> commands = new ArrayDeque<>();
+    private Deque<UndoableCommand> commands = new ArrayDeque<>();
 
-    public void push(IUndoableCommand command) {
+    public void push(UndoableCommand command) {
         commands.push(command);
     }
 
-    public IUndoableCommand pop() {
-        IUndoableCommand last = commands.pop();
-        return last;
+    public UndoableCommand pop() {
+        if (commands.isEmpty()) {
+            return null;
+        }
+        return commands.pop();
     }
 
     public int size() {
