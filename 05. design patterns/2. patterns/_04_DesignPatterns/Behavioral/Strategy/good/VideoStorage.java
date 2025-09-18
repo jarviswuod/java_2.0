@@ -2,11 +2,11 @@ package _04_DesignPatterns.Behavioral.Strategy.good;
 
 public class VideoStorage {
 
-    private ICompressor compressor;
+    private Compressor compressor;
 
-    private IOverlay overlay;
+    private Overlay overlay;
 
-    public VideoStorage(ICompressor compressor, IOverlay overlay) {
+    public VideoStorage(Compressor compressor, Overlay overlay) {
         this.compressor = compressor;
         this.overlay = overlay;
     }
@@ -19,20 +19,19 @@ public class VideoStorage {
         System.out.println("Storing video to " + fileName + "." + compressor);
     }
 
-    public ICompressor getCompressor() {
+    public Compressor getCompressor() {
         return compressor;
     }
 
-    public void setCompressor(ICompressor compressor) {
+    public void setCompressor(Compressor compressor) {
         this.compressor = compressor;
     }
 
-    public IOverlay getOverlay() {
+    public Overlay getOverlay() {
         return overlay;
     }
 
-    public void setOverlay(IOverlay overlay) {
+    public void setOverlay(Overlay overlay) {
         this.overlay = overlay;
     }
-
 }

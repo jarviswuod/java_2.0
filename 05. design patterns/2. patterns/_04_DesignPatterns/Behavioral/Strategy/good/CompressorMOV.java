@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Strategy.good;
 
-public class CompressorMOV implements ICompressor {
+public class CompressorMOV implements Compressor {
 
     @Override
     public void compress() {

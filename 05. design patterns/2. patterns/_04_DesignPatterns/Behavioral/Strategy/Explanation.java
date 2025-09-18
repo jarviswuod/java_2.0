@@ -1,5 +1,187 @@
 package _04_DesignPatterns.Behavioral.Strategy;
 
+/*
+
+    NOTES:
+    - SOLUTION 1: Conditional If else;
+        - we will be creating a VideoStorage class to handle the situation
+        first we will create enums for the different types of compressors and overlays we have
+        - NOTE:
+            - Using enums is better than using hardcoded strings because it avoids typos and makes it easy to edit
+
+                public enum Compressors {
+
+                    MOV, MP4, WEBM;
+                }
+
+                public enum Overlays {
+
+                    None, BlackAndWhite, Blur;
+                }
+
+        - Then we create the VideoStorage class, which has two fields: Compressors and Overlays
+                public class VideoStorage {
+
+                    private Compressors compressors;
+                    private Overlays overlays;
+
+                    ...
+                }
+
+        - THen we need a construtor to initialize the fields we will be using
+                public class VideoStorage {
+
+                    public VideoStorage(Compressors compressors, Overlays overlays) {
+                        this.compressors = compressors;
+                        this.overlays = overlays;
+                    }
+
+                    ...
+                }
+
+        - We need a setters since once VideoStroage is created, we can change the compression ALgorithm or Overlay used in the video stroage object to store the video differently
+                public class VideoStorage {
+
+                    public void setCompressors(Compressors compressors) {
+                        this.compressors = compressors;
+                    }
+
+                    public void setOverlays(Overlays overlays) {
+                        this.overlays = overlays;
+                    }
+
+                    ...
+                }
+
+        - THe we create our store() method, which contains our logic for storing the video, it takes fileName and uses the current Compressor and Overlay from the client to store the video
+                public class VideoStorage {
+
+                    public void store(String fileName) {
+
+                        // Compression logic
+                        if (compressors == Compressors.MOV) {
+                            System.out.println("Compressing using MOV");
+                        } else if (compressors == Compressors.MP4) {
+                            System.out.println("Compressing using MP4");
+                        } else if (compressors == Compressors.WEBM) {
+                            System.out.println("Compressing using WEBM");
+                        }
+
+                        // Compression logic
+                        if (overlays == Overlays.BlackAndWhite) {
+                            System.out.println("Applying black and white on overlay");
+                        } else if (overlays == Overlays.Blur) {
+                            System.out.println("Applying blur overlay");
+                        } else if (overlays == Overlays.None) {
+                            System.out.println("Not applying any overlay");
+                        }
+
+                        // Storing
+                        System.out.println("Storing video to " + fileName + "." + compressors);
+                    }
+
+                    ...
+                }
+
+        - PROBLEMS:
+            - This solution works great but has a couple of problems
+                - It violates the Open/Closed Principle because if we want to add a new Compressor or Overlay, we need to modify the VideoStorage class
+                - The store() method is getting quite large and complex, and if we add more Compressors or Overlays, it will get even larger and more complex
+                - The VideoStorage class is tightly coupled to the specific Compressor and Overlay implementations, making it difficult to test and maintain
+
+
+
+    - SOLUTION 1: Strategy Pattern;
+        - FIrst of all we cre interfaces for 2 of our stratergies; Compressor and Overlay
+                public interface Compressor {
+                    void compress();
+                }
+
+                public interface Overlay {
+                    void apply();
+                }
+
+        - Then we create 2 sets of concrete implementations for each of the Compressors and Overlays
+                public class CompressorMP4 implements Compressor {
+                    @Override
+                    public void compress() {
+                        System.out.println("Compressing using MP4");
+                    }
+                }
+
+                public class OverlayBlackAndWhite implements Overlay {
+                    @Override
+                    public void apply() {
+                        System.out.println("Applying black and white on overlay");
+                    }
+                }
+
+        - Then we create our VideoStorage class, which has 2 fields: Compressor and Overlay interfaces rather than coding to enums. We need a setters since once VideoStroage is created, we can change the compression ALgorithm or Overlay used in the video stroage object to store the video differently
+
+                public class VideoStorage {
+
+                    private Compressor compressor;
+
+                    private Overlay overlay;
+
+                    public VideoStorage(Compressor compressor, Overlay overlay) {
+                        this.compressor = compressor;
+                        this.overlay = overlay;
+                    }
+
+                    ...
+                }
+
+        - Our biggest changes now comes in the store() method, which is now much simpler because we delegate the work to the concretes classes of Compressor and Overlay objects. So video storage will have no knowledge for each compression and overlay algorithm
+            - NOTES:
+                - In a real application you have to pass in the file name the compressor and overlay methods so they can work on the actual video file. We are ignoring that for simplicity
+                - We dont need to check for the compression algorithm or overlay type because the client has already passed in the correct concrete implementations of Compressor and Overlay that they want to use
+
+                public class VideoStorage {
+
+                    public void store(String fileName) {
+
+                        compressor.compress();
+                        overlay.apply();
+                        // Storing
+                        System.out.println("Storing video to " + fileName + "." + compressor);
+                    }
+
+                    ...
+                }
+
+
+        - Let's look at how clients will use the solution
+                public class Main {
+                    public static void main(String[] args) {
+
+                        VideoStorage videoStorage = new VideoStorage(new CompressorMOV(), new OverlayBlackAndWhite());
+                        videoStorage.store("/videos/some-movie");
+
+                        ...
+                    }
+                }
+
+        - Because we added setters to VideoStorage, we can change the compression algorithm and overlay at any time
+            - It allows us to change the COmpressor or Overlay we use within the video storage class, we dont have to create a new VideoStorage object each time we want to change the compression algorithm or overlay
+                public class Main {
+                    public static void main(String[] args) {
+
+                        VideoStorage videoStorage = new VideoStorage(new CompressorMOV(), new OverlayBlackAndWhite());
+                        videoStorage.store("/videos/some-movie");
+
+                        videoStorage.setCompressor(new CompressorMP4());
+                        videoStorage.setOverlay(new OverlayBlur());
+                        videoStorage.store("/videos/some-movie");
+
+                    }
+                }
+        - This solution offers several advantages over the previous one:
+            - It adheres to the Open/Closed Principle because we can add new Compressors and Overlays without modifying the VideoStorage class
+                - Example to create a new compressor we simpliy create a new class that implements the Compressor interface
+
+ */
+
 public class Explanation {
 
 }

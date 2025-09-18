@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Iterator.good;
 
-public interface IIterator<T> {
+public interface Iterator<T> {
 
     void next();
 

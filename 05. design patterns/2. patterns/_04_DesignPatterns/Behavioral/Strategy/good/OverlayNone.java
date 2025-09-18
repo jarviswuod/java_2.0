@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Strategy.good;
 
-public class OverlayNone implements IOverlay {
+public class OverlayNone implements Overlay {
 
     @Override
     public void apply() {

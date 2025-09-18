@@ -6,6 +6,10 @@ public class VideoStorage {
 
     private Overlays overlays;
 
+    public VideoStorage(Compressors compressors) {
+        this(compressors, Overlays.None);
+    }
+
     public VideoStorage(Compressors compressors, Overlays overlays) {
         this.compressors = compressors;
         this.overlays = overlays;

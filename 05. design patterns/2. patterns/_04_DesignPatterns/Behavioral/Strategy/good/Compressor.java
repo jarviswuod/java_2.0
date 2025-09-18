@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Strategy.good;
 
-public interface ICompressor {
+public interface Compressor {
 
     void compress();
 }

@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Strategy.good;
 
-public class CompressorWEBM implements ICompressor {
+public class CompressorWEBM implements Compressor {
 
     @Override
     public void compress() {

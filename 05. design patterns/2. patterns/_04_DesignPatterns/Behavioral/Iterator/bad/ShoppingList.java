@@ -6,7 +6,6 @@ import java.util.List;
 public class ShoppingList {
 
     private List<String> list = new ArrayList<>();
-    // private int[] list = new int[5];
 
     public void push(String itemName) {
         list.add(itemName);

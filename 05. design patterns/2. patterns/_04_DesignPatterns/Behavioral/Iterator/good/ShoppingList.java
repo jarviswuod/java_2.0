@@ -20,11 +20,11 @@ public class ShoppingList {
         return list;
     }
 
-    public IIterator<String> createIterator() {
+    public Iterator<String> createIterator() {
         return new ListIterator(this);
     }
 
-    private class ListIterator implements IIterator<String> {
+    private class ListIterator implements Iterator<String> {
 
         private ShoppingList shoppingList;
 

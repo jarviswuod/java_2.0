@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Strategy.good;
 
-public interface IOverlay {
+public interface Overlay {
 
     void apply();
 }

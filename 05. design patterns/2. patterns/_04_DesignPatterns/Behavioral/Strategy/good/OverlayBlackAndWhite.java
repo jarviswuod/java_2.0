@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Strategy.good;
 
-public class OverlayBlackAndWhite implements IOverlay {
+public class OverlayBlackAndWhite implements Overlay {
 
     @Override
     public void apply() {

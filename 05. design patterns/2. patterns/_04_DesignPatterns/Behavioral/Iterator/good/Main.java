@@ -13,7 +13,7 @@ public class Main {
 
         // System.out.println("Shopping List: " + shoppingList.getList());
 
-        IIterator<String> iterator = shoppingList.createIterator();
+        Iterator<String> iterator = shoppingList.createIterator();
 
         while (iterator.hasNext()) {
             System.out.println(iterator.current());
