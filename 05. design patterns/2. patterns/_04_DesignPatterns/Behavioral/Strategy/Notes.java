@@ -6,6 +6,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
     - Strategy Pattern:
       - Used to pass different algorithms, or behaviours, to an object
 
+
     - CHALLENGE:
         - Let's consider an application that stores videos. Before storing a video, the video needs to be compressed using a specific compression algorithm, such as MOV or MP4, then, if necessary, apply an overlay of say black and white or blur to the video
 
@@ -57,7 +58,9 @@ package _04_DesignPatterns.Behavioral.Strategy;
                                           |_______________| |
                                             |_______________|
 
-    - This is the Strategy Pattern. Here's how it looks, with it's abstract class names, in GoF;
+
+
+    - STRATEGY PATTERN UML: From GoF book:
 
                 _________________            __________________
                 | Context       |            | Strategy       |

@@ -83,7 +83,8 @@ package _04_DesignPatterns.Behavioral.Momento;
 
 
 
-    - MEMENTO PATTERN UML:
+    - MEMENTO PATTERN UML: From GoF book:
+
         - This is the Memento pattern; The abstract names that each class would be in the Memento pattern:
 
                 ________________________             ____________________
@@ -93,10 +94,10 @@ package _04_DesignPatterns.Behavioral.Momento;
                 |______________________|             |__________________|
                 | createState():       |             |                  |
                 | restore(EditorState) |             |__________________|
-                |______________________|                       ^
-                                                               |
-                                                               |
-                                                               <>
+                |______________________|                    ^
+                                                            |
+                                                            |
+                                                            <>
                                                       _________________
                                                       | Caretaker     |
                                                       |_______________|
