@@ -7,11 +7,11 @@ package _04_DesignPatterns.Behavioral.Template;
 
     - Suppose we are desinging some software that will be isntalled on a machine that makes hot beverages. At the beggining we jsut had tea and coffee. But after some fedback from the customers, we needed to add some more beverages, cush as camomile tea
 
-                |-------------------|                 |-------------------|                 |-------------------|
+                _____________________                 _____________________                 _____________________
                 |  Tea              |                 |  Coffee           |                 |  Camomile         |
-                |-------------------|                 |-------------------|                 |-------------------|
+                |___________________|                 |___________________|                 |___________________|
                 | makeBeverage()    |                 | makeBeverage()    |                 | makeBeverage()    |
-                |-------------------|                 |-------------------|                 |-------------------|
+                |___________________|                 |___________________|                 |___________________|
 
             - Make beverage:
                 - boilwater()       // same for all beverages
@@ -26,20 +26,21 @@ package _04_DesignPatterns.Behavioral.Template;
         - Inheritance
 
 
-                |----------------------|            |-----------------|
+                ________________________            ___________________
                 |  BeverageMaker       |            |  Beverage       |
-                |----------------------|<>--------->|-----------------|
+                |______________________|<>--------->|_________________|
                 |  + prepareBeverage() |            | + prepare():    |
-                |----------------------|            |-----------------|
+                |______________________|            |_________________|
                                                            ^
                                                            |
                                                            |
-                                                    |---------------|
+                                                    _________________
                                                     |  Tea          |
-                                                    |---------------|-|
+                                                    |_______________|-|
                                                     |  + prepare(): | |
-                                                    |---------------| |
-                                                      |---------------|
+                                                    |_______________| |
+                                                      |_______________|
+
 
     - prepareBeverage():
         - boilingWater()    // commom
@@ -60,25 +61,25 @@ package _04_DesignPatterns.Behavioral.Template;
             - We can provide a base abstract class called Beverage that contains all common operations for making a beverage, and we can provide methods, brew() and addCondiments(), which can be overriden in concrete classes
 
                                                         ABSTRACT CLASS
-                                                    |----------------------|
+                                                    ________________________
                                                     |  Beverage            |
-                                                    |----------------------|
+                                                    |______________________|
                                                     |  + prepare()         |
                                                     |  # brew()            |
                                                     |  # addCondiments()   |
-                                                    |----------------------|
+                                                    |______________________|
                                                             ^
                                                             |
                                                             |
-                        |-----------------------------------|---------------------------------|
+                        _______________________________________________________________________
                         |                                   |                                 |
                         |                                   |                                 |
-                |-------------------|             |-------------------|             |-------------------|
+                _____________________             _____________________             _____________________
                 |  Tea              |             |  Coffee           |             |  Camomile         |
-                |-------------------|             |-------------------|             |-------------------|
+                |___________________|             |___________________|             |___________________|
                 | + brew()          |             | + brew()          |             | + brew()          |
-                | + addCondiments() |             | + addCondiments() |             |-------------------|
-                |-------------------|             |-------------------|
+                | + addCondiments() |             | + addCondiments() |             |___________________|
+                |___________________|             |___________________|
 
 
             - The +Template method":
@@ -92,23 +93,23 @@ package _04_DesignPatterns.Behavioral.Template;
 
         - Template Method Pattern in GoF Book
 
-                            |---------------------|
+                            _______________________
                             |  AbstractClass      |
-                            |---------------------|
+                            |_____________________|
                             | + templateMethod(): |
                             | # method1():        |
                             | # method2():        |
-                            |---------------------|
+                            |_____________________|
                                     ^
                                     |
                                     |
-                            |--------------------|
+                            ______________________
                             |  ConcreteClass     |
-                            |--------------------|-|
-                            | # method1():       | |-|
-                            | # method2():       | | |
-                            |----------------------| |
-                              |----------------------|
+                            |____________________|-|
+                            | # method1():       | |
+                            | # method2():       | |
+                            |____________________| |
+                              |____________________| 
 
         - templateMethod():
             # method1(): // Hook
@@ -131,14 +132,14 @@ package _04_DesignPatterns.Behavioral.Template;
                 - The Strategy Pattern is suitable when you want to decouple the clients code from secific algo implementations, allowing greather flexibility and extensibility
 
             - In summary:
-                - If you primaryly need to customize or override specific steps of an also while keeping the overrall strcture intact, the Template Method Pattern is a good choice
-                - If you need to encpauslate entire algo or behavious as interchangable componenets that can be dynamically selected or replaced, the Strategy Patten is more appropriate
+                - If you primaryly need to customize or override specific steps of an algo while keeping the overrall strcture intact, then Template Method Pattern is a good choice
+                - If you need to encpauslate entire algo or behavious as interchangable componenets that can be dynamically selected or replaced, then Strategy Patten is more appropriate
 
             - Both patterns have their own strengths and used to address different design scehnarios. The choise between them depends on the specific requirements and design goals of your application
 
 
         - WHen to use THE TEMPLATE METHOD PATTERN:
-            - Use the Template Method Patten when you want to allow clients to implement only particular steps in an algo, and not the whole also. 
+            - Use the Template Method Patten when you want to allow clients to implement only particular steps in an algo, and not the whole also
             - It's good to use when yoy have a bunch of classes with the same logic, or also, but with difference in a few steps. So if the algo changes it only has to be modified in one place - the base class
 
         - Pros and Cons:

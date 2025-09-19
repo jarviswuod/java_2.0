@@ -16,10 +16,9 @@ public class DataSource {
         this.values = values;
 
         for (Object object : dependents) {
-
-            if (object.getClass() == new Sheet2().getClass()) {
+            if (object instanceof Sheet2) {
                 ((Sheet2) object).calculateTotal(values);
-            } else if (object.getClass() == new BarChart().getClass()) {
+            } else if (object instanceof BarChart) {
                 ((BarChart) object).render(values);
             }
         }
@@ -32,5 +31,4 @@ public class DataSource {
     public void removeDependent(Object dependent) {
         dependents.remove(dependent);
     }
-
 }

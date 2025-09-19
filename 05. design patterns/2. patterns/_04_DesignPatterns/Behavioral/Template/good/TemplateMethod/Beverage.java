@@ -1,4 +1,4 @@
-package _04_DesignPatterns.Behavioral.Template.goodTemplateMethod;
+package _04_DesignPatterns.Behavioral.Template.good.TemplateMethod;
 
 public abstract class Beverage {
 

@@ -1,8 +1,8 @@
-package _04_DesignPatterns.Behavioral.Template.goodStrategy;
+package _04_DesignPatterns.Behavioral.Template.good.Strategy;
 
 import java.util.Scanner;
 
-public class Coffee implements IBeverage {
+public class Coffee implements Beverage {
 
     private final Scanner scanner;
 

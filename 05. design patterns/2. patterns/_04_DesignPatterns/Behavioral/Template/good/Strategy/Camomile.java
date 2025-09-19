@@ -1,6 +1,6 @@
-package _04_DesignPatterns.Behavioral.Template.goodStrategy;
+package _04_DesignPatterns.Behavioral.Template.good.Strategy;
 
-public class Camomile implements IBeverage {
+public class Camomile implements Beverage {
 
     @Override
     public void prepare() {

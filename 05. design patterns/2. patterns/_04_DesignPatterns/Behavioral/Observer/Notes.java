@@ -18,20 +18,19 @@ package _04_DesignPatterns.Behavioral.Observer;
     
 
     - SOLUTION 1:
-        - observers we have under the data source is the barChart and Sheet2 (the one that sums up the number of dogs) all from the datascource
+        - observers we have under the data source is the barChart and Sheet2 (the one that sums up the number of dogs) all from the datasource
         - we also have the values of the data soruce and the setters and getters for the datasource
-                ________________________             ________________________
-                |  Datasource          |             |  Sheet2              |
-                |______________________|<>---------->|______________________|
-                |  observers:          |             |                      |
-                |  values:             |             |______________________|
-                |______________________|
-                |  getValues():        |             ________________________
-                |  setValues():        |<>---------->|  BarChart            |
-                |______________________|             |______________________|
-                                                     |                      |
-                                                     |______________________|
-
+                _________________             _____________
+                | Datasource    |             | Sheet2    |
+                |_______________|<>---------->|___________|
+                | observers:    |             |           |
+                | values:       |             |___________|
+                |_______________|
+                | getValues():  |             _____________
+                | setValues():  |<>---------->| BarChart  |
+                |_______________|             |___________|
+                                              |           |
+                                              |___________|
 
 
         - PROBLEM:
@@ -48,29 +47,29 @@ package _04_DesignPatterns.Behavioral.Observer;
 
     - SOLUTION 2: Observer Pattern
 
-                ________________________            _______________
-                |  Subject             |            |  Observer   |
-                |______________________|<>--------->|_____________|
-                |  addObserver(obj):   |            |  update()   |
-                |  rmvObserver(obj):   |            |_____________|
-                |  notifyObserver():   |                    ^
-                |  getValues():        |                    |
-                |  setValues():        |                    |
-                |______________________|             _______|_____________
-                            ^                        |                   |
-                            |                ________|______     ________|______
-                            |                |  Sheet2     |     |  BarChart   |
-                            |                |_____________|     |_____________|
-                            |                |  update()   |     |  update()   |
-                            <>               |_____________|     |_____________|
-                ________________________
-                |  DataSource          |
-                |______________________|
-                |  values:             |
-                |______________________|
-                |  getValues():        |
-                |  setValues():        |
-                |______________________|
+                ______________________            _____________
+                | Subject            |            | Observer  |
+                |____________________|<>--------->|___________|
+                | addObserver(obj):  |            | update()  |
+                | rmvObserver(obj):  |            |___________|
+                | notifyObserver():  |                   ^
+                | getValues():       |                   |
+                | setValues():       |                   |
+                |____________________|            _______|____________
+                            ^                     |                   |
+                            |             ________|______     ________|______
+                            |             |  Sheet2     |     |  BarChart   |
+                            |             |_____________|     |_____________|
+                            |             |  update()   |     |  update()   |
+                            <>            |_____________|     |_____________|
+                    _________________
+                    | DataSource    |
+                    |_______________|
+                    | values:       |
+                    |_______________|
+                    | getValues():  |
+                    | setValues():  |
+                    |_______________|
 
 
         - Above Sheet2 and BarChat implement a common interface, so DataSOurce can now talk to that one interface and not multiple concrete classes. We've also created a Subject class to provide the methods for managing observers
@@ -84,22 +83,22 @@ package _04_DesignPatterns.Behavioral.Observer;
     - Observer Pattern UML:
         - The Observer Pattern is AKA the pub and subscriber pattern: the subject (publisher) publishes changes in it's state and the subscribers(observers) subscriber to those events
 
-                ________________________            _______________
-                |  Subject             |            |  Observer   |
-                |______________________|<>--------->|_____________|
-                |  attach(obj):        |            |  update()   |
-                |  detatch(obj):       |            |_____________|
-                |  notify():           |                    ^
-                |______________________|                    |
-                            ^                               |
-                            |                       _____________________
-                            |                       |  ConcreteObserver |
-                            |                       |___________________|-|
-                ________________________            |  update()         | |-|
-                |  ConcreteSubject     |            |___________________| | |
-                |______________________|              |___________________| |
-                |                      |                |___________________|
-                |______________________|
+                ___________________            ______________
+                | Subject         |            | Observer   |
+                |_________________|<>--------->|____________|
+                | attach(obj):    |            | update()   |
+                | detatch(obj):   |            |____________|
+                | notify():       |                   ^
+                |_________________|                   |
+                           ^                          |
+                           |                   ____________________
+                           |                   | ConcreteObserver |
+                           |                   |__________________|-|
+                ___________________            | update()         | |-|
+                | ConcreteSubject |            |__________________| | |
+                |_________________|              |__________________| |
+                |                 |                |__________________|
+                |_________________|
 
 
 
@@ -110,21 +109,20 @@ package _04_DesignPatterns.Behavioral.Observer;
                 NOTES:
                     - Value is "published" to observer
 
-                ________________________            _______________
-                |  Subject             |            |  Observer   |
-                |______________________|<>--------->|_____________|
-                |                      |            |  update()   |
-                |______________________|            |_____________|
-
-                            ^                              ^
-                            |                              |
-                            |                              |
-                            |                              |
-                ________________________            _____________________
-                |  ConcreteSubject     |            |  ConcreteObserver |
-                |______________________|            |___________________|
-                |                      |            |  update()         |
-                |______________________|            |___________________|
+                ____________________            ______________
+                | Subject          |            | Observer   |
+                |__________________|<>--------->|____________|
+                |                  |            | update()   |
+                |__________________|            |____________|
+                           ^                          ^
+                           |                          |
+                           |                          |
+                           |                          |
+                ____________________            ____________________
+                | ConcreteSubject  |            | ConcreteObserver |
+                |__________________|            |__________________|
+                |                  |            | update()         |
+                |__________________|            |__________________|
 
             - For flexiliblty 'value' could be any 'Object' or generic type
 
@@ -137,21 +135,20 @@ package _04_DesignPatterns.Behavioral.Observer;
             - NOTES:
                 - Value is 'pulled' from concrete subject
 
-                ________________________            _______________
-                |  Subject             |            |  Observer   |
-                |______________________|<>--------->|_____________|
-                |                      |            |  update()   |
-                |______________________|            |_____________|
-
-                            ^                              ^
-                            |                              |
-                            |                              |
-                            |                              |
-                ________________________            _____________________
-                |  ConcreteSubject     |            |  ConcreteObserver |
-                |______________________|<---------<>|___________________|
-                |  getValue()          |            |                   |
-                |______________________|            |___________________|
+                ___________________            _____________
+                | Subject         |            | Observer  |
+                |_________________|<>--------->|___________|
+                |                 |            | update()  |
+                |_________________|            |___________|
+                           ^                         ^
+                           |                         |
+                           |                         |
+                           |                         |
+                ___________________            ____________________
+                | ConcreteSubject |            | ConcreteObserver |
+                |_________________|<---------<>|__________________|
+                | getValue()      |            |                  |
+                |_________________|            |__________________|
 
 
             - The concrete observer stores a reference to the concrete subject. We give concrete subject a getValue() method, so a concrete observer can get the data it needs. This gives more fleibility; however, we have coupling between the concrete classes. But this is not a bad type of coupling. 

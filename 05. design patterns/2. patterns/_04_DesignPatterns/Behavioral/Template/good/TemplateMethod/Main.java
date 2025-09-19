@@ -1,4 +1,4 @@
-package _04_DesignPatterns.Behavioral.Template.goodTemplateMethod;
+package _04_DesignPatterns.Behavioral.Template.good.TemplateMethod;
 
 import java.util.Scanner;
 

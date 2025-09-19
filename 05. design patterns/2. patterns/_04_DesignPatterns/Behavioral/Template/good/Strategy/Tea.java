@@ -1,9 +1,8 @@
-package _04_DesignPatterns.Behavioral.Template.goodTemplateMethod;
+package _04_DesignPatterns.Behavioral.Template.good.Strategy;
 
 import java.util.Scanner;
 
-public class Tea extends Beverage {
-
+public class Tea implements Beverage {
     private final Scanner scanner;
 
     public Tea(Scanner scanner) {
@@ -11,12 +10,16 @@ public class Tea extends Beverage {
     }
 
     @Override
-    protected void brew() {
+    public void prepare() {
+        brew();
+        addCondiments();
+    }
+
+    private void brew() {
         System.out.println("Brewing tea for 3 minutes");
     }
 
-    @Override
-    protected void addCondiments() {
+    private void addCondiments() {
         if (customerWantsCondiments()) {
             System.out.println("Adding lemon to the tea");
         }
@@ -27,5 +30,4 @@ public class Tea extends Beverage {
         String input = scanner.nextLine().toLowerCase();
         return input.equals("y");
     }
-
 }

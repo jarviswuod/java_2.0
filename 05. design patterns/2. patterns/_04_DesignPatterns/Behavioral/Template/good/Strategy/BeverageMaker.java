@@ -1,14 +1,14 @@
-package _04_DesignPatterns.Behavioral.Template.goodStrategy;
+package _04_DesignPatterns.Behavioral.Template.good.Strategy;
 
 public class BeverageMaker {
 
-    private IBeverage beverage;
+    private Beverage beverage;
 
-    public BeverageMaker(IBeverage beverage) {
+    public BeverageMaker(Beverage beverage) {
         this.beverage = beverage;
     }
 
-    public void setBeverage(IBeverage beverage) {
+    public void setBeverage(Beverage beverage) {
         this.beverage = beverage;
     }
 
