@@ -2,7 +2,13 @@ package _04_DesignPatterns.Behavioral.State;
 
 /*
 
-    NOTES:
+    - CODE EXPLANATION:
+
+    - CHALLENGE:
+        - Say you're writing a blog post using the popular Content Management System(CMS), wordpress. The document can be in one of three states; Draft, Moderation(under review by an admin) and Published. There are three types of user roles; Reader, Editor, and Admin
+        - You are tasked to build sample version of the CMS; please not, Only Admin can publish documents
+
+
     - SOLUTION 1: Conditional If else;
         - First we create an enum class called DocumentState
                 public enum DocumentStates {
