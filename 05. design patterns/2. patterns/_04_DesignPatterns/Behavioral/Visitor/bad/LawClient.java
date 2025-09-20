@@ -10,5 +10,4 @@ public class LawClient extends Client {
     public void sendEmail() {
         System.out.println("Sending law marketing tips to " + name + " at " + email);
     }
-
 }

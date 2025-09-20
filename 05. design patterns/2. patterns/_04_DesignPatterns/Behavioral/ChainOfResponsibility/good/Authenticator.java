@@ -11,5 +11,4 @@ public class Authenticator extends Handler {
 
         return !("admin".equals(username) && "admin@123".equals(password));
     }
-
 }

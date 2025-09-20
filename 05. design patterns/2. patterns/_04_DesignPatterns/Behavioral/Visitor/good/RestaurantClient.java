@@ -7,7 +7,7 @@ public class RestaurantClient extends Client {
     }
 
     @Override
-    public void accpet(Visitor visitor) {
+    public void accept(Visitor visitor) {
         visitor.visitRestaurant(this);
     }
 }

@@ -7,27 +7,27 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
         - The pattern allows building a chain of objects to handle a request. A request is passed through a chain of handlers each capable of either handling the request or passing it to the next handler in the chain.
 
     - Example Demo:
-        - Let's say we have a web page that contains someointormation that only admins of the website can access, such as a page that allows an adming to manage the website's users. e.g create new users, get informatino, update users information etc.
+        - Let's say we have a web page that contains some information that only admins of the website can access, such as a page that allows an admin to manage the website's users. e.g create new users, get informatino, update users information etc.
 
     - SOLUTION 1: Without Chain of Responsibility
 
         - Say that a user makes a request to the webstie's server, but before returning the web page, the users data must be valiadated (e.g trim any whitespace around user-entered data), authenticate the user (e.g check their username and password is correct) and then log some information onto the server about this request. If any of those steps fail, then 'access denied' is returned to the user
 
-            ________________         ___________________________        ________________
-            | Request      |         | Request                 |        | WebPage      |
-            |______________|-------> |_________________________|------->|______________|
-            |              |         | Handler 1: Validate     |        |              |
-            |______________|         | Handler 2: Authenticate |        |______________|
-                                     | Handler 3: Log          |
-                                     |_________________________|
-                                                    |
-                                                    |
-                                                    v
-                                        ________________________
-                                        | Access Denied        |
-                                        |______________________|
+            ____________         ___________________________        _____________
+            | Request  |         | Request                 |        | WebPage   |
+            |__________|-------> |_________________________|------->|___________|
+            |          |         | Handler 1: Validate     |        |           |
+            |__________|         | Handler 2: Authenticate |        |___________|
+                                 | Handler 3: Log          |
+                                 |_________________________|
+                                                |
+                                                |
+                                                v
+                                    ________________________
+                                    | Access Denied        |
+                                    |______________________|
 
-    - Chain of Responsility SOlution:
+    - Chain of Responsility Solution:
         - Instead of having all of out request processgin logic inside of the WebServer.handle() methos, we can create a processing pipline - a chain of objects:
 
             ____________         _______________         __________________         ________________         ________________
@@ -47,12 +47,12 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
     - UML for our chain of responsility example:
 
-            ______________________             __________________________
-            |  WebServer         |             |  Handeler              |
-            |____________________|<>---------->|________________________|
-            |  handle(request)   |             |  setNext(L: Handler)   |
-            |____________________|             |  handle(request)       |
-                                               |________________________|
+            ___________________             _______________________
+            | WebServer       |             | Handeler            |
+            |_________________|<>---------->|_____________________|
+            | handle(request) |             | setNext(L: Handler) |
+            |_________________|             | handle(request)     |
+                                            |_____________________|
                                                         ^
                                                         |
                     ____________________________________|_____________
@@ -72,14 +72,14 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
     - GoF implemetatin of Chain of Responsibliluty:
 
-            _______________________
-            |  Handler            |           ______________
-            |_____________________|<----------|  Client    |
-            |  next: Handler      |           |____________|
-            |_____________________|
-            |  setNext(L:Handler) |            h1 =  new Handler1() 
-            |  handle(request)    |            h2 =  new Handler2() 
-            |_____________________|            h3 =  new Handler3() 
+            ______________________
+            | Handler            |           ______________
+            |____________________|<----------|  Client    |
+            | next: Handler      |           |____________|
+            |____________________|
+            | setNext(L:Handler) |            h1 =  new Handler1() 
+            | handle(request)    |            h2 =  new Handler2() 
+            |____________________|            h3 =  new Handler3() 
                     ^                          h1.setNext(h2) 
                     |                          h2.setNext(h3) 
             ________|___________               h1.handle(request) 

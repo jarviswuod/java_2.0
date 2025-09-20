@@ -7,7 +7,7 @@ public class LawClient extends Client {
     }
 
     @Override
-    public void accpet(Visitor visitor) {
+    public void accept(Visitor visitor) {
         visitor.visitLaw(this);
     }
 }

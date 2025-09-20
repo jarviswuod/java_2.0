@@ -117,6 +117,11 @@ package _04_DesignPatterns.Behavioral.Mediator;
                     if(text == "")
                         button.disable()
 
+                - onClick():
+                    -  text = textBox.getText()
+                    -  databse.save(post1, text)
+
+
             - Whenever a post is selected. PostsListBox xalls it's onChange() method to populate the title text box and enable the button , etc
 
             - Problem

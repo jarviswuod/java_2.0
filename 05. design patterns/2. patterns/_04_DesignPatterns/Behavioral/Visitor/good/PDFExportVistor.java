@@ -16,5 +16,4 @@ public class PDFExportVistor implements Visitor {
     public void visitRetail(RetailClient retailClient) {
         System.out.println("Exporting retail client " + retailClient.name + " to PDF");
     }
-
 }

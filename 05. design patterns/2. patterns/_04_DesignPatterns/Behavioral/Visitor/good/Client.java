@@ -14,5 +14,5 @@ public abstract class Client {
         return email;
     }
 
-    public abstract void accpet(Visitor visitor);
+    public abstract void accept(Visitor visitor);
 }

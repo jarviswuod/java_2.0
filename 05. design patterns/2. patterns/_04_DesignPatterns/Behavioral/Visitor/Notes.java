@@ -13,7 +13,7 @@ package _04_DesignPatterns.Behavioral.Visitor;
             - Law firms
             - Retailers
 
-        - Your manager comes to you and says that they ned the ability to send a specialised email with marketing tips for each  of the different clients; example:
+        - Your manager comes to you and says that they need the ability to send a specialised email with marketing tips for each  of the different clients; example:
             - Restaurants needs tips on how they can better market their food better but las firms don't
             - Law firms get tips on how to improve their online reviews
             - Retailers get tips on how to improve their product descriptions
