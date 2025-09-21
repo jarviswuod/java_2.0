@@ -4,10 +4,13 @@ package _04_DesignPatterns.Behavioral.Template;
 
     - CODE EXPLANATION:
 
+    - CHALLENGE:
+        - Suppose we are designing some software that will be installed on a machine that makes hot beverages. At the beginning we have tea and coffee but, after some fedback from the customers, we needed to add some more beverages such as camomile tea
+
+
     - SOLUTION 1:
         - Tea class:
-            - We have a Tea class with some methods [boilWater(), pourWaterIntoCup(), brew()]
-
+            - We have a Tea class with some methods(boilWater(), pourWaterIntoCup(), brew())
 
                     public class Tea {
                         private void boilingWater() {
@@ -26,7 +29,7 @@ package _04_DesignPatterns.Behavioral.Template;
                     }
 
 
-            - We also need a method to know if a customer needs conterments and to add those condements to the beveage
+            - We also need a method to know if a customer needs condiments and then add those condiments to the beverage
                     public class Tea {
                         private void addCondiments() {
                             if (customerWantsCondiments()) {
@@ -45,8 +48,9 @@ package _04_DesignPatterns.Behavioral.Template;
                         ...
                     }
 
-            - We need to make one final method named make beverage
-                - THis is where we all the methods we ahve created in the corect order to make the Tea successfully
+
+            - We need to make one final method named makeBeverage()
+                - This is where we all the methods we have created in the correct order to make the Tea successfully
 
                     public class Tea {
                         public void makeBeverage() {
@@ -59,8 +63,6 @@ package _04_DesignPatterns.Behavioral.Template;
                         ...
                     }
 
-        - Main class: Testing
-            - We create the Tea object then we make a method call makeBeverage(). It all workd corretnly with either (y/n) from the user
 
         - Coffee class;
             -  The next part is creating coffee class which is also a beverage
@@ -68,9 +70,13 @@ package _04_DesignPatterns.Behavioral.Template;
             - Idential methods (boilWater() and pourWaterToCup())
 
 
+        - Main class: Client class;
+            - We create the Tea object then we make a method call makeBeverage(). It all workd correctly with either (y/n) input from the user
+
+
         - PROBLEM:
-            - With more beverages added we tend to have lots of code duplication, we should resolve this issue, we can use polymophism and inhertance to help out first.
-            - By using the polymorphism and inheritance, we have successfuly managed to use the stratergy pattern
+            - With more beverages added we tend to have lots of code duplication, we should resolve this issue, we can use polymorphism and inhertance to help out first
+            - By using the polymorphism, we'll successfuly managed to use the strategy pattern
 
 
 
@@ -124,12 +130,13 @@ package _04_DesignPatterns.Behavioral.Template;
                     
                 - The other 2 methods that we same across all Beverage classes(boilWater() and pourWaterToCup() will be added in a differenct class altogether)
 
-            -COffee class:
+
+            -Coffee class:
                 - It's all the same as the Tea methods, interms of all the methods and implmentations
 
 
             - Camomile class:
-                - THis is actually very simple as we dont have to add anything inside it, we just brew() it
+                - This is actually very simple as we don't have to add anything inside it, we just brew()
 
                     public class Camomile implements Beverage {
 
@@ -143,11 +150,11 @@ package _04_DesignPatterns.Behavioral.Template;
                         }
                     }
 
-        - BeverageMaker class:
-            - It's gonna contain our shared code
-                - First we need field for referencing the particular beverage we are making. Its teh Beverage interface allwoing us to pass different types of beverage into the BeverageMaker
-                - We also need a constructor and setBeverage() methods so that we could easily pchange the beverage we are going to prepare
 
+        - BeverageMaker class:
+            - It contains our shared code
+                - First, we need field for referencing the particular beverage we are making. It's the Beverage interface allowing us to pass different types of beverage into the BeverageMaker
+                - We also need a constructor and setBeverage() methods so that we could easily change the beverage we are going to prepare
 
                     public class BeverageMaker {
 
@@ -168,7 +175,6 @@ package _04_DesignPatterns.Behavioral.Template;
 
                     public class BeverageMaker {
 
-
                         private void boilingWater() {
                             System.out.println("Boiling water");
                         }
@@ -180,7 +186,7 @@ package _04_DesignPatterns.Behavioral.Template;
                         ...
                     }
 
-            - We create a method called makeBeverage() and in this method we'll  have our commom operation/steps/methods and then unique operations
+            - We create a method called makeBeverage() and in this method we'll  have our commom operations/steps/methods and then unique operations
                     public class BeverageMaker {
 
                         public void makeBeverage() {
@@ -196,8 +202,9 @@ package _04_DesignPatterns.Behavioral.Template;
                     }
 
 
+
         - Main class: client class
-            - first create a BeverageMaker object passing the beverage we wanna make and then we call the makeBeverage() method
+            - First create a BeverageMaker object passing the beverage we wanna make and then we call the makeBeverage() method
                     public class Main {
                         public static void main(String[] args) {
 
@@ -214,18 +221,20 @@ package _04_DesignPatterns.Behavioral.Template;
                         }
                     }
 
-        - Conslution:
-            - Inside of beverageMaker we have defined the commom methods for making a beverage [boilWater() and addIntoCup() ] and then we have an interface Beverage which has prepare() method we also have our concreteBeverage implementations Camomile, Tea and Coffee all of which implmement the Beverage interface and this allows us to treat all beverage the same way in the beverageMaker class
-            - From the beverageMaker class we specify the beverage when we create  the beverageMekter object or or we can set the bevegare in the setBeverage() methos and then we are delegating/forwaring the execution of tasks related to making a spesific beberage to a conreteBeverage object, this is done done via beverage.prepare() method inside the beverageMaker class
+
+        - Conlusion:
+            - Inside of BeverageMaker we have defined the commom methods for making a beverage(boilWater() and addIntoCup()) and then we have an interface Beverage which has prepare() method
+            - We also have our ConcreteBeverage implementations of Camomile, Tea and Coffee all of which implement the Beverage interface and allows us to treat all beverage the same way in the BeverageMaker class
+            - From the BeverageMaker class we specify the beverage when we create the BeverageMaker object or we can set the bevegare in the setBeverage() method and then delegate/forward the execution of tasks related to making a specific beverage to a ConcreteBeverage object, this is done via beverage.prepare() method inside the BeverageMaker class
 
 
-        - We just solved our peroblem using polymophism which lead to us using the stratergy pattern. We couls also solve the problem using inhertance; Teas, COffee and Camomile have things in common
+        - We just solved our problem using polymorphism which lead to us using the strategy pattern. We could also solve the problem using inhertance; Tea, Coffee and Camomile have things in common
 
 
 
     - SOLUTION 3: Template Pattern 
         - Bevarage class: Base class
-            - We currently haveour template method with all the steps involved in creating a beverage
+            - We currently have our template method with all the steps involved in creating a beverage
 
                     public abstract class Beverage {
 
@@ -235,10 +244,11 @@ package _04_DesignPatterns.Behavioral.Template;
                             brew();
                             addCondiments();
                         }
-                        }
+                    }
 
 
-            - Rem: boilWater() and pourIntoCup() are shared between all the concrete beverage classes hence we can actually implement the 2 steps inside of this beverage class
+            - NOTE: boilWater() and pourIntoCup() are shared between all the concrete beverage classes hence we can actually implement the 2 steps inside of this Beverage class
+
                     public abstract class Beverage {
 
                         public void prepare() {
@@ -258,10 +268,11 @@ package _04_DesignPatterns.Behavioral.Template;
 
                         ...
                     }
-                    
-            - Now in this template method , we can provide a brew() and addCondiments() methods
+
+
+            - Now in this template method, we can provide a brew() and addCondiments() method
                 - We can make brew() an abstract method
-                - addCOndiments() method is optional to be overridden in subclasses 
+                - addCondiments() method is optional to be overriden in subclasses 
 
                     public abstract class Beverage {
 
@@ -281,65 +292,67 @@ package _04_DesignPatterns.Behavioral.Template;
                         ...
                     }
 
-            - Concrete classes implementations:
-                - Tea class:
-                    - THe only method we have to implement is brew() method because it's an abstract method
 
-                    - Optionally we Override the addCondiment() method depending on sub-class
+        - Concrete classes implementations:
+            - Tea class:
+                - The only method we have to implement is brew() method because it's an abstract method
 
-                            public class Tea extends Beverage {
+                - Optionally we override the addCondiments() method depending on sub-class
 
-                                @Override
-                                protected void brew() {
-                                    System.out.println("Brewing tea for 3 minutes");
-                                }
+                        public class Tea extends Beverage {
 
-                                @Override
-                                protected void addCondiments() {
-                                    if (customerWantsCondiments()) {
-                                        System.out.println("Adding lemon to the tea");
-                                    }
-                                }
-
-                                private boolean customerWantsCondiments() {
-                                    System.out.print("Do you want condiments with your tea? (y/n): ");
-                                    String input = scanner.nextLine().toLowerCase();
-                                    return input.equals("y");
-                                }
-
-                                ...
+                            @Override
+                            protected void brew() {
+                                System.out.println("Brewing tea for 3 minutes");
                             }
 
-                    - Same case aplies to COffee class
-
-
-
-                - Camomile class:
-                    - THis one is a bit different compared to COffee and Tea concrete classes
-                    - All we have to for Camomile is inheriextend the abstract Beverage class and oveeride the abstract method bre(), nothing else is needed from it
-                            public class Camomile extends Beverage {
-
-                                @Override
-                                protected void brew() {
-                                    System.out.println("Brewing camomile for 3 minutes");
+                            @Override
+                            protected void addCondiments() {
+                                if (customerWantsCondiments()) {
+                                    System.out.println("Adding lemon to the tea");
                                 }
                             }
 
-                - Main class: Client class;
-                    - We create subclass instance and call the  prepare() method, with this everything works fine
-                            public class Main {
-                                public static void main(String[] args) {
-
-
-                                    Tea tea = new Tea();
-                                    tea.prepare();
-
-                                    System.out.println();
-
-                                    Camomile camomile = new Camomile();
-                                    camomile.prepare();
-                                }
+                            private boolean customerWantsCondiments() {
+                                System.out.print("Do you want condiments with your tea? (y/n): ");
+                                String input = scanner.nextLine().toLowerCase();
+                                return input.equals("y");
                             }
+
+                            ...
+                        }
+
+            - Same case aplies to Coffee class
+
+
+            - Camomile class:
+                - This one is a bit different compared to Coffee and Tea concrete classes
+                - All we have to for Camomile is inherit/extend the abstract Beverage class and override the abstract method brew(), nothing else is needed from it
+
+                        public class Camomile extends Beverage {
+
+                            @Override
+                            protected void brew() {
+                                System.out.println("Brewing camomile for 3 minutes");
+                            }
+                        }
+
+
+        - Main class: Client class;
+            - We create subclass instance and call the  prepare() method, with this everything works fine
+                    public class Main {
+                        public static void main(String[] args) {
+
+
+                            Tea tea = new Tea();
+                            tea.prepare();
+
+                            System.out.println();
+
+                            Camomile camomile = new Camomile();
+                            camomile.prepare();
+                        }
+                    }
 
  */
 

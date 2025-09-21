@@ -76,7 +76,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
         - WebServer has a reference to the first handler in the chain
             - Note: WebServer is not talking directly to the concrete handlers, it's talking to the handler interface. So it's completely decoupled from the concrete implmenetations
 
-        - This satisfies open-closed principle, if we want to remove logger, we don't have to go to the handeler() method on WebServer and change it's implementation
+        - This satisfies open-closed principle, if we want to remove logger, we don't have to go to the handler() method on WebServer and change it's implementation
         - Also, if we want to add a new process, we can create a new class that extends Handler, then add it to our chain - Satisfying OCP
 
 

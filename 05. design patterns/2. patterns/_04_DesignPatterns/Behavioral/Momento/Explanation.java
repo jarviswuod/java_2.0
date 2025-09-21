@@ -10,6 +10,7 @@ package _04_DesignPatterns.Behavioral.Momento;
                 2. Write some text: "Hello there, my name is Dan"
                 3. Change the title of the document to "The Life of a Developer. My Memories"
 
+
     - SOLUTION:
         - EditorState class: Memento
             - The EditorState class plus all it's fields(title, content, createdAt) are made final
