@@ -16,7 +16,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
             - When a user passes a username and passord, the 2 other fields validateUsername and validatePassword will be populated cleaning up the user inputs
             - We also create a constructor so that username and password can be set
-            - Finally generate settera and getters for the 4 fields
+            - Finally generate setters and getters for the 4 fields
 
                     public class HttpRequest {
 
