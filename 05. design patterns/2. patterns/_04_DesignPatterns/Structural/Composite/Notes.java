@@ -16,7 +16,7 @@ package _04_DesignPatterns.Structural.Composite;
                             ________________|_________________
                             |                                |
                             v                                v
-                          Box                               Box
+                           Box                              Box
                             |                                |
                             v                   _____________|______________________
                         Microphone              |                                  |
@@ -40,7 +40,7 @@ package _04_DesignPatterns.Structural.Composite;
 
 
     - SOLUTION 2:
-        - Whever we have lots of conditionals that are checking the type of an object, and casting it to another object type it's a good sign that we need to use polymorphism
+        - Whenever we have lots of conditionals that are checking the type of an object, and casting it to another object type it's a good sign that we need to use polymorphism
         - We can use polymorphism by creating an interface, called Item and extracting common methods or logic between the objects into that interface
 
                                   ______________
@@ -87,8 +87,8 @@ package _04_DesignPatterns.Structural.Composite;
 
 
         - The composite pattern is useful for representing tree structure, example;
-            - Folder and files
-            - A graphical editor, that allows you to group shapes together, and group groups of shapes together. When dragging a group, all shapes should move together in the same way
+            1. Folder and files
+            2. A graphical editor, that allows you to group shapes together, and group groups of shapes together. When dragging a group, all shapes should move together in the same way
 
  */
 

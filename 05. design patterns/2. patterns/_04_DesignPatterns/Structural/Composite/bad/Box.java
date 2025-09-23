@@ -14,6 +14,7 @@ public class Box {
     public double calculateTotalPrice() {
 
         double totalPrice = 0;
+
         for (Object item : items) {
             if (item instanceof Keyboard) {
                 totalPrice += ((Keyboard) item).price;
@@ -25,6 +26,7 @@ public class Box {
                 totalPrice += ((Box) item).calculateTotalPrice(); // calls calculateTotalPrice() recursively
             }
         }
+
         return totalPrice;
     }
 }

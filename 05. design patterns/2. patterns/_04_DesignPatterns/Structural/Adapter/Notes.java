@@ -24,9 +24,11 @@ package _04_DesignPatterns.Structural.Adapter;
 
         - PROBLEM:
             - The issue here is that all concrete color classes are expected to implement our Color interface and have an apply() method. But, the concrete color classes from the installed library do not, meaning that we can't pass them to our videoEditor.applyColor() method
-                    videoEditor.applyColor(new Rainbow()); // Rainbow is a color from the 3rd party library
+                    NOTE: Rainbow is a color from the 3rd party library
+                        - videoEditor.applyColor(new Rainbow()); 
 
-            - We cannot modify the 3rd-party library code to make the color classed implement Color interface. Hence we solve for this by converting the interface of the 3rd party color classes to a different form, using the Adaper Pattern
+
+            - We cannot modify the 3rd-party library code to make the color classes implement Color interface. Hence we solve for this by converting the interface of the 3rd party color classes to a different form, using the Adaper Pattern
 
 
 

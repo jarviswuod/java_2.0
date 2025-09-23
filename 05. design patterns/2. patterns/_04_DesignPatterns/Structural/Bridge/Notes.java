@@ -28,7 +28,7 @@ package _04_DesignPatterns.Structural.Bridge;
             |________________|     |______________|     |________________|     |______________|
 
 
-        - With this design every time we add a new brand, e.g Samsung, we'd have to create three new classes: SamsungRemote, AdvancedSamsungRemote and MegaSamsungRemote. And if we create a new type of remote e.g. RadioAndTVRemote, then we'd have to create a new class for every brand, so RadioAndTVLG, RadioAndTVSamsung. This is not maintainable
+        - With this design every time we add a new brand, e.g Samsung, we'd have to create three new classes: SamsungRemote, AdvancedSamsungRemote and MegaSamsungRemote. And if we create a new type of remote e.g. RadioAndTVRemote, then we'd have to create a new class for every brand, so RadioAndTVLG, RadioAndTVSamsung - this is not maintainable
 
 
 
