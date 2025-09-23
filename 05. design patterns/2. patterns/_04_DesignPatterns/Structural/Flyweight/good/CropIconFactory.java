@@ -17,5 +17,4 @@ public class CropIconFactory {
 
         return icons.get(cropType);
     }
-
 }

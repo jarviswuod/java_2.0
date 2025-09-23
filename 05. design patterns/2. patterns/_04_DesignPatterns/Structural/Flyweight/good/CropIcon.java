@@ -13,5 +13,4 @@ public class CropIcon {
     public CropType getType() {
         return type;
     }
-
 }

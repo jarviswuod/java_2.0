@@ -4,13 +4,11 @@ package _04_DesignPatterns.Structural.Bridge;
 
     NOTES:
     - The Bridge Pattern:
-        - Is a desgin pattern that separates a large class, or a set of related classes into two separate hierarchies so that they can be developed independently from each other
+        - Is a structural design pattern that separates a large class, or a set of related classes into two separate hierarchies so that they can be developed independently from each other
 
 
     - CHALLENGE:
         - Say that we have a remote controlling a radio. There are multiple different brands of radio, and there are different types of remotes;
-
-
                                                    __________________
                                                    | Remote         |   Abstract class
                                                    |________________|
@@ -30,7 +28,8 @@ package _04_DesignPatterns.Structural.Bridge;
             |________________|     |______________|     |________________|     |______________|
 
 
-        - Every time that we add a new brand, e.g Samsung, we'd have to create three new classes: SamsungRemote, AdvancedSamsungRemote and MegaSamsungRemote. And if we create a new type of remote e.g. RadioAndTVRemote, then we'd have to create a new class for every brand, so RadioAndTVLG, RadioAndTVSamsung. This is not maintainable
+        - With this design every time we add a new brand, e.g Samsung, we'd have to create three new classes: SamsungRemote, AdvancedSamsungRemote and MegaSamsungRemote. And if we create a new type of remote e.g. RadioAndTVRemote, then we'd have to create a new class for every brand, so RadioAndTVLG, RadioAndTVSamsung. This is not maintainable
+
 
 
     - SOLUTION 2: BRIDGE PATTERN;
@@ -38,29 +37,26 @@ package _04_DesignPatterns.Structural.Bridge;
 
         - To simplify this hierarchy, we can break it down into two separate hierarchies;
 
+            __________________    Device "Bridge"                   ________________
+            | RemoteControl  |<>--------------------------------->  | Device       |
+            |________________|                                      |______________|
+            | turnOn()       |  device.turnOn()                     | turnOn()     |
+            |________________|                                      |______________|
+                    ^                                                       ^
+                    |                                                       |
+                ____|_______________________                    ____________|________
+                |                          |                    |                   |
+              __|_______________   ________|________     _______|_________   _______|_________
+              | AdvancedRemote |   | MegaRemote    |     | LG            |   | Sony          |
+              |________________|   |_______________|     |_______________|   |_______________|
+              |                |   |               |     |               |   |               |
+              |________________|   |_______________|     |_______________|   |_______________|
 
-            __________________    Device "Bridge"                       ________________
-            | RemoteControl  |<>------------------------------------->  | Device       |
-            |________________|                                          |______________|
-            | turnOn()       |  device.turnOn()                         | turnOn()     |
-            |________________|                                          |______________|
-                    ^                                                           ^
-                    |                                                           |
-                ____|_______________________                        ____________|________
-                |                          |                        |                   |
-              __|_______________   ________|________         _______|_________   _______|_________
-              | AdvancedRemote |   | MegaRemote    |         | LG            |   | Sony          |
-              |________________|   |_______________|         |_______________|   |_______________|
-              |                |   |               |         |               |   |               |
-              |________________|   |_______________|         |_______________|   |_______________|
-
-        - Whever we have a hierarchy growing in two separetate dimensions, we need to split them in half and connect then using bridge
+        - Whenever we have a hierarchy growing in two separate dimensions, we need to split them in half and connect then using bridge
         - The two hierarchies can now grow independently from each other
-        
-
-
 
  */
+
 public class Notes {
 
 }

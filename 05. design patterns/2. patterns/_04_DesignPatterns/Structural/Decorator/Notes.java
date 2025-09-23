@@ -4,7 +4,7 @@ package _04_DesignPatterns.Structural.Decorator;
 
     NOTES:
     - Decorator pattern:
-        - Is a structural design pattern that allows behavior to be added to individual objects dynamically, enhancing functionality without altering the object's structure, and it's used to extend or modify the behaviour of objects by wrapping them with additional fucntionality through composition
+        - Is a structural design pattern that allows behavior to be added to individual objects dynamically, enhancing functionality without altering the object's structure, and it's used to extend or modify the behaviour of objects by wrapping them with additional functionality through composition
 
 
     - CHALLENGE:
@@ -20,7 +20,6 @@ package _04_DesignPatterns.Structural.Decorator;
                                      |________________|
                                               ^
                                               |
-                                              |
                         ______________________|______________________________
                         |                     |                             |
                         |                     |                             |
@@ -30,7 +29,7 @@ package _04_DesignPatterns.Structural.Decorator;
                   | save(data)  |         | save(data)   |         | save(data)              |
                   |_____________|         |______________|         |_________________________|
 
-        - So far, everything looks OK. But then the boss says that we need to create a new validation class to validate and clean the data before it is sent to the cloud. Our code starts to look bloated as we need to make lots of new classes just to add an extra feature
+        - So far, everything looks OK. But if we need to create a new validation class to validate and clean the data before it is sent to the cloud. Our code starts to look bloated as we need to make lots of new classes just to add an extra feature
 
                                      __________________
                                      | CloudData      |
@@ -42,7 +41,6 @@ package _04_DesignPatterns.Structural.Decorator;
                                      |________________|
                                               ^
                                               |
-                                              |
                         ______________________|______________________________________________________________
                         |          |          |             |                |                    |         |
                         |          |          |             |                |                    |         |
@@ -53,14 +51,15 @@ package _04_DesignPatterns.Structural.Decorator;
                   |_____________|  |      |______________|  |       |_________________________|   |      |____________|
                                    |                        |                                     |
                                    |                        |                                     |
-           ___________________________         ___________________________         ______________________________________
-           | Encryption&Validation   |         | Compression&Validation  |         | Encryption&Compression&Validation  |
-           |_________________________|         |_________________________|         |____________________________________|
-           | save(data)              |         | save(data)              |         | save(data)                         |
-           |_________________________|         |_________________________|         |____________________________________|
+               ___________________________     ___________________________         ______________________________________
+               | Encryption&Validation   |     | Compression&Validation  |         | Encryption&Compression&Validation  |
+               |_________________________|     |_________________________|         |____________________________________|
+               | save(data)              |     | save(data)              |         | save(data)                         |
+               |_________________________|     |_________________________|         |____________________________________|
 
 
-        - To add one nre feature, we havet to create four new classes. Our class library is growing exponentially - not good, not maintanable, not flexible
+        - To add one more feature, we have to create four new classes. Our class library is growing exponentially - not good, not maintanable, not flexible
+
 
 
     - SOLUTION 2: DECORATOR;
@@ -96,7 +95,7 @@ package _04_DesignPatterns.Structural.Decorator;
                                     |______________________|         |_______________________| 
 
 
-            - Above, we make the encryption and compression objects decorators, because they are decorating the CloudData object with some additional behaviour. Because decorator classes have some common logic - e.g. referencing a CloudData object - we have created a DataDecorator class where this logic can be inherited to prevent code repetition
+            - Above, we make the encryption and compression objects decorators, because they are decorating the CloudData object with some additional behaviour. Because decorator classes have some common logic - e.g. referencing a CloudData object - We have created a DataDecorator class where this logic can be inherited to prevent code repetition
 
             - Our decorator classes are composed of( or are decorating/wrapping) a CloudData object(or any object that implements the Data interface)
 
@@ -133,9 +132,6 @@ package _04_DesignPatterns.Structural.Decorator;
                                                   |_____________________| | |
                                                     |_____________________| |
                                                       |_____________________|
-
-
-        - 
 
  */
 

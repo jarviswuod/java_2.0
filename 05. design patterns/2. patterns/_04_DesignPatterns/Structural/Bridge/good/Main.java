@@ -13,6 +13,5 @@ public class Main {
         advancedRemote.turnOn();
         advancedRemote.turnOff();
         advancedRemote.setChannel(4);
-
     }
 }

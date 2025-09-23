@@ -23,7 +23,7 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - PROBLEM:
-            - The probem is that all concrete color classes are expected to implement our Color interface and have an apply() method. But, the concrete color classes from the installed library do not, meaning that we can't pass them to our videoEditor.applyColor() method
+            - The issue here is that all concrete color classes are expected to implement our Color interface and have an apply() method. But, the concrete color classes from the installed library do not, meaning that we can't pass them to our videoEditor.applyColor() method
                     videoEditor.applyColor(new Rainbow()); // Rainbow is a color from the 3rd party library
 
             - We cannot modify the 3rd-party library code to make the color classed implement Color interface. Hence we solve for this by converting the interface of the 3rd party color classes to a different form, using the Adaper Pattern
@@ -33,7 +33,6 @@ package _04_DesignPatterns.Structural.Adapter;
     - SOLUTION 2 - ADAPTER PATTERN
         - So far, we can't use Rainbow because it doesn't implement Color, and we can't make it implement COlor because it's inside a 3rd party package:
 
-
             ______________________                ________________
             | VideoEditor        |--------------> | Color        |
             |____________________|                |______________|
@@ -41,13 +40,12 @@ package _04_DesignPatterns.Structural.Adapter;
             |____________________|                |______________|
                                                         ^
                                                         |
-                                                        |
                     ???                                 |
-               _________________                ________________________
-           ??? | Rainbow       | ???            | MidnightpurpleColor  |
-               |_______________|                |______________________|
-           ??? | update(video) | ???            | apply(video)         |
-               |_______________|                |______________________|
+               _________________                _______________________
+           ??? | Rainbow       | ???            | MidnightpurpleColor |
+               |_______________|                |_____________________|
+           ??? | update(video) | ???            | apply(video)        |
+               |_______________|                |_____________________|
 
 
         - SOLUTION:
@@ -61,7 +59,6 @@ package _04_DesignPatterns.Structural.Adapter;
                                                         ^
                                                         |
                                                         |
-                                                        |
                _________________                _________________
                | Rainbow       | <-----------<> | Rainbow       |
                |_______________|                |_______________|
@@ -70,8 +67,6 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
             - RainbowColor is the adapter; it's converting the interface of the Rainbow("adaptee") class into a different form(Color)
-        -
-
 
  */
 

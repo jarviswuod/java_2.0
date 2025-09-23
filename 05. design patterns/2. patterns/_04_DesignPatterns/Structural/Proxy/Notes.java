@@ -12,10 +12,9 @@ package _04_DesignPatterns.Structural.Proxy;
 
 
 
-
     - CHALLENGE:
         - Let's say that we have an application that fetched a list of youtube videos from Youtube's API, and displays them in a list. In our application we are using a 3rd party youtube package to handle fetching youtube videos from the API, and then rendering the video on the screen with the video controls
-        - The problem is that every time a request is made to our appilcation, our server has to re-download the video from teh YouTube API. This takes a long time, especially if lots of requests are made to our application at once
+        - The problem is that every time a request is made to our appilcation, our server has to re-download the video from the YouTube API. This takes a long time, especially if lots of requests are made to our application at once
 
 
     - SOLUTION 1
@@ -29,6 +28,7 @@ package _04_DesignPatterns.Structural.Proxy;
               ______________        ______________        ____________________
               | VideoList  |------->| VideoProxy |------->| ThirdPartyVideo  |
               |____________|        |____________|        |__________________|
+
 
 
         - Our VideoList object will now talk to VideoProxy objects
@@ -52,7 +52,6 @@ package _04_DesignPatterns.Structural.Proxy;
 
             - The above UML shows that our VideoProxy object will implement the third-party libraries Video interface, meaning that we can add these video proxy objects to our VideoList, and, VideoList won't care whether it's a ThirPartyVideo or a VideoProxy, as long as it's a Video
 
-
               ______________              _________________
               | Client     |------------> | Subject       |
               |____________|              |_______________|
@@ -67,8 +66,6 @@ package _04_DesignPatterns.Structural.Proxy;
                             |__________________|           |____________|
                             | request()        |           |  request() |     realSubject.request()
                             |__________________|           |____________|
-            - 
-
 
  */
 

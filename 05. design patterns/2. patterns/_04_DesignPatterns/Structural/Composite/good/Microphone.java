@@ -8,5 +8,4 @@ public class Microphone implements Item {
     public double getPrice() {
         return price;
     }
-
 }

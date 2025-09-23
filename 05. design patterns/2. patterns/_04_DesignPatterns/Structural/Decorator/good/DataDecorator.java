@@ -7,6 +7,4 @@ public abstract class DataDecorator implements Data {
     public DataDecorator(Data data) {
         this.data = data;
     }
-
-    // public abstract save(String data);
 }

@@ -20,8 +20,9 @@ package _04_DesignPatterns.Structural.Flyweight;
                 |____________________|
 
 
+
     - SOLUTION 1:
-        - The problem with the above solution is that for every carrot created, we are storing a new object with all of the information about a carrot stored within that object. This means that if we create 1000 carrots, then we will be storing 1000 carrot icons in RAM - that's going to take up lots of memory, and many maobile devices wil struggle to handle that
+        - The problem with the above solution is that for every carrot created, we are storing a new object with all of the information about a carrot stored within that object. This means that if we create 1000 carrots, then we will be storing 1000 carrot icons in RAM - that's going to take up lots of memory, and many mobile devices will struggle to handle that
 
         - What if we could share icons between crop objects of the same type...
 
@@ -38,10 +39,10 @@ package _04_DesignPatterns.Structural.Flyweight;
                 | icon: byte         |          Intrinsic state
                 |____________________|
 
-        - So, if we can extract the intrinsic state out of Crop, and place it into a new object, called CropIcon, then we would only need to create three CropIcon objects (for potato, carrot and what) in our application, even if there are 1000s of crops in the game
+        - So, if we can extract the intrinsic state out of Crop, and place it into a new object, called CropIcon, then we would only need to create three CropIcon objects (for potato, carrot and what) in our application even if there are 1000s of crops in the game
 
-        - We can then, for example, have just one carrot icon object store in memory, then all crops o type carrot can make reference, or reuse, that carrot icon object throughout the game
-
+        - We can then, for example, have just one carrot icon object store in memory, then all crops of type carrot can make reference, or reuse, that carrot icon object throughout the game
+            - An object that contains only intrisic state is called a FlyWeight
 
                 ___________              _____________
                 | Crop    |<>----------->| CropIcon  |
@@ -50,10 +51,9 @@ package _04_DesignPatterns.Structural.Flyweight;
                 | y: int  |              | icon      |
                 |_________|              |___________|
 
-            - An object that contains only intrisic state is called a FlyWeight
 
-            - But we shouldn't create CropIcon objects directly, we can create a factory class that cretes an icon, depending on the icon type, and cached that icon in memory, ensuring that it's only stored in one place
 
+            - But we shouldn't create CropIcon objects directly, we can create a factory class that creates an icon, depending on the icon type, and cached that icon in memory, ensuring that it's only stored in one place
 
                             ___________              _____________
                             | Crop    |<>----------->| CropIcon  |
@@ -68,7 +68,6 @@ package _04_DesignPatterns.Structural.Flyweight;
                 |____________________|              |____________________|
                 | getCrops()         |              | getCropIcon(type)  |
                 |____________________|              |____________________|
-
 
 
 
@@ -97,8 +96,6 @@ package _04_DesignPatterns.Structural.Flyweight;
 
             - operation();
                 - flyweight.operation(uniqueState)
-
-
 
  */
 
