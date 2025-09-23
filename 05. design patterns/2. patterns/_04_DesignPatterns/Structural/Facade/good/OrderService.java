@@ -20,5 +20,4 @@ public class OrderService {
         OrderFulfillment orderFulfillment = new OrderFulfillment(inventory);
         orderFulfillment.fulfill(orderRequest.name, orderRequest.address, orderRequest.itemIds);
     }
-
 }
