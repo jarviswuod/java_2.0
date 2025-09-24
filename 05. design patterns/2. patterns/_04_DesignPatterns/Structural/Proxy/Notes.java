@@ -4,7 +4,7 @@ package _04_DesignPatterns.Structural.Proxy;
 
     NOTES:
     - The Proxy Pattern:
-        - Is a structural design pattern that provides a proxy, or agent object to control access to another object allowing for additional functionality such as caching, logging, lazy loading or access control without changing the client's code
+        - Is a structural design pattern that provides a proxy, or agent, object to control access to another object, allowing for additional functionality such as caching, logging, lazy loading or access control without changing the client's code
 
               ______________        ______________        ______________
               | Client     |------->| Proxy      |------->| Target     |
@@ -22,7 +22,7 @@ package _04_DesignPatterns.Structural.Proxy;
 
 
     - SOLUTION 2: PROXY PATTERN;
-        - The problem with our first solution is that the YoutubeVIdeo class is from a third-party library, so we are unable to modify it's code. The solution is to use a proxy object
+        - The problem with our first solution is that the YoutubeVideo class is from a third-party library, so we are unable to modify it's code. The solution is to use a proxy object
 
                                       Lazy Loading
               ______________        ______________        ____________________

@@ -8,7 +8,7 @@ package _04_DesignPatterns.Structural.Flyweight;
 
 
     - CHALLENGE:
-        - Say that we have a farming game that includes different types of crops, such as potatoes, carrots and wheat. Each crop is represented by a Crop object, that includes it's X ad Y coordinates, the type of crop, and an icon;
+        - Say that we have a farming game that includes different types of crops, such as potatoes, carrots and wheat. Each crop is represented by a Crop object, that includes it's X and Y coordinates, the type of crop, and an icon;
 
                 ______________________
                 | Crop               |
