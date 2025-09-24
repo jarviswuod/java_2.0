@@ -15,12 +15,12 @@ package _04_DesignPatterns.Structural.Facade;
             USER    ------------------->| Authenticate       |
                                         | check Inventory    |
                                         | Connect to payment |
-                                        | fullfil orders     |
+                                        | fulfill orders     |
                                         | charge Users       |
                 ^                       |____________________|
                 |        Response:               |
                 |     Success or failure         |
-                |--------------------------------|
+                |________________________________|
 
 
         - As you can see, every client that needs to make an order has to go through all the 5 main steps to make a single order. Every client becomes coupled to, or dependent on, four classes; Authenticate, Inventory, Payment, and OrderFulfillement
@@ -34,10 +34,10 @@ package _04_DesignPatterns.Structural.Facade;
                                         |_______________|
                                                 |
                                                 |
-                    |-------------------------------------------------------------|
-                    |                |                             |              |
-                    |                |                             |              |
-                    v                v                             v              v
+                    ____________________________|__________________________________
+                    |                     |                   |                   |
+                    |                     |                   |                   |
+                    v                     v                   v                   v
                 _________________  __________________   ______________   ____________________
                 | Authenticate  |  | Inventory      |   | Payment    |   | OrderFulfillment |
                 |_______________|  |________________|   |____________|   |__________________|
@@ -56,10 +56,10 @@ package _04_DesignPatterns.Structural.Facade;
                                         |_____________________|
                                                 |
                                                 |
-                    |-------------------------------------------------------------|
-                    |                |                             |              |
-                    |                |                             |              |
-                    v                v                             v              v
+                    ____________________________|__________________________________
+                    |                     |                   |                   |
+                    |                     |                   |                   |
+                    v                     v                   v                   v
                 _________________  __________________   ______________   ____________________
                 | Authenticate  |  | Inventory      |   | Payment    |   | OrderFulfillment |
                 |_______________|  |________________|   |____________|   |__________________|
@@ -72,15 +72,15 @@ package _04_DesignPatterns.Structural.Facade;
                     |          |         |         |         |           |
                     |__________|         |_________|         |___________|
                         |                     |                     |
-                        |-------------------------------------------|
+                        |_____________________|_____________________|
                                               |
                                               |
                                               v
-                                    __________________
-                                    | OrderService   |
-                                    |________________|
-                                    |                |
-                                    |________________|
+                                      __________________
+                                      | OrderService   |
+                                      |________________|
+                                      |                |
+                                      |________________|
 
  */
 

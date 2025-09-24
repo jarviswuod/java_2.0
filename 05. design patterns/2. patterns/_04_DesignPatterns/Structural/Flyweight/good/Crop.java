@@ -5,7 +5,6 @@ public class Crop {
     private int x;
     private int y;
     private CropIcon cropIcon;
-    private byte[] icon;
 
     public Crop(int x, int y, CropIcon cropIcon) {
         this.x = x;

@@ -15,5 +15,4 @@ public class Payment {
     public void pay() {
         System.out.println("Charging card with name " + name);
     }
-
 }
