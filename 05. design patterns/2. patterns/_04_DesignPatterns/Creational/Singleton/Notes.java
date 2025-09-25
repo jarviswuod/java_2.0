@@ -35,6 +35,47 @@ package _04_DesignPatterns.Creational.Singleton;
 
         - Say that we need to keep an AppSettings object, that storess global variables such as the name of the app, the db configuration (e.g the db we are using, username, password) and logger settings (e.g the file location of our log file, the format -  e.g text vs JSON). We need to create only a single instance of this object throughout the app to ensure that it only needs to be configured once in one place, and to ensure consistency throughout the app
 
+
+
+    - SOLUTION 2: SINGLETON DESIGN PATTERN;
+        - To ensure we have only a single instance of a class(AppSettings), first we have to make the constructor private (notice -ve UML symbol) - so we can't use the new operation with this class
+
+                    ___________________
+                    |  AppSettings    |
+                    |_________________|
+                    | - instance      |
+                    |_________________|
+                    | - AppSettings() |
+                    | + getInstance() |
+                    | + get()         |
+                    | + set()         |
+                    |_________________|
+
+            if(instance == null)
+                instance = new AppSettings();
+                return instance;
+
+
+        - We also add a private static "getInstance()" instance field that holds an instance of the AppSettings class - i.e the class is responsible for maintaining a single instance of itself
+        - getInstance() is a static method for getting that single instance. Static because static fields are only visible to static methods
+
+
+
+    - SINGLETON PATTERN UML: From GoF book:
+                    _______________________________
+                    |  Singleton                  |
+                    |_____________________________|
+                    | - instance: Singleton       |
+                    |_____________________________|
+                    | - Singleton                 |
+                    | + getInstance(): Singleton  |
+                    |_____________________________|
+
+        - So, to implement the Singleton pattern, you have to:
+            1. Make the constructor private, so the new keyword can't be used to create multiple instance of the class
+            2. Create a private static instance field to keep reference to the single instance
+            3. Create a public static getInstance() for creating that single instance the first time the method is called in the application, then returning that same instance every time the method is called
+
  */
 
 public class Notes {
