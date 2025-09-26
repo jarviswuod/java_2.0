@@ -6,13 +6,18 @@ public class Main {
     public static void main(String[] args) {
 
         CarBuilder carBuilder = new CarBuilder();
-        carBuilder.setCarType(CarType.Sports).setSeats(2).setEngine(new Engine()).setDashboard(new Dashboard(true))
+        carBuilder.setCarType(CarType.Sports)
+                .setSeats(2)
+                .setEngine(new Engine())
+                .setDashboard(new Dashboard(true))
                 .setWheels(new Wheels(20));
         Car sportsCar = carBuilder.getCar();
         sportsCar.setFuel(100);
 
         CarManualBuilder sportsCarManualBuilder = new CarManualBuilder();
-        sportsCarManualBuilder.setCarType(CarType.Sports).setSeats(2).setEngine(new Engine())
+        sportsCarManualBuilder.setCarType(CarType.Sports)
+                .setSeats(2)
+                .setEngine(new Engine())
                 .setDashboard(new Dashboard(true))
                 .setWheels(new Wheels(20));
         Manual sportsManualBuilder = sportsCarManualBuilder.getManual();

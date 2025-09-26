@@ -6,7 +6,6 @@ public class Controller {
 
     public void render(String fileName, Map<String, Object> data, ViewEngine viewEngine) {
 
-        // BladeViewEngine viewEngine = new BladeViewEngine();
         String html = viewEngine.render(fileName, data);
         System.out.println(html);
     }

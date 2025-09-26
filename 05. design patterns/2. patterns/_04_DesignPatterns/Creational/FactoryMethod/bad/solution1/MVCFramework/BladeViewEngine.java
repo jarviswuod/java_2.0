@@ -8,5 +8,4 @@ public class BladeViewEngine implements ViewEngine {
     public String render(String fileName, Map<String, Object> data) {
         return "View rendered from " + fileName + " by Blade";
     }
-
 }

@@ -70,7 +70,19 @@ public class Manual {
 
     @Override
     public String toString() {
-        return "Manual [type=" + type + ", seats=" + seats + ", isConvertible=" + isConvertible + ", engine=" + engine
-                + ", dashboard=" + dashboard + ", wheels=" + wheels + ", gpsNavigator=" + gpsNavigator + "]";
+        String text = "";
+
+        text += "Car type: " + this.type + "\n";
+        text += "Seats: " + this.seats + "\n";
+        text += "Wheels: diameter in inches + " + this.wheels.getDiameterInInches() + "\n";
+        text += "Engine: info on engine...  " + this.type + "\n";
+        text += "GPS Navigator: ";
+        if (this.gpsNavigator != null) {
+            text += "Inf on gps... \n";
+        } else {
+            text += "N/A \n";
+        }
+
+        return text;
     }
 }

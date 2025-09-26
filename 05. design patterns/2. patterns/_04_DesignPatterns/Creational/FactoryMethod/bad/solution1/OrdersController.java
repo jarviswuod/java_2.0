@@ -25,5 +25,4 @@ public class OrdersController extends Controller {
 
         render("order.blade.php", orders);
     }
-
 }

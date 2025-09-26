@@ -7,6 +7,10 @@ package _04_DesignPatterns.Creational.FactoryMethod;
         - Is a creational pattern that defines an interface for creating objects, but allows subclasses to alter the type of objects that will be created, providing a way to delegate the instantiation logic to subclasses, enabling flexibility in object creation without changing the client code
 
 
+    - CHALLENGE:
+        - Say that we are developing a new Model-View-Controller backend framework, to rival the popular PHP framework, Laravel
+
+
 
     - SOLUTION : Factory Method
         - We can add a createViewEngine() factory method in the Controller class. By default, we return the Blade view engine. But if the developer wants to switch to a different view engine, such as Twig, then they can use our alternative controller class, TwigController, that overrides the createViewEngine() Factory method;
@@ -32,10 +36,6 @@ package _04_DesignPatterns.Creational.FactoryMethod;
 
             TwigController.createViewEngine()
                 - Returns TwigViewEngine()
-
-
-    - CHALLENGE:
-        - Say that we are developing a new Model-View-Controller backend framework, to rival the populat PHP framework, Laravel
 
 
 

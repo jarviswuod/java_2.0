@@ -78,8 +78,6 @@ package _04_DesignPatterns.Creational.Prototype;
                   |____________________| |
                     |____________________|
 
-
-
  */
 
 public class Notes {

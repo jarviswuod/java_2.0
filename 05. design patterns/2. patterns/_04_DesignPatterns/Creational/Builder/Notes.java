@@ -9,7 +9,7 @@ package _04_DesignPatterns.Creational.Builder;
 
 
     - CHALLENGE:
-        - Say we have a class called Car ad we also have a manual class that's used to create Car manulas for certain cars
+        - Say we have a class called Car and we also have a manual class that's used to create Car manuals for certain cars
 
 
     - SOLUTION 1:

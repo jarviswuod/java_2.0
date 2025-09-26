@@ -4,15 +4,15 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class AppSettings {
-    private Map<String, Object> settings = new HashMap<>();
+    private Map<String, String> settings = new HashMap<>();
 
-    public Object get(String key) {
+    public String get(String key) {
         if (!settings.containsKey(key))
             return null;
         return settings.get(key);
     }
 
-    public void set(String key, Object value) {
+    public void set(String key, String value) {
         settings.put(key, value);
     }
 }

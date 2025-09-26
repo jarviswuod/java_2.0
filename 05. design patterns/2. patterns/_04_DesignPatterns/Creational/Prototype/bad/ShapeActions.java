@@ -9,6 +9,7 @@ public class ShapeActions {
             Circle newShape = new Circle(); // the clone
             newShape.radius = copiedShape.radius;
             newShape.draw();
+
         } else if (shape instanceof Rectangle) {
 
             Rectangle copiedShape = (Rectangle) shape;
@@ -16,6 +17,7 @@ public class ShapeActions {
             newShape.width = copiedShape.width;
             newShape.height = copiedShape.height;
             newShape.draw();
+
         } else {
             throw new NullPointerException("Invalid shape provided");
         }
