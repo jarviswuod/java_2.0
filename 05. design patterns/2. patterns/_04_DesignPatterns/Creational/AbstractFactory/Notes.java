@@ -25,15 +25,15 @@ package _04_DesignPatterns.Creational.AbstractFactory;
                                                ^
                                                |
                                                |
-                           ____________________|_________________________
-                           |                                            |
-                           |                                            |
-                _________________________                _____________________________
-                | MacUIComponentFactory |                | WindowsUIComponentFactory |
-                |_______________________|                |___________________________|
-                | createButton()        |                | createButton()            |
-                | createCheckbox()      |                | createCheckbox()          |
-                |_______________________|                |___________________________|
+                              _________________|_________________
+                              |                                 |
+                              |                                 |
+                   _________________________     _____________________________
+                   | MacUIComponentFactory |     | WindowsUIComponentFactory |
+                   |_______________________|     |___________________________|
+                   | createButton()        |     | createButton()            |
+                   | createCheckbox()      |     | createCheckbox()          |
+                   |_______________________|     |___________________________|
 
 
 
