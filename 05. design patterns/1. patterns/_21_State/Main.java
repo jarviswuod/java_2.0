@@ -1,7 +1,8 @@
-package _21_StateDesignPattern;
+package _21_State;
 
 public class Main {
     public static void main(String[] args) {
+
         Context context = new Context();
 
         StartState startState = new StartState();

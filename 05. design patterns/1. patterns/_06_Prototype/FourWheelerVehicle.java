@@ -1,6 +1,7 @@
-package _06_PrototypeDesignPattern;
+package _06_Prototype;
 
 public class FourWheelerVehicle extends Vehicle {
+
     private boolean automatic;
     private boolean isDiesel;
 
@@ -14,4 +15,8 @@ public class FourWheelerVehicle extends Vehicle {
         return (FourWheelerVehicle) super.clone();
     }
 
+    @Override
+    public String toString() {
+        return "FourWheelerVehicle [automatic=" + automatic + ", isDiesel=" + isDiesel + "]";
+    }
 }

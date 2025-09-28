@@ -1,4 +1,4 @@
-package _13_ChainOfResponsibilityDesignPattern;
+package _13_ChainOfResponsibility;
 
 public class BankPaymentHandler extends PaymentHandler {
 
@@ -10,5 +10,4 @@ public class BankPaymentHandler extends PaymentHandler {
             next.handlePayment(amount);
         }
     }
-
 }

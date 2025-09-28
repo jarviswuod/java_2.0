@@ -1,6 +1,7 @@
-package _08_BridgeDesignPattern;
+package _08_Bridge;
 
 public abstract class Video {
+
     protected VideoProccesor videoProccesor;
 
     public Video(VideoProccesor videoProccesor) {

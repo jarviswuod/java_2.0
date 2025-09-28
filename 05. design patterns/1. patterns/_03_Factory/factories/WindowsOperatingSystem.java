@@ -1,4 +1,4 @@
-package _03_FactoryDesignPattern.factories;
+package _03_Factory.factories;
 
 public class WindowsOperatingSystem extends OperatingSystem {
 
@@ -16,5 +16,4 @@ public class WindowsOperatingSystem extends OperatingSystem {
     public void removeDir(String dir) {
         // Windows change
     }
-
 }

@@ -1,6 +1,7 @@
-package _07_AdapterDesignPattern;
+package _07_Adapter;
 
 public class GroceryItemAdapter implements Item {
+
     private GroceryItem item;
 
     public GroceryItemAdapter(GroceryItem item) {
@@ -21,5 +22,4 @@ public class GroceryItemAdapter implements Item {
     public String getRestaurantName() {
         return item.getStoreName();
     }
-
 }

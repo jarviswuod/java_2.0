@@ -1,5 +1,6 @@
-package _09_DecoratorDesignPattern;
+package _09_Decorator;
 
 public interface Pizza {
+
     public String bake();
 }

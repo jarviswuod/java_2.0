@@ -1,7 +1,8 @@
-package _12_CompositeDesignPattern;
+package _12_Composite;
 
 public class CompositeApplication {
     public static void main(String[] args) {
+
         Department salesDepartment = new SalesDepartment(1, "Sales Department");
         Department financialDepartment = new FinancialDepartment(1, "Financial Department");
         HeadDepartment headDepartment = new HeadDepartment(1, "Head Department");
@@ -10,6 +11,5 @@ public class CompositeApplication {
         headDepartment.addDepartment(financialDepartment);
 
         headDepartment.printDepartmentName();
-
     }
 }

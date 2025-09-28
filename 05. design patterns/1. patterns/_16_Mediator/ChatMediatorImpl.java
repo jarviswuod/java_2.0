@@ -1,11 +1,10 @@
-package _16_MediatorDesignPattern;
+package _16_Mediator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatMediatorImpl implements ChatMediator
+public class ChatMediatorImpl implements ChatMediator {
 
-{
     private List<User> users;
 
     public ChatMediatorImpl() {
@@ -19,12 +18,11 @@ public class ChatMediatorImpl implements ChatMediator
 
     @Override
     public void sendMessage(String msg, User user) {
+
         for (User userValue : this.users) {
             if (userValue != user) {
                 userValue.receive(msg);
             }
         }
-
     }
-
 }

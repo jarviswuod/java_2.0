@@ -1,4 +1,4 @@
-package _12_CompositeDesignPattern;
+package _12_Composite;
 
 public class SalesDepartment implements Department {
 
@@ -15,4 +15,8 @@ public class SalesDepartment implements Department {
         System.out.println(getClass().getSimpleName());
     }
 
+    @Override
+    public String toString() {
+        return "SalesDepartment [id=" + id + ", name=" + name + "]";
+    }
 }

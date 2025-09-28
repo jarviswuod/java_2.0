@@ -1,4 +1,4 @@
-package _12_CompositeDesignPattern;
+package _12_Composite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,4 +29,8 @@ public class HeadDepartment implements Department {
         childDepartments.remove(department);
     }
 
+    @Override
+    public String toString() {
+        return "HeadDepartment [id=" + id + ", name=" + name + ", childDepartments=" + childDepartments + "]";
+    }
 }

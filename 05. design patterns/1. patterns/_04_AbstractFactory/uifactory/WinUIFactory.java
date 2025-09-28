@@ -1,9 +1,9 @@
-package _04_AbstractFactoryDesignPattern.uifactory;
+package _04_AbstractFactory.uifactory;
 
-import _04_AbstractFactoryDesignPattern.Button;
-import _04_AbstractFactoryDesignPattern.Checkbox;
-import _04_AbstractFactoryDesignPattern.os.win.WinButton;
-import _04_AbstractFactoryDesignPattern.os.win.WinCheckbox;
+import _04_AbstractFactory.Button;
+import _04_AbstractFactory.Checkbox;
+import _04_AbstractFactory.os.win.WinButton;
+import _04_AbstractFactory.os.win.WinCheckbox;
 
 public class WinUIFactory implements UIFactory {
 
@@ -16,5 +16,4 @@ public class WinUIFactory implements UIFactory {
     public Checkbox createCheckbox() {
         return new WinCheckbox();
     }
-
 }

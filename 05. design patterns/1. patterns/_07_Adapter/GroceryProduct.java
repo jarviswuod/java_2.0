@@ -1,7 +1,6 @@
-package _07_AdapterDesignPattern;
+package _07_Adapter;
 
-public class GroceryProduct
-        implements GroceryItem {
+public class GroceryProduct implements GroceryItem {
 
     @Override
     public String getName() {
@@ -17,5 +16,4 @@ public class GroceryProduct
     public String getStoreName() {
         return null;
     }
-
 }

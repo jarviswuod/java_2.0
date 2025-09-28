@@ -1,4 +1,4 @@
-package _11_ProxyDesignPattern;
+package _11_Proxy;
 
 public class ATM implements Account {
 
@@ -11,5 +11,4 @@ public class ATM implements Account {
     @Override
     public void getAccountNumber() {
     }
-
 }

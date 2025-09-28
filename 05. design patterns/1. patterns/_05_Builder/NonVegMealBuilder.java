@@ -1,4 +1,4 @@
-package _05_BuilderDesignPattern;
+package _05_Builder;
 
 public class NonVegMealBuilder extends MealBuilder {
 

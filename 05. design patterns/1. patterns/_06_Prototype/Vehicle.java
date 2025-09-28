@@ -1,6 +1,7 @@
-package _06_PrototypeDesignPattern;
+package _06_Prototype;
 
 public abstract class Vehicle implements Cloneable {
+
     private String engine;
     private String model;
     private long price;
@@ -38,5 +39,4 @@ public abstract class Vehicle implements Cloneable {
     public void setPrice(long price) {
         this.price = price;
     }
-
 }

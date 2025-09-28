@@ -1,4 +1,4 @@
-package _09_DecoratorDesignPattern;
+package _09_Decorator;
 
 public class BasePizza implements Pizza {
 
@@ -6,5 +6,4 @@ public class BasePizza implements Pizza {
     public String bake() {
         return "Base Pizza";
     }
-
 }

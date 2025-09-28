@@ -1,4 +1,4 @@
-package _16_MediatorDesignPattern;
+package _16_Mediator;
 
 public class Main {
 

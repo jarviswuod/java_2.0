@@ -1,4 +1,4 @@
-package _02_SingletonDesignPattern;
+package _02_Singleton;
 
 import java.io.Serializable;
 
@@ -19,6 +19,7 @@ public class _03_MultithreadSingleton implements Serializable {
                 }
             }
         }
+
         return instance;
     }
 }

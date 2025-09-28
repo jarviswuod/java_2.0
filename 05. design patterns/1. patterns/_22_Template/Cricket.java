@@ -1,4 +1,4 @@
-package _22_TemplateDesignPattern;
+package _22_Template;
 
 public class Cricket extends Game {
 
@@ -16,5 +16,4 @@ public class Cricket extends Game {
     void endPlay() {
         System.out.println("Cricket Game Finished");
     }
-
 }

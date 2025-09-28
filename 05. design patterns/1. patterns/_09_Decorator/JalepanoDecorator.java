@@ -1,4 +1,4 @@
-package _09_DecoratorDesignPattern;
+package _09_Decorator;
 
 public class JalepanoDecorator extends PizzaDecorator {
 
@@ -14,5 +14,4 @@ public class JalepanoDecorator extends PizzaDecorator {
     private String addJalepano() {
         return "Jalepano";
     }
-
 }

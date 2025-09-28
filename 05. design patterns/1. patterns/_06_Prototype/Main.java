@@ -1,4 +1,4 @@
-package _06_PrototypeDesignPattern;
+package _06_Prototype;
 
 public class Main {
 

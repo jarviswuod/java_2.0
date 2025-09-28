@@ -1,4 +1,4 @@
-package _08_BridgeDesignPattern;
+package _08_Bridge;
 
 public class YoutubeVideo extends Video {
 
@@ -10,5 +10,4 @@ public class YoutubeVideo extends Video {
     public void play(String videoFile) {
         videoProccesor.process(videoFile);
     }
-
 }

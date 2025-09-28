@@ -1,8 +1,8 @@
-package _03_FactoryDesignPattern;
+package _03_Factory;
 
-import _03_FactoryDesignPattern.factories.LinuxOperatingSystem;
-import _03_FactoryDesignPattern.factories.OperatingSystem;
-import _03_FactoryDesignPattern.factories.WindowsOperatingSystem;
+import _03_Factory.factories.LinuxOperatingSystem;
+import _03_Factory.factories.OperatingSystem;
+import _03_Factory.factories.WindowsOperatingSystem;
 
 public class OperatingSystemFactory {
 

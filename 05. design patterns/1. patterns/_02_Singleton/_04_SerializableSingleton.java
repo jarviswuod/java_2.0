@@ -1,4 +1,4 @@
-package _02_SingletonDesignPattern;
+package _02_Singleton;
 
 import java.io.Serializable;
 
@@ -20,5 +20,4 @@ public class _04_SerializableSingleton implements Serializable {
     protected Object readResolve() {
         return instance;
     }
-
 }

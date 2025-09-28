@@ -1,7 +1,8 @@
-package _11_ProxyDesignPattern;
+package _11_Proxy;
 
 public interface Account {
-    public void withdraw();
+
+    void withdraw();
 
     void getAccountNumber();
 }

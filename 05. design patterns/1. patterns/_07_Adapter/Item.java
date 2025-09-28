@@ -1,6 +1,7 @@
-package _07_AdapterDesignPattern;
+package _07_Adapter;
 
 public interface Item {
+
     String getItemName();
 
     String getPrice();

@@ -1,7 +1,8 @@
-package _08_BridgeDesignPattern;
+package _08_Bridge;
 
 public class Main {
     public static void main(String[] args) {
+
         Video youtubeVideo = new YoutubeVideo(new HDProcessor());
         youtubeVideo.play("abc.mp4");
 

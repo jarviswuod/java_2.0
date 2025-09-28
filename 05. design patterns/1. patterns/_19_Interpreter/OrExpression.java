@@ -1,6 +1,7 @@
-package _19_InterpreterDesignPattern;
+package _19_Interpreter;
 
 public class OrExpression implements Expression {
+
     private Expression exp1 = null;
     private Expression exp2 = null;
 

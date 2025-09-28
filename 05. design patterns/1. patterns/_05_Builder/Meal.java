@@ -1,6 +1,7 @@
-package _05_BuilderDesignPattern;
+package _05_Builder;
 
 public class Meal {
+
     private String curry;
     private String bread;
     private String coldDrink;
@@ -37,5 +38,4 @@ public class Meal {
     public void setBriyani(String briyani) {
         this.briyani = briyani;
     }
-
 }

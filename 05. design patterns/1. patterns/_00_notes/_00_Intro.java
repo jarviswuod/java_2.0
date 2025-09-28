@@ -18,19 +18,18 @@
             - Flyweight
             - Proxy
 
-        - Behavioural: The interation/communication between objects
+        - Behavioral: The interaction/communication between objects
             - Chain of Responsibility
             - Command
             - Interpreter
             - Iterator
             - Mediator
-            - Momento
+            - Memento
             - Observer
             - State
             - Strategy
             - Template Method
-            - Visisor
-
+            - Visitor
 
  */
 

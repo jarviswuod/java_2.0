@@ -1,4 +1,4 @@
-package _17_ObserverDesignPattern;
+package _17_Observer;
 
 public class Main {
 

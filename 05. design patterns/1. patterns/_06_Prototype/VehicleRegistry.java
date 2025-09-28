@@ -1,9 +1,10 @@
-package _06_PrototypeDesignPattern;
+package _06_Prototype;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class VehicleRegistry {
+
     private static Map<String, Vehicle> mapVehicles = new HashMap<>();
 
     static {

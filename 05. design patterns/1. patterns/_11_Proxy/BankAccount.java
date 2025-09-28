@@ -1,4 +1,4 @@
-package _11_ProxyDesignPattern;
+package _11_Proxy;
 
 public class BankAccount implements Account {
 
@@ -9,5 +9,4 @@ public class BankAccount implements Account {
     @Override
     public void getAccountNumber() {
     }
-
 }

@@ -1,5 +1,6 @@
-package _23_StrategyDesignPattern;
+package _23_Strategy;
 
 public interface Strategy {
+
     public int doOperation(int num1, int num2);
 }

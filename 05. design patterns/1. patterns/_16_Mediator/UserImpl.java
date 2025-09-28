@@ -1,4 +1,4 @@
-package _16_MediatorDesignPattern;
+package _16_Mediator;
 
 public class UserImpl extends User {
 
@@ -14,8 +14,7 @@ public class UserImpl extends User {
 
     @Override
     public void receive(String msg) {
+
         System.out.println(this.name + " : Received message= " + msg);
-
     }
-
 }

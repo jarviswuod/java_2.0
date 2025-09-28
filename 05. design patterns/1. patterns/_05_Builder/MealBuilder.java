@@ -1,6 +1,7 @@
-package _05_BuilderDesignPattern;
+package _05_Builder;
 
 public abstract class MealBuilder {
+
     public abstract void addBriyani();
 
     public abstract void addBread();

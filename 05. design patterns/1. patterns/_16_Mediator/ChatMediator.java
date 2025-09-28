@@ -1,7 +1,8 @@
-package _16_MediatorDesignPattern;
+package _16_Mediator;
 
 public interface ChatMediator {
-    public void sendMessage(String msg, User user);
+
+    void sendMessage(String msg, User user);
 
     void addUser(User user);
 }

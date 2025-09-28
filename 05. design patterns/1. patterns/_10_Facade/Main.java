@@ -1,4 +1,4 @@
-package _10_FacadeDesignPattern;
+package _10_Facade;
 
 public class Main {
 

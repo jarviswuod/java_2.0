@@ -1,6 +1,7 @@
-package _09_DecoratorDesignPattern;
+package _09_Decorator;
 
 public abstract class PizzaDecorator implements Pizza {
+
     protected Pizza pizza;
 
     public PizzaDecorator(Pizza pizza) {

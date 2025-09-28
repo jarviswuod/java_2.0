@@ -1,10 +1,11 @@
-package _04_AbstractFactoryDesignPattern;
+package _04_AbstractFactory;
 
-import _04_AbstractFactoryDesignPattern.uifactory.MacUIFactory;
-import _04_AbstractFactoryDesignPattern.uifactory.WinUIFactory;
+import _04_AbstractFactory.uifactory.MacUIFactory;
+import _04_AbstractFactory.uifactory.WinUIFactory;
 
 public class Main {
     public static void main(String[] args) {
+
         Application application = new Application(new WinUIFactory());
         Application application2 = new Application(new MacUIFactory());
         application.paint();

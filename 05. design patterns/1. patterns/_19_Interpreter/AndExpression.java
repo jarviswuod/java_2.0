@@ -1,6 +1,7 @@
-package _19_InterpreterDesignPattern;
+package _19_Interpreter;
 
 public class AndExpression implements Expression {
+
     private Expression exp1 = null;
     private Expression exp2 = null;
 
@@ -13,5 +14,4 @@ public class AndExpression implements Expression {
     public boolean interpret(String context) {
         return exp1.interpret(context) && exp2.interpret(context);
     }
-
 }

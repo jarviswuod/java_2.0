@@ -1,4 +1,4 @@
-package _02_SingletonDesignPattern;
+package _02_Singleton;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

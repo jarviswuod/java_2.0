@@ -1,4 +1,4 @@
-package _08_BridgeDesignPattern;
+package _08_Bridge;
 
 public class UHD4KProcessor implements VideoProccesor {
 
@@ -6,5 +6,4 @@ public class UHD4KProcessor implements VideoProccesor {
     public void process(String videoFile) {
         // Process
     }
-
 }

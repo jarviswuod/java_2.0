@@ -1,7 +1,8 @@
-package _13_ChainOfResponsibilityDesignPattern;
+package _13_ChainOfResponsibility;
 
 public class Main {
     public static void main(String[] args) {
+
         PaymentHandler bank = new BankPaymentHandler();
         PaymentHandler creditCard = new CreditCardPaymentHandler();
         PaymentHandler paypal = new PaypalPaymentHandler();

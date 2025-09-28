@@ -1,6 +1,6 @@
-package _04_AbstractFactoryDesignPattern.os.win;
+package _04_AbstractFactory.os.win;
 
-import _04_AbstractFactoryDesignPattern.Button;
+import _04_AbstractFactory.Button;
 
 public class WinButton implements Button {
 

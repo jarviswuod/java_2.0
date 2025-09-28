@@ -1,4 +1,4 @@
-package _09_DecoratorDesignPattern;
+package _09_Decorator;
 
 public class CheeseBurstDecorator extends PizzaDecorator {
 
@@ -14,5 +14,4 @@ public class CheeseBurstDecorator extends PizzaDecorator {
     private String addCheese() {
         return "Cheese";
     }
-
 }

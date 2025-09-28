@@ -1,4 +1,4 @@
-package _22_TemplateDesignPattern;
+package _22_Template;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package _18_FlyweightDesignPattern;
+package _18_Flyweight;
 
 public class Main {
 

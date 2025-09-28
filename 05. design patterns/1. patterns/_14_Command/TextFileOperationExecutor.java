@@ -1,9 +1,10 @@
-package _14_CommandDesignPattern;
+package _14_Command;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TextFileOperationExecutor {
+
     private final List<TextFileOperation> textFileOperations = new ArrayList<>();
 
     public String executeOperation(TextFileOperation textFileOperation) {

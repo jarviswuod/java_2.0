@@ -1,6 +1,7 @@
-package _02_SingletonDesignPattern;
+package _02_Singleton;
 
 public class _02_EagerSingleton {
+
     private static final _02_EagerSingleton instance = new _02_EagerSingleton();
 
     private _02_EagerSingleton() {

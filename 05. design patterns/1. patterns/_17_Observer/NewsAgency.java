@@ -1,9 +1,10 @@
-package _17_ObserverDesignPattern;
+package _17_Observer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewsAgency {
+
     private String news;
     private List<Channel> channels = new ArrayList<>();
 
@@ -21,5 +22,4 @@ public class NewsAgency {
             channel.update(this.news);
         }
     }
-
 }

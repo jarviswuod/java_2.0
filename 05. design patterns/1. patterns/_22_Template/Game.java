@@ -1,6 +1,7 @@
-package _22_TemplateDesignPattern;
+package _22_Template;
 
 public abstract class Game {
+
     abstract void initialize();
 
     abstract void startPlay();

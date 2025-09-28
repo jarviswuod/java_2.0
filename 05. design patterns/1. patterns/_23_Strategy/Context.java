@@ -1,6 +1,7 @@
-package _23_StrategyDesignPattern;
+package _23_Strategy;
 
 public class Context {
+
     private Strategy strategy;
 
     public Context(Strategy strategy) {
@@ -10,5 +11,4 @@ public class Context {
     public int executeStrategy(int num1, int num2) {
         return strategy.doOperation(num1, num2);
     }
-
 }

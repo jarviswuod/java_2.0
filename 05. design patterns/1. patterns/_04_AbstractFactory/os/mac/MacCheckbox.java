@@ -1,6 +1,6 @@
-package _04_AbstractFactoryDesignPattern.os.mac;
+package _04_AbstractFactory.os.mac;
 
-import _04_AbstractFactoryDesignPattern.Checkbox;
+import _04_AbstractFactory.Checkbox;
 
 public class MacCheckbox implements Checkbox {
 
@@ -8,5 +8,4 @@ public class MacCheckbox implements Checkbox {
     public void paint() {
         System.out.println("Mac Checkbox");
     }
-
 }

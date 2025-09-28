@@ -1,8 +1,9 @@
-package _18_FlyweightDesignPattern;
+package _18_Flyweight;
 
 import java.util.HashMap;
 
 public class ShapeFactory {
+
     private static final HashMap<ShapeType, Shape> shapes = new HashMap<>();
 
     public static Shape getShape(ShapeType type) {

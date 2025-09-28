@@ -1,4 +1,5 @@
 package _01_Creational;
+
 /*
 
     NOTES:
@@ -15,13 +16,13 @@ package _01_Creational;
 
     - Advantages and Disadvantages
         - Advantages:
-            - Object creation efficiency: Cloning of objects reduces the overhead associated with recteating and initializing objects from scratch significantly, this results in more streamline and efficient process especially when object initialization is resource intensive
+            - Object creation efficiency: Cloning of objects reduces the overhead associated with recreating and initializing objects from scratch significantly, this results in more streamline and efficient process especially when object initialization is resource intensive
 
             - Flexibility: It enhances flexibility of the development process. developers can create new object instances by simply cloning existing prototypes. This ability to generate new  objects on the fly contributes to a more agile and adaptable development environment.
 
 
         - Disadvantages:
-            - Circular dependency: Implementing the protoype pattern can become complex and tricky if the object that needs to be cloned has a circles dependency. This situation requires careful handling to ensure the the pattern is implemented effectively without introducing bugs or inconsistecies in the application's behaviour
+            - Circular dependency: Implementing the prototype pattern can become complex and tricky if the object that needs to be cloned has a circles dependency. This situation requires careful handling to ensure the the pattern is implemented effectively without introducing bugs or inconsistencies in the application's behavior
 
  */
 

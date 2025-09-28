@@ -1,6 +1,6 @@
-package _04_AbstractFactoryDesignPattern;
+package _04_AbstractFactory;
 
-import _04_AbstractFactoryDesignPattern.uifactory.UIFactory;
+import _04_AbstractFactory.uifactory.UIFactory;
 
 public class Application {
 
@@ -16,5 +16,4 @@ public class Application {
         button.paint();
         checkbox.paint();
     }
-
 }

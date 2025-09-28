@@ -1,6 +1,7 @@
-package _14_CommandDesignPattern;
+package _14_Command;
 
 public class TextFile {
+
     private String name;
 
     public TextFile(String name) {

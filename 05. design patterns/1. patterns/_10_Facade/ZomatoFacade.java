@@ -1,6 +1,7 @@
-package _10_FacadeDesignPattern;
+package _10_Facade;
 
 public class ZomatoFacade {
+
     private Restaurant restaurant;
     private DeliveryTeam deliveryTeam;
     private DeliveryBoy deliveryBoy;

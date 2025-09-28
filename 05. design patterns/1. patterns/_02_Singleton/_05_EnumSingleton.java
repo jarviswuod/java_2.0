@@ -1,6 +1,7 @@
-package _02_SingletonDesignPattern;
+package _02_Singleton;
 
 public enum _05_EnumSingleton {
+
     INSTANCE;
 
     public void doSomething() {

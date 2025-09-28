@@ -1,6 +1,6 @@
-package _08_BridgeDesignPattern;
+package _08_Bridge;
 
 public interface VideoProccesor {
-    void process(String videoFile);
 
+    void process(String videoFile);
 }

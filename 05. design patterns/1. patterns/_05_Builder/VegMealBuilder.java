@@ -1,4 +1,4 @@
-package _05_BuilderDesignPattern;
+package _05_Builder;
 
 public class VegMealBuilder extends MealBuilder {
 
@@ -32,5 +32,4 @@ public class VegMealBuilder extends MealBuilder {
     public Meal build() {
         return meal;
     }
-
 }

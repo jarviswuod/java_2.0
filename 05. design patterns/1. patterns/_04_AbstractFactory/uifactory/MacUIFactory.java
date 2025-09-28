@@ -1,9 +1,9 @@
-package _04_AbstractFactoryDesignPattern.uifactory;
+package _04_AbstractFactory.uifactory;
 
-import _04_AbstractFactoryDesignPattern.Button;
-import _04_AbstractFactoryDesignPattern.Checkbox;
-import _04_AbstractFactoryDesignPattern.os.mac.MacButton;
-import _04_AbstractFactoryDesignPattern.os.mac.MacCheckbox;
+import _04_AbstractFactory.Button;
+import _04_AbstractFactory.Checkbox;
+import _04_AbstractFactory.os.mac.MacButton;
+import _04_AbstractFactory.os.mac.MacCheckbox;
 
 public class MacUIFactory implements UIFactory {
 

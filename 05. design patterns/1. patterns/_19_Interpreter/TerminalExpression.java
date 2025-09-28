@@ -1,6 +1,7 @@
-package _19_InterpreterDesignPattern;
+package _19_Interpreter;
 
 public class TerminalExpression implements Expression {
+
     private String data;
 
     public TerminalExpression(String data) {
@@ -9,9 +10,9 @@ public class TerminalExpression implements Expression {
 
     @Override
     public boolean interpret(String context) {
-        if (context.contains(data)) {
+        if (context.contains(data))
             return true;
-        }
+
         return false;
     }
 }

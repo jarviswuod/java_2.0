@@ -1,6 +1,7 @@
-package _16_MediatorDesignPattern;
+package _16_Mediator;
 
 public abstract class User {
+
     protected ChatMediator mediator;
 
     protected String name;

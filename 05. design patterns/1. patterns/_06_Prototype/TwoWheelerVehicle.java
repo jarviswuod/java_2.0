@@ -1,6 +1,7 @@
-package _06_PrototypeDesignPattern;
+package _06_Prototype;
 
 public class TwoWheelerVehicle extends Vehicle {
+
     private boolean isElectric;
 
     public TwoWheelerVehicle(String engine, String model, long price, boolean isElectric) {
@@ -10,5 +11,9 @@ public class TwoWheelerVehicle extends Vehicle {
 
     protected TwoWheelerVehicle clone() throws CloneNotSupportedException {
         return (TwoWheelerVehicle) super.clone();
+    }
+
+    public boolean isElectric() {
+        return isElectric;
     }
 }

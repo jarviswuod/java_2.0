@@ -1,6 +1,7 @@
-package _17_ObserverDesignPattern;
+package _17_Observer;
 
 public class NewsChannel implements Channel {
+
     private String news;
 
     @Override
@@ -15,5 +16,4 @@ public class NewsChannel implements Channel {
     public void setNews(String news) {
         this.news = news;
     }
-
 }

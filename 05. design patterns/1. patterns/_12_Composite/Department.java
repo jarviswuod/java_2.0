@@ -1,5 +1,6 @@
-package _12_CompositeDesignPattern;
+package _12_Composite;
 
 public interface Department {
+
     void printDepartmentName();
 }

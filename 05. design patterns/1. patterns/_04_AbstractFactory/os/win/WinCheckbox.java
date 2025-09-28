@@ -1,6 +1,6 @@
-package _04_AbstractFactoryDesignPattern.os.win;
+package _04_AbstractFactory.os.win;
 
-import _04_AbstractFactoryDesignPattern.Checkbox;
+import _04_AbstractFactory.Checkbox;
 
 public class WinCheckbox implements Checkbox {
 

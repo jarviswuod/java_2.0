@@ -1,4 +1,4 @@
-package _15_IteratorDesignPattern;
+package _15_Iterator;
 
 import java.util.Iterator;
 

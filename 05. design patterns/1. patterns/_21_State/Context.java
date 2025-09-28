@@ -1,6 +1,7 @@
-package _21_StateDesignPattern;
+package _21_State;
 
 public class Context {
+
     private State state;
 
     public Context() {
@@ -14,5 +15,4 @@ public class Context {
     public void setState(State state) {
         this.state = state;
     }
-
 }

@@ -1,8 +1,9 @@
-package _15_IteratorDesignPattern;
+package _15_Iterator;
 
 import java.util.Iterator;
 
 public class OurGenericList<T> implements Iterable<T> {
+
     private T[] items;
     private int size;
 

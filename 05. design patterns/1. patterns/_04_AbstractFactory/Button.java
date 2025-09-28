@@ -1,7 +1,6 @@
-package _04_AbstractFactoryDesignPattern;
+package _04_AbstractFactory;
 
 public interface Button {
 
     void paint();
-
 }

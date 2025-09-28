@@ -1,4 +1,4 @@
-package _21_StateDesignPattern;
+package _21_State;
 
 public class StopState implements State {
 
@@ -11,5 +11,4 @@ public class StopState implements State {
     public String toString() {
         return "Stop state";
     };
-
 }

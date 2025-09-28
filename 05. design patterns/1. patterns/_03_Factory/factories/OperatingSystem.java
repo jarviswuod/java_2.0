@@ -1,4 +1,4 @@
-package _03_FactoryDesignPattern.factories;
+package _03_Factory.factories;
 
 public abstract class OperatingSystem {
 
@@ -29,5 +29,4 @@ public abstract class OperatingSystem {
     public abstract void changeDir(String dir);
 
     public abstract void removeDir(String dir);
-
 }

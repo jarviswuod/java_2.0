@@ -1,7 +1,8 @@
-package _19_InterpreterDesignPattern;
+package _19_Interpreter;
 
 public class Main {
     public static void main(String[] args) {
+
         Expression isMale = getMaleExpression();
         Expression isMarriedWoman = getMarriedWomanExpression();
 

@@ -1,4 +1,4 @@
-package _07_AdapterDesignPattern;
+package _07_Adapter;
 
 public class FoodItem implements Item {
 
@@ -16,5 +16,4 @@ public class FoodItem implements Item {
     public String getRestaurantName() {
         return null;
     }
-
 }

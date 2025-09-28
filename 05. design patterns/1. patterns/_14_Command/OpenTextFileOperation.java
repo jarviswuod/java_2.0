@@ -1,4 +1,4 @@
-package _14_CommandDesignPattern;
+package _14_Command;
 
 public class OpenTextFileOperation implements TextFileOperation {
 
@@ -12,5 +12,4 @@ public class OpenTextFileOperation implements TextFileOperation {
     public String execute() {
         return textFile.open();
     }
-
 }

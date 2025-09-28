@@ -1,6 +1,7 @@
-package _05_BuilderDesignPattern;
+package _05_Builder;
 
 public class Burger {
+
     private String size;
     private boolean egg;
     private boolean extraCheese;
@@ -78,6 +79,10 @@ public class Burger {
             return new Burger(this);
         }
 
+        @Override
+        public String toString() {
+            return "BurgerBuilder [size=" + size + ", egg=" + egg + ", extraCheese=" + extraCheese + ", mayonese="
+                    + mayonese + ", onion=" + onion + ", lettuce=" + lettuce + "]";
+        }
     }
-
 }

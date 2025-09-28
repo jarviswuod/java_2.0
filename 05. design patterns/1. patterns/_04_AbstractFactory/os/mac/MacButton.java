@@ -1,6 +1,6 @@
-package _04_AbstractFactoryDesignPattern.os.mac;
+package _04_AbstractFactory.os.mac;
 
-import _04_AbstractFactoryDesignPattern.Button;
+import _04_AbstractFactory.Button;
 
 public class MacButton implements Button {
 
@@ -8,5 +8,4 @@ public class MacButton implements Button {
     public void paint() {
         System.out.println("Mac Button");
     }
-
 }

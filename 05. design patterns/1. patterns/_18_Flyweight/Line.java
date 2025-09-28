@@ -1,8 +1,9 @@
-package _18_FlyweightDesignPattern;
+package _18_Flyweight;
 
 import java.awt.*;
 
 public class Line implements Shape {
+
     public Line() {
         System.out.println("Creating Line object");
 
@@ -19,5 +20,4 @@ public class Line implements Shape {
         line.setColor(color);
         line.drawLine(x, y, width, height);
     }
-
 }

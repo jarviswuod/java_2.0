@@ -1,6 +1,7 @@
-package _05_BuilderDesignPattern;
+package _05_Builder;
 
 public class MealDirector {
+
     private MealBuilder mealBuilder;
 
     public MealDirector(MealBuilder mealBuilder) {

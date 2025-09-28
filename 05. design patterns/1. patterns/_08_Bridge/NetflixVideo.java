@@ -1,4 +1,4 @@
-package _08_BridgeDesignPattern;
+package _08_Bridge;
 
 public class NetflixVideo extends Video {
 
@@ -10,5 +10,4 @@ public class NetflixVideo extends Video {
     public void play(String videoFile) {
         videoProccesor.process(videoFile);
     }
-
 }

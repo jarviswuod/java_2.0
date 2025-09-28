@@ -1,4 +1,4 @@
-package _03_FactoryDesignPattern.factories;
+package _03_Factory.factories;
 
 public class LinuxOperatingSystem extends OperatingSystem {
 

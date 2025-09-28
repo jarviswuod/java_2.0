@@ -1,4 +1,4 @@
-package _18_FlyweightDesignPattern;
+package _18_Flyweight;
 
 import java.awt.*;
 
@@ -28,5 +28,4 @@ public class Oval implements Shape {
             circle.fillOval(x, y, width, height);
         }
     }
-
 }
