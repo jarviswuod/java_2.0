@@ -298,7 +298,162 @@ How JSP Translated into Servlets
 
 JSP Directive Page Include TagLib
     - Inside of JSP Directive tag we have;
-        - @page
-        - @include
-        - @taglib
+        - @page - used to import a lanugage
+            -  Example:
+                - <%@ page attibute="value" attibute="value" ... %>
+                    language="scripting Language"
+                    extends="className"
+                    import="importList"
+                    session="true|false"
+                    autoFlush="true|false"
+                    contentType="ctinfo"
+                    errorPage="error_url"
+                    isErrorPage="true|false"
+                    info="information"
+                    isELIgnored="true|false"
+                    isThreadSafe="true|false"
 
+                    NOTE: import is the only attribute we can use multiple times in our directive
+
+
+
+        - @include -  Used to include another JSP page inside our page
+            <%@ include file="filename" %>
+            <%@ include file="header.jsp" %>
+
+
+
+
+        - @taglib - used to include a variaty of tags inside our jsp file
+            <%@ taglib uri="uri" prefix="fx" %>
+
+
+Implicit Object in JSP
+    - Builtin Object (can be used in Scriplet and Expression)
+        - request (HttpServletRequest)
+        - response (HttpServletResponse)
+        - pageContext (PageContext)
+        - out (JspWrite) PrintWriter object
+        - session (HttpSession)
+        - application (ServletContext)
+        - config (ServletConfig)
+
+
+
+Exception Handling in JSP
+    - In general java we use try catch to capture errors
+    - Types of errors
+        - checked exception
+        - unchecked exception compilor is not giving any error for it, the error will be genrated at runtime instead
+
+    - We can use a normal try catch block for error handling inside our jsp file
+    - In web world we create a separate page for errors
+    - Steps:
+        - Mention the error page(where the error should be displayed on) inside the page where we are throwing the error when it arrises
+            - Example;
+                <% page language="java" errorPage="error.jsp" %>
+
+                ...
+                <% 
+                    int k = 9/10;
+                %>
+
+        - Indicate the error page as an error page then provide details about the error
+            - error.jsp
+                <% page language="java" isErrorPage="true" %>
+
+                ...
+                Error
+                <%= exception.getMessage() %>
+
+
+
+JDBC in JSP
+    - Steps involved in installing JDBC
+        - Import package (java.sql.*)
+        - Load and register driver (Every db has it's won driver)
+            - For PostGres :
+                - Driver : org.postgresql.Driver
+                - URL : jdbc:postgresql://localhost:5432/jarvis
+                - Username : postgres
+                - password : 0
+
+
+            - For MySql:
+                - Driver : com.mysql.jdbc.Driver
+                - URL : jdbc:mysql://localhost:3306/jarvis
+                - Username : root
+                - password :
+
+
+        - Create a connection
+            - A connection requires 3 parameters
+                String url = "jdbc:mysql://localhost:3306/jarvis"
+                String username = "root"
+                String password = ""
+                Class.forName(com.mysql.jdbc.Driver)
+                Connection con = DriverManager.getConnection(url, username, password)
+
+        - File a query
+            String sql = "Select * from student where rollno=103";
+            ...
+
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            rs.next();
+
+
+
+Model View Controller (MVC) Using Servlet & JSP
+    - JSP takes time to be converted to Servlet when you are running it for the first time(Time wastage)
+    - Don't write your business logic inside your JSP (go for serlet instead)
+    - JSP should only be used for the View (JSP) - Used for dynamic page - For static use HTML instead
+    - MVC FLOW:::
+        - Client sends a request to the server, this request is sent to the controller(Servlet)
+        - The Controller is responsible to call the view (JSP) and then the view (JSP) is sent back to the client
+        - Controller sends data and view (JSP) as well via a Model(POJO)
+
+    - NOTE::
+        - Model is only for holding data, NOT processing
+
+    - N-Tier Architecture:
+        - Controller is only for accepting requests and sending response (DONT PROCESS ANYTHING INSIDE THE CONTROLLER)
+        - Service class: Used to perform business operations
+        - Data Access Object(DAO) a class that helps you interact with the DB
+
+
+
+
+JSTL Tutorial
+    - JSP Standard Tag Library
+        - Used to help write java code more of like a html code to help designers manage and update when necessary
+    - Versions:
+        - core
+        - sql
+        - functions
+
+
+Servlet Filter Tutorial
+    - Are used to intercept requests that go to the servlets
+    - They extend the servletFilter class
+    - Filter methods:
+        - init()
+        - doFilter()
+        - destroy()
+
+    - Extra codes/ Common files:
+        - Maintaining log files
+        - Maintaining transactions
+        - Maintaining security
+
+    - Filters help intercept requests helping offload some tasks off your servlets
+    - Filters can deny and respond back to the client
+    - Advantage is that, it's pluggable to any part of the program/servlet you need to add them in
+        - filters are indipendent
+        - we use filter chaning to help with comminication between them
+        - XMl 
+        - TOMCAT
+
+
+
+Login Using Servlet & JSP
