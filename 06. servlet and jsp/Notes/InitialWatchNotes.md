@@ -457,3 +457,34 @@ Servlet Filter Tutorial
 
 
 Login Using Servlet & JSP
+    - We will be using sessions to help with login
+    - We can use sessions or cookies to help around authentications
+    - Client has access to cookie and can play around with it use sessions instead where everything is saved inside the server
+    - In login you set the data, in logout you remove the data
+    - Stop caching too
+    - Dont't cache your secure web pages
+
+
+
+Servlet, JSP, JDBC, Maven Example:
+    - 2 Options for building projects
+        - Build dynamic web project -  Not awesome for large projects
+        - Maven - Automatically handle additional imports such as db connection
+
+    - You interact with maven via the pom.xml file; it's where you add dependeny you need
+    - Concepts picked:
+        - Controller
+        - Model
+        - DAO
+
+    - DAO contains the CRUD Operations that are to be performed
+
+    - Ways of calling a jsp from a servelet
+        1. Dispatcher - requestDispatcher
+        2. Redirect  - SendRedirect
+
+        - If you want to let the use know they are redirected use redirect otherwise is you use Dispatcher the client doesnot know what's happening behind the scene
+
+
+File Upload in Java Servlet
+    - 
