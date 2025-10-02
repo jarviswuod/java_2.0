@@ -81,6 +81,7 @@ package _02_OopPrinciples.Coupling;
                 3. Constructor dependency change ::: Order won’t compile because EmailSender needs a parameter
                     // Old
                     public class EmailSender {
+
                         public void sendEmail(String msg) { ... }
                     }
 
@@ -99,13 +100,13 @@ package _02_OopPrinciples.Coupling;
 
     - GOOD EXAMPLE EXPLANATION:
         - We can reduce coupling by introducing an abstraction or interface layer between the Order and EmailSender class. This allows the Order class interact with EmailSender class through the interface making it easier to modify or replace the implementation of EmailSender class without affecting the Order class
-                public interface INotificationService {
+                public interface NotificationService {
 
                     void sendNotification(String msg);
                 }
 
-        - We then implement the INotificationService to EmailSender class and override the sendNotification() method replacing the sendEmail() logic
-                public class EmailSender implements INotificationService {
+        - We then implement the NotificationService to EmailSender class and override the sendNotification() method replacing the sendEmail() logic
+                public class EmailSender implements NotificationService {
 
                     @Override
                     public void sendNotification(String msg) {
@@ -142,9 +143,9 @@ package _02_OopPrinciples.Coupling;
             NEW::
                 public class Order {
 
-                    private INotificationService notificationService;
+                    private NotificationService notificationService;
 
-                    public Order(INotificationService notificationService) {
+                    public Order(NotificationService notificationService) {
                         this.notificationService = notificationService;
                     }
 
@@ -153,7 +154,7 @@ package _02_OopPrinciples.Coupling;
                     }
                 }
 
-        - In our client area, we'll need to pass a INotificationService to an Order object when we creating Order instance. We can pass an EmailSender or introduce a new notification mechanism with easy, Example SmsSender class
+        - In our client area, we'll need to pass a NotificationService to an Order object when we creating Order instance. We can pass an EmailSender or introduce a new notification mechanism with easy, Example SmsSender class
 
                 public class Main {
                     public static void main(String[] args) {

@@ -2,9 +2,9 @@ package _02_OopPrinciples.Coupling.good;
 
 public class Order {
 
-    private INotificationService notificationService;
+    private NotificationService notificationService;
 
-    public Order(INotificationService notificationService) {
+    public Order(NotificationService notificationService) {
         this.notificationService = notificationService;
     }
 

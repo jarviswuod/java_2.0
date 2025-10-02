@@ -8,11 +8,13 @@ public class Car {
     private Seats seats = new Seats();
 
     public void startCar() {
+
         engine.start();
         wheels.rotate();
         chassis.support();
         seats.sit();
+
+        System.out.println();
         System.out.println("Car started");
     }
-
 }

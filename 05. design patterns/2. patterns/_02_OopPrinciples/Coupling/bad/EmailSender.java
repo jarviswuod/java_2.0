@@ -7,5 +7,4 @@ public class EmailSender {
 
         System.out.println("Sending email: " + msg);
     }
-
 }

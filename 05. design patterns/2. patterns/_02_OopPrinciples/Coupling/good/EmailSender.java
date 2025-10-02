@@ -1,6 +1,6 @@
 package _02_OopPrinciples.Coupling.good;
 
-public class EmailSender implements INotificationService {
+public class EmailSender implements NotificationService {
 
     @Override
     public void sendNotification(String msg) {
@@ -8,5 +8,4 @@ public class EmailSender implements INotificationService {
 
         System.out.println("Sending email: " + msg);
     }
-
 }

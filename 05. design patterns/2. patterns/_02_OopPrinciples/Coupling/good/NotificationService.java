@@ -1,7 +1,6 @@
 package _02_OopPrinciples.Coupling.good;
 
-public interface INotificationService {
+public interface NotificationService {
 
     void sendNotification(String msg);
-
 }

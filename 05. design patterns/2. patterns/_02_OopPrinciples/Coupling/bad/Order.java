@@ -5,6 +5,6 @@ public class Order {
         // Place order logic
 
         EmailSender emailSender = new EmailSender();
-        emailSender.sendEmail("Order placed successfully.");
+        emailSender.sendEmail("Order placed successfully");
     }
 }

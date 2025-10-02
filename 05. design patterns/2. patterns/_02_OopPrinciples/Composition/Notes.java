@@ -10,7 +10,8 @@ package _02_OopPrinciples.Composition;
 
 
     - GOOD CODE EXPLANATION:
-        - In this example we have a load of items/parts that make up a Car i.e chassis, Wheels, Engine. All this are individual and complete Objects on their own containing both fields and complete methods
+        - In this example we have a load of items/parts that make up a Car i.e Chassis, Wheels, Engine. All this are individual and complete Objects on their own containing both fields and complete methods
+
                 public class Chassis {
                     public void support() {...}
                 }
@@ -22,6 +23,7 @@ package _02_OopPrinciples.Composition;
                 public class Wheels {
                     public void rotate() {...}
                 }
+
 
         - The Chassis, Engine, Wheels, Seats etc are all things that make up a Car, this means that under the Car class we use all the individual classes above with each component being a separate class doing an independent role
 
@@ -35,9 +37,11 @@ package _02_OopPrinciples.Composition;
                     ...
                 }
 
+
         - The Car class delegates tasks to the individual components rather than doing all that work itself
 
                 public void startCar() {
+
                     engine.start();
                     wheels.rotate();
                     chassis.support();
@@ -55,6 +59,8 @@ package _02_OopPrinciples.Composition;
                         car.startCar();
                     }
                 }
+
+
 
     - COMPOSITION VS INHERITANCE:
         - When to use Composition:
