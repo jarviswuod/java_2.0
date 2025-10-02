@@ -4,8 +4,8 @@ package _02_OopPrinciples.Encapsulation;
 
     NOTES:
     - Encapsulation;
-        - Referes to hiding the internal implementations details of a class and only exposing the necessary functionalities
-        - Encapsulation allows for a clear separation between the public interface and the internal implemetation of a class providing users with a simplified and intuitive way to interact with objects while hiding the complexity of how interactions are handled internally
+        - Refers to hiding the internal implementations details of a class and only exposing the necessary functionalities
+        - Encapsulation allows for a clear separation between the public interface and the internal implementation of a class providing users with a simplified and intuitive way to interact with objects while hiding the complexity of how interactions are handled internally
 
 
     - BAD CODE EXPLANATION:
@@ -15,7 +15,7 @@ package _02_OopPrinciples.Encapsulation;
                     public double balance;
                 }
 
-        - Over here we only have one fiels called **balance** which is public, the issue with this is since it;s public all clients that use the class *BankAccount* can directly change the balance field into whatever value they want incluvise of a negative balance which is not logically correct
+        - Over here we only have one field called **balance** which is public, the issue with this is since it;s public all clients that use the class *BankAccount* can directly change the balance field into whatever value they want inclusive of a negative balance which is not logically correct
 
                 public class Main {
                     public static void main(String[] args) {
@@ -49,7 +49,7 @@ package _02_OopPrinciples.Encapsulation;
 
 
         - EXTRA INFO:
-            - Encapsulation of BankAccount class also means users don't have to worry about the implemetation details when interacting with a BackAccount instance. Example;
+            - Encapsulation of BankAccount class also means users don't have to worry about the implementation details when interacting with a BackAccount instance. Example;
                 - A user doesn't have to worry about logic involved in widthdrawing money, they just call the withdraw method
                 - If the user tries to deposit a negative amount of money, the program will throw an error to notify them
 

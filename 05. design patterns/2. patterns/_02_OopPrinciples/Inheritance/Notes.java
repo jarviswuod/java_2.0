@@ -26,7 +26,7 @@ package _02_OopPrinciples.Inheritance;
             - We have duplicate code all over the classes and if anything changes in Vehicle class we literally have to change the code in all classes
 
         - SOLUTION:
-            - We solve for all this issue by introducing inheritacne, since all the methods and fields are to be same across all classes as they are in Vehicle
+            - We solve for all this issue by introducing inheritance, since all the methods and fields are to be same across all classes as they are in Vehicle
 
 
 

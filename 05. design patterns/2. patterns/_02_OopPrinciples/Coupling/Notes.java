@@ -4,16 +4,16 @@ package _02_OopPrinciples.Coupling;
 
     NOTES:
     - Coupling:
-        - Coupling refers to the degree of dependecy between different classes
-        - Higly coupling:
-            - Means classes are higly interconnected making it difficult to modify or maintain them independently, modifying one class could easily break the other classes which could eventually break the whole program
+        - Coupling refers to the degree of dependency between different classes
+        - Highly coupling:
+            - Means classes are highly interconnected making it difficult to modify or maintain them independently, modifying one class could easily break the other classes which could eventually break the whole program
 
         - Low coupling:
             - Means loose connection between classes allowing for great flexibility and ease of modification
 
 
     - BAD EXAMPLE EXPLANATION:
-        - We have create an EmailSender class with a sendEmail() method. This method helps in sending email logic, it covers all the logics from connecting to the EmailServer, authenticating, sending our email message etc
+        - We have create an EmailSender class with a sendEmail() method. This method helps in sending email logic, it covers all the logic from connecting to the EmailServer, authenticating, sending our email message etc
 
                 public class EmailSender {
 
@@ -24,8 +24,8 @@ package _02_OopPrinciples.Coupling;
                     }
                 }
 
-        - Assuming we have an ecommerce website, where a user can place an order and once they place an order we need to notify them
-        - For that we create an Order class with a placeOrder() method. This method covers the logic from inserting an order in the DB, reducing the stock quantity, processing payment, etc. Once that has been done, when we are sending an email to the user that the order has been placed succesfully, basic reassurance to the user
+        - Assuming we have an E-commerce website, where a user can place an order and once they place an order we need to notify them
+        - For that we create an Order class with a placeOrder() method. This method covers the logic from inserting an order in the DB, reducing the stock quantity, processing payment, etc. Once that has been done, when we are sending an email to the user that the order has been placed successfully, basic reassurance to the user
 
                 public class Order {
 
@@ -49,7 +49,7 @@ package _02_OopPrinciples.Coupling;
 
 
         - ISSUE:
-            - In this example, the Order class is tightly coupled to the EmailSender class because it directly creates an instance of the EmailSender class, (introducing the 'new' keyword). This makes the Order class dependens on the implementation details of EmailSender therefore any changes to the EmailSender class may require changes to the Order class too, this means we are risking bugs introduction into Order class and we'd rather not
+            - In this example, the Order class is tightly coupled to the EmailSender class because it directly creates an instance of the EmailSender class, (introducing the 'new' keyword). This makes the Order class depend on the implementation details of EmailSender therefore any changes to the EmailSender class may require changes to the Order class too, this means we are risking bugs introduction into Order class and we'd rather not
 
                 - Changes like method signature, logic, or even replacing EmailSender with another notification method (SMS, Slack, WhatsApp)
 
@@ -136,8 +136,8 @@ package _02_OopPrinciples.Coupling;
                 }
 
 
-        - We could replace sendEmail() with sendNotification() which works fine but we still have an issue. It's tightly coupled just as before which makes it not flexible, coz say the user wants to be notified via text message instead when order is placed successfully
-        - Currently, the EmailSender is just hardcoded into the Order class placeorder() method. This means you can't switch out how a notification is sent to a user. This leads to adding the interface via constructor
+        - We could replace sendEmail() with sendNotification() which works fine but we still have an issue. It's tightly coupled just as before which makes it not flexible, because say the user wants to be notified via text message instead when order is placed successfully
+        - Currently, the EmailSender is just hard coded into the Order class placeOrder() method. This means you can't switch out how a notification is sent to a user. This leads to adding the interface via constructor
 
             NEW::
                 public class Order {

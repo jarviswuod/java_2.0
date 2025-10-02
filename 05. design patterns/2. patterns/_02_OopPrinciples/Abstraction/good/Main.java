@@ -5,6 +5,5 @@ public class Main {
 
         EmailService emailService = new EmailService();
         emailService.sendEmail();
-
     }
 }

@@ -10,8 +10,8 @@ package _02_OopPrinciples.Polymorphism;
 
 
     - GOOD CODE EXPLANATION:
-        - In this example we have a parent-child relationship between classes. The parent Vehicle class has the both fields and methods. The methods start() and stop() are NOT final hence can be overriden by any sub-classes which extends Vehicle
-        - The unique thing is we are overriding the start() and stop() methods in a Car, Motorcycle, and Plane subclasses. This is because starting a car involves some different loic to starting both motorcycle or plane
+        - In this example we have a parent-child relationship between classes. The parent Vehicle class has the both fields and methods. The methods start() and stop() are NOT final hence can be overridden by any sub-classes which extends Vehicle
+        - The unique thing is we are overriding the start() and stop() methods in a Car, Motorcycle, and Plane subclasses. This is because starting a car involves some different logic to starting both motorcycle or plane
 
             public class Car extends Vehicle {
 

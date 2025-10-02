@@ -1,7 +1,9 @@
 package _02_OopPrinciples.Abstraction.good;
 
 public class EmailService {
+
     public void sendEmail() {
+
         connect();
         authenticate();
         System.out.println("Sending email...");
@@ -13,7 +15,7 @@ public class EmailService {
     }
 
     private void authenticate() {
-        System.out.println("Authenticating....");
+        System.out.println("Authenticating...");
     }
 
     private void disconnect() {

@@ -4,14 +4,15 @@ package _02_OopPrinciples.Abstraction;
 
     NOTES:
     - Abstraction;
-        - Is an OOP principle used to reduce the complexity by hiding uncessary details of a class to a user of that class.
-            - Example when pressing a button a TV remote, you don't have to worry about all the interaction with the internal circuit board of the remote
+        - Is an OOP principle used to reduce the complexity by hiding unnecessary details of a class to a user of that class. Example
+            - When pressing a button a TV remote, you don't have to worry about all the interaction with the internal circuit board of the remote
 
 
     - BAD CODE EXPLANATION:
         - This is a simple class example without abstraction; we have a load of public methods to any user of the EmailService class
 
             public class EmailService {
+
                 public void sendEmail() {...}
                 public void connect() {...}
                 public void authenticate() {...}
@@ -19,7 +20,7 @@ package _02_OopPrinciples.Abstraction;
 
             }
 
-        - With this example, if we want to send an email, we have to; Create an EmailService object instance, Connect to the email server, Authenticate that it's us, Send the email mesage we wanted then, remember to Disconnect from the email server
+        - With this example, if we want to send an email, we have to; Create an EmailService object instance, Connect to the email server, Authenticate that it's us, Send the email message we wanted then, remember to Disconnect from the email server connection
 
             public class Main {
                 public static void main(String[] args) {
@@ -55,7 +56,7 @@ package _02_OopPrinciples.Abstraction;
                     ...
                 }
 
-        - With this users of the EmailService class don't have to worry about the internal implementations details involved in sending an email
+        - With this, users of the EmailService class don't have to worry about the internal implementations details involved in sending an email
                 public class Main {
                     public static void main(String[] args) {
 
@@ -64,7 +65,7 @@ package _02_OopPrinciples.Abstraction;
                     }
                 }
 
-        - With this  solution, you dont have to worry about  adding multiple methods, you can safely add a method, make it private and call it too under sendEmail(). This reduces chances of introducing bugs inside a working software solution
+        - You don't have to worry about  adding multiple methods, you can safely add a method, make it private and call it too under sendEmail(). This reduces chances of introducing bugs inside a working software solution
 
 
     - NOTE:

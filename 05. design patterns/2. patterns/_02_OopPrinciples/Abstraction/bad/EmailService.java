@@ -1,6 +1,7 @@
 package _02_OopPrinciples.Abstraction.bad;
 
 public class EmailService {
+
     public void sendEmail() {
         System.out.println("Sending email...");
     }
