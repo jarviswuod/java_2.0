@@ -5,7 +5,7 @@ package _02_OopPrinciples.Coupling;
     NOTES:
     - Coupling:
         - Coupling refers to the degree of dependency between different classes
-        - Highly coupling:
+        - High coupling:
             - Means classes are highly interconnected making it difficult to modify or maintain them independently, modifying one class could easily break the other classes which could eventually break the whole program
 
         - Low coupling:
@@ -13,7 +13,7 @@ package _02_OopPrinciples.Coupling;
 
 
     - BAD EXAMPLE EXPLANATION:
-        - We have create an EmailSender class with a sendEmail() method. This method helps in sending email logic, it covers all the logic from connecting to the EmailServer, authenticating, sending our email message etc
+        - Let's create an EmailSender class with a sendEmail() method. This method helps in sending email logic and basically covers all the logic from connecting to the EmailServer, authenticating, sending our email message etc
 
                 public class EmailSender {
 
@@ -23,6 +23,7 @@ package _02_OopPrinciples.Coupling;
                         System.out.println("Sending email: " + msg);
                     }
                 }
+
 
         - Assuming we have an E-commerce website, where a user can place an order and once they place an order we need to notify them
         - For that we create an Order class with a placeOrder() method. This method covers the logic from inserting an order in the DB, reducing the stock quantity, processing payment, etc. Once that has been done, when we are sending an email to the user that the order has been placed successfully, basic reassurance to the user
@@ -36,6 +37,7 @@ package _02_OopPrinciples.Coupling;
                         emailSender.sendEmail("Order placed successfully.");
                     }
                 }
+
 
         - We are simulating an order placement process for which the program works fine and the user gets an email notification that "Order is placed successfully"
                 public class Main {
@@ -53,39 +55,42 @@ package _02_OopPrinciples.Coupling;
 
                 - Changes like method signature, logic, or even replacing EmailSender with another notification method (SMS, Slack, WhatsApp)
 
-                1. Method signature change ::: Order won’t compile because the old method doesn’t exist
-                    // Old
+                1. Method signature change:: Order won’t compile because the OLD method doesn’t exist
+                    // OLD
                     public class EmailSender {
+
                         public void sendEmail(String msg) {
                             System.out.println("Sending email: " + msg);
                         }
                     }
 
-                    // New (signature changed)
+                    // NEW (signature changed)
                     public class EmailSender {
+
                         public void sendEmail(String msg, String subject) {
                             System.out.println("[" + subject + "] " + msg);
                         }
                     }
 
 
-                2. Different notification system ::: you must edit Order to use new SmsSender()
-                    // New requirement: Use SMS instead of Email
+                2. Different notification system:: you must edit Order to use new SmsSender()
+                    // NEW requirement: Use SMS instead of Email
                     public class SmsSender {
+
                         public void sendSms(String msg) {
                             System.out.println("Sending SMS: " + msg);
                         }
                     }
 
 
-                3. Constructor dependency change ::: Order won’t compile because EmailSender needs a parameter
-                    // Old
+                3. Constructor dependency change:: Order won’t compile because EmailSender needs a parameter
+                    // OLD
                     public class EmailSender {
 
                         public void sendEmail(String msg) { ... }
                     }
 
-                    // New (now needs a config object)
+                    // NEW (now needs a config object)
                     public class EmailSender {
                         private String smtpServer;
 
@@ -105,6 +110,7 @@ package _02_OopPrinciples.Coupling;
                     void sendNotification(String msg);
                 }
 
+
         - We then implement the NotificationService to EmailSender class and override the sendNotification() method replacing the sendEmail() logic
                 public class EmailSender implements NotificationService {
 
@@ -114,6 +120,7 @@ package _02_OopPrinciples.Coupling;
                         System.out.println("Sending email: " + msg);
                     }
                 }
+
 
         - In our Order class;
             - OLD::
