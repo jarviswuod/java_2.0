@@ -4,7 +4,7 @@ package _02_OopPrinciples.Encapsulation;
 
     NOTES:
     - Encapsulation;
-        - Refers to hiding the internal implementations details of a class and only exposing the necessary functionalities
+        - Refers to hiding the internal implementation details of a class and only exposing the necessary functionalities
         - Encapsulation allows for a clear separation between the public interface and the internal implementation of a class providing users with a simplified and intuitive way to interact with objects while hiding the complexity of how interactions are handled internally
 
 
@@ -30,6 +30,7 @@ package _02_OopPrinciples.Encapsulation;
     - GOOD CODE EXPLANATION:
         - Over here *BankAccount* class encapsulates the **account** field which is now private preventing direct access from outside of the class
                 public class BankAccount {
+
                     private double balance;
                 }
 
@@ -41,9 +42,9 @@ package _02_OopPrinciples.Encapsulation;
         - The methods deposit() and widthdraw() are used to manipulate **balance** field ensuring operations are performed safely and according to the business rules i.e, we have checks to ensure nothing is incorrect and program logic can't be violated from outside the class. Example;
             - Widthdrawing more money than what is inside the BankAccount class
                 public void deposit(double amount) {
-                    if (amount <= 0) {
+                    if (amount <= 0)
                         throw new IllegalArgumentException("Deposit Amount  must be positive");
-                    }
+
                     this.balance += amount;
                 }
 

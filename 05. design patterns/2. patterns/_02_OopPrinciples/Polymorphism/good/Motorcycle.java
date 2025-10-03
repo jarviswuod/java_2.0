@@ -30,7 +30,6 @@ public class Motorcycle extends Vehicle {
     @Override
     public String toString() {
         return "Motorcycle [brand=" + brand + ", numberOfWheels=" + numberOfWheels + ", model=" + model + ", year="
-                + year
-                + "]";
+                + year + "]";
     }
 }

@@ -56,50 +56,51 @@ package _02_OopPrinciples.Coupling;
                 - Changes like method signature, logic, or even replacing EmailSender with another notification method (SMS, Slack, WhatsApp)
 
                 1. Method signature change:: Order won’t compile because the OLD method doesn’t exist
-                    // OLD
-                    public class EmailSender {
+                    - OLD
+                        public class EmailSender {
 
-                        public void sendEmail(String msg) {
-                            System.out.println("Sending email: " + msg);
+                            public void sendEmail(String msg) {
+                                System.out.println("Sending email: " + msg);
+                            }
                         }
-                    }
 
-                    // NEW (signature changed)
-                    public class EmailSender {
+                    - NEW (signature changed)
+                        public class EmailSender {
 
-                        public void sendEmail(String msg, String subject) {
-                            System.out.println("[" + subject + "] " + msg);
+                            public void sendEmail(String msg, String subject) {
+                                System.out.println("[" + subject + "] " + msg);
+                            }
                         }
-                    }
 
 
                 2. Different notification system:: you must edit Order to use new SmsSender()
-                    // NEW requirement: Use SMS instead of Email
-                    public class SmsSender {
+                    - NEW requirement: Use SMS instead of Email
+                        public class SmsSender {
 
-                        public void sendSms(String msg) {
-                            System.out.println("Sending SMS: " + msg);
+                            public void sendSms(String msg) {
+                                System.out.println("Sending SMS: " + msg);
+                            }
                         }
-                    }
 
 
                 3. Constructor dependency change:: Order won’t compile because EmailSender needs a parameter
-                    // OLD
-                    public class EmailSender {
+                    - OLD
+                        public class EmailSender {
 
-                        public void sendEmail(String msg) { ... }
-                    }
-
-                    // NEW (now needs a config object)
-                    public class EmailSender {
-                        private String smtpServer;
-
-                        public EmailSender(String smtpServer) {
-                            this.smtpServer = smtpServer;
+                            public void sendEmail(String msg) { ... }
                         }
 
-                        public void sendEmail(String msg) { ... }
-                    }
+                    - NEW (now needs a config object)
+                        public class EmailSender {
+
+                            private String smtpServer;
+
+                            public EmailSender(String smtpServer) {
+                                this.smtpServer = smtpServer;
+                            }
+
+                            public void sendEmail(String msg) { ... }
+                        }
 
 
 
@@ -160,6 +161,7 @@ package _02_OopPrinciples.Coupling;
                         notificationService.sendNotification("Order placed successfully");
                     }
                 }
+
 
         - In our client area, we'll need to pass a NotificationService to an Order object when we creating Order instance. We can pass an EmailSender or introduce a new notification mechanism with easy, Example SmsSender class
 

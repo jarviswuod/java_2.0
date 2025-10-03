@@ -1,6 +1,6 @@
 package _03_SOLID.I.good;
 
-public class Sphere implements IShape3D {
+public class Sphere implements Shape3D {
 
     private double radius;
 

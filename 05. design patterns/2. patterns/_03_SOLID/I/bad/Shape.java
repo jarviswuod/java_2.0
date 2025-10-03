@@ -1,6 +1,7 @@
 package _03_SOLID.I.bad;
 
-public interface IShape {
+public interface Shape {
+
     double area();
 
     double volume();

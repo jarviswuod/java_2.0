@@ -36,7 +36,7 @@ package _02_OopPrinciples.Inheritance;
             public class Bike extends Vehicle {...}
             public class Car extends Vehicle {...}
 
-        - We extend our scope or functionalities or scope and adding only subclass fields and method inside the subclass itself
+        - We extend our functionalities/ scope and adding only subclass fields and method inside the subclass itself
             public class Car extends Vehicle {
 
                 private int numberOfDoors;
@@ -48,6 +48,8 @@ package _02_OopPrinciples.Inheritance;
                 private int numberOfWheels;
                 ...
             }
+
+
 
     - Advantages of inheritance:
         - We don't have to write the commonly used fields and methods for every single Vehicle subclass

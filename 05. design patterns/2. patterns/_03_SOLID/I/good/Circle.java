@@ -1,6 +1,6 @@
 package _03_SOLID.I.good;
 
-public class Circle implements IShape2D {
+public class Circle implements Shape2D {
 
     private double radius;
 

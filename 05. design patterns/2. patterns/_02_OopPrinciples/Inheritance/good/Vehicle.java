@@ -1,6 +1,7 @@
 package _02_OopPrinciples.Inheritance.good;
 
 public class Vehicle {
+
     protected String brand;
     protected String model;
     protected int year;

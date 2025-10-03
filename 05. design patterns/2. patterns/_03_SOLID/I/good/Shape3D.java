@@ -1,7 +1,6 @@
 package _03_SOLID.I.good;
 
-public interface IShape3D extends IShape2D {
+public interface Shape3D extends Shape2D {
 
     double volume();
-
 }

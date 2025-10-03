@@ -17,5 +17,4 @@ public class Bike extends Vehicle {
         return "Bike [brand=" + brand + ", numberOfWheels=" + numberOfWheels + ", model=" + model + ", year=" + year
                 + "]";
     }
-
 }

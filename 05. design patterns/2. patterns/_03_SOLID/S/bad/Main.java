@@ -4,6 +4,6 @@ public class Main {
     public static void main(String[] args) {
 
         User user = new User();
-        user.register("jarviswuod@gmail.com");
+        user.register("jarvis@wuod.com");
     }
 }

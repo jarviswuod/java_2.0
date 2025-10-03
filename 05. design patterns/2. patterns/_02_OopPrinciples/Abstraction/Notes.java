@@ -65,7 +65,7 @@ package _02_OopPrinciples.Abstraction;
                     }
                 }
 
-        - You don't have to worry about  adding multiple methods, you can safely add a method, make it private and call it too under sendEmail(). This reduces chances of introducing bugs inside a working software solution
+        - You don't have to worry about adding multiple methods, you can safely add a method, make it private and call it too under sendEmail(). This reduces chances of introducing bugs inside a working software solution
 
 
     - NOTE:

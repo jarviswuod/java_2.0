@@ -2,6 +2,7 @@ package _02_OopPrinciples.Encapsulation.bad;
 
 class Main {
     public static void main(String[] args) {
+
         BankAccount account = new BankAccount();
 
         account.balance = 100;

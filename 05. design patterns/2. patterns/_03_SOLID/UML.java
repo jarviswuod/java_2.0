@@ -8,16 +8,16 @@ package _03_SOLID;
 
     - Representing classes using UML
 
-                 __________________            public class Dog() {
+                ____________________            public class Dog() {
                 |  Dog             |                private String name;
-                |__________________|                
+                |__________________|
                 |  - name:String   |                public void bark() {
                 |__________________|                    System.out.println("Woof Woof");
                 |  + bark():       |                }
-                |__________________|            }   
+                |__________________|            }
 
-        - "-" means private access modifiers
-        - "+" means public access modifiers
+        - "-" => private access modifiers
+        - "+" => public access modifiers
 
         - Value after ":" is the type. If there is not colon after the method, then void is the return type
 
@@ -31,7 +31,7 @@ package _03_SOLID;
 
                 ____________________
                 |    Animal        |
-                |__________________|            
+                |__________________|
                 |                  |
                 |__________________|            public class Animal() {...}
                          ^
@@ -39,11 +39,11 @@ package _03_SOLID;
                          |
                 ____________________            public class Dog extends Animal() {
                 |     Dog          |                private String name;
-                |__________________|                
+                |__________________|
                 |  - name:String   |                public void bark() {
                 |__________________|                    System.out.println("Woof Woof");
                 |  + bark():       |                }
-                |__________________|            }   
+                |__________________|            }
 
 
         2. Composition Relationship:
@@ -62,9 +62,9 @@ package _03_SOLID;
                          |
                          v
                 ____________________            public class Dog extends Animal() {
-                |     Dog          |                private Size size;
-                |__________________|            }
-                |  - size: size    |
+                |     Dog          |
+                |__________________|                private Size size;
+                |  - size: size    |            }
                 |__________________|
                 |  + bark():       |
                 |__________________|
@@ -107,7 +107,10 @@ package _03_SOLID;
             |__________________|
 
             public class Dog {
+
                 public void render(Document document) {...}
+
+                ...
             }
 
             - Document is not a field in this class, but is used somewhere in the class, in this case it's a pameter, but it could also be a local varaible defined in the render() method. Or somewhere in the Dog class, we have a reference/ dependncy to the Document class

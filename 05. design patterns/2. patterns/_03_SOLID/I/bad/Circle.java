@@ -1,6 +1,6 @@
 package _03_SOLID.I.bad;
 
-public class Circle implements IShape {
+public class Circle implements Shape {
 
     private double radius;
 
@@ -15,6 +15,6 @@ public class Circle implements IShape {
 
     @Override
     public double volume() {
-        throw new NullPointerException("Volume not applicable for 2D shapes");
+        throw new UnsupportedOperationException("Volume not applicable for 2D shapes");
     }
 }

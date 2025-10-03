@@ -9,7 +9,7 @@ public class Main {
         car.stop();
 
         // Unique
-        car.getNumberOfDoors();
-        car.getNumberOfWheels();
+        System.out.println(car.getNumberOfDoors());
+        System.out.println(car.getNumberOfWheels());
     }
 }

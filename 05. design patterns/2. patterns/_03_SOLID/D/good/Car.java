@@ -2,9 +2,9 @@ package _03_SOLID.D.good;
 
 public class Car {
 
-    private IEngine engine;
+    private Engine engine;
 
-    public Car(IEngine engine) {
+    public Car(Engine engine) {
         this.engine = engine;
     }
 

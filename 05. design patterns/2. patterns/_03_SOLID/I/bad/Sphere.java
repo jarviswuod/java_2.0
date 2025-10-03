@@ -1,6 +1,6 @@
 package _03_SOLID.I.bad;
 
-public class Sphere implements IShape {
+public class Sphere implements Shape {
 
     private double radius;
 

@@ -1,6 +1,7 @@
 package _03_SOLID.L.good;
 
 public class Rectangle extends Shape {
+
     private double length;
     private double width;
 
