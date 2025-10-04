@@ -3,15 +3,19 @@ package _02_Structural;
 /*
 
     NOTES:
-    - Flyweight is a design pattern that focuses on sharing and reusing object states especially when many similar objects need to be created.
-    - It aims to minimize memory usage by sharing a common state across multiple objects reducing the applications overall memory footprint
+    - Flyweight Pattern:
+        - Is a structural design pattern that focuses on sharing and reusing object states especially when many similar objects need to be created.
+        - It aims to minimize memory usage by sharing a common state across multiple objects reducing the applications overall memory footprint
+
 
     - 3 Main actors in Flyweight;
-        - Flyweight Factory:
+        a. Flyweight Factory:
             -  This is a class that contains methods for getting all available flyweight classes
-        - Flyweight class:
+
+        b. Flyweight class:
             - Is responsible for managing and creating flyweight objects. It ensures that the shared states are reused
-        - Objects:
+
+        c. Objects:
             - Are the classes that flyweight create and contain repetitive information that we are trying to optimize
 
 

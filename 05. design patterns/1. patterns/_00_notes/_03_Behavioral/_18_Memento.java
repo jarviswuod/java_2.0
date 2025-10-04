@@ -3,15 +3,19 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - Memento is a behavioral design pattern that captures and externalizes the internal state of an object without breaking it's encapsulation.
-    - It allows you to save and restore state of an object providing the ability to undo or rollback changes, and also save a history of the state
+    - Memento Pattern:
+        - Is a behavioral design pattern that captures and externalizes the internal state of an object without breaking it's encapsulation
+        - It allows you to save and restore state of an object providing the ability to undo or rollback changes, and also save history of the state
+
 
     - 3 Main actors in Memento;
-        - Originator:
+        a. Originator:
             - Is a class whose state needs to be saved and restored. It creates memento objects to capture it's state and restore it's state from the memento
-        - Memento:
+
+        b. Memento:
             - Is a class that stores the internal state of the originator
-        - Caretaker:
+
+        c. Caretaker:
             - Is a class that stores and manages mementos, it stores and managed mementos. It requests mementos from the originator and can restore the originator state
 
 

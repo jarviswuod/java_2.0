@@ -3,17 +3,22 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - Iterator is a pattern that provides a way to access elements of a collection without exposing its underlying representation.
-    - It abstracts the traversal process allowing clients to navigate through elements sequentially without knowing the details of the collection structure
+    - Iterator Pattern:
+        - Is a behavioral pattern that provides a way to access elements of a collection without exposing it's underlying representation
+        - It abstracts the traversal process allowing clients to navigate through elements sequentially without knowing the details of the collection structure
+
 
     - 4 Main actors in Iterator;
-        - Iterator:
+        a. Iterator:
             - Is an interface that defines the methods for traversing a collections including operations like next() and hasNext()
-        - Concrete Iterator:
+
+        b. Concrete Iterator:
             - Is a class that implements the iterator interface and provides the actual traversal logic for a specific collection
-        - Collection:
+
+        c. Collection:
             - An interface that defines methods for creating and iterating
-        - Concrete collection:
+
+        d. Concrete collection:
             - Is a class that implements the Collection interface providing the actual collection of elements and creating an appropriate iterator 
 
 

@@ -3,13 +3,16 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - Template Method design is a behavioral pattern that defines the skeleton of an algorithm in base class while allowing sub-classes to provide specific implementations for the certain steps without changing the algorithm structure
-    - It promotes code reuse and enforces a consistent structure for closely related algorithms
+    - Template Method Pattern:
+        - Is a behavioral pattern that defines the skeleton of an algorithm in base class while allowing sub-classes to provide specific implementations for the certain steps without changing the algorithm structure
+        - It promotes code reuse and enforces a consistent structure for closely related algorithms
+
 
     - 2 Main actors in Template Method;
-        - Abstract class:
+        a. Abstract class:
             - Is the base class that defines the template method and outlines the algorithm structure. It may also provide default implementations for some steps
-        - Concrete class:
+
+        b. Concrete class:
             - Is a subclass of an abstract class that provides concrete implementations for the steps defined in the template method
 
 

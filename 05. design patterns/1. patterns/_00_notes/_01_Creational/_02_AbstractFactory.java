@@ -3,18 +3,20 @@ package _01_Creational;
 /*
 
     NOTES:
-    - The Abstract Factory is a creation design pattern that provides an interface for creating families of related or dependent objects without specifying there concrete classes
-    - It extends the concept of Factory Design pattern by introducing multiple Factory methods organized into a single Factory class.
-    - This pattern is especially useful when a system needs to be independent of how its objects are created, composed and represented
+    - Abstract Factory:
+        - Is a creation design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes
+        - It extends the concept of Factory Design pattern by introducing multiple Factory methods organized into a single Factory class
+        - This pattern is especially useful when a system needs to be independent of how its objects are created, composed and represented
+
 
     - 4 Main actors in Abstract Factory;
-        - Abstract Factory:
+        a. Abstract Factory:
             - This is an interface that declares several factory methods, and is responsible for creating a family of related products
 
-        - Concrete Factory:
+        b. Concrete Factory:
             - Is a subclass of abstract factory that implements factory methods create complete instances of related products
 
-        - Abstract Products and Concrete products
+        c. Abstract Products and Concrete products
             - Concrete products is a subclass of abstract products, which is an interface that implements certain products features defined in abstract products
 
 

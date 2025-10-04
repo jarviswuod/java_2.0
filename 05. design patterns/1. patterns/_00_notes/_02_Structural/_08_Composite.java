@@ -2,13 +2,16 @@ package _02_Structural;
 /*
 
     NOTES:
-    - Composite is a structural design pattern that combines objects into tree like structures to represent part-whole hierarchies.
-    - It handles individual objects and object compositions uniformly allowing clients to work with complex structures and particular object using a single interface
+    - Composite pattern:
+        - Is a structural design pattern that combines objects into tree like structures to represent part-whole hierarchies
+        - It handles individual objects and object compositions uniformly allowing clients to work with complex structures and particular object using a single interface
+
 
     - 3 Main actors in Composite;
-        - Component:
+        a. Component:
             - This defines the common interface for leaf and composite knots
-        - Leaf And Composite:
+
+        b. Leaf And Composite:
             - Are classes that both implement the component interface but 'leaf' represents the individual object in the composition while 'composite' represents the composition itself and contains set of child components
 
 

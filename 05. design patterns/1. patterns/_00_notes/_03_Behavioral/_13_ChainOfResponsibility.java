@@ -3,14 +3,16 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - Chain or responsibility pattern allows you to create a chain of objects where each object can either handle a request or pass it along to the next object.
-    - It decouples the sender of a request from it's receiver enabling multiple objects to handle the request without explicitly specifying which object will process it
+    - Chain of Responsibility Pattern
+        - Is a behavioral pattern allows you to create a chain of objects where each object can either handle a request or pass it along to the next object
+        - It decouples the sender of a request from it's receiver enabling multiple objects to handle the request without explicitly specifying which object will process it
+
 
     - 2 Main actors in Chain;
-        - Handler:
+        a. Handler:
             - Is an interface that defines a common interface for handling requests, it contains a reference to the next handler in the chain
 
-        - Concrete Handler:
+        b. Concrete Handler:
             - Is a subclass or handler that implements special request processing logic
 
 

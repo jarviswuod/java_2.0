@@ -3,16 +3,20 @@ package _02_Structural;
 /*
 
     NOTES:
-    - Proxy is a structural design pattern that provides a placeholder for another object to control it's access.
-    - It acts as an intermediary allowing you to add additional behavior or control to the original object without modifying it's code
-    - They are commonly used for various aspects including controlling access, managing resources and delaying object creation
+    - Proxy Pattern:
+        - Is a structural design pattern that provides a placeholder for another object to control it's access
+        - It acts as an intermediary allowing you to add additional behavior or control to the original object without modifying it's code
+        - They are commonly used for various aspects including controlling access, managing resources and delaying object creation
+
 
     - 3 Main actors in Proxy;
-        - Subject:
+        a. Subject:
             - Is a generic interface that defines both methods, the real subject and the proxy implement this allows you to use a proxy instead of a real object
-        - Real subject:
+
+        b. Real subject:
             - Is a class that represents the real object or service that the proxy controls access to
-        - Proxy:
+
+        c. Proxy:
             - A class that implements the same interface as the subject it contains a real subject and controls access to it adding any necessary functionality
 
 

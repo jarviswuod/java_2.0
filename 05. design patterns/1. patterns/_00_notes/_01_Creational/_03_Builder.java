@@ -3,19 +3,20 @@ package _01_Creational;
 /*
 
     NOTES:
-    - The builder is a creational Design pattern that separated the creation of a complex object from it's representation allowing the same construction process to create different representations
-    - It provides a way to incrementally create objects, allowing you to create complex objects with different configurations while keeping the construction code separate from the final structure of the object
-    - The pattern is most useful when creating objects with optional or variable components
+    - Builder pattern:
+        - Is a creational Design pattern that separates the creation of a complex object from it's representation allowing the same construction process to create different representations
+        - It provides a way to incrementally create objects, allowing you to create complex objects with different configurations while keeping the construction code separate from the final structure of the object
+        - The pattern is most useful when creating objects with optional or variable components
 
 
     - 3 Main actors in Builder;
-        - Builders:
+        a. Builders:
             - Is an interface that declare methods for building the various parts of a complex object
 
-        - Concrete Builder:
+        b. Concrete Builder:
             - A subclass of builder that implements methods for building individual parts of a complex object
 
-        - Product:
+        c. Product:
             - It's a complex object being constructed typically composed of multiple parts
 
 

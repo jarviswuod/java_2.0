@@ -3,17 +3,23 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - Mediator is a behavioral design pattern that facilitates communication between different objects without them necessarily being aware of each other or being directly coupled, their interaction is handles by a central point, the mediator
+    - Mediator Pattern:
+        - Is a behavioral design pattern that facilitates communication between different objects without them necessarily being aware of each other or being directly coupled
+        - The interaction is handled by a central point, the mediator
+
 
     - 4 Main actors in Mediator;
-        - Mediator:
+        a. Mediator:
             - Is an interface that defines the communication methods that concrete methods must implement.
             - It also maintains references to the specific objects
-        - Concrete Mediator class:
+
+        b. Concrete Mediator class:
             - It implements the mediator interface and manages the interactions and coordination between the participating objects
-        - Component:
+
+        c. Component:
             - Is an interface that defines the communication methods that concrete components must implement. It maintains a reference to the mediator
-        - Concrete Components:
+
+        d. Concrete Components:
             - Are classes that implement the component interface and communicate with the other components through the mediator
 
 

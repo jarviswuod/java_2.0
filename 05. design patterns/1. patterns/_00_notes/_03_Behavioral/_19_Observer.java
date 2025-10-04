@@ -3,14 +3,19 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - The observer is a behavior pattern that defines a one to many relationship between objects, where changes in one object are automatically communicated to and reflected in other objects. It enables loosely coupled and efficient communication mechanism between components
+    - Observer Pattern:
+        - Is a behavior pattern that defines a one to many relationship between objects, where changes in one object are automatically communicated to and reflected in other objects
+        - It enables loosely coupled and efficient communication mechanism between components
+
 
     - 3 Main actors in Observer;
-        - Subject/ Publisher:
+        a. Subject/ Publisher:
             - Is a class that contains a list of independent observers and notifies them of any state changes. It provided methods to attach/detect and notify observers
-        - Observer/ Subscriber:
+
+        b. Observer/ Subscriber:
             - Is an interface that defines the update method to be called when the subject's state changes
-        - Concrete Observers:
+
+        c. Concrete Observers:
             - Are classes that implement the observer interface and receive updates from the subject when it's state changes
 
 

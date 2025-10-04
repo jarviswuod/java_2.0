@@ -3,18 +3,23 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - The Visitor design pattern is a behavioral pattern that allows you to add new operation to the existing classes without modifying there structure.
-    - It separates the operations from the classes they operate on by encapsulating them in visitor object
-    - This pattern is handy when dealing with a structured hierarchy of classes and multiple operations that need to be performed on those classes 
+    - Visitor Pattern:
+        - Is a behavioral pattern that allows you to add new operation to the existing classes without modifying there structure.
+        - It separates the operations from the classes they operate on by encapsulating them in visitor object
+        - This pattern is handy when dealing with a structured hierarchy of classes and multiple operations that need to be performed on those classes 
+
 
     - 4 Main actors in Visitor;
-        - Visitor Interface:
+        a. Visitor Interface:
             - It declares the methods for each element type in the hierarchy
-        - Concrete visitors:
-            - Are classes that implement the visitor and provide the implementations for its methods
-        - Element interface:
+
+        b. Concrete visitors:
+            - Are classes that implement the visitor and provide the implementations for it's methods
+
+        c. Element interface:
             - It declares the accept method which accepts the visitor
-        - Concrete Element:
+
+        d. Concrete Element:
             - Are concrete classes that implements the element interface and it's methods. They receive the visitor and delegate the visit to the appropriate method
 
 

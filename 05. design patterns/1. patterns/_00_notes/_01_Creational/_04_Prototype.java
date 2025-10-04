@@ -3,14 +3,16 @@ package _01_Creational;
 /*
 
     NOTES:
-    - Is a creational design pattern that allows to create a new objects by copying or cloning existing ones
-    - It focuses on constructing new instances by duplicating existing ones, minimizing the object creation overhead
+    - Prototype Design:
+        - Is a creational design pattern that allows creation of new objects by copying/ cloning existing ones
+        - It focuses on constructing new instances by duplicating existing ones, minimizing the object creation overhead
+
 
     - 2 Main actors in Prototype;
-        - Main interface Prototype:
+        a. Main interface Prototype:
             - It defines a clone method
 
-        - A Concrete Prototype:
+        b. A Concrete Prototype:
             - A subclass or prototype interface implements the clone methods to create it's copies
 
 

@@ -3,15 +3,19 @@ package _02_Structural;
 /*
 
     NOTES:
-    - The Adapter is a structural design pattern that allow objects with incompatible interfaces to work together by providing a bridge between then
-    - It acts a translator allowing two classes with different interfaces to communicate and collaborate seamlessly
+    - Adapter Pattern:
+        - Is a structural design pattern that allow objects with incompatible interfaces to work together by providing a bridge between them
+        - It acts a translator allowing two classes with different interfaces to communicate and collaborate seamlessly
+
 
     - 3 Main actors in Adapter;
-        - Target:
+        a. Target:
             - This is an interface that clients code expected to work with
-        - Adaptee:
+
+        b. Adaptee:
             - A class with an incompatible interface that must be adapted to work with the client code
-        - The Adapter:
+
+        c. The Adapter:
             - This class implements the target interface and interacts internally with the adaptee translating calls and operations as needed
 
 

@@ -3,17 +3,22 @@ package _02_Structural;
 /*
 
     NOTES:
-    - Is a structural design pattern that allows you to dynamically add behaviors or responsibilities to objects without changing there code.
-    - It involves creating a set of decorators classes to wrap specific components, add new functionalities or runtime behaviors
+    - Decorator Pattern:
+        - Is a structural design pattern that allows you to dynamically add behaviors or responsibilities to objects without changing there code
+        - It involves creating a set of decorators classes to wrap specific components, add new functionalities or runtime behaviors
+
 
     - 4 Main actors in Decorators;
-        - Component:
+        a. Component:
             - Defines a common interface for concrete components and decorators
-        - Concrete Component:
+
+        b. Concrete Component:
             - It implements the component interface and provides basic functionality that decorators can enhance
-        - Decorator:
+
+        c. Decorator:
             - Is an interface extending from the component, it maintains reference to the component instance
-        - Concrete decorators:
+
+        d. Concrete decorators:
             - Are sub-classes of decorators that add specific behavior or responsibilities to a component
 
 

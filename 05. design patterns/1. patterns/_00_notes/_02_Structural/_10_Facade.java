@@ -3,15 +3,20 @@ package _02_Structural;
 /*
 
     NOTES:
-    - Facade is a structural pattern that provides a unified interface to a set of interfaces in a subsystem. It simplifies complex systems by offering a high level interface that shields clients from the complexities and interactions of individual components within the subsystem.
-    - It's especially useful when working with complex systems or third party libraries where a simplified interface can improve usability and hide implementation details
+    - Facade Pattern:
+        - Is a structural pattern that provides a unified interface to a set of interfaces in a subsystem
+        - It simplifies complex systems by offering a high level interface that shields clients from the complexities and interactions of individual components within the subsystem
+        - It's especially useful when working with complex systems or third party libraries where a simplified interface can improve usability and hide implementation details
+
 
     - 3 Main actors in Facade;
-        - Facade:
+        a. Facade:
             - Provides a simplified interface to a subsystem
-        - Facade Implementation:
+
+        b. Facade Implementation:
             - Implements the facade and manages the interaction with subsystem classes and hides their complexity
-        - Subsystem classes:
+
+        c. Subsystem classes:
             - Are separate classes that make up a complex system. Clients can work with these classes directly but it's more convenient to use the facade
 
 

@@ -3,15 +3,19 @@ package _03_Behavioral;
 /*
 
     NOTES:
-    - Strategy is a behavioral design pattern that defines a family of interchangeable algorithm and allows them to be selected and used dynamically at runtime.
-    - This also enables algorithms to be encapsulated in separate classes
+    - Strategy Pattern:
+        - Is a behavioral design pattern that defines a family of interchangeable algorithm and allows them to be selected and used dynamically at runtime
+        - This also enables algorithms to be encapsulated in separate classes
+
 
     - 3 Main actors in Strategy;
-        - Context:
+        a. Context:
             - A class that maintains a reference to the strategy object and delegates the algorithms execution to it
-        - Strategy:
+
+        b. Strategy:
             - A common interface for all specific strategies it declares a method for an algorithm
-        - Concrete Strategy:
+
+        c. Concrete Strategy:
             - Is a class that implements the strategy interface providing a concrete algorithm
 
 
