@@ -4,8 +4,8 @@ package _04_DesignPatterns.Structural;
 
     NOTES:
     - Structural design patterns:
-        - They focus on the composition of classes and objects to form larger structures and systems. These patterns primarily deal with how classes and objects can be combined to form larger, more comples strctures while keeping these structures flexible and efficient.
-        - The key objects of the structural design pattern is to provide solutions to design problems related to objects composition and structure, allowing for better organization and management of code
+        - They focus on the composition of classes and objects to form larger structures and systems. These patterns primarily deal with how classes and objects can be combined to form larger, more complex structures while keeping the very structures flexible and efficient
+        - The key objective of the structural design pattern is to provide solutions to design problems related to objects composition and structure, allowing for better organization and management of code
 
         - Structural design patterns help to achieve several important goals in software development
             1. Promote code reusability and modularity by defining clear and standardized ways to compose and organize classes and objects. This makes the codebase more maintanable and scalable over time, as changes or additions to the system can be made more easily

@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral;
 
     NOTES:
     - Behavioral design pattern:
-        - focus on how objects interact with each other and how they communicate to accomplish specific tasks
+        - They focus on how objects interact with each other and how they communicate to accomplish specific tasks
         - These patterns address communication, responsibility, and algorithmic issues in object-oriented software design
         - They help in defining clear and efficient communication mechanisms between objects and classes
 
