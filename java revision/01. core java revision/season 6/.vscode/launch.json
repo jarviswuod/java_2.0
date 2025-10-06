@@ -6,6 +6,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "_55_LambdaExpression",
+      "request": "launch",
+      "mainClass": "_55_LambdaExpression",
+      "projectName": "season 6_ab4ebf0f"
+    },
+    {
+      "type": "java",
+      "name": "_54_Anonymous",
+      "request": "launch",
+      "mainClass": "_54_Anonymous",
+      "projectName": "season 6_ab4ebf0f"
+    },
+    {
+      "type": "java",
+      "name": "_49_UserInput",
+      "request": "launch",
+      "mainClass": "_49_UserInput",
+      "projectName": "season 6_ab4ebf0f"
+    },
+    {
+      "type": "java",
+      "name": "_49_UserInput_",
+      "request": "launch",
+      "mainClass": "_49_UserInput_",
+      "projectName": "season 6_ab4ebf0f"
+    },
+    {
+      "type": "java",
+      "name": "_43_Enum",
+      "request": "launch",
+      "mainClass": "_43_Enum",
+      "projectName": "season 6_ab4ebf0f"
+    },
+    {
+      "type": "java",
       "name": "_35_InnerClasses",
       "request": "launch",
       "mainClass": "_35_InnerClasses",

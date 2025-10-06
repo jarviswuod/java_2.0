@@ -17,16 +17,17 @@ public class _40_FunctionalInterface {
 
 @FunctionalInterface
 interface Area {
-    Area mathArea(int radius);
+
+    double mathArea(int radius);
 }
 
 class Circle implements Area {
 
     @Override
-    public Circle mathArea(int radius) {
+    public double mathArea(int radius) {
 
         double area = Math.PI * radius * radius;
         System.out.println("Area of the circle with a radius of " + radius + " is : " + Math.round(area));
-        return this;
+        return area;
     }
 }
