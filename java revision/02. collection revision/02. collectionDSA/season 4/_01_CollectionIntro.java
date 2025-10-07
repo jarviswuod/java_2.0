@@ -18,7 +18,9 @@
     - List Interface
         - ArrayList
         - LinkedList
-        - Vector
+        - Vector (legacy dynamic array)
+            - thread safe
+            - slight performance issue due to sync
 
     - Queue
         - PriorityQueue

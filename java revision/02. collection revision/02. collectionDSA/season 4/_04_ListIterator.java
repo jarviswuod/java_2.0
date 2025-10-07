@@ -15,6 +15,7 @@
 
     - Usecases:
         - Used in deques for check for both forward and backward looping
+        - bidirectional iterator for lists
 
     - 
 
