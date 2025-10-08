@@ -37,6 +37,10 @@ public class _19_CollectionWrapUp {
         List<Integer> list2 = Arrays.asList(array);
 
         Arrays.sort(array);
+        for (Integer integer : array) {
+            System.out.print(integer + " ");
+        }
+        System.out.println("----");
 
         List<Integer> list1 = Arrays.asList(1, 3, 7, 9);
         System.out.println(list1);
