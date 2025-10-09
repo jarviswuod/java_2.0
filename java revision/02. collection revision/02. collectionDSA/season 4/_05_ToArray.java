@@ -10,6 +10,26 @@
 
  */
 
-public class _05_ToArray {
+import java.util.List;
 
+public class _05_ToArray {
+    public static void main(String[] args) {
+
+        List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        Integer[] array = list.toArray(new Integer[0]);
+
+        for (Integer integer : array) {
+            System.out.print(integer + " ");
+        }
+        System.out.println();
+        System.out.println("--- --- --- --- --- --- --- ");
+
+        List<String> list2 = List.of("Jarvis", "Wuod", "Random", "Just");
+        String[] array2 = list2.toArray(new String[0]);
+        for (String string : array2) {
+            System.out.print(string + " ");
+        }
+        System.out.println();
+
+    }
 }

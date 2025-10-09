@@ -19,6 +19,20 @@
             - get()     -> getFirst(),,, getLast()
             - peek()    -> peekFirst(),,, peekLast()
 
+
+    - Deque methods:
+        - ADDING:
+            - addFirst(element) / offerFirst(element) / push(element)
+            - add() / offer() / addLast(element) / offerLast(element)
+
+        - REMOVING:
+            - removeFirst() / pollFirst() / pop()
+            - remove() / poll() / removeLast() / pollLast()
+
+        - EXAMINE:
+            - getFirst() / peekFirst()
+            - element() / peek() / getLast() / peekLast()
+
  */
 
 public class _07_Deque {

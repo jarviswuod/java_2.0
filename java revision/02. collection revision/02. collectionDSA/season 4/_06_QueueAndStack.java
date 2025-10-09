@@ -29,7 +29,7 @@
 
         - Stack methods:
             - push();
-            - poll();
+            - pop();
             - peek();
 
     - 
