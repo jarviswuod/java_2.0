@@ -2,7 +2,7 @@
 
     NOTES:
     - All I know about Generics:
-    - Typecast:
+    - Type parameter:
         - 
 
     - Wildcards
@@ -28,14 +28,25 @@
 
  */
 
+import java.util.List;
+
 public class _01_Intro {
     public static void main(String[] args) {
 
+        List<Integer> intList = List.of(2, 4, 7, 8, 9, 1);
+        add(intList);
+
     }
 
-    // public static void add(<T extends Number>) {
+    public static void add(List<? extends Number> list2) {
 
-    // }
+        double sum = 0;
+        for (Number number : list2) {
+            sum += number.doubleValue();
+        }
+
+        System.out.println(sum);
+    }
 }
 
 class DifferentClass<T extends Number> {
