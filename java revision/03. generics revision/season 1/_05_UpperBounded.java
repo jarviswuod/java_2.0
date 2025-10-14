@@ -23,7 +23,7 @@
         - Achieved by using 'extends' keyword
         - Only does READ
             - Read under what is defined as the upperbound
-            - Doesnot allow WRITE because it doesnot know what Type will be passed to it to begin with, say Integer, yet you adding Double or String objects
+            - Doesnot allow WRITE because it doesnot know what Type will be passed to it to begin with, say Integer, yet you'll be adding Double or String objects
 
                 public static <T extends Number> Double sumAnyVal(List<T> listOfAnyVal) {
 
