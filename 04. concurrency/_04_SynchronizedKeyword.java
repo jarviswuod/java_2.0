@@ -1,7 +1,7 @@
 /*
 
     NOTES:
-    - Threads share the same memory space, i.e. they can share reources(objects)
+    - Threads share the same memory space, i.e. they can share resources(objects)
     - However, there are critical situation where it is desirable that only one thread at a time has access to a shared resource
 
     - Exception in thread "Pusher" java.lang.ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 5

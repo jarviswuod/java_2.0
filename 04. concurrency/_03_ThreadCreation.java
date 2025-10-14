@@ -17,10 +17,10 @@
         - Using Runnable interface
 
     - Whatever code you want executed in a Thead, you write it under the run() method you override when extending the Thread class.
-    - start() methods does not start immediately, it's an asynhronous method that returns immediately. It's now upto JVM to start the Thread execution when it wants to
+    - The start() method does not start immediately, it's an asynhronous method that returns immediately. It's now upto JVM to start the Thread execution when it wants to
     - Parent child relationship between 2 threads, main begin the parent of other threads
     - No order for execution of Threads
-    - If JVM finds no user threads running, it might allow the Deamon threads to run or not. However the program doesnot terminate then there is even a single user thread running
+    - If JVM finds no user threads running, it might allow the Deamon threads to run or not. However the program doesnot terminate when there is even a single user thread running
 
 
     @Override
@@ -31,15 +31,15 @@
     }
 
     Reason behind why; It's possible to create a Thread in 2 ways;
-        1. Pass a Runnable instance which will set the target to our instance and then our instance method will be executed
+        1. Pass a Runnable instance which will set the *target* to our instance and then our instance method will be executed
         2. Extend the Thread class and override the run() method itself
     - Which and Why method should be used to create a Thread;
-        - Extending the Thread class limits possibility of extending other classes that you might need
+        - Extending the Thread class limits possibility of extending other classes that might be needed
         - One can implement multiple interfaces other than the Runnable as java supports multiple interfaces implementations
 
  */
 
-public class _03_Thread {
+public class _03_ThreadCreation {
     public static void main(String[] args) {
 
         Program program = new Program("program thread");
