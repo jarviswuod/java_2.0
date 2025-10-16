@@ -43,6 +43,36 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class _07_ProducerConsumerPattern {
+    public static void main(String[] args) {
+        BlockingQueue queue = new BlockingQueue(5); // capacity 5
+
+        // Producer
+        Thread producer = new Thread(() -> {
+            for (int i = 1; i <= 10; i++) {
+                queue.add(i);
+                System.out.println("Produced: " + i);
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException ignored) {
+                }
+            }
+        });
+
+        // Consumer
+        Thread consumer = new Thread(() -> {
+            for (int i = 1; i <= 10; i++) {
+                int item = queue.remove();
+                System.out.println("Consumed: " + item);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ignored) {
+                }
+            }
+        });
+
+        producer.start();
+        consumer.start();
+    }
 }
 
 class BlockingQueue {
