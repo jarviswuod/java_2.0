@@ -8,7 +8,7 @@
             - Another thread interrupts the waiting thread
 
     - Notify:
-        - Invoking the notify() method on an object wakes up a single thread that is waiting for the lock of this object
+        - Invoking the notify() method on an object awakens a single thread waiting for the lock of this object
         - The selection of a thread to awaken is dependent on the thread policies implemented by the JVM
         - On being notified, a waiting thread first transits to the 'blocked-for-lock-acquisition' state to acquire the lock on the object, and not directly to the 'ready-to-run' state
         - The thread is also removed from the wait set of the object

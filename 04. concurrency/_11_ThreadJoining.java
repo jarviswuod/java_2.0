@@ -3,7 +3,7 @@
     NOTES:
     - Thread Joining:
         - Thread once created and started (is in the 'running' state), it always runs asynchronously (in parallel) with other threads, e.g main thread
-        - thread.join() method comes into play, when we want to pause other threads until it's execution is done before other threads resume execution(main thread)
+        - thread.join() method comes into play, when we want to pause other threads until it's execution is done, then other threads resume execution(main thread)
         -  Thread is in a 'ready-to-run" state, once it's given priority to execute and you call the join() method, you are simply pausing the asynchronous nature of thread execution and to a 'blocked-for-join-completion' state
         - Whatever is returned can be one of the 3;
             - Join compeleted: once the thread execution is complete

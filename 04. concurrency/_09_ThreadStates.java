@@ -4,18 +4,18 @@
                |
      started() |
                |
-        ready-to-run  <----------------------------------
+        ready-to-run  <---------------------------------|
                ^                                        | Leaving non-runnable
-               |                                        |
-               |                |-----------------------------------------------------------|
+               |                ________________________|____________________________________
+               |                |                                                           |
                |                | sleeping            blocked-for-        blocked-          |
                |                |                   join-completion       for-I/O           |
-               |    Entering    |                                                           |
-               |  non-runnable  |                                                           |
-           Running----------->  | waiting-for-     on notification         blocked-for      |
+               |     Entering   |                                                           |
+               |   non-runnable |                                                           |
+           Running -----------> | waiting-for-     on notification         blocked-for      |
                |                | notification    --------------->      lock-acquisition    |
                v                |                                                           |
-        Completed/Terminated    |-----------------------------------------------------------|
+        Completed/Terminated    |___________________________________________________________|
                |                
                v
               Dead
