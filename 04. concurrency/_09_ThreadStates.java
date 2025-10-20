@@ -1,24 +1,24 @@
 /*
 
-  created -> new
-               |
-     started() |
-               |
-        ready-to-run  <---------------------------------|
-               ^                                        | Leaving non-runnable
-               |                ________________________|____________________________________
-               |                |                                                           |
-               |                | sleeping            blocked-for-        blocked-          |
-               |                |                   join-completion       for-I/O           |
-               |     Entering   |                                                           |
-               |   non-runnable |                                                           |
-           Running -----------> | waiting-for-     on notification         blocked-for      |
-               |                | notification    --------------->      lock-acquisition    |
-               v                |                                                           |
-        Completed/Terminated    |___________________________________________________________|
-               |                
-               v
-              Dead
+    created -> new Thread()
+                 |
+       started() |
+                 |
+          ready-to-run  <---------------------------------|
+                 ^                                        | Leaving non-runnable
+                 |                ________________________|________________________________
+                 |                |                                                       |
+                 |                | sleeping            blocked-for-      blocked-        |
+                 |                |                   join-completion     for-I/O         |
+                 |     Entering   |                                                       |
+                 |   non-runnable |                                                       |
+             Running -----------> | waiting-for-     on notification       blocked-for    |
+                 |                | notification    --------------->    lock-acquisition  |
+                 v                |                                                       |
+          Completed/Terminated    |_______________________________________________________|
+                 |                
+                 v
+                Dead
 
 
     - Running and yielding:
