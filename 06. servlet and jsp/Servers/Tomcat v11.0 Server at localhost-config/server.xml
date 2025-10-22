@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8006" shutdown="SHUTDOWN">
+ --><Server port="8005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -61,7 +61,7 @@
          AJP  Connector: /docs/config/ajp.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector connectionTimeout="20000" port="8081" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -136,7 +136,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="_02_CreateServletAndWebXML" path="/_02_CreateServletAndWebXML" reloadable="true" source="org.eclipse.jst.jee.server:_02_CreateServletAndWebXML"/><Context docBase="_01_ServletIntro" path="/_01_ServletIntro" reloadable="true" source="org.eclipse.jst.jee.server:_01_ServletIntro"/><Context docBase="_03_GetAndPost" path="/_03_GetAndPost" reloadable="true" source="org.eclipse.jst.jee.server:_03_GetAndPost"/><Context docBase="_04_RequestDispatcher" path="/_04_RequestDispatcher" reloadable="true" source="org.eclipse.jst.jee.server:_04_RequestDispatcher"/></Host>
+      <Context docBase="_01_ServletIntro" path="/_01_ServletIntro" reloadable="true" source="org.eclipse.jst.jee.server:_01_ServletIntro"/><Context docBase="_03_GetAndPost" path="/_03_GetAndPost" reloadable="true" source="org.eclipse.jst.jee.server:_03_GetAndPost"/><Context docBase="_04_RequestDispatcher" path="/_04_RequestDispatcher" reloadable="true" source="org.eclipse.jst.jee.server:_04_RequestDispatcher"/><Context docBase="_05_SendRedirectAndURLRewriting" path="/_05_SendRedirectAndURLRewriting" reloadable="true" source="org.eclipse.jst.jee.server:_05_SendRedirectAndURLRewriting"/><Context docBase="_02_CreateServletAndWebXML" path="/_02_CreateServletAndWebXML" reloadable="true" source="org.eclipse.jst.jee.server:_02_CreateServletAndWebXML"/><Context docBase="_06_HttpSession" path="/_06_HttpSession" reloadable="true" source="org.eclipse.jst.jee.server:_06_HttpSession"/><Context docBase="_07_Cookies" path="/_07_Cookies" reloadable="true" source="org.eclipse.jst.jee.server:_07_Cookies"/><Context docBase="_08_ServletConfigAndContext" path="/_08_ServletConfigAndContext" reloadable="true" source="org.eclipse.jst.jee.server:_08_ServletConfigAndContext"/><Context docBase="_09_ServletConfigurationAnnotation" path="/_09_ServletConfigurationAnnotation" reloadable="true" source="org.eclipse.jst.jee.server:_09_ServletConfigurationAnnotation"/></Host>
     </Engine>
   </Service>
 </Server>

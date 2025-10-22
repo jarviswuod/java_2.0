@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>_03_GetAndPost</name>
+	<name>_05_SendRedirectAndURLRewriting</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -30,7 +30,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1761109296916</id>
+			<id>1761109297321</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

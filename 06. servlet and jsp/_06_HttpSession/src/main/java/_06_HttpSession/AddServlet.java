@@ -1,4 +1,4 @@
-package _04_RequestDispatcher;
+package _06_HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class AddServlet extends HttpServlet {
 
@@ -18,10 +19,10 @@ public class AddServlet extends HttpServlet {
 
 		int k = i + j;
 
-		req.setAttribute("k", k);
+		HttpSession session = req.getSession();
+		session.setAttribute("k", k);
 
-		RequestDispatcher rd = req.getRequestDispatcher("square");
-		rd.forward(req, res);
+		res.sendRedirect("square");
 
 	}
 }

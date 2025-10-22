@@ -1,4 +1,4 @@
-package _04_RequestDispatcher;
+package _05_SendRedirectAndURLRewriting;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,10 +18,7 @@ public class AddServlet extends HttpServlet {
 
 		int k = i + j;
 
-		req.setAttribute("k", k);
-
-		RequestDispatcher rd = req.getRequestDispatcher("square");
-		rd.forward(req, res);
+		res.sendRedirect("square?k=" + k); // URL REWRITING
 
 	}
 }
