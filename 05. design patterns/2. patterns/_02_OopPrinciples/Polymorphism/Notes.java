@@ -48,7 +48,7 @@ package _02_OopPrinciples.Polymorphism;
         - SUMMARY:
             - In this example, we have a list of both instances of Motorcycle and Car. We then iterate through the Vehicle list and perform a general inspection, starting a vehicle
             - Despite the vehicles being of different types, polymorphism allows us to treat them all as instances of Vehicle class even though the implementation of start() and stop() methods are all invoked dynamically at runtime based on the actual type of vehicle.
-            - Because the List only contains Vehicle class, all the classes wills have some common fields and methods we can safely call within the client code without having to worry about each specific vehicle type
+            - Because the List only contains Vehicle class, all the classes have some common fields and methods we can safely call within the client code without having to worry about each specific vehicle type
 
             - This shows how polymorphism enables code to be written in a more generic and flexible manner allowing for easy extension and maintenance of new types of Vehicles as they are added to the system
 

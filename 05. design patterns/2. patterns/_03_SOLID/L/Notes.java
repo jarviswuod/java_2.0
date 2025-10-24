@@ -18,7 +18,8 @@ package _03_SOLID.L;
 
         - Concrete class:
             - Rectangle class:
-                - Consider an example with a Rectangle and Square class which inherit from a common Shape class, initially we will violate the Liskov Substitution principle by not following it
+                - Consider an example with a Rectangle and Square class both of which inherit from a common Shape class
+                - Initially we will violate the Liskov Substitution principle by not following it
 
                         public class Rectangle extends Shape {
 
@@ -33,7 +34,7 @@ package _03_SOLID.L;
 
 
             - Square class
-                - We also have a Square class, which inherits a Rectangle class this is based on assumption that a Square is a unique Rectangle with all sides equal to each other
+                - We also have a Square class. It inherits a Rectangle class, this is based on assumption that a Square is a unique Rectangle with all sides equal to each other
 
                         public class Square extends Rectangle {
 
@@ -80,17 +81,17 @@ package _03_SOLID.L;
 
 
         - ISSUE:
-            - From Liskov substitution principle, when we substitute Rectangle for Square the program should just work fine, instead we have completely different results in comparison to what we expect in terms of area. This should not be the case as it makes it easier for our system to contain bugs
+            - From Liskov substitution principle, when we substitute Rectangle for Square the program should just work fine. Instead we have completely different results in comparison to what we expect in terms of area. This should not be the case as it makes it easier for our system to contain bugs
 
 
         - SOLUTION:
-            - We refactor our program to follow the Liskov Substitution. We'll basically modify our Square class such that it no longer extends the Rectangle class instead extends the Shape class directly
+            - We refactor our program to follow the Liskov Substitution. Basically modifying our Square class such that it no longer extends the Rectangle class and instead extend the Shape class directly too
 
 
 
     - GOOD CODE EXPLAINED:
         - Main && Shape class:
-            - Once we inherit Shape abstract class, Square no longer makes sense to have both **legth** and **width**, instead we'll make adjustments to only have sideLength which satisfies the Square requirements for calcualting area. With this everything works corectly and as expected;
+            - Once we inherit Shape abstract class, Square no longer makes sense to have both **legth** and **width**, instead we'll make adjustments to only have sideLength which satisfies the Square requirements for calcualting area. With this everything works correctly and as expected;
 
                     public class Square extends Shape {
 
@@ -106,7 +107,7 @@ package _03_SOLID.L;
                     }
 
         - CONCLUSION:
-            - We have redesigned the square class to directly set the sideLength and now it's correctly models as a subclass or Shape and it adhears to Liskov Substitution princple coz all shapes are substitutable with each other and they calculate their areas correctly
+            - We have redesigned the square class to directly set the sideLength and now it's correctly models as a subclass or Shape and it adhears to Liskov Substitution principle coz all shapes are substitutable with each other and they calculate their respective areas correctly
 
  */
 

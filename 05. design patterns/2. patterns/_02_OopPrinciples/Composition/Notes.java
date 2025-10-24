@@ -10,7 +10,7 @@ package _02_OopPrinciples.Composition;
 
 
     - GOOD CODE EXPLANATION:
-        - In this example we have a load of items/parts that make up a Car i.e Chassis, Wheels, Engine. All this are individual and complete Objects on their own containing both fields and complete methods
+        - In this example we have a load of items/parts that make up a Car i.e Chassis, Wheels, Engine. All these are individual and complete Objects on their own containing both fields and complete methods
 
                 public class Chassis {
                     public void support() {...}
@@ -50,7 +50,7 @@ package _02_OopPrinciples.Composition;
                     System.out.println("Car started");
                 }
 
-        - This means that when we create a Car instance and call the startCar() method every component will be delegated it's role and the car starts successfully
+        - This means that when we create a Car instance and call the startCar() method every component will be delegated it's specific/ unique role and the car starts successfully
 
                 public class Main {
                     public static void main(String[] args) {
@@ -75,8 +75,8 @@ package _02_OopPrinciples.Composition;
 
 
     - WHY CHOOSE COMPOSITION OVER INHERITANCE:
-        1. Inheritance coupling:
-            - Inheritance create a strong coupling between the super and sub. Any changes made to the super can potentially affect the behavior of all sub classes
+        1. Tight coupling:
+            - Inheritance create a strong coupling between the super and sub classes. Any changes made to the super can potentially affect the behaviour of all sub classes
 
         2. Limited Extensibility:
             - The Fragile-Base limits the extensibility of software systems, as modifications to the base class can become increasingly risky and costly over time. Developers may avoid making necessary changes due to the fear of breaking existing functionality -- Brittle software
@@ -85,7 +85,7 @@ package _02_OopPrinciples.Composition;
     - FRAGILE-BASE CLASS:
         - Fragile-Base class is a software design issue that arises in object-oriented programming when changes made to a base class can advertently break the functionality of derived classes. This problem occurs due to the tight coupling between base and derived classes in inheritance hierarchies
 
-        - Fragile-Base class Prevention Strategies:
+        - PREVENTION STRATEGIES:
             - To mitigate the Fragile-Base Class problem, software developers can use design principle such as Open-Closed Principle and Dependency Inversion Principle, as well as design patterns like Composition over inheritance. These approaches promote loose coupling, encapsulation and moduler design, reducing the impact of changes in base classes
 
 */

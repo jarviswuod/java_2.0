@@ -12,7 +12,7 @@ package _03_SOLID.S;
     - BAD CODE EXPLAINED:
         - EmailSender class:
             - We are creating an EmailSender class for sending an email notification, over here we have a sendEmail() method which takes *email* and *message* as params
-            - We use the sendEmail() method to send an email after successfull user registration
+            - We can use the sendEmail() method say to send an email after successfull user registration
 
                     public class EmailSender {
 
@@ -30,7 +30,7 @@ package _03_SOLID.S;
                 - If they already exist we could redirect them to the login page
                 - Saving registered users to the DB
 
-                # Once that's all done we can send the user an email notification;
+            - Once that's all done we can send the user an email notification;
 
                     public class User {
 
@@ -48,14 +48,14 @@ package _03_SOLID.S;
 
 
         - ISSUE:
-            - In this example the User class is violating the Single responsibility principle because it's managing user data; email, username, password it also contains user registration logic
+            - In this example the User class is violating the Single responsibility principle because it's managing user data; email, username, password. It's also containing the user registration logic
             - For this reason, the User class has more than one reason to change;
                 1. Modifications can be made to our User data management, i.e add more fields as firstName, lastName, age, hobby
                 2. Another reason to modify the class is if we need to change the logic for registering a user. i.e We may choose to fetch user from the DB by email instead of username
 
 
         - SOLUTION:
-            - We solve for this issue by introducing UserService class which holds all the business logic related to a User
+            - We solve for this issue by introducing UserService class. It will hold all the business logic related to a User
 
 
 
@@ -63,7 +63,7 @@ package _03_SOLID.S;
         - UserService class:
             - We have a separate class UserService which holds all the business logic related to a user, i.e 
                 - User registration
-                - User sign up
+                - User sign-in
                 - User details update
 
 
@@ -83,8 +83,8 @@ package _03_SOLID.S;
                     }
 
         - With this separation;
-            - User class has ONLY ONE purpose which is representing User data
-            - UserService class handles User business logic like user registration, and might as well contain login() and update() methods for the User
+            - User class has only ONE purpose, representing User data
+            - UserService class handles User business logic such as user registration, and might as well contain login() and update() methods for the User
 
  */
 

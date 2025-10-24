@@ -6,7 +6,7 @@ package _02_OopPrinciples.Coupling;
     - Coupling:
         - Coupling refers to the degree of dependency between different classes
         - High coupling:
-            - Means classes are highly interconnected making it difficult to modify or maintain them independently, modifying one class could easily break the other classes which could eventually break the whole program
+            - Means classes are highly interconnected making it difficult to modify or maintain them independently. Modifying one class could easily break other classes which could eventually break the whole program
 
         - Low coupling:
             - Means loose connection between classes allowing for great flexibility and ease of modification
@@ -26,7 +26,7 @@ package _02_OopPrinciples.Coupling;
 
 
         - Assuming we have an E-commerce website, where a user can place an order and once they place an order we need to notify them
-        - For that we create an Order class with a placeOrder() method. This method covers the logic from inserting an order in the DB, reducing the stock quantity, processing payment, etc. Once that has been done, when we are sending an email to the user that the order has been placed successfully, basic reassurance to the user
+        - For that we create an Order class with a placeOrder() method. This method covers the logic from inserting the order in a DB, reducing the stock quantity, processing payment, etc. Once that has been done, when we are sending an email to the user that the order has been placed successfully, basic reassurance to the user
 
                 public class Order {
 
@@ -39,7 +39,7 @@ package _02_OopPrinciples.Coupling;
                 }
 
 
-        - We are simulating an order placement process for which the program works fine and the user gets an email notification that "Order is placed successfully"
+        - We are simulating an order placement process for which the program works fine and the user gets an email notification that "Order placed successfully"
                 public class Main {
 
                     public static void main(String[] args) {
@@ -51,9 +51,11 @@ package _02_OopPrinciples.Coupling;
 
 
         - ISSUE:
-            - In this example, the Order class is tightly coupled to the EmailSender class because it directly creates an instance of the EmailSender class, (introducing the 'new' keyword). This makes the Order class depend on the implementation details of EmailSender therefore any changes to the EmailSender class may require changes to the Order class too, this means we are risking bugs introduction into Order class and we'd rather not
+            - In this example, the Order class is tightly coupled to the EmailSender class. This is because it directly creates an instance of the EmailSender class, (introducing the 'new' keyword). This makes the Order class depend on the implementation details of EmailSender therefore any changes to the EmailSender class may require changes to the Order class too, this means we are risking bugs into the Order class and we'd rather not
 
-                - Changes like method signature, logic, or even replacing EmailSender with another notification method (SMS, Slack, WhatsApp)
+                - Example of changes likely to be made are; method signature, logic, or even replacing EmailSender with another notification method like SMS or WhatsApp
+
+            - Sample changes:
 
                 1. Method signature change:: Order won’t compile because the OLD method doesn’t exist
                     - OLD
@@ -73,7 +75,7 @@ package _02_OopPrinciples.Coupling;
                         }
 
 
-                2. Different notification system:: you must edit Order to use new SmsSender()
+                2. Notification system change:: You must edit Order to use new SmsSender()
                     - NEW requirement: Use SMS instead of Email
                         public class SmsSender {
 
@@ -105,14 +107,14 @@ package _02_OopPrinciples.Coupling;
 
 
     - GOOD EXAMPLE EXPLANATION:
-        - We can reduce coupling by introducing an abstraction or interface layer between the Order and EmailSender class. This allows the Order class interact with EmailSender class through the interface making it easier to modify or replace the implementation of EmailSender class without affecting the Order class
+        - We can reduce coupling by introducing an abstraction or interface layer between the Order and EmailSender class. This allows the Order class interaction to EmailSender class through an interface. This makes it easier to modify or replace the implementation of EmailSender class without affecting the Order class
                 public interface NotificationService {
 
                     void sendNotification(String msg);
                 }
 
 
-        - We then implement the NotificationService to EmailSender class and override the sendNotification() method replacing the sendEmail() logic
+        - We then implement the NotificationService to EmailSender class overriding sendNotification() method replacing the sendEmail() logic
                 public class EmailSender implements NotificationService {
 
                     @Override
@@ -145,8 +147,8 @@ package _02_OopPrinciples.Coupling;
                 }
 
 
-        - We could replace sendEmail() with sendNotification() which works fine but we still have an issue. It's tightly coupled just as before which makes it not flexible, because say the user wants to be notified via text message instead when order is placed successfully
-        - Currently, the EmailSender is just hard coded into the Order class placeOrder() method. This means you can't switch out how a notification is sent to a user. This leads to adding the interface via constructor
+        - We could replace sendEmail() with sendNotification() which works fine but we still have an issue. It's tightly coupled just as before which makes it not flexible, because say the user wants to be notified via text message instead of email
+            - Currently, the EmailSender is literally hard coded into the Order class placeOrder() method. This means you can't switch out how a notification is sent to a user. This leads to adding the interface via constructor
 
             NEW::
                 public class Order {
@@ -163,7 +165,7 @@ package _02_OopPrinciples.Coupling;
                 }
 
 
-        - In our client area, we'll need to pass a NotificationService to an Order object when we creating Order instance. We can pass an EmailSender or introduce a new notification mechanism with easy, Example SmsSender class
+        - In our client area, we'll need to pass a NotificationService to an Order object when we creating Order instance. We can pass an EmailSender or introduce a new notification mechanism(SMS) with easy
 
                 public class Main {
                     public static void main(String[] args) {
@@ -179,7 +181,7 @@ package _02_OopPrinciples.Coupling;
 
             - With this solution;
                 - If EmailSender changes internally (constructor, logic, SMTP, etc.), Order stays untouched
-                - If you replace with SmsSender (or SlackSender, WhatsAppSender), only Main changes NOT Order
+                - If you replace with SmsSender or WhatsAppSender
 
 
         - CONCLUSION:

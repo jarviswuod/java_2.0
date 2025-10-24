@@ -4,13 +4,14 @@ package _03_SOLID.O;
 
     NOTES:
     - Open-closed Principle:
-        - It states that a software entities (classes, modules, functions, etc) should be open for extenstion but closed for modifications
+        - It states that a software entity (classes, modules, functions, etc) should be open for extension but closed for modifications
         - This principle promotes the idea that existing code should be able to be extended with new functionality without  modifying it's existing source code
-        - It encourages the use of abstraction and polymorphism to achieve it's goal
+        - It encourages use of abstraction and polymorphism to achieve it's goal
 
 
     - BAD CODE EXPLAINED:
-        - Over here we have a Shape class hierarchy that calculates the area of different shapes. At this phase we are violating the Open-closed Princinple because when we add new shapes we will have to modifying already existing code
+        - Over here we have a Shape class hierarchy that calculates the area of different shapes
+        - We are currently violating the Open-closed Princinple because when we add new shapes we will have to modifying already existing code
         
         - ShapeType enum:
             - First we have an enum class type that stores our type of shape with only a Circle and Rectangle shapes only
@@ -21,8 +22,8 @@ package _03_SOLID.O;
 
 
         - Shape class:
-            - Then we have Shape class, it stores the shape type, the radius, length and width, basically different shapes with their corresponding formula for calculating areas
-            - calculateArea() method of calculating the area of a shape based on the enum ShapeType
+            - Then we have Shape class, it stores the ShapeType enum, radius, length and width, basically different shapes with their corresponding formulas for calculating areas
+            - calculateArea() method calculates the area of a shape based on it's enum ShapeType
 
                     public class Shape {
 
