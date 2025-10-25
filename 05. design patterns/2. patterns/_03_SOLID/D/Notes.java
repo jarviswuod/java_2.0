@@ -6,7 +6,8 @@ package _03_SOLID.D;
     - Dependecy Inversion Principle:
         - It states that high-level modules should not depend on low-level modules. Both should depend on abstractions
         - It's a strategy of depending upon interfaces/ abstract classes rather than upon concrete classes
-        - It promotes decoupling between modules and promotes the use of interfaces/ abstracts to define dependency allowing for more flexible and testable code
+        - It promotes decoupling between modules
+        - It also promotes the use of interfaces/ abstracts to define dependency allowing for more flexible and testable code
 
 
     - BAD CODE EXPLAINED:
@@ -22,7 +23,7 @@ package _03_SOLID.D;
 
 
         - Car class:
-            - We then create a Car class which is a composition of other classes inclusive of Engine class. We can have other classes like Seats, Chassis, Doors, wheels, etc
+            - We then create a Car class which is a composition of other classes(Engine, Seats, Chassis, Doors, wheels) inclusive of our Engine class
                     public class Car {
 
                         private Engine engine;
@@ -37,11 +38,12 @@ package _03_SOLID.D;
                         }
                     }
 
-            - The Car class has direct dependency on the concrete Engine class. We say this because on the Car constructor we have created an Engine instance
+            - NOTE:
+                - The Car class has direct dependency on the concrete Engine class. We say this because on the Car constructor we have created an Engine instance
 
 
         - ISSUE:
-            - Once we create a Car object, we have way of changing the type of Engine
+            - Once we create a Car object, we have NO way to changing the type of Engine
                     public class Main {
                         public static void main(String[] args) {
 
@@ -51,12 +53,12 @@ package _03_SOLID.D;
                     }
 
             - We have a Car class which has a dependency on concrete Engine class
-            - The car class directly creates an instance of the Engine class, leading to a tight coupling between Car and Engine. This means if something under the Engine class changes, it my affect the Car class changes. This is violation of Dependency Injection
+            - The car class directly creates an instance of the Engine class. This leads to a tight coupling between Car and Engine. This means if something under the Engine class changes, it my affect the Car class changes. This is violation of Dependency Injection
 
 
         - SOLUTION:
             - To solve the issue we'll introduce an interface or abstract class between the Engine and Car class
-            - This allows Car to depend on abstraction instead of concrete Engine implementation
+            - This allows Car to depend on abstraction instead of concrete Engine class implementation
 
 
 
@@ -132,7 +134,7 @@ package _03_SOLID.D;
 
 
         - Advantages of Dependecy Injection;
-            1. It promotes loose coupling between components by removing direct dependecies so that the components rely on abstractions rather than concrete implementations making them more indepedent and easy to maintain
+            1. It promotes loose coupling between components by removing direct dependencies so that components rely on abstractions rather than concrete implementations, this makes them more independent and easy to maintain
             2. It simplifies unit testing by allowing components to be easily replaced with mock or stub implemetation during testing this enables isolated testing of individual components without relying on dependecies
             3. It impoves flexiblity because we could swap out dependecies at runtime
 

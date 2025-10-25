@@ -23,7 +23,7 @@ package _03_SOLID.I;
 
         - Concrete class:
             - Circle and Sphere classes:
-                - We create concrete classes implementing the interface Interface
+                - We create concrete classes implementing the Shape interface
 
                     public class Circle implements Shape {
 
@@ -75,27 +75,29 @@ package _03_SOLID.I;
 
         
         - SOLUTION:
-            - We will refactor our code segregating the Shape interface into Shape2D and Shape3D interfaces and only implementing appropriate interface as required of by concrete classes
+            - We will refactor our code segregating the Shape interface into Shape2D and Shape3D interfaces to only implement appropriate interface as required of by concrete classes
 
 
 
     - GOOD CODE EXPLAINED:
-        - Shape2D interface:
-        - Shape3D interface:
-            - We break down the Shape interface to Shape2D and Shape3D interfaces and only having the required methods with them
+        - We break down the Shape interface to Shape2D and Shape3D interfaces and only having the required methods with them
 
+        - Shape2D interface:
                     public interface Shape2D {
                         double area();
                     }
 
+
+        - Shape3D interface:
                     public interface Shape3D extends Shape2D {
                         double volume();
                     }
 
 
         - Concrete classes:
+            - We then implement the interfaces to Circle and Sphere classes
+
             - Circle and Sphere classes:
-                - We then implement the interfaces to Circle and Sphere classes
                         public class Circle implements Shape2D {
 
                             private double radius;
