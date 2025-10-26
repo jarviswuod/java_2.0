@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>_17_LoginUsingServletAndJsp</name>
+	<name>_05_SendRedirectAndURLRewriting</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -30,7 +30,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1761354772287</id>
+			<id>1761109297420</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
