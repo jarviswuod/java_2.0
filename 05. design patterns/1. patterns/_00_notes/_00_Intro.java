@@ -1,5 +1,5 @@
 /*
- 
+
     NOTES:
     - Pattern Types:
         - Creational: The different ways to create objects
