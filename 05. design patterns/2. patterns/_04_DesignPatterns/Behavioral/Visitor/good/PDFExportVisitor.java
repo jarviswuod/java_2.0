@@ -4,7 +4,7 @@ public class PDFExportVisitor implements Visitor {
 
     @Override
     public void visitLaw(LawClient lawClient) {
-        System.out.println("Sending law marketing tips to " + lawClient.name + " at " + lawClient.email);
+        System.out.println("Exporting law client " + lawClient.name + " to PDF");
     }
 
     @Override

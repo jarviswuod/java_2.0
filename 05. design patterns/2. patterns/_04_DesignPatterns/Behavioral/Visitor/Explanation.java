@@ -112,19 +112,6 @@ package _04_DesignPatterns.Behavioral.Visitor;
                     }
 
 
-        - Visitor Interface:
-            - In here, we will have 3 methods
-
-                    public interface Visitor {
-
-                        void visitLaw(LawClient lawClient);
-
-                        void visitRestaurant(RestaurantClient restaurantClient);
-
-                        void visitRetail(RetailClient retailClient);
-                    }
-
-
         - Concrete classes:
             - We extend the Client abstract class then implement the accept() method
             
@@ -158,6 +145,19 @@ package _04_DesignPatterns.Behavioral.Visitor;
                             visitor.visitLaw(this);
                         }
 
+
+
+        - Visitor Interface:
+            - In here, we will have 3 methods
+
+                    public interface Visitor {
+
+                        void visitLaw(LawClient lawClient);
+
+                        void visitRestaurant(RestaurantClient restaurantClient);
+
+                        void visitRetail(RetailClient retailClient);
+                    }
 
 
         - Concrete Visitor classes:
@@ -205,10 +205,10 @@ package _04_DesignPatterns.Behavioral.Visitor;
                                     new RestaurantClient("Pizza Hut", "safe@inpizzahut.co.ke"));
 
                             for (Client client : clients) {
-                                client.accpet(new EmailVisitor());
+                                client.accept(new EmailVisitor());
 
                                 // New
-                                client.accpet(new PDFExportVistor());
+                                client.accept(new PDFExportVistor());
                             }
                         }
                     }
@@ -221,7 +221,7 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
                         @Override
                         public void visitLaw(LawClient client) {
-                            System.out.println("Sending law marketing tips to " + client.name + " at " + client.email);
+                            System.out.println("Exporting law client " + client.name + " to PDF");
                         }
 
                         @Override

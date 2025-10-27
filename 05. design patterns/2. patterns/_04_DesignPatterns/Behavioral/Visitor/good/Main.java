@@ -12,7 +12,7 @@ public class Main {
                 new RestaurantClient("Pizza Hut", "safe@inpizzahut.co.ke"));
 
         for (Client client : clients) {
-            // client.accpet(new EmailVisitor());
+            // client.accept(new EmailVisitor());
 
             client.accept(new PDFExportVisitor());
         }
