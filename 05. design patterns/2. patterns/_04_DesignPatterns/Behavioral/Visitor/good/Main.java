@@ -13,7 +13,8 @@ public class Main {
 
         for (Client client : clients) {
             // client.accpet(new EmailVisitor());
-            client.accept(new PDFExportVistor());
+
+            client.accept(new PDFExportVisitor());
         }
     }
 }

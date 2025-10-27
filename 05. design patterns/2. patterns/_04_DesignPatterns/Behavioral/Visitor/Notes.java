@@ -13,7 +13,7 @@ package _04_DesignPatterns.Behavioral.Visitor;
             - Law firms
             - Retailers
 
-        - Your manager comes to you and says that they need the ability to send a specialised email with marketing tips for each  of the different clients; example:
+        - Your manager comes to you and says that they need the ability to send a specialised email with marketing tips for each  of the different clients; Example:
             - Restaurants needs tips on how they can better market their food better but law firms don't
             - Law firms tips to improve their online reviews
             - Retailers tips to improve their product descriptions
@@ -34,7 +34,7 @@ package _04_DesignPatterns.Behavioral.Visitor;
                 |___________________|
 
 
-        - This appears to be a nice elegant solution, but the manager comes back and says that they need a way to export clients as PDFs and XML. You realize that you mananger is going to keep coming to you asking more and more features for Clients
+        - This appears to be a nice elegant solution, but the manager comes back and says that they need a way to export clients as PDFs and XML. You realize that your mananger is going to keep coming to you asking more and more features for clients
 
         - PROBLEM:
             - We are breaking the open-close principle; everytime we want to add new functionality, we have to open up our code for modification
@@ -78,15 +78,15 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
     - VISITOR PATTERN UML: From GoF book:
 
-                ____________________                   ____________________________
-                | Element          |                   | Visitor                  |
-                |__________________|-----------------> |__________________________|
-                | accept(Visitor)  |                   | visitA(ConcreteElementA) |
-                |__________________|                   | visitB(ConcreteElementB) |
-                        ^                              |__________________________|
-                        |                                      ^
-                        |                                      |
-                ____________________                           |
+                ____________________                 ____________________________
+                | Element          |                 | Visitor                  |
+                |__________________|---------------> |__________________________|
+                | accept(Visitor)  |                 | visitA(ConcreteElementA) |
+                |__________________|                 | visitB(ConcreteElementB) |
+                        ^                            |__________________________|
+                        |                                        ^
+                        |                                        |
+                ____________________                             |
                 | ConcreteElementA |                  ____________________________
                 |__________________|-|                | ConcreteVisitorA         |
                 | accept(Visitor)  | |-|              |__________________________|-|

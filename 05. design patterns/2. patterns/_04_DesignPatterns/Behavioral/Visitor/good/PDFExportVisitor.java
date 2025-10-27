@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.Visitor.good;
 
-public class PDFExportVistor implements Visitor {
+public class PDFExportVisitor implements Visitor {
 
     @Override
     public void visitLaw(LawClient lawClient) {

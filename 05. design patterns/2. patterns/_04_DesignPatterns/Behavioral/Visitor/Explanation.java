@@ -10,15 +10,15 @@ package _04_DesignPatterns.Behavioral.Visitor;
             - Law firms
             - Retailers
 
-        - Your manager comes to you and says that they need the ability to send a specialised email with marketing tips for each  of the different clients; example:
+        - Your manager comes to you and says that they need the ability to send a specialised email with marketing tips for each  of the different clients; Example:
             - Restaurants needs tips on how they can better market their food better but law firms don't
             - Law firms tips to improve their online reviews
             - Retailers tips to improve their product descriptions
 
 
     - SOLUTION 1: POLYMORPHISM
-        - Client class
-            - We have Client class, it's basicaly a parent/base class for different types of clients
+        - Client abstract class:
+            - This is basically a parent/base class for different types of clients
             - We are storing the name and contact email for the client
             - We also have an abstract method sendEmail() which will be implemented by subclasses and customized according to their needs
 
@@ -35,9 +35,10 @@ package _04_DesignPatterns.Behavioral.Visitor;
                         public abstract void sendEmail();
                     }
 
+
         - Concrete classes:
             - LawClient class:
-                - We extend the Client class and introduce a consttuctor and implement SendEmail() method
+                - We extend the Client class, introduce a constructor and implement sendEmail() method
 
                         public class LawClient extends Client {
 
@@ -59,8 +60,7 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
 
         - Main class: Client class
-            - We create a list of Clients
-            - We then loop through each client sending them custom emails using the sendEmail() method
+            - We create a list of Clients then loop through each client sending each a custom email using the sendEmail() method
 
                     public class Main {
                         public static void main(String[] args) {
@@ -78,19 +78,21 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
 
         - Observation:
-            - This solution works pefectly fine meeting our goal
-            - Following our current design every time we wanted to add new functionality we have to open up abstract class adding these specific abstract methods and then implment the methods in to ClientConcrete classes. This breaks the OCP
+            - This solution works pefectly fine in meeting our goal
 
+        - Issue:
+            - Following our current design every time we want to add new functionality we have to open up abstract class adding these specific abstract methods and then implement the methods in to Client concrete classes. This breaks the OCP
             - We are also violating the SRP as clients are responsible for storing clients, sending emails and exporting clients as PDF's or XML
 
 
 
     - SOLUTION 2: VISITOR PATTERN:
-        - To solve for the issue we are facing we need to extract the behavior outside client classes on which they operate on as Visitor pattern separates the algorithm/behaviours from the object they operate on
+        - To solve for the issue we are facing we need to extract the behavior/algorithm outside client classes on which they operate on as Visitor pattern states
 
         - abstract Client class:
-            - We have everything as before from the 2 fields of name and email, a constructor to pass them and a getter method for email
-            - NOTE: No abstract method sendEmail() this time instead we will have accept() which takes in a Visitot object and the Visisot object is gonna contain the behavior that will operate of specific client object
+            - We have everything as before from the 2 fields (name and email), a constructor and a getter method for the email field
+            - NOTE:
+                - We don't have the sendEmail() abstract method this time, instead we will have accept() which takes in a Visitor object and the object contains the behavior that will operate on the specific client object
 
                     public abstract class Client {
 
@@ -124,9 +126,10 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
 
         - Concrete classes:
+            - We extend the Client abstract class then implement the accept() method
+            
             - RetailClient class:
-                - Extend the Client abstract class then implement the accept() method
-                - Under the accept() method we call visitRetail() method and then pass 'this' keyword  because the RetailVisitor will operate on the exact RetailClient object
+                - Under the accept() method we call a specific visitRetail() method and then pass 'this' keyword because the RetailVisitor will operate on the exact RetailClient object
 
                     public class RetailClient extends Client {
 
@@ -143,7 +146,7 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
             - RestaurantClient class:
             - LawClient class:
-                - Same concept applies as the RetailClient when it comes to accept() method where we call visitRestaurant() and visitLaw() respectively
+                - Same concept applies as the RetailClient when it comes to accept() method where we call specifically visitRestaurant() and visitLaw() respectively
 
                         @Override
                         public void accept(Visitor visitor) {
@@ -156,11 +159,14 @@ package _04_DesignPatterns.Behavioral.Visitor;
                         }
 
 
-        - ConcreteVisitor class for sending matching email for each specific type of client
+
+        - Concrete Visitor classes:
+            - This implements the Visitor interface
+            - This is where we implement the specific concrete methods and have the behavior is separated from each of the corresponding clients' objects
+
+
             - EmailVisitor class:
-                - It implements the Visitor interface 
-                - This is where we implement the specific methods and we have the behavior is not separated from each of the clients objects
-                - What we now do is to send custom emails
+                - For sending a custom email for each specific type of client
 
                         public class EmailVisitor implements Visitor {
 
@@ -184,13 +190,13 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
 
         - Main class: Client class;
-            - As before we have a list of clients; RetailClient, RestaurantClient, LawClient
-            - We then loop though across our clients not with the sendEmail() because the logic is no longer stored on the client objects themselves, we've separated the behaviour which is sendEmail() in this case from the objects in which they operate which are the unique specific client objects. We just call the accept() method instead and inside the accept method we pass in any type of visitor, in this case we will pass in the emailVisitor because we want to send an email to each of the clients
+            - Just as before(SOLUTION 1: POLYMORPHISM), we have a list of clients; RetailClient, RestaurantClient, LawClient
+            - We then loop though across our clients not with the sendEmail() as the logic is no longer stored on the client objects themselves. Instead, we've separated the behaviour/algorithm, sendEmail(), from the objects in which they operate each being unique and specific to client objects.
+            - We just call the accept() method instead and inside the accept() method we pass in any type of Visitor. In this case we will pass in the emailVisitor as we want to send an email to each of the clients
 
-            - Running our programs, it works find with no issues
+            - Running our programs, it works fine with no issues
 
                     public class Main {
-
                         public static void main(String[] args) {
 
                             List<Client> clients = List.of(
@@ -208,8 +214,8 @@ package _04_DesignPatterns.Behavioral.Visitor;
                     }
 
 
-            - This is a good solution as we can add any other features needed with just extending our code and we don't have to modify nothing
-            - To add new functionality such as export as PDF we just create a new type of visitor
+            - This is a good solution as if needed we can add any other features by just extending our code with no need to modify nothing
+            - To add new functionality such as export as PDF we just create a new type of visitor and we set to operate on the different client objects
 
                     public class PDFExportVistor implements Visitor {
 
