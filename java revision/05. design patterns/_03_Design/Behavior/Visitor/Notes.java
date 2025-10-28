@@ -1,5 +1,7 @@
 package _03_Design.Behavior.Visitor;
 
+import java.util.List;
+
 /*
 
     NOTES:
@@ -301,9 +303,146 @@ package _03_Design.Behavior.Visitor;
 
 
         FOURTH ATTEMPT::: ::: ::: :::
-            - 
+            - Separates algorithms from object structure
+
+            - 4 key players:
+                - Element abstract class/ interface:
+                    - Is a normal class with fields, constructor and accept() method. The accept method takes in Visitor as parameter
+                    - 
+
+                - Element concrete classes:
+                    - Are subclasses Element inside the accept method we refer to 'this' keyword
+                    - The visitor has methods that haven't been defined yet by the Visitor inteface
+                    - 
+
+                - Visitor interface:
+                    - Is an interface this methods you want to be implemented by Element concrete classes
+                    - From AI it's basically the same methods thats to be implemeted by different Element sub classes, the difference is they take in concrete Element as parameter
+                    - 
+
+                - Visitor concrete classes:
+                    - This is actual implementations of the 
+                    - Contains the algorithm thats to be implemeted by concrete elements
+                    - Takes the same name as the method name it was to be otherwise in a polymorphism setup
 
  */
 
 public class Notes {
+    public static void main(String[] args) {
+
+        List<Element> list = List.of(
+                new Element1("Jarivs", "jarvis@mail.cm"),
+                new Element2("Wuod", "wuod@jarv.is"),
+                new Element3("Ruby", "ruby@dim.sam"));
+
+        for (Element element : list) {
+            // element.accept(new SendMarketingEmail());
+
+            element.accept(new SocialEvent());
+        }
+    }
+}
+
+abstract class Element {
+
+    protected String name;
+    protected String email;
+
+    public Element(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public abstract void accept(Visitor visitor);
+
+}
+
+class Element1 extends Element {
+
+    public Element1(String name, String email) {
+        super(name, email);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+}
+
+class Element2 extends Element {
+
+    public Element2(String name, String email) {
+        super(name, email);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+}
+
+class Element3 extends Element {
+
+    public Element3(String name, String email) {
+        super(name, email);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+}
+
+interface Visitor {
+
+    void visit(Element1 element1);
+
+    void visit(Element3 element3);
+
+    void visit(Element2 element2);
+
+}
+
+class SendMarketingEmail implements Visitor {
+
+    @Override
+    public void visit(Element1 element1) {
+        System.out.println("Send Message to " + element1.getEmail() + " at " + element1.getName());
+    }
+
+    @Override
+    public void visit(Element3 element3) {
+        System.out.println("Send Message to " + element3.getEmail() + " at " + element3.getName());
+    }
+
+    @Override
+    public void visit(Element2 element2) {
+        System.out.println("Send Message to " + element2.getEmail() + " at " + element2.getName());
+    }
+}
+
+class SocialEvent implements Visitor {
+
+    @Override
+    public void visit(Element1 element1) {
+        System.out.println("Invite to " + element1.getName());
+    }
+
+    @Override
+    public void visit(Element3 element3) {
+        System.out.println("Invite to " + element3.getName());
+    }
+
+    @Override
+    public void visit(Element2 element2) {
+        System.out.println("Invite to " + element2.getName());
+    }
 }
