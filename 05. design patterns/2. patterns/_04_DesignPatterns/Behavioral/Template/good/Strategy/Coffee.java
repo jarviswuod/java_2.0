@@ -30,6 +30,5 @@ public class Coffee implements Beverage {
         System.out.println("Would you like cream in your coffee? (y/n)");
         String input = scanner.nextLine().toLowerCase();
         return input.equals("y");
-
     }
 }

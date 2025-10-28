@@ -4,7 +4,7 @@ package _03_Behavioral;
 
     NOTES:
     - Template Method Pattern:
-        - Is a behavioral pattern that defines the skeleton of an algorithm in base class while allowing sub-classes to provide specific implementations for the certain steps without changing the algorithm structure
+        - Is a behavioral pattern that defines the skeleton of an algorithm in base class while allowing sub-classes to provide specific implementations for certain steps without changing the algorithm's structure
         - It promotes code reuse and enforces a consistent structure for closely related algorithms
 
 

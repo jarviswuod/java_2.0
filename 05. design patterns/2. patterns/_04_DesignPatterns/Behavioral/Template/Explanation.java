@@ -5,7 +5,7 @@ package _04_DesignPatterns.Behavioral.Template;
     - CODE EXPLANATION:
 
     - CHALLENGE:
-        - Suppose we are designing some software that will be installed on a machine that makes hot beverages. At the beginning we have tea and coffee but, after some fedback from the customers, we needed to add some more beverages such as camomile tea
+        - Suppose we are designing some software that will be installed on a machine that makes hot beverages. At the beginning we have tea and coffee but, after some feedback from the customers, we needed to add some more beverages such as camomile tea
 
 
     - SOLUTION 1:
@@ -29,7 +29,7 @@ package _04_DesignPatterns.Behavioral.Template;
                     }
 
 
-            - We also need a method to know if a customer needs condiments and then add those condiments to the beverage
+            - We also need a method to know if a customer needs condiments and then add the condiments to the beverage
                     public class Tea {
                         private void addCondiments() {
                             if (customerWantsCondiments()) {
@@ -50,7 +50,7 @@ package _04_DesignPatterns.Behavioral.Template;
 
 
             - We need to make one final method named makeBeverage()
-                - This is where we all the methods we have created in the correct order to make the Tea successfully
+                - This is where we call all methods created in the correct order to make the Tea successfully
 
                     public class Tea {
                         public void makeBeverage() {
@@ -65,24 +65,23 @@ package _04_DesignPatterns.Behavioral.Template;
 
 
         - Coffee class;
-            -  The next part is creating coffee class which is also a beverage
-            - It's all the same business logic as Tea class from head to toe, the only difference is brew() methos and what the condiment question; addCondiments(), customerWantsCondiments()
-            - Idential methods (boilWater() and pourWaterToCup())
+            -  The next part is creating coffee class which is also another beverage with same business logic as Tea classentirely.The only difference is brew() method and type of condiment added; addCondiments(), customerWantsCondiments()
 
 
         - Main class: Client class;
-            - We create the Tea object then we make a method call makeBeverage(). It all workd correctly with either (y/n) input from the user
+            - We create Tea object then call makeBeverage() method. It all works correctly with either (y/n) input from the user
 
 
         - PROBLEM:
-            - With more beverages added we tend to have lots of code duplication, we should resolve this issue, we can use polymorphism and inhertance to help out first
-            - By using the polymorphism, we'll successfuly managed to use the strategy pattern
+            - With more beverages added we tend to have lots of code duplication which could be solved by either polymorphism and inhertance
+            - NOTE:
+                - By using the polymorphism, we'll successfuly managed to use the strategy pattern
 
 
 
     - SOLUTION 2: Strategy Pattern
-        - Beverage interface: Strategy interface;
-            - First we create Beverage class with  prepare method
+        - Beverage interface: Base class
+            - First we create Beverage class with prepare method
 
                     public interface Beverage {
 
@@ -92,7 +91,7 @@ package _04_DesignPatterns.Behavioral.Template;
 
         - Concrete classes:
             - Tea class:
-                - We create tea class while implementing the Beverage interface. Inside this concrete class we have methods specific to making only Tea
+                - We create Tea class by implementing the Beverage interface. Inside this concrete class we have methods specific to making only Tea
 
                     public class Tea implements Beverage {
 
@@ -128,11 +127,11 @@ package _04_DesignPatterns.Behavioral.Template;
                         ...
                     }
                     
-                - The other 2 methods that we same across all Beverage classes(boilWater() and pourWaterToCup() will be added in a differenct class altogether)
+                - The other 2 methods[boilWater() and pourWaterToCup()] are the same across all Beverage subclasses and will be added in a different class altogether
 
 
-            -Coffee class:
-                - It's all the same as the Tea methods, interms of all the methods and implmentations
+            - Coffee class:
+                - It's all the same as the Tea methods, interms of all the methods and implementations
 
 
             - Camomile class:
@@ -152,7 +151,7 @@ package _04_DesignPatterns.Behavioral.Template;
 
 
         - BeverageMaker class:
-            - It contains our shared code
+            - This class contains our shared code
                 - First, we need field for referencing the particular beverage we are making. It's the Beverage interface allowing us to pass different types of beverage into the BeverageMaker
                 - We also need a constructor and setBeverage() methods so that we could easily change the beverage we are going to prepare
 
@@ -171,7 +170,7 @@ package _04_DesignPatterns.Behavioral.Template;
                         ...
                     }
 
-            - We do the shared methods(boilWater() and pourIntoCup()). Next up is boilingWater and adding the water to cup methods. This are shared methods across every single  beverage
+            - We do the shared methods(boilWater() and pourIntoCup()). Next up is boilingWater and adding the water to cup methods. This are shared methods across every single beverage
 
                     public class BeverageMaker {
 
@@ -186,7 +185,7 @@ package _04_DesignPatterns.Behavioral.Template;
                         ...
                     }
 
-            - We create a method called makeBeverage() and in this method we'll  have our commom operations/steps/methods and then unique operations
+            - We create a method called makeBeverage() and in this method we'll have our commom operations/steps/methods and then unique operations
                     public class BeverageMaker {
 
                         public void makeBeverage() {
@@ -225,15 +224,17 @@ package _04_DesignPatterns.Behavioral.Template;
         - Conlusion:
             - Inside of BeverageMaker we have defined the commom methods for making a beverage(boilWater() and addIntoCup()) and then we have an interface Beverage which has prepare() method
             - We also have our ConcreteBeverage implementations of Camomile, Tea and Coffee all of which implement the Beverage interface and allows us to treat all beverage the same way in the BeverageMaker class
-            - From the BeverageMaker class we specify the beverage when we create the BeverageMaker object or we can set the bevegare in the setBeverage() method and then delegate/forward the execution of tasks related to making a specific beverage to a ConcreteBeverage object, this is done via beverage.prepare() method inside the BeverageMaker class
+            - From the BeverageMaker class we specify the beverage when we create the BeverageMaker object or we can set the beverage in the setBeverage() method and then delegate/forward the execution of tasks related to making a specific beverage to a ConcreteBeverage object, this is done via beverage.prepare() method inside the BeverageMaker class
 
 
-        - We just solved our problem using polymorphism which lead to us using the strategy pattern. We could also solve the problem using inhertance; Tea, Coffee and Camomile have things in common
+        - We just solved our problem using polymorphism which lead to us using the strategy pattern
 
 
 
-    - SOLUTION 3: Template Pattern 
-        - Bevarage class: Base class
+    - SOLUTION 3: Template Pattern
+        - We could also solve the problem using inheritance; Tea, Coffee and Camomile have things in common
+
+        - Beverage class: Base class
             - We currently have our template method with all the steps involved in creating a beverage
 
                     public abstract class Beverage {
@@ -247,16 +248,10 @@ package _04_DesignPatterns.Behavioral.Template;
                     }
 
 
-            - NOTE: boilWater() and pourIntoCup() are shared between all the concrete beverage classes hence we can actually implement the 2 steps inside of this Beverage class
+            - NOTE:
+                - boilWater() and pourIntoCup() are shared across all concrete beverage classes hence we can actually implement the 2 steps inside of this Beverage class
 
                     public abstract class Beverage {
-
-                        public void prepare() {
-                            boilingWater();
-                            pourWaterIntoCup();
-                            brew();
-                            addCondiments();
-                        }
 
                         private void boilingWater() {
                             System.out.println("Boiling water");
@@ -272,7 +267,7 @@ package _04_DesignPatterns.Behavioral.Template;
 
             - Now in this template method, we can provide a brew() and addCondiments() method
                 - We can make brew() an abstract method
-                - addCondiments() method is optional to be overriden in subclasses 
+                - addCondiments() method is made optional as it can be overriden or not in subclasses 
 
                     public abstract class Beverage {
 
@@ -327,7 +322,7 @@ package _04_DesignPatterns.Behavioral.Template;
 
             - Camomile class:
                 - This one is a bit different compared to Coffee and Tea concrete classes
-                - All we have to for Camomile is inherit/extend the abstract Beverage class and override the abstract method brew(), nothing else is needed from it
+                - All we have for Camomile is inherit/extend the abstract Beverage class and override the abstract method brew(), nothing else is needed from it
 
                         public class Camomile extends Beverage {
 
@@ -339,7 +334,8 @@ package _04_DesignPatterns.Behavioral.Template;
 
 
         - Main class: Client class;
-            - We create subclass instance and call the  prepare() method, with this everything works fine
+            - We create Tea and Camomile instances then call the prepare() method.
+            - Everything works fine
                     public class Main {
                         public static void main(String[] args) {
 

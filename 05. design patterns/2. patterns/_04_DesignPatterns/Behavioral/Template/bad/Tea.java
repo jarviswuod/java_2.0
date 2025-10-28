@@ -30,7 +30,7 @@ public class Tea {
     }
 
     private boolean customerWantsCondiments() {
-        System.out.println("Do you want condiments with your tea? (y/n)");
+        System.out.println("Do you want condiments in your tea? (y/n)");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine().toLowerCase();
         scanner.close();
