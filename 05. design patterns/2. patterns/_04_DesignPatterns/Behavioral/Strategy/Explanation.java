@@ -5,13 +5,14 @@ package _04_DesignPatterns.Behavioral.Strategy;
     - CODE EXPLANATION:
 
     - CHALLENGE:
-        - Let's consider an application that stores videos. Before storing a video, the video needs to be compressed using a specific compression algorithm, such as MOV or MP4, then, if necessary, apply an overlay of say black and white or blur to the video
+        - Let's consider an application that stores videos. Before storing a video, the video needs to be compressed using a specific compression algorithm such as MOV or MP4, then, if necessary apply an overlay of say black and white or blur to the video
 
 
     - SOLUTION 1: Conditional If else;
         - Compressors and Overlays enum:
             - We will be creating a VideoStorage class to handle the situation. First we create enums for the different types of Compressors and Overlays present
-                - NOTE: Using enums is better than using hardcoded strings because it avoids typos and makes it easy to edit
+                - NOTE:
+                    - Using enums is better than using hardcoded strings because it avoids typos plus makes it easy to edit
 
                 public enum Compressors {
 
@@ -91,15 +92,15 @@ package _04_DesignPatterns.Behavioral.Strategy;
 
         - PROBLEMS:
             - This solution works great but has a couple of problems;
-                1. It violates the Open/Closed Principle because if we want to add a new Compressor or Overlay, we need to modify the VideoStorage class
-                2. The store() method is getting quite large and complex, and if we add more Compressors or Overlays, it will get even larger and more complex
+                1. It violates the Open/Closed Principle: If we want to add a new Compressor or Overlay, we need to modify the VideoStorage class
+                2. The store() method is getting quite large and complex. If we add more Compressors or Overlays, it will get even larger and more complex
                 3. The VideoStorage class is tightly coupled to the specific Compressor and Overlay implementations, making it difficult to test and maintain
 
 
 
     - SOLUTION 1: Strategy Pattern;
         - Compressor and Overlay interfaces;
-            - First we create an interfaces for 2 of our stratergies;
+            - First we create an interface for 2 of our strategies;
                 public interface Compressor {
                     void compress();
                 }
@@ -127,8 +128,8 @@ package _04_DesignPatterns.Behavioral.Strategy;
 
 
         - VideoStorage clas:
-            - Then we create our VideoStorage class, which has 2 fields: Compressor and Overlay interfaces rather than coding to enums
-            - We need a consturctor to create VideoStroage
+            - We then create our VideoStorage class, which has 2 fields: Compressor and Overlay interfaces rather than coding to enums
+            - We need a constructor to create VideoStorage
 
                 public class VideoStorage {
 
@@ -145,7 +146,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
                 }
 
 
-            - Our biggest changes now comes in the store() method, which is now much simpler because we delegate the work to the concretes classes of Compressor and Overlay objects. So video storage will have no knowledge for each compression and overlay algorithm
+            - Our biggest changes now comes in the store() method. It's now much simpler because we delegate the work to concrete classes of Compressor and Overlay objects.This way VideoStoragehas no knowledge for each compression and overlay algorithm
                 - NOTES:
                     - In a real application you have to pass in the file name the compressor and overlay methods so they can work on the actual video file
                     - We also don't need to check for the compression algorithm or overlay type because the client has already passed in the correct concrete implementations of Compressor and Overlay that they want to use
@@ -177,8 +178,8 @@ package _04_DesignPatterns.Behavioral.Strategy;
                 }
 
 
-            - Because we added setters to VideoStorage, we can change the compression algorithm and overlay at any time
-                - It allows us to change the COmpressor or Overlay we use within the video storage class, we dont have to create a new VideoStorage object each time we want to change the compression algorithm or overlay
+            - Because we added setters to VideoStorage, we can change the compression and overlay algorithm at any time
+                - It allows us to change the Compressor or Overlay we use within the VideoStorage class, we don't have to create a new VideoStorage object each time we want to change the compression algorithm or overlay
                     public class Main {
                         public static void main(String[] args) {
 
@@ -191,13 +192,12 @@ package _04_DesignPatterns.Behavioral.Strategy;
                     }
 
 
-        - Obervation:
-            - This solution offers several advantages over the previous one:
+        - Observation:
+            - This solution offers several advantages over the previous one(If else staments):
                 - It adheres to the Open/Closed Principle as we can add new Compressors and Overlays without modifying the VideoStorage class
-                    - Example to create a new compressor we simpliy create a new class that implements the Compressor interface
+                    - Example to create a new compressor we simply create a new class that implements the Compressor interface
 
  */
 
 public class Explanation {
-
 }
