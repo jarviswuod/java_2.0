@@ -255,7 +255,191 @@ package _03_Design.Behavior.TemplateMethod;
                 }
             }
 
+
+    // THIRD ATTEMPT::: ::: ::: :::
+
+    - Is a behavioral pattern which provides a skeleton of an algorithm with specific implementations done by subclasses
+
+    - 2 main key players:
+        - Abstract class:
+            - Provides a template of algorithm
+
+        - Concrete classes:
+            - Implmenents specific algorithm details after extending the abstract class
+
+
+
+
+            // -- -- -- -- -- -- -- INHERITANCE[TEMPLATE METHOD] -- -- -- -- -- -- --
+
+            public class Notes {
+                public static void main(String[] args) {
+
+                    Tea tea = new Tea();
+                    tea.makeBeverage();
+
+                    System.out.println();
+
+                    Coffee coffee = new Coffee();
+                    coffee.makeBeverage();
+
+                    System.out.println();
+
+                    Camomile camomile = new Camomile();
+                    camomile.makeBeverage();
+                }
+            }
+
+            abstract class Beverage {
+
+                public void makeBeverage() {
+                    boilWater();
+                    pourIntoCup();
+                    brew();
+                    addCondiments();
+                }
+
+                protected void boilWater() {
+                    System.out.println("Boil water");
+                }
+
+                protected void pourIntoCup() {
+                    System.out.println("Pour water int cups");
+                }
+
+                protected abstract void brew();
+
+                protected void addCondiments() {
+                }
+            }
+
+            class Tea extends Beverage {
+                @Override
+                protected void brew() {
+                    System.out.println("Brew for 5 minutes");
+                }
+
+                @Override
+                protected void addCondiments() {
+                    System.out.println("Add lemon to tea");
+                }
+            }
+
+            class Camomile extends Beverage {
+                @Override
+                protected void brew() {
+                    System.out.println("Brew for 5 minutes");
+                }
+            }
+
+            class Coffee extends Beverage {
+                @Override
+                protected void brew() {
+                    System.out.println("Brew for 5 minutes");
+                }
+
+                @Override
+                protected void addCondiments() {
+                    System.out.println("Add cream to coffee");
+                }
+            }
+
  */
 
+// -- -- -- -- -- -- -- POLYMORPHISM[STRATEGY PATTERN] -- -- -- -- -- -- --
+
 public class Notes {
+    public static void main(String[] args) {
+
+        BeverageMaker beverageMaker = new BeverageMaker(new Tea());
+        beverageMaker.makeBeverage();
+
+        System.out.println("-------------------------------------------");
+
+        beverageMaker.setBeverage(new Camomile());
+        beverageMaker.makeBeverage();
+
+        System.out.println("-------------------------------------------");
+
+        beverageMaker.setBeverage(new Coffee());
+        beverageMaker.makeBeverage();
+
+    }
+}
+
+interface Beverage {
+    void prepare();
+
+}
+
+class BeverageMaker {
+    private Beverage beverage;
+
+    public BeverageMaker(Beverage beverage) {
+        this.beverage = beverage;
+    }
+
+    public void setBeverage(Beverage beverage) {
+        this.beverage = beverage;
+    }
+
+    public void makeBeverage() {
+        boilWater();
+        pourIntoCup();
+        beverage.prepare();
+    }
+
+    private void pourIntoCup() {
+        System.out.println("Pour water into cup");
+    }
+
+    private void boilWater() {
+        System.out.println("Boil water");
+    }
+}
+
+class Tea implements Beverage {
+
+    @Override
+    public void prepare() {
+        brew();
+        addCondiments();
+    }
+
+    private void brew() {
+        System.out.println("Brewing tea for 5 mins");
+    }
+
+    private void addCondiments() {
+        System.out.println("Adding lemon to tea");
+    }
+}
+
+class Coffee implements Beverage {
+
+    @Override
+    public void prepare() {
+        brew();
+        addCondiments();
+    }
+
+    private void brew() {
+        System.out.println("Brewing coofee for 6 mins");
+    }
+
+    private void addCondiments() {
+        System.out.println("Adding cream to coofee");
+    }
+}
+
+class Camomile implements Beverage {
+
+    @Override
+    public void prepare() {
+        brew();
+    }
+
+    private void brew() {
+        System.out.println("Brewing camomile for 3 mins");
+    }
 }
