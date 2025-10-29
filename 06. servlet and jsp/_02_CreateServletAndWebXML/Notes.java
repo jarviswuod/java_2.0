@@ -1,6 +1,9 @@
 /*
 
     NOTES:
+    - Create Servlet & Web.xml
+
+
     - In the previous video we created a web project in eclipse then created one page, index.html which is takes 2 values and want to sum them. The moment you clisk submit we want to call "add" the purpose of having the 'add' is just to add the 2 numbers of which we will use a server side technology to sum the values up, in this case we will use servlet in java
 
     - We create a servlet by creating a normal class and then we extend the HttpServlet, once you extend the HttpServlet you are done, you class becomes a servlet
@@ -58,7 +61,7 @@
                 public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 
                     ...
-                
+
                     PrintWriter out = res.getWriter();
                     out.println("Result is " + k);
                 }

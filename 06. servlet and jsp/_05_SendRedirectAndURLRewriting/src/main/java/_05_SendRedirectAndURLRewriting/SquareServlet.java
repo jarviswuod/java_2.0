@@ -10,8 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class SquareServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		
-		
+
 		System.out.println("Square called");
 
 		int k = Integer.parseInt(req.getParameter("k"));

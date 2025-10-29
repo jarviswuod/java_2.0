@@ -1,6 +1,8 @@
 /*
 
     NOTES:
+    - Creating Web Project in Eclipse
+
     - Java project has been setup and started successfully; from installing eclipse and tomcat and setting them up to work together
     - What we did is just over is creating a file called base.html with basic html content for testing purposes and did run the server. It all works good and perfect at URL: http://localhost:8080/_01_ServletIntro/base.html
 
