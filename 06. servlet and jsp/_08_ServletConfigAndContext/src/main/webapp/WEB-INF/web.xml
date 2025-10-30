@@ -21,7 +21,6 @@
 	</servlet-mapping>
 
 
-
 	<context-param>
 		<param-name>name</param-name>
 		<param-value>Jarvis</param-value>

@@ -2,18 +2,20 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Why JSP</title>
-</head>
-<body bgcolor="blue">
+	<head>
+	<meta charset="UTF-8" />
+	<title>Why JSP</title>
+	</head>
+	<body bgcolor="blue">
 
-	<%
-		int i = Integer.parseInt(request.getParameter("num1"));
-		int j = Integer.parseInt(request.getParameter("num2"));
-		int k = i + j;
-		out.println("Result is " + k);
-	%>
+		<%
 
-</body>
+			int i = Integer.parseInt(request.getParameter("num1"));
+			int j = Integer.parseInt(request.getParameter("num2"));
+			int k = i + j;
+			out.println("Result is " + k);
+
+		%>
+
+	</body>
 </html>

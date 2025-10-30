@@ -19,7 +19,7 @@ public class AddServlet extends HttpServlet {
 		int j = Integer.parseInt(req.getParameter("num2"));
 
 		int k = i + j;
-		
+
 		PrintWriter out = res.getWriter();
 		out.println("<html><body bgcolor='cyan'>");
 		out.println("Result is " + k);

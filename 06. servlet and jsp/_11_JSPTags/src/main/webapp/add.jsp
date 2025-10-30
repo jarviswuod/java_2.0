@@ -25,33 +25,30 @@
 
 		<%!
 			int coef = 3;
-
 			Scanner scanner = new Scanner(System.in);
-			// This is a declaration tag
-			// This code goes outside the service method of our servlet
 		%>
-			
+		<!--
+			- The above is a declaration tag
+			- This code goes outside the service method of our servlet
+		 -->
+
 		<%
 			out.println("This is a scriplet tag");
 			out.println("We can have multiple scriplet tags");
-			out.println("NOTE: All scriplet tags codes go into the service method of our servlet");
 		%>
-		<p>Tags</p>
+		<!--
+			- The above is a scriplet tag
+			- Code inside this place gets printed inside our jsp page
+			- NOTE: All scriplet tags codes go into the service method of our servlet
+		 -->
 
 
-		<%
-			int i = Integer.parseInt(request.getParameter("num1"));
-			int j = Integer.parseInt(request.getParameter("num2"));
-			int k = i + j;
-
-			out.println("Result is " + k);
-		%>
-		
 		<p>My favorite Number is <% out.print(coef); %> </p>
 		<p>My favorite Number is <%= coef %> </p>
-		<!-- 
-			The above is an expression tag
+		<!--
+			- The above is an expression tag
+			- It's a shortcut to printing something inside our jsp page
 		-->
-	
+
 	</body>
 </html>

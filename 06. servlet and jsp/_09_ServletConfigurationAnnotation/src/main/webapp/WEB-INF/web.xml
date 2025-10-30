@@ -4,30 +4,30 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	
-	<!-- 
-	<display-name>_09_ServletConfigurationAnnotation</display-name>
+	<!--
 
-	<servlet>
-		<servlet-name>abc</servlet-name>
-		<servlet-class>_09_ServletConfigurationAnnotation.AddServlet</servlet-class>
-	</servlet>
+		<display-name>_09_ServletConfigurationAnnotation</display-name>
 
-	<servlet-mapping>
-		<servlet-name>abc</servlet-name>
-		<url-pattern>/add</url-pattern>
-	</servlet-mapping>
+		<servlet>
+			<servlet-name>abc</servlet-name>
+			<servlet-class>_09_ServletConfigurationAnnotation.AddServlet</servlet-class>
+		</servlet>
 
-	<servlet>
-		<servlet-name>qpr</servlet-name>
-		<servlet-class>_09_ServletConfigurationAnnotation.SquareServlet</servlet-class>
-	</servlet>
+		<servlet-mapping>
+			<servlet-name>abc</servlet-name>
+			<url-pattern>/add</url-pattern>
+		</servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>qpr</servlet-name>
-		<url-pattern>/square</url-pattern>
-	</servlet-mapping>
-	
+		<servlet>
+			<servlet-name>qpr</servlet-name>
+			<servlet-class>_09_ServletConfigurationAnnotation.SquareServlet</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>qpr</servlet-name>
+			<url-pattern>/square</url-pattern>
+		</servlet-mapping>
+
 	 -->
-
 
 </web-app>
