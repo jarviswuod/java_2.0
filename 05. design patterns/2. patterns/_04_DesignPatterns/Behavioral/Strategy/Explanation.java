@@ -46,7 +46,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
                     }
 
 
-            - We need a setters because once VideoStroage is created, we can change the Compression or Overlay algorithm used in the VideoStroage object to store the video differently
+            - We need a setters because once VideoStroage is created, we can change the Compression or Overlay algorithm used in the VideoStorage object to store the video differently
                     public class VideoStorage {
                         public void setCompressors(Compressors compressors) {
                             this.compressors = compressors;
@@ -60,7 +60,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
                     }
 
 
-            - Then we create store() method which contains our logic for storing the video, it takes fileName and uses the current Compressor and Overlay from the client to store the video
+            - Then we create store() method which contains our logic for storing the video, it takes a fileName and uses the current Compressor and Overlay from the client to store the video
                     public class VideoStorage {
                         public void store(String fileName) {
 
@@ -93,12 +93,12 @@ package _04_DesignPatterns.Behavioral.Strategy;
         - PROBLEMS:
             - This solution works great but has a couple of problems;
                 1. It violates the Open/Closed Principle: If we want to add a new Compressor or Overlay, we need to modify the VideoStorage class
-                2. The store() method is getting quite large and complex. If we add more Compressors or Overlays, it will get even larger and more complex
+                2. The store() method is quite large and complex. If we add more Compressors or Overlays, it will get even larger and more complex
                 3. The VideoStorage class is tightly coupled to the specific Compressor and Overlay implementations, making it difficult to test and maintain
 
 
 
-    - SOLUTION 1: Strategy Pattern;
+    - SOLUTION 2: Strategy Pattern;
         - Compressor and Overlay interfaces;
             - First we create an interface for 2 of our strategies;
                 public interface Compressor {
@@ -127,7 +127,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
                 }
 
 
-        - VideoStorage clas:
+        - VideoStorage class:
             - We then create our VideoStorage class, which has 2 fields: Compressor and Overlay interfaces rather than coding to enums
             - We need a constructor to create VideoStorage
 
@@ -146,7 +146,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
                 }
 
 
-            - Our biggest changes now comes in the store() method. It's now much simpler because we delegate the work to concrete classes of Compressor and Overlay objects.This way VideoStoragehas no knowledge for each compression and overlay algorithm
+            - Our biggest changes now comes in the store() method. It's now much simpler because we delegate the work to concrete classes of Compressor and Overlay objects. This way VideoStorage has no knowledge for each compression and overlay algorithm
                 - NOTES:
                     - In a real application you have to pass in the file name the compressor and overlay methods so they can work on the actual video file
                     - We also don't need to check for the compression algorithm or overlay type because the client has already passed in the correct concrete implementations of Compressor and Overlay that they want to use

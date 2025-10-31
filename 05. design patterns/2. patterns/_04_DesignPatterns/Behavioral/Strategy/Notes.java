@@ -19,12 +19,12 @@ package _04_DesignPatterns.Behavioral.Strategy;
     - GOOD SOLUTION: Strategy Pattern
         - The UML below show that when we create a VideoStorage object. We pass it the concrete compressor and overlay objects that we want it to use
         - This is polymorphism:
-            - VideoStorage can accept many different forms of Compressor and Overlay objects. VideoStorage is composed of Compressor and Overlay objects with multiple concrete compressor and overlay implementations that extend them
+            - VideoStorage can accept many different forms of Compressor and Overlay objects. VideoStorage is composed of Compressor and Overlay objects with multiple concrete implementations that extend them
 
             ________________            _______________
             | VideoStorage |            | Compressor  |
             |______________|<>--------->|_____________|
-            | compressor   |            | compress(): |
+            | compressor() |            | compress(): |
             | overlay()    |            |_____________|
             |______________|                   ^
             | store():     |                   |
@@ -86,7 +86,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
             - States store a reference to the context objects that contains them while Strategy does not
             - States are allowed to replace themselves (i.e; to change the state of the context object to something else) while Statergies are not
             - Strategies only handle a single, specific task, while States provide the underlaying implementation for everything (or most) the content object does
-            
+
 
     - When to use Strategy Pattern:
         - When you have a class with a large number of conditional statements that switch between variants of the same algorithm. The algorithm logic can be can be extracted into separate classes that implement the same interface. The context object then delegates the work to these classes, instead of implementing all the algorithms itself
