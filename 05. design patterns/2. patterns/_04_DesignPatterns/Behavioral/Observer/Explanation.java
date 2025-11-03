@@ -10,7 +10,7 @@ package _04_DesignPatterns.Behavioral.Observer;
                 - In one spreedsheet we have a data source which is a list of city(on the left column) with number_of_dogs in that city(on the right column)
                 - We also have a bar chart with dogs on the y-axis and the city name on the x-axis
 
-            - On spreedsheet 2:
+            - Spreedsheet 2:
                 - Here we have a sum, basically one of the cell is summing up the total number_of_dogs to get the total number of dogs in all the cities
 
 

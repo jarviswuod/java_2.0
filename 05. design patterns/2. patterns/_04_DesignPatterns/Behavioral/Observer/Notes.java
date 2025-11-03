@@ -13,14 +13,14 @@ package _04_DesignPatterns.Behavioral.Observer;
                 - In one spreedsheet we have a data source which is a list of city(on the left column) with number_of_dogs in that city(on the right column)
                 - We also have a bar chart with dogs on the y-axis and the city name on the x-axis
 
-            - On spreedsheet 2:
+            - Spreedsheet 2:
                 - Here we have a sum, basically one of the cell is summing up the total number_of_dogs to get the total number of dogs in all the cities
 
 
 
     - SOLUTION 1:
         - Observers we have under the Datasource is the BarChart and Sheet2 (the one that sums up the number of dogs) all from the Datasource
-        - We also have the values of the Datasource and the setters and getters for the values
+        - We also have the values of the Datasource plus setters and getters for the values
                 _________________             _____________
                 | Datasource    |             | Sheet2    |
                 |_______________|<>---------->|___________|
@@ -45,8 +45,8 @@ package _04_DesignPatterns.Behavioral.Observer;
 
 
         - HOW TO SOLVE FOR THEM:
-            - To solve the SRP violatin, we could create a separate class for managing the dependent observer objects
-            - To solve the OCP violation, we can ensure that all observers objects(Sheet, BarChart) implement a common interface to that they provide consistent methods allowing us to use polymorphism in DataSource
+            - To solve the SRP violation, we could create a separate class for managing the dependent observer objects
+            - To solve the OCP violation, we can ensure that all observers objects(Sheet, BarChart) implement a common interface to that they provide consistent methods allowing us to use polymorphism in Datasource
 
 
 
@@ -60,13 +60,13 @@ package _04_DesignPatterns.Behavioral.Observer;
                 | notifyObserver():  |                   ^
                 | getValues():       |                   |
                 | setValues():       |                   |
-                |____________________|            _______|_____________
-                          ^                       |                   |
-                          |               ________|______     ________|______
-                          |               |  Sheet2     |     |  BarChart   |
-                          |               |_____________|     |_____________|
-                          |               |  update()   |     |  update()   |
-                          <>              |_____________|     |_____________|
+                |____________________|            _______|_________
+                          ^                       |               |
+                          |               ________|______ ________|______
+                          |               |  Sheet2     | |  BarChart   |
+                          |               |_____________| |_____________|
+                          |               |  update()   | |  update()   |
+                          <>              |_____________| |_____________|
                   _________________
                   | DataSource    |
                   |_______________|
@@ -77,16 +77,16 @@ package _04_DesignPatterns.Behavioral.Observer;
                   |_______________|
 
 
-        - Above Sheet2 and BarChat implement a common interface, so DataSource can now talk to that one interface and not multiple concrete classes. We've also created a Subject class to provide the methods for managing observers
+        - Above Sheet2 and BarChat implement a common interface, so Datasource can now talk to that one interface and not multiple concrete classes. We've also created a Subject class to provide the methods for managing observers
 
-        - This follows the OCP as we can extend out application by adding new observer classes without having to modify DataSource
+        - This follows the OCP as we can extend out application by adding new observer classes without having to modify Datasource
 
-        - setValues(values) will loop through all of it's observers and call update() on each. This is polymorphic bevahior, a different update() method will be called depending on the observer but DataScource doesnot need to know what the specific concrete observers are. Each concrete implementation figures our how to update themselves
+        - setValues(values) will loop through all of it's observers and call update() on each. This is polymorphic bevahior, a different update() method will be called depending on the observer but Datasource doesnot need to know what the specific concrete observers are. Each concrete implementation figures out how to update themselves
 
 
 
     - OBSERVER PATTERN UML: From GoF book:
-        - The Observer Pattern is AKA the publisher and subscriber pattern: The subject(publisher) publishes change in it's state and the subscribers(observers) subscriber to those events
+        - The Observer Pattern is AKA the publisher and subscriber pattern: The Subject(publisher) publishes change in it's state and the subscribers(observers) subscriber to those events
 
                 ___________________            ______________
                 | Subject         |            | Observer   |
@@ -145,9 +145,9 @@ package _04_DesignPatterns.Behavioral.Observer;
                 |_________________|<>--------->|___________|
                 |                 |            | update()  |
                 |_________________|            |___________|
-                        ^                         ^
-                        |                         |
-                        |                         |
+                        ^                           ^
+                        |                           |
+                        |                           |
                 ___________________            ____________________
                 | ConcreteSubject |            | ConcreteObserver |
                 |_________________|<---------<>|__________________|
@@ -159,9 +159,9 @@ package _04_DesignPatterns.Behavioral.Observer;
             - A bad coupling would be between ConcreteSubject and ConcreteObserver, because these observers could change in the future which may introduce more observers - and ConcreteSubject would have to keep reference to them all. We don't want to change our concrete subject class(DataSource in our example) every time there is a new observer
 
                 - NOTE:
-                    - In reality , we never have zero coupling in software. What matters is the direction of the relationship
+                    - In reality, we never have zero coupling in software. What matters is the direction of the relationship
 
-            - With Pull style comminication, we pass the concrete subject(dataSource) to the observer objects - just like we did when implemeneting the Observer pattern for our DataSouce with the BarChart and Sheet2 observers
+            - With Pull style communication, we pass the concrete subject(dataSource) to the observer objects - just like we did when implemeneting the Observer pattern for our DataSouce with the BarChart and Sheet2 observers
 
  */
 

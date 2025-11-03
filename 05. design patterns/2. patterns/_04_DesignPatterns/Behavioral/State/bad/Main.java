@@ -5,7 +5,7 @@ public class Main {
 
         Document document = new Document();
 
-        document.setState(DocumentStates.Moderation);
+        document.setState(DocumentState.Moderation);
         // document.setCurrentUserRole(UserRoles.Admin);
         document.setCurrentUserRole(UserRoles.Editor);
 

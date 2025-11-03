@@ -2,29 +2,29 @@ package _04_DesignPatterns.Behavioral.State.bad;
 
 public class Document {
 
-    private DocumentStates state;
+    private DocumentState state;
     private UserRoles currentUserRole;
 
     public void publish() {
-        if (state == DocumentStates.Draft) {
-            state = DocumentStates.Moderation;
+        if (state == DocumentState.Draft) {
+            state = DocumentState.Moderation;
 
-        } else if (state == DocumentStates.Moderation) {
+        } else if (state == DocumentState.Moderation) {
 
             if (currentUserRole == UserRoles.Admin) {
-                state = DocumentStates.Published;
+                state = DocumentState.Published;
             }
 
-        } else if (state == DocumentStates.Published) {
+        } else if (state == DocumentState.Published) {
             // do nothing
         }
     }
 
-    public DocumentStates getState() {
+    public DocumentState getState() {
         return state;
     }
 
-    public void setState(DocumentStates state) {
+    public void setState(DocumentState state) {
         this.state = state;
     }
 

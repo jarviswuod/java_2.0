@@ -1,6 +1,6 @@
 package _04_DesignPatterns.Behavioral.State.bad;
 
-public enum DocumentStates {
+public enum DocumentState {
 
     Draft, Moderation, Published;
 }
