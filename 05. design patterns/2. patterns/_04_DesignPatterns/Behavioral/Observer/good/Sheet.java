@@ -1,13 +1,23 @@
-package _04_DesignPatterns.Behavioral.Observer.bad;
+package _04_DesignPatterns.Behavioral.Observer.good;
 
 import java.util.List;
 
-public class Sheet2 {
+public class Sheet implements Observer {
 
     private int total;
+    private DataSource dataSource;
+
+    public Sheet(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     public int getTotal() {
         return total;
+    }
+
+    @Override
+    public void update() {
+        total = calculateTotal(dataSource.getValues());
     }
 
     public int calculateTotal(List<Integer> values) {

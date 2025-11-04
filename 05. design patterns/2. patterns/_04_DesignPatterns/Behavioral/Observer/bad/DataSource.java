@@ -16,8 +16,8 @@ public class DataSource {
         this.values = values;
 
         for (Object object : dependents) {
-            if (object instanceof Sheet2) {
-                ((Sheet2) object).calculateTotal(values);
+            if (object instanceof Sheet) {
+                ((Sheet) object).calculateTotal(values);
             } else if (object instanceof BarChart) {
                 ((BarChart) object).render(values);
             }

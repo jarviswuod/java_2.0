@@ -7,11 +7,11 @@ public class Main {
 
         DataSource datasource = new DataSource();
 
-        Sheet2 sheet2 = new Sheet2();
+        Sheet sheet = new Sheet();
         BarChart barChart = new BarChart();
 
         datasource.addDependent(barChart);
-        datasource.addDependent(sheet2);
+        datasource.addDependent(sheet);
 
         datasource.setValues(List.of(5, 4, 1, 10));
         datasource.setValues(List.of(5, 2, 3, 4, 5));

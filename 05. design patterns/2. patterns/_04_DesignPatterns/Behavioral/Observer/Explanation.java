@@ -15,11 +15,11 @@ package _04_DesignPatterns.Behavioral.Observer;
 
 
     - SOLUTION 1:
-        - Sheet2 class:
-            - It has 2 fields for storing total sum
-            - It also has a getter which returns the total and a method for calculating total calculateTotal() which takes in a List and will;
+        - Sheet class:
+            - It has a field for storing total sum and a getter which returns the total
+            - It also has a method for calculating total calculateTotal() which takes in a List
 
-                    public class Sheet2 {
+                    public class Sheet {
 
                         private int total;
 
@@ -55,10 +55,10 @@ package _04_DesignPatterns.Behavioral.Observer;
 
 
         - DataSource class:
-            - Finally we create a DataSource class which stores a List of the dependent objects essentially, The Observers, that rely on the DataSource so that when the values in the DataSource are changed then DataSource can up date those dependent objects
+            - Finally we create a DataSource class which stores a List of the dependent objects essentially, the Observers that rely on the DataSource so that when the values in the DataSource are changed then DataSource can update those dependent objects
             - We have a list of values Dogs in the cities typically
-            - We also have a list of dependent objects for our Observer objects type, we call it dependents,,, We'll pass in any objects of either BarChart or Sheet2 that needs to be updated when the DataSource values change
-            - We also need a getter for the values so that the other object can get the values. Then we need a setter method which takes in a List of Integers or whatnot
+            - We also have a list of dependent objects for our Observer objects type, we call it dependents,,, We'll pass in an object of either BarChart or Sheet that needs to be updated when the DataSource values change
+            - We also need a getter for the values so that the other object can get the values. Then we need a setter method which takes in a List of Integers
 
                     public class DataSource {
 
@@ -75,7 +75,7 @@ package _04_DesignPatterns.Behavioral.Observer;
                     }
 
 
-            - Under the setter method whenever we updae the values we also need to notify the dependents object list (BarChart and Sheet2) so they can render themselves in the new values and recalculate the total if needed. Typically we loop through our dependent objects
+            - Under the setter method whenever we update the values we also need to notify the dependents object list (BarChart and Sheet) so they can render themselves in the new values plus recalculate the total if needed. Typically we loop through our dependent objects
 
                 public class DataSource {
 
@@ -90,8 +90,8 @@ package _04_DesignPatterns.Behavioral.Observer;
                         this.values = values;
 
                         for (Object object : dependents) {
-                            if (object instanceof Sheet2) {
-                                ((Sheet2) object).calculateTotal(values);
+                            if (object instanceof Sheet) {
+                                ((Sheet) object).calculateTotal(values);
                             } else if (object instanceof BarChart) {
                                 ((BarChart) object).render(values);
                             }
@@ -102,13 +102,13 @@ package _04_DesignPatterns.Behavioral.Observer;
                 }
 
                 - AI RECOMMENDATION:
-                    - object.getClass() == Sheet2.class → checks if the object’s class is exactly Sheet2 (no subclasses)
-                    - object instanceof Sheet2 → true if the object is Sheet2 or any subclass of Sheet2
+                    - object.getClass() == Sheet.class → checks if the object’s class is exactly Sheet (no subclasses)
+                    - object instanceof Sheet → true if the object is Sheet or any subclass of Sheet
 
                     - instanceof is preferred because:
                         - It’s clearer, more readable, and idiomatic in Java
                         - It supports polymorphism (works with subclasses)
-                        - Avoids unnecessary object creation (new Sheet2().getClass() is wasteful)
+                        - Avoids unnecessary object creation (new Sheet().getClass() is wasteful)
 
 
             - We also need a way of adding dependents to our DataSource so we can control which objects are going to observe the DataSource for that we create addDependent() and removeDependent() methods
@@ -129,15 +129,15 @@ package _04_DesignPatterns.Behavioral.Observer;
 
         - Main class: Client class
             - We create a new DataSource object
-            - Also create Sheet2 and BarChart observers
+            - Also create Sheet and BarChart observers
 
-            - We know need to add the objects (Datasource and BarChart) observers
+            - We now need to add the objects (Datasource and BarChart) observers
                     public class Main {
                         public static void main(String[] args) {
 
                             DataSource datasource = new DataSource();
 
-                            Sheet2 sheet2 = new Sheet2();
+                            Sheet sheet = new Sheet();
                             BarChart barChart = new BarChart();
 
                             ...
@@ -145,7 +145,7 @@ package _04_DesignPatterns.Behavioral.Observer;
                     }
 
 
-            - Then we can set some values in the DataSource. It all works prefectly
+            - Then we can set some values in the DataSource. It all works perfectly
 
                 public class Main {
                     public static void main(String[] args) {
@@ -160,7 +160,7 @@ package _04_DesignPatterns.Behavioral.Observer;
 
         - Observations:
             - The solution works well but we are violation some SOLID principles
-                - SRP coz DataSource class has 2 responsibilities; sorting managing data storage and managing the dependent observer objects too, hence 2 reasons to change
+                - SRP coz DataSource class has 2 responsibilities; 1. Sorting managing data storage and 2. Managing the dependent observer objects too, hence 2 reasons to change
                 - OCP coz every time we want to add a new observer object we have to modify DataSource and then update the conditionals too. This is because we are programming to concrete classes rather than to generic interface
 
 
@@ -173,11 +173,11 @@ package _04_DesignPatterns.Behavioral.Observer;
                 }
 
 
-        - Concrete observers:
+        - Concrete Observers:
             - BarChart class
                 - It implements the Observer interface and sorts Datasource reference passing it to the constructor whenever we create a new BarChart
 
-                - This is a solution compared to our previous way of passing the Datasource class into the render() method
+                - This is a solution in comparison to our previous way of passing the Datasource class into the render() method
 
 
                     public class BarChart implements Observer {
@@ -195,15 +195,15 @@ package _04_DesignPatterns.Behavioral.Observer;
                     }
 
 
-            - Sheet2 class:
+            - Sheet class:
                 - Same case to BarChart, store reference to Datasouce and then pass it into other constructor and then call in the calculateTotal() method passing DataSource values
 
-                    public class Sheet2 implements Observer {
+                    public class Sheet implements Observer {
 
                         private int total;
                         private DataSource dataSource;
 
-                        public Sheet2(DataSource dataSource) {
+                        public Sheet(DataSource dataSource) {
                             this.dataSource = dataSource;
                         }
 
@@ -231,9 +231,10 @@ package _04_DesignPatterns.Behavioral.Observer;
             - Subject class:
                 - This is the class that manages the Observers
                 - First we need a field to keep the list of Observer objects
-                - Then we need to pass in our 3 methods for managing observers, i.e adding, removing, and notifying observers.
+                - Then we need to pass in our 3 methods for managing observers, i.e adding, removing, and notifying observers
                 - We notify observers in our DataSource list that our source object has changed
-                    - NOTE: we loop in the Obervers object list and call the update() method
+                    - NOTE:
+                        - We loop in the Obervers object list and call the update() method
 
                         public class Subject {
 
@@ -257,7 +258,7 @@ package _04_DesignPatterns.Behavioral.Observer;
 
             - DataSource class:
                 - We are refactoring our DataSource class,
-                - First we are not longer managing our observers over here hence we can remove dependents list
+                - First we are no longer managing our observers over here we can remove dependents list
                     - private List<Object> dependents = new ArrayList<>();
 
                 - We clean up our setValues() method
@@ -266,8 +267,8 @@ package _04_DesignPatterns.Behavioral.Observer;
                             this.values = values;
 
                             for (Object object : dependents) {
-                                if (object instanceof Sheet2) {
-                                    ((Sheet2) object).calculateTotal(values);
+                                if (object instanceof Sheet) {
+                                    ((Sheet) object).calculateTotal(values);
                                 } else if (object instanceof BarChart) {
                                     ((BarChart) object).render(values);
                                 }
@@ -278,26 +279,19 @@ package _04_DesignPatterns.Behavioral.Observer;
                     - NEW::
                         public void setValues(List<Integer> values) {
                             this.values = values;
-
-                            for (Object object : dependents) {
-                                if (object instanceof Sheet2) {
-                                    ((Sheet2) object).calculateTotal(values);
-                                } else if (object instanceof BarChart) {
-                                    ((BarChart) object).render(values);
-                                }
-                            }
+                            notifyObservers();
                         }
 
 
             - Main class: Client class;
                 - First we create an instances of DataSource
-                - Then we create a list of observers, Sheet2 and BarChart, passing DataSource into the object
+                - Then we create a list of observers, Sheet and BarChart, passing DataSource into the object
                         public class Main {
                             public static void main(String[] args) {
 
                                 DataSource datasource = new DataSource();
 
-                                Sheet2 sheet2 = new Sheet2(datasource);
+                                Sheet sheet = new Sheet(datasource);
                                 BarChart barChart = new BarChart(datasource);
 
                                 ...
@@ -310,7 +304,7 @@ package _04_DesignPatterns.Behavioral.Observer;
                             public static void main(String[] args) {
 
                                 datasource.addObserver(barChart);
-                                datasource.addObserver(sheet2);
+                                datasource.addObserver(sheet);
 
                                 ...
                             }
