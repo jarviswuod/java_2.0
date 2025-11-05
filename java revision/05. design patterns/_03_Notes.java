@@ -112,6 +112,10 @@
                 - Visitor
                 - Concrete Visitor
 
+            - Example:
+                - Send custom emails to clients
+                - Export as pdf
+
         - Template Method:
             - Is a behavioral pattern where a super class provides a skeleton of an algo and subclasses implement them
 
@@ -135,6 +139,9 @@
                 - Strategy
                 - Concrete Strategy
 
+            - Example:
+                - Applying overlay and compression to a video
+
         - State:
             - Is a behavioral pattern that changes an object behavior with change in internal implementation state
 
@@ -143,6 +150,19 @@
                 - State
                 - Concrete State
 
+            - Example
+                - Document state, Roles & Permissions
+
+        - Observer:
+            - Is a behavioral pattern that defines a one to many relationship between objects. Changes in one class is automatically communicated and reflected in other classes
+
+            - 3 Key players:
+                - Publisher
+                - Observer/Subscriber
+                - Concrete Observer
+
+            - Example:
+                - BarChart and Sheet changes
 
  */
 
