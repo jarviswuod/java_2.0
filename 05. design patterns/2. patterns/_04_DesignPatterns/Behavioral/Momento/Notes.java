@@ -31,12 +31,12 @@ package _04_DesignPatterns.Behavioral.Momento;
 
         - ISSUE:
             - With this solution, every time we add a new field, e.g **author**, **data**, **isPublised**, we have to keep storing list of previous states for each field
-            - Another issue is, how would we implement the 'undo' feature? If the user changed the **title** then changed the **content**, then pressed 'undo', the current implementation has not knowledge of what the user did last - did they change **title** or **content**?
+            - Another issue is, how would we implement the 'undo' feature? If the user changed the **title** then changed the **content**, then pressed 'undo', the current implementation has no knowledge of what the user did last - did they change **title** or **content**?
 
 
 
     - SOLUTION 2:
-        - Instead of having multiple fields in this Editor class, we create a separate class to store the state of our editor at a given time:
+        - Instead of having multiple fields in this Editor class, we create a separate class to store the state of our Editor at a given time:
 
                 ________________________                ________________________
                 |  Editor              |                |  EditorState         |
@@ -46,10 +46,13 @@ package _04_DesignPatterns.Behavioral.Momento;
                 |  prevStates: List    |                |______________________|
                 |______________________|
 
-        - (Note: The composition relationship Editor is composed of, or has field of, the EditorState class)
-        - This is a good solution as we can do undo multiple times and we don't pollute the Editor class with too many fields
+            - Note:
+                - The composition relationship Editor is composed of or has field of, the EditorState class
+
+
+        - This is a good solution as we can undo multiple times while not polluting the Editor class with too many fields
         - ISSUE:
-            - This solution is violating the Single Responsibility Principle, as our Editor class currently has multiple responsibilities;
+            - This solution is violating the SRP, as our Editor class currently has multiple responsibilities;
                 1. State management
                 2. Providing the features that we need from an editor
 
@@ -67,7 +70,7 @@ package _04_DesignPatterns.Behavioral.Momento;
             | createState():       |                ^
             | restore(EditorState) |                |
             |______________________|                |
-                                                     <>
+                                                    <>
                                              __________________
                                              | History        |     backup():
                                              |________________|         - states.add(editor.createState())
@@ -84,8 +87,6 @@ package _04_DesignPatterns.Behavioral.Momento;
 
 
     - MEMENTO PATTERN UML: From GoF book:
-
-        - This is the Memento pattern; The abstract names that each class would be in the Memento pattern:
 
                 ________________________             ____________________
                 | Originator           |             | Memento          |
@@ -108,7 +109,7 @@ package _04_DesignPatterns.Behavioral.Momento;
                                                       |_______________|
 
             - NOTE:
-                - Our solution differs slightly from the above pattern, as our Caretaker(History) class also has a field that stores a reference to the Editor; this mean the History class can restore the Editor's state when the user clicks 'undo'
+                - Our solution differs slightly from the above pattern, as our Caretaker(History) class also has a field that stores a reference to the Editor; this means the History class can restore the Editor's state when the user clicks 'undo'
 
 
     - WHEN TO USE THE MEMENTO PATTERN:
@@ -117,7 +118,7 @@ package _04_DesignPatterns.Behavioral.Momento;
 
 
     - PROS AND CONS OF MEMENTO PATTERN:
-        +  You can simplify the Originator's code by letting the Caretaker maintain the history of the Originator's state, satisfying the Singleton Responsiblity Principle
+        +  You can simplify the Originator's code by letting the Caretaker maintain the history of the Originator's state, satisfying the SRP
 
         -  The app might consume a lot of RAM if lots of Mementos are created
 

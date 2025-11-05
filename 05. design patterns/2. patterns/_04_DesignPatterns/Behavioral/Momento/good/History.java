@@ -6,8 +6,8 @@ import java.util.Deque;
 // Caretaker
 public class History {
 
-    private final Deque<EditorState> states = new ArrayDeque<>();
-    private final Editor editor;
+    private Deque<EditorState> states = new ArrayDeque<>();
+    private Editor editor;
 
     public History(Editor editor) {
         this.editor = editor;
