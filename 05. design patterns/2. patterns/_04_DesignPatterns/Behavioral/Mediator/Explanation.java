@@ -5,14 +5,14 @@ package _04_DesignPatterns.Behavioral.Mediator;
     - CODE EXPLANATION:
 
     - CHALLENGE:
-        - Let's say we have a blog that lists all of your posts, and you can select a post and then edit that post's title
-        - When an article is selected form the list box, the text should be populated and the button enabled. When we clear the text box, the button should become disabled
+        - Let's say we have a blog that lists all of your posts. You have the ability to select a post and then edit the post's title
+        - When an article is selected from the list box, the text should be populated and the button enabled. When we clear the text box, the button should become disabled
 
 
     - SOLUTION 1;
         - abstract DialogueBox class:
             - This class plays the role of a mediator, so everytime a UI component changed state, it will call it's group DialogueBox
-            - The reason why we made this an abstract class and not an interface is in a real world GUI framework we would provide some concrete methods as well as abstract method
+            - The reason why we made this an abstract class and not an interface is in a real world GUI framework we would provide both concrete and abstract methods
             - We provide a public abstract method called change() which takes a UIControl component
 
                     public abstract class DialogBox {
@@ -22,12 +22,13 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
         - abstract UIControl class:
-            - This ensures that each UI component gets put into a DialogueBox, a DialogueBox is a group of UI components
+            - This class ensures that each UI component gets put into a DialogueBox. A DialogueBox is a group of UI components
             - We store a reference to DialogueBox,
-                - Every component can be grouped into a DialogueBox and and talk to there owner, this allows the owner to change all the UI components accordingly
-                - So all UIControl components need a single dialoguebox or mediator owner
+                - Every component can be grouped into a DialogueBox and talk to their owner, this allows the owner to change all the UI components accordingly
+                - Note:
+                    - All UIControl components need a single Dialoguebox/ Mediator (owner)
 
-            - We also need a constructor where we can pass in the owner to the UIControl to specify which class should be the owner
+            - We need a constructor where we can pass in the owner to the UIControl to specify which class should be the owner
 
                     public class UIControl {
 
@@ -41,19 +42,19 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
         - Concrete UIControl class:
             - ListBox class:
-                - We are passing a DialogueBox or mediator owner to the list box instructor and setting the owner the super UIcontrol class
-                    public class ListBox extends UIControl {
+                - We pass a DialogueBox or mediator owner to the list box instructor. Then pass the owner to the super UIcontrol class
+                        public class ListBox extends UIControl {
 
-                        public ListBox(DialogBox owner) {
-                            super(owner);
+                            public ListBox(DialogBox owner) {
+                                super(owner);
+                            }
+
+                            ...
                         }
 
-                        ...
-                    }
 
-
-                - In a listBox we need to be able to select a post hence we store a string reference called 'selection'
-                    - We will also create setter and getter method too. Under setter method we need to notify the owner that this class has changed(just to let other components know i.e textBox and Button)
+                - In a listBox we need to be able to select and edit a post hence we store a string reference called 'selection'
+                - We will also create setter and getter methods too. Under setter method we'll need to notify the owner that this class has changed so as to let other components (textBox & Button) know of the change
 
                         public class ListBox extends UIControl {
 
@@ -76,7 +77,7 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
             - TextBox class:
-                - It has a simple text field String with setter and getter for it
+                - It has a simple text field String with setter and getter methods
                 - Same concept applies as the ListBox under setter method, we need to notify the owner of the change
 
                     public class TextBox extends UIControl {
@@ -100,7 +101,7 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
             - Button class:
-                - It just needs to store a boolean field to state weather the button is disabled or enabled, we also need it's setter and getter methods
+                - It just needs to store a boolean field to state of weather the button is disabled or enabled. We also need it's setter and getter methods
 
                     public class Button extends UIControl {
 
@@ -123,21 +124,22 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
             - PostDialogueBox class
-                - We create this class that contains all the UI components for our post editing title application and we will update these components depending on which change() method was called
-                - The class extends the dialogBox
-                - We need all fields for all UI components - ListBox, TextBox, Button
+                - This class extends the dialogBox 
+                - It contains all the UI components for our post-editing-title application. We update the components based on which change() method was called
+                - We need all fields for all UI components
+                    - ListBox, TextBox, and Button
     
-                        public class PostDialogBox extends DialogBox {
+                            public class PostDialogBox extends DialogBox {
 
-                            private ListBox postListBox;
-                            private TextBox titleTextBox;
-                            private Button saveButton;
+                                private ListBox postListBox;
+                                private TextBox titleTextBox;
+                                private Button saveButton;
 
-                            ...
-                        }
+                                ...
+                            }
 
 
-                - We will initialize them inside a constructor rather than passing them and them we set the button to enabled
+                - We will initialize them inside a constructor rather than passing them. Then we set the button to 'false'
 
                         public class PostDialogBox extends DialogBox {
 
@@ -167,14 +169,14 @@ package _04_DesignPatterns.Behavioral.Mediator;
                                 }
                             }
 
-                            private void handleTitleChange() {
-                                boolean isTitleEmpty = titleTextBox.getText() != "";
-                                saveButton.setEnabled(isTitleEmpty);
-                            }
-
                             private void handlePostChange() {
                                 titleTextBox.setText(postListBox.getSelection());
                                 saveButton.setEnabled(true);
+                            }
+
+                            private void handleTitleChange() {
+                                boolean isTitleEmpty = titleTextBox.getText() != "";
+                                saveButton.setEnabled(isTitleEmpty);
                             }
 
                             ...
@@ -197,7 +199,7 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
             - Main class: Client class;
-                - We create a postDialgueBox and then populate a user interaction by calling the simulateUserInteration() method
+                - We create a postDialogueBox and then populate a user interaction by calling the simulateUserInteration() method
                         public class Main {
                             public static void main(String[] args) {
 
@@ -223,10 +225,10 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
 
-    - MEDIATOR PATTERN WITH OBSERVER PATTERN
+    - MEDIATOR PATTERN WITH OBSERVER PATTERN:
         - UIFramework directory:
             - EventHandler interface:
-                - This is a fucntional interface
+                - This is a functional interface
 
                         @FunctionalInterface
                         public interface EventHandler {

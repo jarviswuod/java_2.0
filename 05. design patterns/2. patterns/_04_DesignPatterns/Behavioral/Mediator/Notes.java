@@ -4,16 +4,16 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
     NOTES:
     - Mediator Pattern:
-        - It defines an object (the mediator) that describes how a set of objects interact with heach other, therefore erducing lofs of chaotic dependecies between those objects
+        - It defines an object (the mediator) that describes how a set of objects interact with each other therefore reducing lots of chaotic dependencies between those objects
 
 
     - CHALLENGE:
-        - Let's say we have a blog that lists all of your posts, and you can select a post and then edit that post's title;
+        - Let's say we have a blog that lists all of your posts. You have the ability to select a post and then edit the post's title
 
 
-                                State 1
-                                                                Edit post:
-                                                                    - When the page loads we have state 1; where we have a list of blog posts and none of those blog posts are intially selected
+            State 1
+                Edit post:
+                    - When the page loads we have state 1 where we have a list of blog posts and none of those blog posts are initially selected
                 _______________
                 |  Post1      |            Initial State -  no post selected
                 |  Post2      |
@@ -22,9 +22,9 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
 
-                                State 2
-                                                                Edit post:
-                                                                    - Select an article from the postsContainer on left and the input is populated on the right with the title
+            State 2
+                Edit post:
+                    - Select an article from the posts container on left and the input is populated on the right with the title
 
                 _______________
                 |  Post1      |            Post 3 selected - show input for title and save button
@@ -38,9 +38,9 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
 
-                                State 3
-                                                                Edit post:
-                                                                    - The save button is disabled if no title provided, or no article selcted
+            State 3
+                Edit post:
+                    - The save button is disabled if no title provided or no article selected
 
 
                 _______________
@@ -56,30 +56,30 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
         - Explanation:
-            -Components (classes) that we need:
+            - Components/ classes that we need:
                 - ListBox that contains the posts(on left)
                 - TextBox for editing title
                 - Button that can be diabled or enabled
 
             - The above classes will come from a UI framework we don't have access to the source code
 
-            - When an article is selected form the list box, the text should be populated and the button enabled. When we clear the text box, the button should become disabled
+            - When an article is selected from the list box, the text should be populated and the button enabled. When we clear the text box, the button should become disabled
 
         - ISSUE:
             - But how do they talk to each other? They should be able to talk to each other without knowledge of each other
 
         - Solutions:
-             One solution would be to use inheritance
+            - One solution would be to use inheritance
 
                 _______________         _______________         _______________
                 | ListBox     |         | TextBox     |         | Button      |
                 |_____________|         |_____________|         |_____________|
                 |             |         |             |         |             |
                 |_____________|         |_____________|         |_____________|
-                        ^                       ^                      ^ 
-                        |                       |                      |               UI Framework
-            ------------|-----------------------|----------------------|-----------------------
-                        |                       |                      |               Our Classes
+                      ^                       ^                        ^ 
+                      |                       |                        |               UI Framework
+            ----------|-----------------------|------------------------|-----------------------
+                      |                       |                        |               Our Classes
                 _______________         _______________         _______________
                 | PostListBox |         | TitleListBox|         | SaveButton  |
                 |_____________|         |_____________|         |_____________|
@@ -95,8 +95,8 @@ package _04_DesignPatterns.Behavioral.Mediator;
                 | onSelect()  |         | onChange()  |                 - button.enable()
                 |_____________|         |_____________|
                       |                   |       ^                 - onChange():
-                      |                   |       |                     if(text == "")
-                      |                   v       |                     button.disable()
+                      |                   |       |                     - if(text == "")
+                      |                   v       |                         button.disable()
                       |                 _______________
                       |---------------> | SaveButton  |             - onClick():
                                         |_____________|                 - text = textBox.getText()
@@ -109,13 +109,13 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
 
         - PROBLEM:
-            - As our form gets more complex, there becomes lots of dependencies/connections between these classes
+            - As our form gets more complex, their becomes lots of dependencies/connections between these classes
             - Also, the logic for this form is spread all over the place, so to see what's going on in this form, you have to look at multiple classes which makes it difficult to understand and maintain
 
 
 
-    - SOLUTION 1: THE MEDIATOR PATTERN;
-        - Using the Mediator pattern, the UI components doesn't know about each other, and all interactions logic is in the DialogueBox(the Mediator)
+    - SOLUTION 1: THE MEDIATOR PATTERN:
+        - Using the Mediator pattern, the UI components doesn't know about each other and all interactions logic is in the DialogueBox(the Mediator)
 
                 _______________                                 _______________
                 | ListBox     |-----------|       |-------------| TextBox     |
@@ -136,7 +136,7 @@ package _04_DesignPatterns.Behavioral.Mediator;
                 | changed(UIControl) |                               |             |
                 |____________________|                               |_____________|
 
-            - Whenever a UI componenet changes, it notifies it's owner, the DialogBox this is by calling the changed(UIControl) method and passing itself as argument, which then handles updating other components
+            - Whenever a UI component changes, it notifies it's owner, the DialogBox. This is done by calling the changed(UIControl) method and passing itself as argument. This then handles updating other components
 
 
 
@@ -164,7 +164,7 @@ package _04_DesignPatterns.Behavioral.Mediator;
             - Colleague = UIControl
             - ConcreteColleague(s) = our concrete UI classes (Button, TextBox, ListBox)
 
-        - The ConcreteColleagues are all unrelated/uncoupled from each other. They talk to each other indirently via a mediator allowing them to be reused in different contexts i.e we are not coupling a list box to a text box or button
+        - The ConcreteColleagues are all unrelated/uncoupled from each other. They talk to each other indirectly via a mediator allowing them to be reused in different contexts i.e we are not coupling a list box to a text box or button
 
         - The only coupling we have is between ConcreteMediator and ConcreteCollegue. This is fine because in our example the PostsDialogueBox needs to know about all it's UI components so they can interact with each other
 
@@ -195,10 +195,10 @@ package _04_DesignPatterns.Behavioral.Mediator;
                 | detatch(obj):   |            |_____________|
                 | notify():       |                    ^
                 |_________________|                    |
-                           ^                           |
-                           |                   _____________________
-                           |                   |  ConcreteObserver |
-                           |                   |___________________|-|
+                        ^                              |
+                        |                      _____________________
+                        |                      |  ConcreteObserver |
+                        |                      |___________________|-|
                 ___________________            |  update()         | |-|
                 | ConcreteSubject |            |___________________| | |
                 |_________________|              |___________________| |
