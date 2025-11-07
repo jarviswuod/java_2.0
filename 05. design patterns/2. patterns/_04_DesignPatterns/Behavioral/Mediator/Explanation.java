@@ -268,7 +268,7 @@ package _04_DesignPatterns.Behavioral.Mediator;
                 - In summary, each UIComponent is gonna extend the UIControl class meaning we can add certain event handlers to each UIControl component
 
 
-            - Concrete UI COmponents:
+            - Concrete UI Components:
                 - ListBox class:
                     - We copy paste the code we had before. It has a String field 'selection', a getter method and a setter method, whenever we set the selection we are notifing the event handler method which we get from the UIControl
 
@@ -296,50 +296,53 @@ package _04_DesignPatterns.Behavioral.Mediator;
                     - Same experience as what we had before with only a bit of change
 
                     - BEFORE::
-                            public class ListBox extends UIControl {
+                            public class Button extends UIControl {
 
-                                private String selection = "";
+                                private boolean isEnabled;
 
-                                public ListBox(DialogBox owner) {
+                                public Button(DialogBox owner) {
                                     super(owner);
                                 }
 
-                                public String getSelection() {
-                                    return selection;
+                                public boolean isEnabled() {
+                                    return isEnabled;
                                 }
 
-                                public void setSelection(String selection) {
-                                    this.selection = selection;
+                                public void setEnabled(boolean isEnabled) {
+                                    this.isEnabled = isEnabled;
 
                                     owner.changed(this);
                                 }
                             }
  
                     - AFTER::
-                            public class ListBox extends UIControl {
+                            public class Button extends UIControl {
 
-                                private String selection = "";
+                                private boolean isEnabled;
 
-                                public String getSelection() {
-                                    return selection;
+                                public boolean isEnabled() {
+                                    return isEnabled;
                                 }
 
-                                public void setSelection(String selection) {
-                                    this.selection = selection;
+                                public void setEnabled(boolean isEnabled) {
+                                    this.isEnabled = isEnabled;
 
                                     notifyEventHandlers();
                                 }
                             }
 
 
-                - This is all the code we need for the UIFramework directory. It's basically code that we downloaded or installed and we don't have access to
+
+                - This is all the code we need for the UIFramework directory. 
+                - It's basically downloaded or installed and we don't have access to
                 - Next is creating out custom code to consume the UIFramework
 
 
 
         - PostDialogBox class:
-            - PostDialogBox is both a mediator containing all the business logic of how a UIComponent should interact with each other as well as being an observer, which is receives notice whenever a UI component changes. So it's now a mediator and an observer
-            - First is to declear fields for the UI components and then create a constructor to intialize the fields
+            - PostDialogBox is both a mediator and an observer
+            - It's a mediator in that it contains all the business logic of how a UIComponent should interact with each other as well as being an observer, which is receives notice whenever a UI component changes
+            - First is to declear fields for the UI components and then create a constructor to initialize the fields
 
                     public class PostsDialogBox {
 
