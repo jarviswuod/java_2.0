@@ -384,7 +384,7 @@ class DialogBox implements EventHandler {
     }
 
     private void titleChanged() {
-        button.setEnabled(textBox.getTitle() != "");
+        button.setEnabled(!textBox.getTitle().isEmpty());
     }
 
     public void simulated() {
