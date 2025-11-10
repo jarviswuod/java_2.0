@@ -14,27 +14,27 @@ pageEncoding="UTF-8" errorPage="error.jsp" %>
 		101	<br>
 		Jarvis <br>
 		88 <br>
-	
+
 		<%
-	
+
 				String url = "jdbc:mysql://localhost:3306/jarvis";
 				String user = "root";
 				String pass = "yourpassword";
-	
-				String sql = "select * from student where rollno=103";
-	
+
+				String sql = "select * from students where rollno=3";
+
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				Connection con = DriverManager.getConnection(url, user, pass);
 				Statement st = con.createStatement();
-	
+
 				ResultSet rs = st.executeQuery(sql);
 				rs.next();
-	
+
 			%>
-	
-		Rollno: <%= rs.getString(1) %>
-		Name: <%= rs.getString(2) %>
-		Marks: <%= rs.getString(3) %>
+
+		Rollno: <%= rs.getString(1) %> <br>
+		Name: <%= rs.getString(2) %> <br>
+		Marks: <%= rs.getString(3) %> <br>
 
   </body>
 </html>
