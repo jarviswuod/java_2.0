@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome: Login Using JDBC Servlet And Jsp</title>
-</head>
-<body>
-
-
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome: Login Using JDBC Servlet And Jsp</title>
+  </head>
+  <body>
 	<%
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
 		response.setHeader("Pragma", "no-cache"); // HTTP 1.0
@@ -21,11 +19,10 @@
 
 	Welcome home ${username} ...
 
-	<a href="videos.jsp">Videos here</a>
+    <a href="videos.jsp">Videos here</a>
 
-	<form action="Logout" method="post">
-		<input type="submit" value="Logout">
-	</form>
-
-</body>
+    <form action="Logout" method="post">
+      <input type="submit" value="Logout" />
+    </form>
+  </body>
 </html>

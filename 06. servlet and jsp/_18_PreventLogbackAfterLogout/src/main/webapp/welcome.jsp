@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Welcome: Prevent Log back After Logout</title>
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome: Prevent Log back After Logout</title>
+  </head>
+  <body>
 
 	<%
 	
@@ -22,11 +21,11 @@
 
 	Welcome home ${username} ...
 
-	<a href="videos.jsp">Videos here</a>
 
-	<form action="Logout" method="post">
-		<input type="submit" value="Logout">
-	</form>
+    <a href="videos.jsp">Videos here</a>
 
-</body>
+    <form action="Logout" method="post">
+      <input type="submit" value="Logout" />
+    </form>
+  </body>
 </html>

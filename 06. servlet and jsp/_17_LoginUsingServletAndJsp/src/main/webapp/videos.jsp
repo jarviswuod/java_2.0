@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Videos: Login Using Servlet And Jsp</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Videos: Login Using Servlet And Jsp</title>
+  </head>
+  <body>
 
 	<%
 		
@@ -22,5 +22,5 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 		referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-</body>
+  </body>
 </html>
