@@ -29,5 +29,5 @@
 
  */
 
-public class Notes {
+public class Notes_1 {
 }
