@@ -447,6 +447,325 @@
 
         - State pattern:
 
+                public class Notes {
+                    public static void main(String[] args) {
+
+                        Context context = new Context(new Draft(), Users.Admin);
+                        System.out.println("Context " + context.getState().getClass());
+
+                        context.action();
+                        System.out.println("Context " + context.getState().getClass());
+
+                        context.action();
+                        System.out.println("Context " + context.getState().getClass());
+
+                        context.action();
+                        System.out.println("Context " + context.getState().getClass());
+
+                        context.setState(new Edit());
+                        System.out.println("Context " + context.getState().getClass());
+
+                    }
+                }
+
+                enum Users {
+
+                    Basic, Editor, Admin;
+                }
+
+                class Context {
+
+                    private State state;
+                    private Users user;
+
+                    public Context(State state, Users user) {
+                        this.state = state;
+                        this.user = user;
+                    }
+
+                    public void setState(State state) {
+                        this.state = state;
+                    }
+
+                    public State getState() {
+                        return state;
+                    }
+
+                    public Users getUser() {
+                        return user;
+                    }
+
+                    public void setUser(Users user) {
+                        this.user = user;
+                    }
+
+                    public void action() {
+                        state.action(this);
+                    }
+                }
+
+                abstract class State {
+
+                    protected Users user;
+
+                    protected State state;
+
+                    public abstract void action(Context context);
+                }
+
+                class Draft extends State {
+
+                    @Override
+                    public void action(Context context) {
+                        context.setState(new Edit());
+                    }
+                }
+
+                class Edit extends State {
+
+                    @Override
+                    public void action(Context context) {
+                        if (user != Users.Admin)
+                            context.setState(new Publish());
+                    }
+                }
+
+                class Publish extends State {
+
+                    @Override
+                    public void action(Context context) {
+                    }
+                }
+
+
+        - Observer pattern:
+
+                import java.util.ArrayList;
+                import java.util.List;
+
+                public class Note_ {
+                    public static void main(String[] args) {
+
+                        DataSource dataSource = new DataSource();
+
+                        Sheet sheet = new Sheet(dataSource);
+                        Barchart barchart = new Barchart(dataSource);
+
+                        dataSource.addSub(barchart);
+                        dataSource.addSub(sheet);
+
+                        dataSource.setIntList(List.of(12, 45, 23));
+                        System.out.println();
+                        dataSource.removeSub(sheet);
+
+                        dataSource.setIntList(List.of(12, 45));
+                    }
+                }
+
+                class Publisher {
+
+                    private List<Subscriber> subscribers = new ArrayList<>();
+
+                    public void addSub(Subscriber subscriber) {
+                        subscribers.add(subscriber);
+                    }
+
+                    public void removeSub(Subscriber subscriber) {
+                        subscribers.remove(subscriber);
+                    }
+
+                    public void notifySubs() {
+                        for (Subscriber subscriber : subscribers) {
+
+                            subscriber.update();
+                        }
+                    }
+                }
+
+                class DataSource extends Publisher {
+
+                    private List<Integer> intList = new ArrayList<>();
+
+                    public void setIntList(List<Integer> intList) {
+                        this.intList = intList;
+
+                        notifySubs();
+                    }
+
+                    public List<Integer> getIntList() {
+                        return intList;
+                    }
+                }
+
+                abstract class Subscriber {
+                    public abstract void update();
+                }
+
+                class Sheet extends Subscriber {
+
+                    private DataSource dataSource;
+
+                    public Sheet(DataSource dataSource) {
+                        this.dataSource = dataSource;
+                    }
+
+                    @Override
+                    public void update() {
+                        System.out.println("Changed based on input changes");
+                    }
+                }
+
+                class Barchart extends Subscriber {
+
+                    private int total;
+                    private DataSource dataSource;
+
+                    public Barchart(DataSource dataSource) {
+                        this.dataSource = dataSource;
+                    }
+
+                    @Override
+                    public void update() {
+                        total = 0;
+                        for (int value : dataSource.getIntList()) {
+                            total += value;
+                        }
+
+                        System.out.println("Changed total values : " + total);
+                    }
+                }
+
+
+        - Memento pattern:
+
+                import java.time.Instant;
+                import java.util.Stack;
+
+                public class Notes_ {
+                    public static void main(String[] args) {
+
+                        Originator originator = new Originator();
+
+                        CareTaker careTaker = new CareTaker(originator);
+
+                        originator.setDescription("Random");
+
+                        careTaker.backup();
+                        originator.setTitle("Just a title");
+
+                        careTaker.backup();
+
+                        originator.setDescription("Another rnadom");
+
+                        careTaker.backup();
+                        originator.setTitle("Stew is good");
+
+                        careTaker.backup();
+                        System.out.println(originator.getTitle());
+                        System.out.println(originator.getDescription());
+
+                        System.out.println();
+
+                        careTaker.revert();
+                        System.out.println(originator.getTitle());
+                        System.out.println(originator.getDescription());
+
+                        careTaker.revert();
+
+                        System.out.println();
+
+                        System.out.println(originator.getTitle());
+                        System.out.println(originator.getDescription());
+                    }
+                }
+
+                class Originator {
+
+                    private String title = "";
+                    private String description = "";
+
+                    public Memento capture() {
+                        return new Memento(title, description);
+                    }
+
+                    public void revert(Memento memento) {
+                        title = memento.getTitle();
+                        description = memento.getDescription();
+                    }
+
+                    public String getTitle() {
+                        return title;
+                    }
+
+                    public void setTitle(String title) {
+                        this.title = title;
+                    }
+
+                    public String getDescription() {
+                        return description;
+                    }
+
+                    public void setDescription(String description) {
+                        this.description = description;
+                    }
+                }
+
+                class Memento {
+
+                    private String title;
+                    private String description;
+                    private Instant timestamp;
+
+                    public Memento(String title, String description) {
+                        this.title = title;
+                        this.description = description;
+
+                        timestamp = Instant.now();
+                    }
+
+                    public String getTitle() {
+                        return title;
+                    }
+
+                    public String getDescription() {
+                        return description;
+                    }
+
+                    public Instant getTimestamp() {
+                        return timestamp;
+                    }
+
+                    @Override
+                    public String toString() {
+                        return "[title=" + title + ", description=" + description + ", timestamp=" + timestamp + "]";
+                    }
+                }
+
+                class CareTaker {
+
+                    private Stack<Memento> mementos = new Stack<>();
+                    // private Deque<Memento> mementos = new ArrayDeque<>();
+                    private Originator originator;
+
+                    public CareTaker(Originator originator) {
+                        this.originator = originator;
+                    }
+
+                    public void backup() {
+                        mementos.push(originator.capture());
+                    }
+
+                    public void revert() {
+                        if (mementos.isEmpty())
+                            return;
+
+                        originator.revert(mementos.pop());
+                    }
+
+                }
+
+
+        - Mediator pattern:
 
     NOTES:
     - Behavioral design pattern:
@@ -499,20 +818,19 @@
                 - concrete state
 
             - Example:
-                - 
+                - Online Document Editor
 
 
 
         - Observer pattern:
             - Is a behavioral pattern that defines a one to many relationship between objects. Changes in one object is communicated and reflected on the other objects
-            - 4 key players:
-                - 
-                - 
-                - 
-                - 
+            - 3 key players:
+                - Publisher
+                - Subscriber
+                - Concrete Subscriber
 
             - Example:
-                - 
+                - BarChart thingy
 
 
 

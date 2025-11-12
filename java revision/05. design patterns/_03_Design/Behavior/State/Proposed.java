@@ -1,23 +1,6 @@
-/*
+import java.util.Objects;
 
-    NOTES:
-    - State Pattern:
-
-    - Is a behavioral pattern that allows an object to change it's behavior when it's internal implementation changes
-
-    - 3 state Key players:
-        - Context
-        - State
-        - Concrete state
-
-    - Example:
-        - Something that has a state that changes, a doc state with allowance to change based on editor
-        - enum Document
-        - enum Permission; Admin, Editor, User
-
- */
-
-public class Notes {
+public class Proposed {
     public static void main(String[] args) {
 
         Document document = new Document(UserRoles.Admin);
@@ -43,9 +26,15 @@ enum UserRoles {
     Reader, Editor, Admin;
 }
 
-interface State {
+abstract class State {
 
-    void publish();
+    protected final Document document;
+
+    protected State(Document document) {
+        this.document = Objects.requireNonNull(document, "Document cannot be null");
+    }
+
+    public abstract void publish();
 }
 
 class Document {
@@ -79,12 +68,10 @@ class Document {
     }
 }
 
-class DraftState implements State {
-
-    private Document document;
+class DraftState extends State {
 
     public DraftState(Document document) {
-        this.document = document;
+        super(document);
     }
 
     @Override
@@ -93,12 +80,10 @@ class DraftState implements State {
     }
 }
 
-class ModerationState implements State {
-
-    private Document document;
+class ModerationState extends State {
 
     public ModerationState(Document document) {
-        this.document = document;
+        super(document);
     }
 
     @Override
@@ -109,12 +94,10 @@ class ModerationState implements State {
     }
 }
 
-class PublishedState implements State {
-
-    private Document document;
+class PublishedState extends State {
 
     public PublishedState(Document document) {
-        this.document = document;
+        super(document);
     }
 
     @Override
