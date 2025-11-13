@@ -19,7 +19,8 @@ public class PostsDialogBox {
 
     public void simulateUserInteration() {
         postListBox.setSelection("Post 2");
-        titleTextBox.setText("");
+        // titleTextBox.setText("");
+
         System.out.println("Title text box: " + titleTextBox.getText());
         System.out.println("Button enabled : " + saveButton.isEnabled());
     }
