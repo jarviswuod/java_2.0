@@ -4,8 +4,10 @@ package _04_DesignPatterns.Behavioral.Interpreter;
 
     NOTES:
     - Interpreter pattern:
-        - Defines a way to represent and evaluate sentences in a language by using an abstract class for expressions, with concrete sublcasses implementing to interpret specific parts of the language's grammar
-        - This is the most complex and the least used of all the 23 GoF patterns
+        - Is a behavior pattern that provides a way to evaluate sentences or formula/ expression in a language
+
+        - NOTE:
+            - This is the most complex and the least used of all the 23 GoF patterns
 
        - Use cases:
             - Parsing and executing SQL queries, where the interpreter pattern helps parse the query syntax and execute it against a database

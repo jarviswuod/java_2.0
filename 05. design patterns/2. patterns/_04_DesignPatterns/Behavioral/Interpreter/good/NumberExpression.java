@@ -16,5 +16,4 @@ public class NumberExpression implements Expression {
     public int interpret(Context context) {
         return number;
     }
-
 }

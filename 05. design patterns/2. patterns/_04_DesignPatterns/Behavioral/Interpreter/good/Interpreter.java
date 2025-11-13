@@ -15,6 +15,7 @@ public class Interpreter {
 
     private Expression BuildExpressionTree(String input) {
         input = "1 + 2 * 3";
+
         Expression expressionTree = new AdditionExpression(
                 new MultiplicationExpression(
                         new NumberExpression("2"),

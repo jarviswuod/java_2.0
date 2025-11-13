@@ -42,7 +42,6 @@ public class ShoppingList {
         @Override
         public boolean hasNext() {
             return index < shoppingList.list.size();
-
         }
 
         @Override

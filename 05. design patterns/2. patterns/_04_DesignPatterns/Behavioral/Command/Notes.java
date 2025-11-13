@@ -4,12 +4,12 @@ package _04_DesignPatterns.Behavioral.Command;
 
     NOTES:
     - Command Pattern:
-        - It's a behavioral design pattern that encapsulates a request as an object, allowing you to parameterize clients with queues, requests, or operations
-        - It enables you to decouple the sender from the receiver, providing flexibility in the execution of commmands and supporting undoable operations
+        - Is a pattern that turns a request into a stand-alone object that contains all information about the request
+        - This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations
 
 
     - CHALLENGE:
-        - Consider a situation where we are creating a remote control that if connected to lights, and the light can either be switched on or off. How could you handle this situation?
+        - Consider a situation where we are creating a remote control that is connected to light and the light can either be switched on or off
 
 
     - SOLUTION 1:
@@ -30,9 +30,8 @@ package _04_DesignPatterns.Behavioral.Command;
 
 
     - SOLUTION 2: Using the Command Pattern;
-        - Using the Command Pattern, we decouple RemoteControl, sender class from Light, receiver class. Then to add new functionality such as dimming the light, we just extend our codebase by adding a new DimCommand class without having to modify RemoteControl class
-        - The RemoteControl is composed of Command
-        - The concrete command classes TurnOn and TurnOff implement Command and store a reference to Light
+        - Using the Command pattern we decouple RemoteControl class(sender) from Light class(receiver). Then, to add new functionality such as dimming the light, we just extend our codebase by adding a new DimCommand class without having to modify RemoteControl class
+        - The concrete command classes TurnOn and TurnOff implement Command and store a reference to Light. The RemoteControl is composed of Command
 
                 _________________             _____________
                 | RemoteControl |             | Command   |
@@ -56,7 +55,7 @@ package _04_DesignPatterns.Behavioral.Command;
 
 
     - UNDO WITH COMMAND PATTERN:
-        - The Command Pattern is also commonly used in UI frameworks, especially for handling user interactions with buttons or menu items. Each button or menu item can be associated with a specific command object allowing the framework to execute the appropriate action when the user interacts with the UI element. This decouples the UI components from the actual operations they perform on facilitating features like undo/redo as and event logging in UI application
+        - The Command Pattern is used in UI frameworks especially when handling user interactions with a UI element. In this case each UI element can be associated with a specific command object allowing the framework to execute the appropriate action when the user interacts with the element. This decouples the UI elements from the actual operations they are performing on facilitating features like undo/redo as and event is logged in UI application
 
                 ____________________           ______________
                 | Button           |           | Command    |
@@ -77,13 +76,13 @@ package _04_DesignPatterns.Behavioral.Command;
                                               |_____________|
 
 
-        - The 'FRAMEWORK' would be code that you couldn't edit, i.e some UI package, while the 'APP' is one that you create
-        - You would create concrete commands that extend the Command interface found in the UI package. Your concrete commands keeps a reference to a class that contains the business logic, such as UserService, which contains methods related to adding, updating, and deleting users
+        - The 'FRAMEWORK' is code that can't be editted i.e code from a UI package while the 'APP' is code that we create
+        - We create concrete commands by extending the Command interface from the UI package. Your concrete commands keeps reference to the class that contains the business logic such as UserService which contains methods related to adding, updating, and deleting users
 
 
 
         - Undo feature without Command pattern:
-            - A simpler solution, without the Command pattern would be to creating a load of Button subclasses for each place where a button is used. These subclasses would contain the code for what should happen when that button is clicked
+            - Performing undo without the Command pattern would be creating a load of Button subclasses for each place where a button is used. These subclasses would contain the code for what should happen when that button is clicked
 
                                         _________________
                                         |  Button       |
@@ -99,24 +98,19 @@ package _04_DesignPatterns.Behavioral.Command;
 
 
             - ISSUE:
-                - This is a fragile solution: 
-                    - One ends up with a huge number of subclasses which would be OK if there was no risk of breaking the code in these subclasses every time the base Button class is modified. But if we have updates our UI library and it includes a breaking change to the Button class, then, it could break all our button subclasses
+                - This is a fragile solution as one ends up with a huge number of subclasses which would be OK if there was no risk of breaking the code in these subclasses every time the base Button class is modified. But, if we have updates our UI library and it includes a breaking change to the Button class then it could break all our button subclasses
 
-                - Duplicate copy logic: Some operations, such as "Copy" need to be called from multiple places. Example;
-                    - A user can click the copy button, press "Ctrl + C" or right-click and select 'copy' logic from the context menu
-                    - With this solution, we'd either have to duplicate the copy logic in multiple classes, or make shortcuts and context menus dependent on buttons, which is a very bad solution
+                - Another issue is duplicate logic i.e Some operations such as "Copy" need to be called from multiple places say when a user clicks the copy button, press "Ctrl + C" or right-click and select 'copy' logic from the context menu
 
 
 
         - UNDO feature with COMMAND PATTERN:
-            - The Command Pattern solves this issue by breaking the APP into layers following the good software design principle called "principle of separation of concerns"
+            - The Command Pattern can be used to implement undo functionality. By storing a history of executed commands you can easily reverse the effects of previous operations
             - The Command Pattern breaks the APP into two layers;
-                1. The GUI; responsible for rendering things on the screen, capturing user input, and showing results
-                2. Business logic; When it comes to the Important stuff, such as validating the info from a contact form and sending an email, the GUI delegates that task to the underlying layer of business logic
+                1. The GUI which is responsible for rendering what's on screen, capturing user input, and showing results
+                2. Business logic used when it comes to the important stuff such as validating info from a contact form or sending an email
 
             
-            - Another common use case for the Command Pattern is to implement undo functionality. By storing a history of executed commands, you can easily reverse the effects of previous operations
-
                     _________________           _________________           _________________
                     | Command       |           | UndoCommand   |           | ItalicCommand |
                     |_______________|<----------|_______________|<----------|_______________|
@@ -125,37 +119,28 @@ package _04_DesignPatterns.Behavioral.Command;
                                                                             |_______________|
 
 
-                - Above , we create UndoCommand interface which implements Command Interface;
-                    - This is because not all commands are undoable. Some commands, such as sending an email or processing a payment, may not have a meaningful undo operation
+                - Above, we create UndoCommand interface which implements Command interface this is because commands such as sending an email or processing a payment are undoable
 
-                - We then create concrete command classes such as ItalicCommand from the UndoCommand interface to implement both execute() and unexecute() methods;
-                    - The execute() method applies the italic formatting, while
-                    - The unexecute() method removes it
+                - We then create concrete command classes such as ItalicCommand from the UndoCommand interface to implement both execute() and unexecute() methods where execute() applies the italic formatting while unexecute() removes it
 
 
-            - We can also use the Memento Patten to implement undo feature
-                - The difference between Memento and Command patterns when it comes to undo operations is;
-                    - In Memento we store the changes in the state of an object i.e. we keep multiple snapshots over time. Sometimes, storing these snapshots can be memory intensive especially if the object's state is large and or complex (e.g videos are large and consume loads of memory)
+            - We can also use the Memento Patten to implement undo feature the difference is
+                - In Memento we store the changes in the state of an object meaning we keep multiple snapshots over time. Storing these snapshots can be memory intensive especially if the object's state are large and complex example videos
 
-                - In those conditions, it's better to use Command Pattern because every command knows how to undo itself, meaning we don't have to store multiple snapshots of an object, example;
-                    - Think of the resize operation;
-                        - If a user resizes a video, we only have to store the previous dimensions of the video and not the entire snapshot of the video object. In this case the Command Pattern stores a history of executed commands, which can be more memory efficient especially if the commands themselves are lightweight
+                - In Command Pattern every command knows how to undo itself meaning we don't have to store multiple snapshots of an object making it a good solution over Memento. Example, think of the resize operation;
+                    - If a user resizes a video, we only have to store the previous dimensions of the video and not the entire snapshot of the video object. In this case the Command Pattern stores a history of executed commands which can be more memory efficient especially if the commands themselves are lightweight
 
-                        _________________        ________________
-                        | ItalicCommand |        | HtmlDocument |
-                        |_______________|<>----->|______________|
-                        | preConvert:   |        | makeItalic() |
-                        |_______________|        |______________|
-                        | execute()     |
-                        | unexecute()   |        ______________             ________________
-                        |_______________|<>----->| History    |<----------<>| UndoCommand  |
-                                                 |____________|             |______________|
-                                                 |            |             | execute()    |
-                                                 |____________|             |______________|
-
-
-                        - A new class, UndoCommand has been created to handle all undo operations
-                            - It pops the last command from History, then calls unexecute() on that command, as all commands know how to unexecute themselves
+                            _________________        ________________
+                            | ItalicCommand |        | HtmlDocument |
+                            |_______________|<>----->|______________|
+                            | preConvert:   |        | makeItalic() |
+                            |_______________|        |______________|
+                            | execute()     |
+                            | unexecute()   |        ______________             ________________
+                            |_______________|<>----->| History    |<----------<>| UndoCommand  |
+                                                     |____________|             |______________|
+                                                     |            |             | execute()    |
+                                                     |____________|             |______________|
 
 
 
@@ -178,15 +163,15 @@ package _04_DesignPatterns.Behavioral.Command;
 
 
     - When to use the Command Pattern:
-        - Use the Command Pattern when you want to implement reversible operations, because it uses less RAM than the Memento Pattern which has to backup the whole state of the object
-        - The Command Pattern is great when you want to queue operations, or schedule their execution, as command objects can be serialized (converted into strings) and stored in databases or sent over networks, then at a later time, they can be converted back into objects and executed
+        - Use the Command Pattern when you want to implement reversible operation as it uses less RAM than Memento Pattern which has to backup the whole state of the object
+        - The Command Pattern is great when you want to queue operations or schedule their execution for command objects can be serialized (converted to string) and stored in databases or sent over networks then at a later time they can be converted back into objects and executed
 
 
     - Pros and Cons:
         + Satifies SRP; classes that invoke operations are decoupled from classes that perform these operations
-        + Satifies Open/closed principle: new commands can be added to the codebase without having to modify existing code
+        + Satifies OCP; new commands can be added to the codebase without having to modify existing code
 
-        - Code may become more complex as there's an additionalw layer between senders and receivers
+        - Code may become more complex as there's an additionally layer between senders and receivers
 
  */
 

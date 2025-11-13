@@ -31,40 +31,29 @@ package _04_DesignPatterns.Behavioral.Iterator;
         - Client class:
             - Let's model a client interaction with our ShoppingList
                 - We are currently adding items to the list
-
-                    public class Main {
-                        public static void main(String[] args) {
-
-                        ShoppingList shoppingList = new ShoppingList();
-
-                        shoppingList.push("Milk");
-                        shoppingList.push("honey");
-                        shoppingList.push("Tea");
-
-                        ...
-                        }
-                    }
-
-
                 - We want to loop over each item in the shopping list and log each item
+
                         public class Main {
                             public static void main(String[] args) {
+
+                                ShoppingList shoppingList = new ShoppingList();
+
+                                shoppingList.push("Milk");
+                                shoppingList.push("honey");
+                                shoppingList.push("Tea");
 
                                 for (int i = 0; i < shoppingList.getList().size(); i++) {
                                     System.out.println(shoppingList.getList().get(i));
                                 }
-
-                                ...
                             }
                         }
+
                         
             - Issue:
-                - Looks like we have a decent solution however changing the internal of the objects(ShoppinList) will affect it's consumers i.e our client(Main class)
-                - That is, if we change the data structure(used to store the items) inside our shopping list from an ArrayList to a normal array our client code will break because we will still be using ArrayList methods in the client code
-                - This causes an error
+                - Looks like we have a decent solution however changing the internal of the objects(ShoppinList) will affect it's consumers i.e our Client(Main class). i.e If we change the data structure(used to store the items) inside our shopping list from an ArrayList to a normal array our client code will break because we will still be using ArrayList methods in the client code which causes an error
 
 
-        - ShoppingList DEMO:
+        - ShoppingList class: DEMO purpose;
                 public class ShoppingList {
 
                     private String[] list = new String[5];
@@ -87,7 +76,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
                 }
 
 
-            - Now if we run the client code, it will cause an error because we are using List methods in the client code, but the internal representation of the list is now an array. Error:
+            - Now if we run the client code, it will cause an error because we are using List methods in the client code, but the internal representation of the list is now an array. Errors arising:
                 - java: cannot find symbol
                 - symbol:   method size()
                 - location: class java.lang.String[]
@@ -108,7 +97,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
                     }
 
 
-            - Current method returns current items in the loop, this is great as we are working with String objects in our Shopping list [private List<String> list = new ArrayList<>()]. If we change to working with integer values or any other object, it would result to change in the return type of current() method. We can solve this by using Generics
+            - current() method returns current items in the loop, this is great as we are working with String objects in our Shopping list [private List<String> list = new ArrayList<>()]. If we change to working with integer values or any other object, it would result to change in the return type of current() method. We can solve this by using Generics
 
                     public interface Iterator<T> {
 
@@ -119,10 +108,11 @@ package _04_DesignPatterns.Behavioral.Iterator;
 
 
         - ShoppingList class:
-            - The next thing is creating concrete iterator classes, we will create them as nested classes inside ShoppingList?
+            - The next thing is creating concrete iterator classes, we will create them as nested classes inside ShoppingList
                 - Why Nested classes?
-                    - Because these concrete classes are only concerned with iterating over ShoppingList, so it makes sense to nest them so that they can only be used to iterate over shoppping list  and not be used in other classes thorughout our codebase
-            - We make them invisible to all other classes by keeping them private
+                    - Because these concrete classes are only concerned with iterating over ShoppingList, so it makes sense to nest them so that they can only be used to iterate over shoppping list  and not be used in other classes throughout our codebase
+
+            - We also make them invisible to all other classes by keeping them private
 
                     public class ShoppingList {
 
@@ -157,18 +147,19 @@ package _04_DesignPatterns.Behavioral.Iterator;
                     }
 
                 - We have;
-                    - private ShoppingList shoppingList; becasue it's what we are looping over
+                    - private ShoppingList shoppingList; because it's what we are looping over
                     - private int index; to keep track of the current position in the loop
                     - Constructor which takes in a ShoppingList object, so that we can access the list property of shopping list
 
-                    - current() method to return the current item in the list based on the psition of index
-                    - hasNext() method to check if there is another item in the list by comparing the index with the size of the list
-                    - next() method to increment the index to move to the next item in the list by one
+                    - Methods;
+                        - current() method to return the current item in the list based on indexes position
+                        - hasNext() method to check if there is another item in the list by comparing the index with the size of the list
+                        - next() method to increment the index to move to the next item in the list by one
 
 
             - One more thing we need to do in our ShoppingList class is to create a method that returns an instance of the concrete iterator class
-                - It has a return type of Iterator which allows us to use multiple concrete iterators
-                - It returns new ListIterator and we pass in our current Class ShoppingList
+                - It has a return type of Iterator which allows use of multiple concrete iterators
+                - It returns new ListIterator and we pass in our current ShoppingList class
 
                     public class ShoppingList {
 
@@ -182,7 +173,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
 
 
         - Main class: Client 
-            - Now we can use this method in our client code to get an iterator and loop over the shopping list without knowing it's internal representation
+            - Now we can use this method in our client code to get an iterator and loop over the ShoppingList without ever knowing it's internal representation
                 public class Main {
                     public static void main(String[] args) {
 
@@ -259,7 +250,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
                     }
 
     - Observation:
-        - Now if we run the client code, it will work perfectly fine because we have updated the iterator methods to account for the new data structure. This is because we are using the iterator methods to loop over the shopping list, and not directly accessing the list property of shopping list
+        - Now if we run the client code, it will work perfectly fine because we have updated the iterator methods to account for the new data structure. This is because we are using the iterator methods to loop over the shopping list, and not directly accessing the list property of ShoppingList
 
  */
 

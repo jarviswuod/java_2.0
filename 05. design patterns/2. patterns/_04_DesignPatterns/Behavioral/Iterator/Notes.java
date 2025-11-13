@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
 
     NOTES:
     - Iterator Pattern:
-        - Is a pattern that provides a way of iterating over an object without having to expose the object's internal structure and changing the internals of the object should not affect it's consumers
+        - Is a behavioral pattern that provides a way of iterating over an object without exposing the object's internal structure plus changing the object's internals should not affect it's consumers
 
 
     - CHALLENGE:
@@ -34,9 +34,9 @@ package _04_DesignPatterns.Behavioral.Iterator;
         - With this structure, we don't have to know the internal representation of the 'lists' object. Meaning if we changed the data structure used in ShoppingList to store items, no consumers would break
 
         - SOLUTION 1 ISSUES:
-            - The above class violated the Single Responsiblity Principle as;
-                1. It's responsible for list management using push() and pop() methods
-                2. It's responsible for iteration using next(), current(), and hasNext()
+            - The above class violates the SRP as it's both responsible for;
+                1. List management using push() and pop() methods
+                2. Iteration using next(), current(), and hasNext()
 
 
 
@@ -61,22 +61,22 @@ package _04_DesignPatterns.Behavioral.Iterator;
 
             - To solve for this, we introduce an Iterator interface from which we can have concrete classed for each data structure that implements Iterator interface. This ensures the new data structure; array, List, Stack, etc always contains iterator's methods
 
-                ____________________             ____________________
-                | ShoppingList     |             | Iterator         |
-                |__________________|             |__________________|
-                | push(item)       |------------>| next()           |
-                | pop()            |             | current()        |
-                | createIterator() |             | hasNext()        |
-                |__________________|             |__________________|
-                                                        ^
-                                                        |
-                                    _____________________________________
-                                    |                                   |
-                            ________|___________           _____________|______
-                            | ListIterator     |           | ArrayIterator    |
-                            |__________________|           |__________________|
-                            |                  |           |                  |
-                            |__________________|           |__________________|
+                    ____________________          ____________________
+                    | ShoppingList     |          | Iterator         |
+                    |__________________|          |__________________|
+                    | push(item)       |--------->| next()           |
+                    | pop()            |          | current()        |
+                    | createIterator() |          | hasNext()        |
+                    |__________________|          |__________________|
+                                                          ^
+                                                          |
+                                            ______________|__________________
+                                            |                               |
+                                    ________|___________       _____________|______
+                                    | ListIterator     |       | ArrayIterator    |
+                                    |__________________|       |__________________|
+                                    |                  |       |                  |
+                                    |__________________|       |__________________|
 
 
                 NOTE:
@@ -114,7 +114,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
 
     - Pros and cons:
         + Satisfies SRP; traversal logic is abstracted into separate classes
-        + Satisfies Open/Closed Principle; you can create new collections and iterators without breaking the code that uses them
+        + Satisfies OCP; you can create new collections and iterators without breaking the code that uses them
 
         - Can be over-engineering if your app only works with simple collections
 

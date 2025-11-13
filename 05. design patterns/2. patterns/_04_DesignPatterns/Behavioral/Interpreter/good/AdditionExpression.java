@@ -14,5 +14,4 @@ public class AdditionExpression implements Expression {
     public int interpret(Context context) {
         return left.interpret(context) + right.interpret(context);
     }
-
 }
