@@ -10,7 +10,7 @@ package _03_Behavioral;
 
     - 4 Main actors in Mediator;
         a. Mediator:
-            - Is an interface that defines the communication methods that concrete methods must implement
+            - Is an interface that defines the communication methods that concrete mediators must implement
             - It also maintains references to the specific objects
 
         b. Concrete Mediator class:

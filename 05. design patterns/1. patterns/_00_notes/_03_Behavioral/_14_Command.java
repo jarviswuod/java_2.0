@@ -1,24 +1,25 @@
 package _03_Behavioral;
+
 /*
 
     NOTES:
     - Command Pattern:
-        - The command is a behavioral pattern that turns a request into a stand alone object containing all the information about the request
-        - This decoupling allows for parameterizing clients with different requests and supports undoable operations
+        - Is a pattern that turns a request into a stand-alone object that contains all information about the request
+        - This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations
 
 
     - 4 Main actors in Command;
         a. Command:
-            - Defines all the common interface for all concrete command objects. It usually includes an execute method
+            - Defines all the common interface for all concrete command objects. It usually includes an execute*() method
 
         b. Concrete Command:
-            - Are sub-classes of command that encapsulate a specific action by binding a specific a receiver to the actions execution
+            - Are sub-classes of command that encapsulate a specific action by binding a specific receiver to the actions execution
 
         c. Invoker class:
-            - It holds and manages the command objects. It triggers the execution of commands through the execute method
+            - It holds and manages the Command objects. It triggers the execution of commands through the execute() method
 
         d. Receiver:
-            - Is a class that performs the actual action associated with the command, It knows how to carry out the operation
+            - Is a class that performs the actual action associated with the command. It knows how to carry out the operation
 
 
     - Advantages and Disadvantages

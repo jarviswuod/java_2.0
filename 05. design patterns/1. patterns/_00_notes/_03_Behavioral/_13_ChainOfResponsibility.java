@@ -9,11 +9,11 @@ package _03_Behavioral;
 
 
     - 2 Main actors in Chain;
-        a. Handler:
-            - Is an interface that defines a common interface for handling requests, it contains a reference to the next handler in the chain
+        a. Handler interface:
+            - Is an interface that defines a common interface for handling requests. It contains a reference to the next handler in the chain
 
         b. Concrete Handler:
-            - Is a subclass or handler that implements special request processing logic
+            - Is a subclass that implements special request processing logic
 
 
     - Advantages and Disadvantages
