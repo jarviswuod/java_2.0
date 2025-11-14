@@ -5,7 +5,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
     - CODE EXPLANATION:
 
     - CHALLENGE:
-        - Let's say we have a web page that contains some information that only admins of the website can access, such as a page that allows an admin to manage the website's users. e.g create new users, get informatiOn, update users information etc.
+        - Let's say we have a web page that contains some information that only admins of the website can access say as a page that allows an admin to manage the website's users. e.g create new users, get informatiOn, update users information etc
 
 
     - SOLUTION 1:
@@ -14,7 +14,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
                 - First 2 fields are user input fields; username and password
                 - Other fields needed are validateUsername and validatePassword
 
-            - When a user passes a username and passord, the 2 other fields validateUsername and validatePassword will be populated cleaning up the user inputs
+            - When a user passes a username and passord, validateUsername and validatePassword fields will be populated cleaning up the user inputs
             - We also create a constructor so that username and password can be set
             - Finally generate setters and getters for the 4 fields
 
@@ -42,7 +42,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
         - Validator class:
-            - This class validates our data attached to the HttpResuest i.e username and password
+            - This class validates data attached to the HttpRequest i.e username and password
 
                 public class Validator {
                     public void validate(HttpRequest request) {
@@ -60,7 +60,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
         - Authenticator class;
             - Once the request has been validated it needs to be pass to the Authenticator class
-            - We keep it simple by only confirming the password and username passed is matching what we ha ve in the database
+            - We confirm if password and username passed is matching database data
 
                 public class Authenticator {
                     public boolean authenticate(HttpRequest request) {
@@ -73,7 +73,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
         - Logger class:
-            - Once we have been through the authentication and validation we can perform login. We have a simple log() method to log info console
+            - Once authentication and validation operations are done. We log the info to console
 
                 public class Logger {
 
@@ -84,8 +84,8 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
         - WebServer class:
-            - Finally, we create a WebServer class, we have a handle() method which will handle our request; it takes in a HttpRequest like all the other methods
-            - Here we put in together everything we have created in order, we start by validating the request, this will populate the request objects with validate username and password
+            - Here we have a handle() method which will handle our requests taking HttpRequest like all the other methods
+            - We then piece everything in order starting by request validation
 
                     public class WebServer {
                         public void handle(HttpRequest request) {
@@ -99,7 +99,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
             - Then create an authenticator
-                - NOTE; In real server we would throw an error if something was NOT adding up under authentication say return a page with access denied
+                - NOTE that in real servers we throw errors if something ain't adding up under authentication say "access denied"
 
                     public class WebServer {
                         public void handle(HttpRequest request) {
@@ -129,7 +129,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
         - Main class: Client class
             - We are simulating how a client will use our solution
             - First we create a WebServer object
-            - Then create a HttpRequest object with username and password, just as user will pass it in or from from a end user session
+            - Then create a HttpRequest object with username and password, just as a user does in a form from an end user session
 
             - Finally we call handle() method from the server object
 
@@ -145,17 +145,18 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
         - Problems with this approach:
-            - Under handle() method inside the WebServer class, the order of operation are hardcoded inside the WebServer so in the future if you wanted to disable login or authentication for a certain scenario roots and webpages we cannot do so. We have to come back and modify the code in the WebServer class itself. This violates the open-closed principle as changing the steps or order of steps, or adding extra steps, we'd have to modify the existing code
-            - Chain of responsiblity solves this as you can build a pipeline with a chain of objects for processing a request and the request can be of any type not just HTTP Request
+            - Under handle() method inside the WebServer class, the order of operation are hardcoded inside the WebServer so in the future if you wanted to disable login or authentication for a certain scenario roots and webpages we cannot do so. We have to come back and modify the code in the WebServer class itself. This violates the OCP
+            - Chain of responsiblity solves this as you can build a pipeline with a chain of objects for processing a request as the request can be of any type not just HTTP Request
 
-            - Another issues, because of the new keyword within the WebServer class, there is tight coupling between the concrete  authenicator, valiadator, logger and whatveer class, to solve this we will have could extract interfaces from the classes and have a WebServer talk to the interfaces rather than the concrete classes. This makes our WebServer class more flexible because you could just swap to a different type or validator, authenticator or logger
+            - Another issue is since we have the new keyword within the WebServer class, there's tight coupling between the concrete authenicator, valiadator, logger and whatever class. To solve this we have to extract interfaces from the classes and have a WebServer talk to the interfaces rather than the concrete classes. This makes our WebServer class more flexible for you could just swap to a different type or validator, authenticator or logger
 
 
 
     - SOLUTION USING CHAIN OF COMMAND:
         - abstract Hander class:
             - We need to store the next Hander object/class in chain
-            - We need a setNext() method to help in settng out next Handler. Why do we return Handler? THis is because returning a Handler in this setNext() method enables/enables us to chain/link handler in a conventiend way. Example; h1.setNext(h2).setNext(h3).setNext(h4);
+            - We need a setNext() method to help in setting out nextHandler
+                - We return Handler in setNext() method because it enables to chaining/ linking handlers in a conventiend way. Example; h1.setNext(h2).setNext(h3).setNext(h4);
 
                 public abstract class Handler {
 
@@ -170,7 +171,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
                 }
 
 
-            - Next is to create our handle() template method. It receives a HttpRequest and inside of it we have an if-else() condition. What this means is that if dohandle() method returns true, we return early and process ending else we check if the nexthandler field is not equal to null we call the nextHander.handle() method passing along the request object
+            - Next is creating handle() template method. It receives a HttpRequest and inside of it we have an if-else() condition. Meaning, if dohandle() method returns true, we return early ending the process else we check if the nextHandler field is not equal to null then we call the nextHander.handle() method passing along the request object
                 - doHandle() is an abstract method that returns a boolean and takes in a HttpRequest object
                 - It will be implemented in the concrete Handler classes
 
@@ -195,9 +196,8 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
         - Concrete Handler classes:
             - Validator class;
-                - We essentially do what we did before i.e get the username and password from the request object and trim the whitespaces setting in appropriate fields
+                - We essentially do what we did before i.e getting the username & password from the request object then trimming the whitespaces setting in appropriate fields
                 - We do all this inside the overrided method dohandel() and we return false to mean we are not done with processing the request and the next Handler should be called
-                - Returning true means proccessing stops here, 
                 - For this concrete methods, we should always return false as reason to stop processing the request
 
                     public class Validator extends Handler {
@@ -219,7 +219,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
             - Authenticator class:
-                - The return should be false if everything matches up as expected i.e the database's username and password, for this to happen we have to negate(!) the value to false to ensure the process continues i.e call the next Handler class
+                - The return should be false if everything matches up as expected i.e the database's username and password. For this to happen we have to negate(!) the value to false to ensure the process continues i.e calling the next Handler class
 
                     public class Authenticator extends Handler {
 
@@ -266,7 +266,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
         - Main Class: Client class
-            - First we create a Validator object then create an Authenticator object then Logger object too
+            - First we create a Validator, Authenticator and Logger objects
 
                     public class Main {
                         public static void main(String[] args) {
@@ -280,7 +280,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
                     }
 
 
-            - Then what we need to do is to return handlers from the setNext() method and because of that we chain everything in one line
+            - Then return handlers from the setNext() method and because of that we chain everything in one line
             - We basically call validator because it's the first object in our chain
             - We then create our server passing the first object in chain which is validator
                     public class Main {
