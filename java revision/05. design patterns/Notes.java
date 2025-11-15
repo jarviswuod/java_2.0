@@ -765,7 +765,131 @@
                 }
 
 
+
         - Mediator pattern:
+
+                public class Notes {
+                    public static void main(String[] args) {
+
+                        PostDialogBox postDialogBox = new PostDialogBox();
+                        postDialogBox.simulateUserInteration();
+                    }
+                }
+
+                class UIControl {
+
+                    protected DialogBox owner;
+
+                    public UIControl(DialogBox owner) {
+                        this.owner = owner;
+                    }
+                }
+
+                abstract class DialogBox {
+
+                    public abstract void changed(UIControl UIControl);
+                }
+
+                class TextBox extends UIControl {
+
+                    private String text = "";
+
+                    public TextBox(DialogBox owner) {
+                        super(owner);
+                    }
+
+                    public String getText() {
+                        return text;
+                    }
+
+                    public void setText(String text) {
+                        this.text = text;
+
+                        owner.changed(this);
+                    }
+                }
+
+                class ListBox extends UIControl {
+
+                    private String selection = "";
+
+                    public ListBox(DialogBox owner) {
+                        super(owner);
+                    }
+
+                    public String getSelection() {
+                        return selection;
+                    }
+
+                    public void setSelection(String selection) {
+                        this.selection = selection;
+
+                        owner.changed(this);
+                    }
+                }
+
+                class Button extends UIControl {
+
+                    private boolean isEnabled;
+
+                    public Button(DialogBox owner) {
+                        super(owner);
+                    }
+
+                    public boolean isEnabled() {
+                        return isEnabled;
+                    }
+
+                    public void setEnabled(boolean isEnabled) {
+                        this.isEnabled = isEnabled;
+
+                        owner.changed(this);
+                    }
+                }
+
+                class PostDialogBox extends DialogBox {
+
+                    private ListBox postListBox;
+                    private TextBox titleTextBox;
+                    private Button saveButton;
+
+                    public PostDialogBox() {
+                        postListBox = new ListBox(this);
+                        titleTextBox = new TextBox(this);
+                        saveButton = new Button(this);
+
+                        saveButton.setEnabled(false);
+                    }
+
+                    public void simulateUserInteration() {
+                        postListBox.setSelection("Post 2");
+                        // titleTextBox.setText("");
+
+                        System.out.println("Title text box: " + titleTextBox.getText());
+                        System.out.println("Button enabled : " + saveButton.isEnabled());
+                    }
+
+                    @Override
+                    public void changed(UIControl uiControl) {
+                        if (uiControl == postListBox) {
+                            handlePostChange();
+                        } else if (uiControl == titleTextBox) {
+                            handleTitleChange();
+                        }
+                    }
+
+                    private void handleTitleChange() {
+                        boolean isTitleEmpty = titleTextBox.getText() != "";
+                        saveButton.setEnabled(isTitleEmpty);
+                    }
+
+                    private void handlePostChange() {
+                        titleTextBox.setText(postListBox.getSelection());
+                        saveButton.setEnabled(true);
+                    }
+                }
+
+
 
     NOTES:
     - Behavioral design pattern:
@@ -847,20 +971,135 @@
 
 
         - Mediator pattern:
-            - Is a behavioral pattern 
+            - Is a behavioral pattern where communication between objects is done by a central object and the communicating objects are not aware of one another existance
             - 4 key players:
-                - 
-                - 
-                - 
-                - 
+                - Mediator interface
+                - Concrete Mediator
+                - Component interface
+                - Concrete Component
  
             - Example:
-                - 
+                - Online Editor
 
  */
 
 public class Notes {
     public static void main(String[] args) {
 
+        PostDialogBox postDialogBox = new PostDialogBox();
+        postDialogBox.simulateUserInteration();
+    }
+}
+
+class UIControl {
+
+    protected DialogBox owner;
+
+    public UIControl(DialogBox owner) {
+        this.owner = owner;
+    }
+}
+
+abstract class DialogBox {
+
+    public abstract void changed(UIControl UIControl);
+}
+
+class TextBox extends UIControl {
+
+    private String text = "";
+
+    public TextBox(DialogBox owner) {
+        super(owner);
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+
+        owner.changed(this);
+    }
+}
+
+class ListBox extends UIControl {
+
+    private String selection = "";
+
+    public ListBox(DialogBox owner) {
+        super(owner);
+    }
+
+    public String getSelection() {
+        return selection;
+    }
+
+    public void setSelection(String selection) {
+        this.selection = selection;
+
+        owner.changed(this);
+    }
+}
+
+class Button extends UIControl {
+
+    private boolean isEnabled;
+
+    public Button(DialogBox owner) {
+        super(owner);
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean isEnabled) {
+        this.isEnabled = isEnabled;
+
+        owner.changed(this);
+    }
+}
+
+class PostDialogBox extends DialogBox {
+
+    private ListBox postListBox;
+    private TextBox titleTextBox;
+    private Button saveButton;
+
+    public PostDialogBox() {
+        postListBox = new ListBox(this);
+        titleTextBox = new TextBox(this);
+        saveButton = new Button(this);
+
+        saveButton.setEnabled(false);
+    }
+
+    public void simulateUserInteration() {
+        postListBox.setSelection("Post 2");
+        // titleTextBox.setText("");
+
+        System.out.println("Title text box: " + titleTextBox.getText());
+        System.out.println("Button enabled : " + saveButton.isEnabled());
+    }
+
+    @Override
+    public void changed(UIControl uiControl) {
+        if (uiControl == postListBox) {
+            handlePostChange();
+        } else if (uiControl == titleTextBox) {
+            handleTitleChange();
+        }
+    }
+
+    private void handleTitleChange() {
+        boolean isTitleEmpty = titleTextBox.getText() != "";
+        saveButton.setEnabled(isTitleEmpty);
+    }
+
+    private void handlePostChange() {
+        titleTextBox.setText(postListBox.getSelection());
+        saveButton.setEnabled(true);
     }
 }
