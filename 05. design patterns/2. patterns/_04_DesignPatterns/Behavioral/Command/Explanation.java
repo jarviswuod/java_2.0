@@ -201,8 +201,9 @@ package _04_DesignPatterns.Behavioral.Command;
             - First we instanciate the Light object
             - Then create RemoteControl object which takes in a Command interface's concrete class say we pass in TurnOnCommand() which takes in light object
             - Then we class pressButton() method which executes the turnOn() command
+            - We can also dim the light if it's too bright, we just call the setCommand() method and pass in the new DimCommand object which also takes in light. If we then call pressButton() method the command is executed
 
-                   public class Main {
+                    public class Main {
                         public static void main(String[] args) {
 
                             Light light = new Light();
@@ -210,25 +211,13 @@ package _04_DesignPatterns.Behavioral.Command;
                             RemoteControl remoteControl = new RemoteControl(new TurnOnCommand(light));
                             remoteControl.pressButton();
 
+
+                            remoteControl.setCommand(new TurnDimCommand(light));
+                            remoteControl.pressButton();
+
                             ...
                         }
                     }
-
-
-            - We can also dim the light if it's too bright, we just call the setCommand() method and pass in the new DimCommand object which also takes in light. If we then call pressButton() method the command is executed
-                public class Main {
-                    public static void main(String[] args) {
-
-                        Light light = new Light();
-
-                        RemoteControl remoteControl = new RemoteControl(new TurnOnCommand(light));
-
-                        remoteControl.setCommand(new TurnDimCommand(light));
-                        remoteControl.pressButton();
-
-                        ...
-                    }
-                }
 
 
         - OBSERVATION:
@@ -238,7 +227,7 @@ package _04_DesignPatterns.Behavioral.Command;
 
 
     - UNDO WITH COMMAND PATTERN:
-        - HTMLDocument class:
+        - HTMLDocument class: Receiver
             - This is where we implement our business logic
                 - NOTE
                     - This class will know nothing about commands as it's simply a layer of our business application
@@ -273,7 +262,7 @@ package _04_DesignPatterns.Behavioral.Command;
                     }
 
 
-        - History class:
+        - History class: Invoker
             - It keeps track of the commands that we have applied using a Deque for UndoableCommand commands storage
             - The push() method allows us to easily interact with the History class
             - The size() methods is used for getting the size of the current length the command list(useful in another class)
@@ -301,87 +290,90 @@ package _04_DesignPatterns.Behavioral.Command;
                     }
 
 
-        - ItalicCommand class: Concrete class
-            - It implements the UndoableCommand Interface where we have both execute and unexecute methods
-            - We need some fields to store
-                - The reference to the HTMLDocuments
-                - We also need a field for the previous content which is intialized to an empty string
-                - we also need reference to store the History object
+        - Concrete command class
+            - UndoCommand class:
+                - This class sort of manages all of the undoable commands
+                    - It implements the Command interface
+                    - It needs to store a reference to History which is also pass through the constructor
 
-            - After that we need the constructor which takes in the HTMLDocuement and History classes
+                    - Under undo() method we will check if history has any item/commands in the list and then if it does we can pop the last item/command of the list and then call it's execute method
 
-                    public class ItalicCommand implements UndoableCommand {
+                            public class UndoCommand implements Command {
 
-                        private HtmlDocument document;
-                        private String prevContent = "";
-                        private History history;
+                                private History history;
 
-                        public ItalicCommand(HtmlDocument document, History history) {
-                            this.document = document;
-                            this.history = history;
-                        }
-
-                        ...
-                    }
-
-
-            - We also need to implement the execute() and unexecute() methods
-                - When we execute we need the curent HTMLDocument content set to a prevContent and then push this command object to the History class
-                    - Get current content from HtmlDoc, sorting it to the prevContent 
-                    - We then make the content italic 
-                    - Then push this command object onto the History list
-
-                            public class ItalicCommand implements UndoableCommand {
+                                public UndoCommand(History history) {
+                                    this.history = history;
+                                }
 
                                 @Override
                                 public void execute() {
-                                    prevContent = document.content;
-                                    document.makeItalic(); // delegate work to the doc business object
-                                    history.push(this);
-                                }
+                                    if (history.size() > 0) {
 
-                                ...
+                                        UndoableCommand lastCommand = history.pop();
+                                        lastCommand.unexecute(); // Deegating the undo logic to undoable command object
+                                    }
+                                }
                             }
 
 
-                - For the unexecute() method
-                    - All we do is to go back to what content was before we executed the command
 
-                            public class ItalicCommand implements UndoableCommand {
+            - ItalicCommand class:
+                - It implements the UndoableCommand Interface where we have both execute and unexecute methods
+                - We need some fields to store
+                    - The reference to the HTMLDocuments
+                    - We also need a field for the previous content which is intialized to an empty string
+                    - we also need reference to store the History object
 
-                                @Override
-                                public void unexecute() {
-                                    document.content = prevContent;
-                                }
+                - After that we need the constructor which takes in the HTMLDocuement and History classes
 
-                                ...
-                            }
+                        public class ItalicCommand implements UndoableCommand {
 
-
-        - UndoCommand class:
-            - This class sort of manages all of the undoable commands
-                - It implements the Command interface
-                - It needs to store a reference to History which is also pass through the constructor
-
-                - Under undo() method we will check if history has any item/commands in the list and then if it does we can pop the last item/command of the list and then call it's execute method
-
-                        public class UndoCommand implements Command {
-
+                            private HtmlDocument document;
+                            private String prevContent = "";
                             private History history;
 
-                            public UndoCommand(History history) {
+                            public ItalicCommand(HtmlDocument document, History history) {
+                                this.document = document;
                                 this.history = history;
                             }
 
-                            @Override
-                            public void execute() {
-                                if (history.size() > 0) {
-
-                                    UndoableCommand lastCommand = history.pop();
-                                    lastCommand.unexecute(); // Deegating the undo logic to undoable command object
-                                }
-                            }
+                            ...
                         }
+
+
+                - We also need to implement the execute() and unexecute() methods
+                    - When we execute we need the curent HTMLDocument content set to a prevContent and then push this command object to the History class
+                        - Get current content from HtmlDoc, sorting it to the prevContent 
+                        - We then make the content italic 
+                        - Then push this command object onto the History list
+
+                                public class ItalicCommand implements UndoableCommand {
+
+                                    @Override
+                                    public void execute() {
+                                        prevContent = document.content;
+                                        document.makeItalic(); // delegate work to the doc business object
+                                        history.push(this);
+                                    }
+
+                                    ...
+                                }
+
+
+                    - For the unexecute() method
+                        - All we do is to go back to what content was before we executed the command
+
+                                public class ItalicCommand implements UndoableCommand {
+
+                                    @Override
+                                    public void unexecute() {
+                                        document.content = prevContent;
+                                    }
+
+                                    ...
+                                }
+
 
 
         - Main class: Client class;

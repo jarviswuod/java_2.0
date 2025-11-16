@@ -24,12 +24,12 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
             |__________|         | Handler 2: Authenticate |        |___________|
                                  | Handler 3: Log          |
                                  |_________________________|
-                                                |
-                                                |
-                                                v
-                                    ________________________
-                                    | Access Denied        |
-                                    |______________________|
+                                              | 
+                                              | 
+                                              v 
+                                   ________________________
+                                   | Access Denied        |
+                                   |______________________|
 
 
 
@@ -43,12 +43,12 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
             |__________|---> |_____________|---> |________________|---> |______________|---> |______________|
             |          |     | validate()  |     | authenticate() |     | log()        |     |              |
             |__________|     |_____________|     |________________|     |______________|     |______________|
-                                    |                    |                    |
-                                    |                    |                    |
-                                    v                    v                    v
-                            __________________  __________________       __________________
-                            | Access Denied  |  | Access Denied  |       | Access Denied  |
-                            |________________|  |________________|       |________________|
+                                    |                    |                      |
+                                    |                    |                      |
+                                    v                    v                      v
+                            __________________  __________________     __________________
+                            | Access Denied  |  | Access Denied  |     | Access Denied  |
+                            |________________|  |________________|     |________________|
 
 
             - First, a request is passed to the first object in the chain(Validator). If the request is processed successfully, it passes the request to the next object in the chain but if not, it will stop processing right there so the other objects aren't used

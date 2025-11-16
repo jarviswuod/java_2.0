@@ -110,7 +110,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
         - ShoppingList class:
             - The next thing is creating concrete iterator classes, we will create them as nested classes inside ShoppingList
                 - Why Nested classes?
-                    - Because these concrete classes are only concerned with iterating over ShoppingList, so it makes sense to nest them so that they can only be used to iterate over shoppping list  and not be used in other classes throughout our codebase
+                    - Because these concrete classes are only concerned with iterating over ShoppingList, so it makes sense to nest them so that they can only be used to iterate over shoppping list and not be used in other classes throughout our codebase
 
             - We also make them invisible to all other classes by keeping them private
 
@@ -136,7 +136,6 @@ package _04_DesignPatterns.Behavioral.Iterator;
                             @Override
                             public boolean hasNext() {
                                 return index < shoppingList.list.size();
-
                             }
 
                             @Override
