@@ -13,7 +13,7 @@ package _03_Behavioral;
             - Is an interface that defines the communication methods that concrete mediators must implement
             - It also maintains references to the specific objects
 
-        b. Concrete Mediator class:
+        b. Concrete Mediator:
             - It implements the mediator interface and manages the interactions and coordination between the participating objects
 
         c. Component:

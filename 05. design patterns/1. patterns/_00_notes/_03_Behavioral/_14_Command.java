@@ -15,7 +15,7 @@ package _03_Behavioral;
         b. Concrete Command:
             - Are sub-classes of command that encapsulate a specific action by binding a specific receiver to the actions execution
 
-        c. Invoker class:
+        c. Invoker:
             - It holds and manages the Command objects. It triggers the execution of commands through the execute() method
 
         d. Receiver:

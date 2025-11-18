@@ -4,27 +4,28 @@ package _02_Structural;
 
     NOTES:
     - Proxy Pattern:
-        - Is a structural design pattern that provides a placeholder for another object to control it's access
-        - It acts as an intermediary allowing you to add additional behavior or control to the original object without modifying it's code
-        - They are commonly used for various aspects including controlling access, managing resources and delaying object creation
+        - Is a structural design pattern that provides an object to control access to another object
+        - It acts as an intermediary allowing you to add additional functionality or control to the original object without modifying it's code
+        - They are commonly used for various aspects including caching, logging, lazy loading, access control, resources management and delaying object creation
+
 
 
     - 3 Main actors in Proxy;
         a. Subject:
-            - Is a generic interface that defines both methods, the real subject and the proxy implement this allows you to use a proxy instead of a real object
+            - Is an interface that define methods for both real subject and proxy to implement allowing use of proxy instead of a real object
 
         b. Real subject:
             - Is a class that represents the real object or service that the proxy controls access to
 
         c. Proxy:
-            - A class that implements the same interface as the subject it contains a real subject and controls access to it adding any necessary functionality
+            - A class that implements the same interface as the real subject containing a real subject and controls access to it adding any necessary functionality
 
 
     - Advantages and Disadvantages
         - Advantages:
             - Access control: It enhances access control by enabling you to manage the permissions and access to the real subject, adding an extra layer of security or authorization, this can be particularly crucial in scenarios where sensitive information or operations are involved
             - Resource management: It aids in efficient resource management as proxies have the ability to handle resource related to the real subject. This contains lazy initialization, caching and releasing resources when they are no longer necessary contributing to a more optimized use of system resources
-            - Performance optimization: It optimizes the performance of the system for example it can postpone the creation or execution of  resource heavy objects or tasks or reuse just calculated results
+            - Performance optimization: It optimizes the performance of the system for example it can postpone the creation or execution of resource heavy objects or tasks or reuse just calculated results
             - Simplified client code: The client code just becomes simpler and more straightforward when using the proxy pattern. The complexity of functionalities or interactions is encapsulated within the proxy making it easier for the client code to interact with the real subject
 
 
