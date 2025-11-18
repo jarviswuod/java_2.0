@@ -158,17 +158,17 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
             - We need a setNext() method to help in setting out nextHandler
                 - We return Handler in setNext() method because it enables to chaining/ linking handlers in a conventiend way. Example; h1.setNext(h2).setNext(h3).setNext(h4);
 
-                public abstract class Handler {
+                        public abstract class Handler {
 
-                    private Handler nextHandler;
+                            private Handler nextHandler;
 
-                    public Handler setNext(Handler nextHandler) {
-                        this.nextHandler = nextHandler;
-                        return nextHandler;
-                    }
+                            public Handler setNext(Handler nextHandler) {
+                                this.nextHandler = nextHandler;
+                                return nextHandler;
+                            }
 
-                    ...
-                }
+                            ...
+                        }
 
 
             - Next is creating handle() template method. It receives a HttpRequest and inside of it we have an if-else() condition. Meaning, if dohandle() method returns true, we return early ending the process else we check if the nextHandler field is not equal to null then we call the nextHander.handle() method passing along the request object

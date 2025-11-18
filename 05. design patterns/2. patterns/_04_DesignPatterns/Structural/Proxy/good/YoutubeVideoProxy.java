@@ -6,7 +6,6 @@ import _04_DesignPatterns.Structural.Proxy.good._3rdPartylibrary.Video;
 public class YoutubeVideoProxy implements Video {
 
     private String videoId;
-
     private YoutubeVideo youtubeVideo;
 
     public YoutubeVideoProxy(String videoId) {
@@ -15,9 +14,8 @@ public class YoutubeVideoProxy implements Video {
 
     @Override
     public void render() {
-        if (youtubeVideo == null) {
+        if (youtubeVideo == null)
             youtubeVideo = new YoutubeVideo(videoId);
-        }
 
         youtubeVideo.render();
     }

@@ -55,7 +55,7 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
 
 
 
-    - CHAIN OF RESPONSIBILITY UML: From GoF book:
+    - CHAIN OF RESPONSIBILITY UML: GoF Solution:
 
             ___________________             _______________________
             | WebServer       |             | Handler             |
@@ -91,16 +91,18 @@ package _04_DesignPatterns.Behavioral.ChainOfResponsibility;
             |____________________|<----------|  Client    |
             | next: Handler      |           |____________|
             |____________________|
-            | setNext(L:Handler) |            h1 =  new Handler1() 
-            | handle(request)    |            h2 =  new Handler2() 
-            |____________________|            h3 =  new Handler3() 
-                    ^                           h1.setNext(h2) 
-                    |                           h2.setNext(h3) 
-            ________|___________                h1.handle(request) 
-            | ConcreteHandlers |
-            |__________________|
-            | handle(request)  |
-            |__________________|
+            | setNext(L:Handler) |            h1 =  new Handler1()
+            | handle(request)    |            h2 =  new Handler2()
+            |____________________|            h3 =  new Handler3()
+                    ^                           h1.setNext(h2)
+                    |                           h2.setNext(h3)
+            ________|____________               h1.handle(request)
+            | ConcreteHandler   |
+            |___________________|-|
+            | handle(request)   | |-|
+            |___________________| | |
+              |___________________| |
+                |___________________|
 
  */
 
