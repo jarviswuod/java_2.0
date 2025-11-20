@@ -13,7 +13,7 @@ package _03_Design.Structural.Flyweight;
         - Object
 
 
-        
+
     - FIRST TRIAL::: ::: :::
 
             public class Notes {
