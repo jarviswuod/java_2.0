@@ -436,10 +436,59 @@
 
 
     - What is JPA? JPA Implementation:
-        - 
+        - Java Persistance API - (JPA)
+            - Prerequisite:
+                - Java
+                - RDBMS
+                - JDBC
+                - Hibernate (Optional)
+
+        - Object Relational Mapping:
+            - Connecting java to a DB directly
+            - ORM Tools:
+                - Hibernate
+                - iBatis
+                - TopLink
+
+        - JPA is a specification that makes it eay to switch between different ORM tools
+        - To work with JPA you do need the ORM tools and one cannot build a JPA solution without any of them
 
 
 
+    - JPA implementation:
+        - Adding hibernate dependency
+        - Adding mysql-connector to work with DB
+
+        - Created a persistace file under:
+            src/main/resources/META-INF/persistance.xml
+            This file entails configuration to db:
+                - javax.persistence.jdbc.driver : com.mysql.jdbc.Driver
+                - javax.persistence.jdbc.url : jdbc:mysql://localhost:3306/jarvis
+                - javax.persistence.jdbc.user : root
+                - javax.persistence.jdbc.password : root
+
+
+        - Retrive values from the db
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA-PU");
+            EntityManager em = emf.createEntityManager();
+            Alien alien = em.find(Alien.class, 101);
+            System.out.println(alien);
+
+        - save values to the db
+            - transaction ACID properties
+
+                Alien alien = new Alien();
+                alien.setAid(104);
+                alien.setAname("New Alien");
+                alien.setColor("Green");
+
+                EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA-PU");
+                EntityManager em = emf.createEntityManager();
+
+                EntityTransaction et = em.getTransaction();
+                et.begin();
+                em.persist(alien);
+                et.commit();
 
  */
 
