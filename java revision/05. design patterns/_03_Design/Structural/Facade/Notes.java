@@ -9,7 +9,7 @@ package _03_Design.Structural.Facade;
     - 3 key players:
         - Facade interface
         - Concrete Facade
-        - SUbsystem
+        - Subsystem
 
 
                 public class Notes {
