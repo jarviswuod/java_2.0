@@ -3,15 +3,16 @@ package _02_Structural;
 
     NOTES:
     - Composite pattern:
-        - Is a structural design pattern that combines objects into tree like structures to represent part-whole hierarchies
+        - Is a structural design pattern that enables the creation of tree-like structures to represent collections of objects where both individual objects and groups of objects are treated in a unified manner
         - It handles individual objects and object compositions uniformly allowing clients to work with complex structures and particular object using a single interface
 
 
-    - 3 Main actors in Composite;
+    - 3 Main actors in Composite:
         a. Component:
             - This defines the common interface for leaf and composite knots
 
-        b. Leaf And Composite:
+        b. Leaf:
+        c. Composite:
             - Are classes that both implement the component interface but 'leaf' represents the individual object in the composition while 'composite' represents the composition itself and contains set of child components
 
 
@@ -19,7 +20,7 @@ package _02_Structural;
         - Advantages:
             - Unified Interface: It provides a consistent way to work with individual objects and complex compositions. This consistency simplifies client code and enhances ease of use
             - Recursive structure: It's recursive structure is beneficial for representing complex hierarchical structures in a clean and organized manner
-            - Flexibility: The pattern is highly flexible allowing the incorporation of new components, be they leaf or composite without any destructive effects on the existing structure or client code
+            - Flexibility: The pattern is highly flexible allowing the incorporation of new components be they leaf or composite without any destructive effects on the existing structure or client code
 
 
         - Disadvantages:
