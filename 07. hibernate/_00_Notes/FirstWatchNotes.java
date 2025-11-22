@@ -1,3 +1,5 @@
+package _00_Notes;
+
 /*
 
     NOTES:
@@ -492,6 +494,6 @@
 
  */
 
-public class Notes {
+public class FirstWatchNotes {
 
 }
