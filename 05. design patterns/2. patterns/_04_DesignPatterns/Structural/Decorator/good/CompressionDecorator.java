@@ -7,14 +7,15 @@ public class CompressionDecorator extends DataDecorator {
     }
 
     @Override
-    public void save(String data) {
+    public void save(String data_) {
 
-        System.out.println("Compressing data");
-        String compressed = Compress(data);
+        String compressed = compress(data_);
         super.data.save(compressed);
+
+        System.out.println("Data compressed successfully!!!");
     }
 
-    public String Compress(String data) {
-        return data.substring(0, 9);
+    public String compress(String data_) {
+        return data_.substring(0, 9);
     }
 }

@@ -7,14 +7,15 @@ public class EncryptionDecorator extends DataDecorator {
     }
 
     @Override
-    public void save(String data) {
+    public void save(String data_) {
 
-        System.out.println("Encrypting data");
-        String encrypted = Encrypt(data);
+        String encrypted = encrypt(data_);
         super.data.save(encrypted);
+
+        System.out.println("Data encrypted successfully!!!");
     }
 
-    public String Encrypt(String data) {
+    public String encrypt(String data_) {
         return "*$%#@!yuuioo)98876tyyu";
     }
 }

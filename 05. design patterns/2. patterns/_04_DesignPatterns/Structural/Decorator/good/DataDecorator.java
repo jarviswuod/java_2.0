@@ -8,5 +8,5 @@ public abstract class DataDecorator implements Data {
         this.data = data;
     }
 
-    public abstract void save(String data);
+    public abstract void save(String data_);
 }
