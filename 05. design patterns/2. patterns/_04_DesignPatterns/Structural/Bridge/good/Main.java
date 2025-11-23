@@ -7,7 +7,7 @@ public class Main {
         lgRemoteControl.turnOn();
         lgRemoteControl.turnOff();
 
-        System.err.println();
+        System.out.println();
 
         AdvancedRemote advancedRemote = new AdvancedRemote(new SonyRadio());
         advancedRemote.turnOn();
