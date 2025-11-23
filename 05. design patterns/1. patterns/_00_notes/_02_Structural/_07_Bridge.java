@@ -6,17 +6,16 @@ package _02_Structural;
     - Bridge Pattern:
         - Is a structural design pattern that separates obstruction from implementation allowing them to evolve independently
         - It decouples an obstructions interface from it's implementation allowing changes in one without affecting the other
-        - This pattern comes in handy when dealing with complex class hierarchies and when both changes in both the obstruction and implementation are expected
 
 
-    - 3 Main actors in Bridge Design Pattern;
+    - 3 Main actors in Bridge Design Pattern:
         a. Abstraction:
-            - Is a high level interface that defines methods and properties for implementation and keeps a reference to the latter
+            - Is a high level interface that defines methods and properties for Implementation and keeps a reference to the latter
 
         b. Implementation:
-            -  Is a low level interface that defines the method and properties to be implemented by concrete classes
+            - Is a low level interface that defines method and properties to be implemented by concrete classes
 
-        - Concrete Implementations:
+        c. Concrete Implementations:
             - Are sub-classes to the implementation that provide the actual implementations
 
 
