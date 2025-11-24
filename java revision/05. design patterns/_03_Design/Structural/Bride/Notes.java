@@ -134,9 +134,6 @@ package _03_Design.Structural.Bride;
                 }
             }
 
-
-
-
 */
 
 public class Notes {
