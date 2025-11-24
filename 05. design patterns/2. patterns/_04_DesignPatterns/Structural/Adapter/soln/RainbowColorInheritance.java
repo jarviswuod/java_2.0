@@ -2,7 +2,7 @@ package _04_DesignPatterns.Structural.Adapter.soln;
 
 import _04_DesignPatterns.Structural.Adapter.soln._3rdPartylibrary.Rainbow;
 
-public class RainbowAdapter_Inheritance extends Rainbow implements Color {
+public class RainbowColorInheritance extends Rainbow implements Color {
 
     @Override
     public void apply(Video video) {

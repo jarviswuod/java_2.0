@@ -12,8 +12,8 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
     - SOLUTION 1
-        - Video class;
-            - Just a base class with no fields or methods. This class represents some sort of Video
+        - Video class:
+            - This class represents some sort of video. It's just a base class with no fields or methods
 
                     public class Video {
 
@@ -21,8 +21,8 @@ package _04_DesignPatterns.Structural.Adapter;
                     }
 
 
-        - Color interface;
-            - We have color interface which has apply() method which takes in a Video class. A video we gonna work on basically this is a Video on which we will apply color to
+        - Color interface:
+            - We have color interface which has apply() method which takes in a Video on which we will apply the color to
 
                     public interface Color {
 
@@ -31,9 +31,10 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - Concrete Color classes:
-            - BlackAndWhiteColor:
-                - It implements the Color interface and therefore overrides the apply() method which accepts a VIdeo to apply the black and white color to
-                - NOTE: In a real aplication this would be some complex code to apply a black and white color to Video
+            - BlackAndWhite:
+                - This class implements Color interface thereby implementing the apply() method which accepts a Video to apply the blackAndWhite color to
+                - NOTE:
+                    - In a real aplication this would be some complex code to apply a blackAndWhite color to Video
 
                     public class BlackAndWhite implements Color {
 
@@ -44,8 +45,8 @@ package _04_DesignPatterns.Structural.Adapter;
                     }
 
 
-            - MidNightColor:
-                - Same concepts applys here
+            - Midnight:
+                - Same concepts in BlackAndWhite class apply here
 
                     public class Midnight implements Color {
 
@@ -57,7 +58,8 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - VideoEditor class:
-            - Our VideoEditor class has a VIdeo field and we pass a Video to the editor via a Constructor and then we have applyColor which takes some sort of Color object and then calls color.apply() passing the video that we want to apply the color to
+            - Our VideoEditor class has a Video field that we'll pass to the VideoEditor constructor
+            - We have applyColor() method which accepts Color object and then calls apply() passing the video we want to apply the color to
 
                     public class VideoEditor {
 
@@ -75,7 +77,7 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - Main class: Client class;
-            - Here we create a VideoEditor object passing the Video we want to edit and then we call the VideoEditor.applyColor() method  and we pass any color Object methos that we want to apply to
+            - First, create a VideoEditor object passing Video object we want editted then call the applyColor() method passing any Color object we want applied
 
                     public class Main {
                         public static void main(String[] args) {
@@ -87,16 +89,17 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - PROBLEM:
-            - The code is working good so far, until we decide to install a 3rd party library into our application that allows users to apply more types of colors to their videos
+            - The code works good until we decide to install a 3rd party library to work with our application. One that allows users apply more types of colors to their video
+
 
 
 
     - SOLUTION 2: ADAPTER PATTERN
-        - We can solve this issue by converting the interface of 3rd party color classes to a different form using the Adapter Pattern
+        - We can solve this issue by converting the interface of the 3rd party color classes to a different form using the Adapter Pattern
 
 
         - Video class:
-            - This is a class that represents a some sort of Video
+            - This is a class that represents some sort of Video
                     public class Video {
 
                         // video fields and methods
@@ -104,7 +107,7 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - Color interface:
-            - It describes what a concrete color class should look like and all colors should apply the apply() method that accepts a Video object
+            - It describes what a concrete Color class should look like implementing apply() method which accepts a Video object
                     public interface Color {
 
                         void apply(Video video);
@@ -112,7 +115,7 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - Concrete Classes:
-            - We have concrete classes such as blackAndWhite which implement the color interface and have an apply() method that takes a video than the method applies the color to the VIdeo
+            - They implement Color interface and have an apply() method one that takes a Video object and applys color to it
                     public class BlackAndWhite implements Color {
 
                         @Override
@@ -131,7 +134,8 @@ package _04_DesignPatterns.Structural.Adapter;
 
 
         - VideoEditor class:
-            - It has a Video field which stores a video to a video to edit and it;s passed via the constructor and we have a applyColor() method where we can pass a color that we want to apply to the Video
+            - Our VideoEditor class has a Video field and we pass a Video to the editor via a constructor
+            - Then we have applyColor() method which takes in Color object and then calls color.apply() passing the video we want to apply color to
                     public class VideoEditor {
 
                         private Video video;
@@ -147,14 +151,14 @@ package _04_DesignPatterns.Structural.Adapter;
                     }
 
 
-        - _3rdPartyLibrary/Rainbow class:
-            - This is VideoClass from the 3rd party library
-            - Lets say colors from this 3rd party library requires some kind of setup hence we have to call the setUp() method before we use the library.
+        - _3rdPartyLibrary/ Rainbow class:
+            - This is Color class from the 3rd party library
+            - Let's say colors from this 3rd party library requires some kind of setup hence we have to call the setUp() method before we use the library
                 - NOTE:
-                    - This can be some kind of methos that we could pass some configurations options such as brightness of the color or whatnot, but in our case will leave it empty and a simple method logging in "Setting up filter"
+                    - This can be some kind of method that we could pass some configurations options such as color brightness or whatnot. In our case we'll leave it simple by logging "Setting up rainbow filter"
 
-            -  Then we will create a method called update() which will be basically a kinda similar method to our apply() method. so the 3rd party calls the method update() while we call the method apply() same functionality. And it applies the Color to the video
-            - This class represents our 3rd party Rainbow color class looks like and currently we cannot use this because it doesn't implement the color interface, so what we can now do is create an adapter class that adapts this rainbow class to use our color interface so it can be used by our VideoEditor class without having to modify the Rainbow class source code(3rd party source code)
+            -  Then we create an update() method which is similar to our apply() method. This means the 3rd party calls will be made by calling update() method while we'll call the apply() method for the same functionality
+
                     public class Rainbow {
 
                         public void setUp() {
@@ -166,17 +170,22 @@ package _04_DesignPatterns.Structural.Adapter;
                         }
                     }
 
+            - This class represents our 3rd party Rainbow color class but we are unable to use it because it doesn't implement our Color interface
+            - We have to create an Adapter class that adapts this Rainbow class to use our color interface so it can be used by our VideoEditor class without having to modify the Rainbow (3rd party) class source code
 
-        - RainbowColor class:
-            - This is one of our own custom color class and not part of the installed package class
-            - It implements our Color interface and Stores a field of type Rainbow, this is composition, i.e RainbowColor class is composed of or has a Rainbow object
-            - We will also create constructor where we will pass the Rainbow object and in our apply() method,  we can interact with our 3rd party Rainbow object - rainbow.setUp() - this is something that the 3rd party Library requires us to do so we can call the update() method and pass the video
-            - In summary we have a RainCOlor class that implements the Color interface and we can now pass our VideoEditor class method applyColor() and use the Rainbow color as we would with any of our own  color classes, so we can now apply the Rainbow color(from the 3rd party library) just like the  other classes
-                    public class RainbowColor_Composition implements Color {
+
+
+        - RainbowColorComposition class:
+            - This is one of our own custom Color class and not part of the 3rd party installed package
+            - It implements our Color interface and Stores a field of type Rainbow (composition) i.e RainbowColorComposition class is composed of or has a Rainbow object
+            - We will also create constructor where we'll pass the Rainbow object
+            - In our apply() method we can interact with our 3rd party Rainbow object by calling rainbow.setUp(). This is something that the 3rd party library requires us to do so we can call the update() method and pass the video
+            - In summary we have a RainbowColorComposition class that implements our Color interface and we can now pass it to our VideoEditor's class applyColor() method then use the 'adapted' RainbowColorComposition as we would with any of our own color classes. i.e We can now apply the RainbowColor (from the 3rd party library) just like we can with our own custom concrete Color classes say BlackAndWhite or Midnight
+                    public class RainbowColorComposition implements Color {
 
                         private Rainbow rainbow;
 
-                        public RainbowColor_Composition(Rainbow rainbow) {
+                        public RainbowColorComposition(Rainbow rainbow) {
                             this.rainbow = rainbow;
                         }
 
@@ -191,8 +200,9 @@ package _04_DesignPatterns.Structural.Adapter;
 
         - Main class: Client class;
             - We are in our Main class to test if we can use our Rainbow color just like other colors we have 
-            - We see if we can apply RainbowCOlor class in which we pass the Rainbow class object
-                - NOTE: RainbowColor class is a wrapper that translates one interface into another and to use any other color from the 3rd party library we can create a new wrapper class or adapter class to make it compatible with VideoEditor class satisfying the OCP
+            - We see if we can apply RainbowColorComposition class in which we pass the Rainbow class object(from our 3rd party)
+            - NOTE:
+                - RainbowColorComposition class is a wrapper that translates one interface into another and to use any other color from the 3rd party library we can create a new wrapper class or adapter class to make it compatible with VideoEditor class satisfying the OCP
 
                     public class Main {
                         public static void main(String[] args) {
@@ -202,19 +212,19 @@ package _04_DesignPatterns.Structural.Adapter;
                             videoEditor.applyColor(new BlackAndWhite());
                             System.out.println();
 
-                            videoEditor.applyColor(new RainbowAdapter_Inheritance());
+                            videoEditor.applyColor(new RainbowColorInheritance());
                             System.out.println();
 
-                            videoEditor.applyColor(new RainbowColor_Composition(new Rainbow()));
+                            videoEditor.applyColor(new RainbowColorComposition(new Rainbow()));
                         }
                     }
 
 
-        - RainbowAdapter class:
-            - We can also use Inheritance to create our Adapter class
+        - RainbowColorInheritance class:
+            - We can also use inheritance to create our Adapter class
             - Here we implement the Color interface and extend the Rainbow class
 
-                    public class RainbowAdapter_Inheritance extends Rainbow implements Color {
+                    public class RainbowColorInheritance extends Rainbow implements Color {
 
                         @Override
                         public void apply(Video video) {
@@ -223,9 +233,9 @@ package _04_DesignPatterns.Structural.Adapter;
                         }
                     }
 
-            - Pay attention to the difference in how we implement the apply() method, under RainbowColor class is composed on Rainbow object we hav eto call the methods on 'the/this' Rainbow object that we passed into RainbowColor whereas under RainbowAdapter we can call the methods directly because there have been  inherited by the Rainbow class we extended from (it has a setUp method and an updaet() method) and we inheriting them so we can just call them directly
+            - Pay attention to the difference in how we implement the apply() method, under RainbowColorComposition class is composed of Rainbow object we have to call the methods [[rainbow.setUp() & rainbow.update(video)]] on this Rainbow object that we passed into RainbowColorComposition whereas under RainbowColorInheritance we can call the methods [[setUp() & update(video)]] directly because we've inherited both Rainbow class and Color interface from which both setUp() and update() methods are implemented already we can just call them directly
 
-            - Both adapters composition and inheritance do the same thing, the problem with inheritance approach is that it's not as flexible as using the composition one because we can only extend one class. Composition on the other has is very flexible
+            - Both adapters (composition & inheritance) do the same thing. The only problem with inheritance is that it's not as flexible as using composition because we're limited to extending only one class
 
  */
 

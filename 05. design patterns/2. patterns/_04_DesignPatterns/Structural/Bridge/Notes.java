@@ -4,8 +4,8 @@ package _04_DesignPatterns.Structural.Bridge;
 
     NOTES:
     - The Bridge Pattern:
-        - Is a structural design pattern that separates obstruction from implementation allowing them to evolve independently
-        - It decouples an obstructions interface from it's implementation allowing changes in one without affecting the other
+        - Is a structural design pattern that separates abstraction from implementation allowing them to evolve independently
+        - It decouples an abstractions interface from it's implementation allowing changes in one without affecting the other
 
 
     - CHALLENGE:

@@ -2,11 +2,11 @@ package _04_DesignPatterns.Structural.Adapter.soln;
 
 import _04_DesignPatterns.Structural.Adapter.soln._3rdPartylibrary.Rainbow;
 
-public class RainbowColor_Composition implements Color {
+public class RainbowColorComposition implements Color {
 
     private Rainbow rainbow;
 
-    public RainbowColor_Composition(Rainbow rainbow) {
+    public RainbowColorComposition(Rainbow rainbow) {
         this.rainbow = rainbow;
     }
 

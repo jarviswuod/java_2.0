@@ -10,9 +10,9 @@ public class Main {
         videoEditor.applyColor(new BlackAndWhite()); // Applying black and white to video
         System.out.println();
 
-        videoEditor.applyColor(new RainbowAdapter_Inheritance()); // Applying rainbow filter to video
+        videoEditor.applyColor(new RainbowColorInheritance()); // Applying rainbow filter to video
         System.out.println();
 
-        videoEditor.applyColor(new RainbowColor_Composition(new Rainbow())); // Applying rainbow filter to video
+        videoEditor.applyColor(new RainbowColorComposition(new Rainbow())); // Applying rainbow filter to video
     }
 }
