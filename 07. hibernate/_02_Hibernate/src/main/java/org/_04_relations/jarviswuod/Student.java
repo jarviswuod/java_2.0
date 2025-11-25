@@ -1,20 +1,27 @@
-package org.jarviswuod;
+package org._04_relations.jarviswuod;
 
 import jakarta.persistence.*;
 
-// @Entity(name="Student_table")
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table(name = "random_student_table")
 public class Student {
 
     @Id
     private String name;
-
-    @Transient
     private String rollNo;
-
-    @Column(name = "student_color")
     private int marks;
+
+    // @OneToOne
+    // private Laptop laptop;
+
+    // @OneToMany(mappedBy = "student")
+    // private List<Laptop> laptops = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "students")
+    private List<Laptop> laptops = new ArrayList<>();
+
 
     public String getName() {
         return name;
@@ -34,6 +41,14 @@ public class Student {
 
     public int getMarks() {
         return marks;
+    }
+
+    public List<Laptop> getLaptops() {
+        return laptops;
+    }
+
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     public void setMarks(int marks) {

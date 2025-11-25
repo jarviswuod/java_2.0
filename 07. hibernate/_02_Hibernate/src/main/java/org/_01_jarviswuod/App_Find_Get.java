@@ -1,4 +1,4 @@
-package org.jarviswuod;
+package org._01_jarviswuod;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

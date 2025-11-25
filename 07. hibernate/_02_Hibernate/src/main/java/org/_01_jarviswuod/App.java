@@ -1,4 +1,4 @@
-package org.jarviswuod;
+package org._01_jarviswuod;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,14 +10,14 @@ public class App {
 
 
         AlienName alienName = new AlienName();
-        alienName.setFirstName("Jarvis");
-        alienName.setMiddleName("Wuod");
-        alienName.setLastName("Ochieng");
+        alienName.setFirstName("Jarvo");
+        alienName.setMiddleName("Dommy");
+        alienName.setLastName("Kakise");
 
         Alien jarvis = new Alien();
-        jarvis.setAid(21);
+        jarvis.setAid(22);
         jarvis.setName(alienName);
-        jarvis.setColor("Yellow");
+        jarvis.setColor("Orange");
 
         Configuration conf = new Configuration().configure().addAnnotatedClass(Alien.class);
         SessionFactory sf = conf.buildSessionFactory();

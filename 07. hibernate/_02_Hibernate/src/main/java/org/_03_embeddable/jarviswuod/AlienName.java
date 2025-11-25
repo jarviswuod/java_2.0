@@ -1,4 +1,4 @@
-package org.jarviswuod;
+package org._03_embeddable.jarviswuod;
 
 import jakarta.persistence.Embeddable;
 

@@ -1,16 +1,22 @@
-package org.jarviswuod;
+package org._01_jarviswuod;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
-public class App_Create {
+public class Embeddable {
     public static void main(String[] args) {
+
+
+        AlienName alienName = new AlienName();
+        alienName.setFirstName("Jarvis");
+        alienName.setMiddleName("Wuod");
+        alienName.setLastName("Ochieng");
 
         Alien jarvis = new Alien();
         jarvis.setAid(21);
-//        jarvis.setName("Jarvo Rebecca");
+        jarvis.setName(alienName);
         jarvis.setColor("Yellow");
 
         Configuration conf = new Configuration().configure().addAnnotatedClass(Alien.class);
