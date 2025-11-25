@@ -1,4 +1,4 @@
-package org._07_CachingLevel_2.jarviswuod.jarviswuod;
+package org._08_CachingQuery_3.jarviswuod;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,8 +16,10 @@ public class App {
         Session session = sf.openSession();
         session.beginTransaction();
 
-        student = session.find(Student.class, 1);
-
+        student = session.createQuery("FROM Student WHERE rollNo = :rollNo", Student.class)
+                .setParameter("rollNo", 1)
+                .setCacheable(true)
+                .uniqueResult();
         session.getTransaction().commit();
         session.close();
 
@@ -28,7 +30,10 @@ public class App {
         Session session2 = sf.openSession();
         session2.beginTransaction();
 
-        student = session2.find(Student.class, 1);
+        student = session2.createQuery("FROM Student WHERE rollNo = :rollNo", Student.class)
+                .setParameter("rollNo", 1)
+                .setCacheable(true)
+                .uniqueResult();
         System.out.println(student);
 
         session2.getTransaction().commit();

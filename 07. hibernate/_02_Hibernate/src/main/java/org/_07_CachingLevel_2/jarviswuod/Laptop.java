@@ -1,12 +1,15 @@
-package org._07_CachingLevel_2.jarviswuod.jarviswuod;
+package org._07_CachingLevel_2.jarviswuod;
 
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
 @Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Laptop {
 
     @Id

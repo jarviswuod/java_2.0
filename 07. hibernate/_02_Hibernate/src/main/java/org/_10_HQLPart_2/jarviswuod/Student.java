@@ -1,21 +1,20 @@
-package org._07_CachingLevel_2.jarviswuod.jarviswuod;
+package org._10_HQLPart_2.jarviswuod;
 
-import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.Cacheable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity
 @Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Student {
 
     @Id
     private int rollNo;
     private String name;
     private int marks;
-
-    @OneToMany(mappedBy = "student")
-    private List<Laptop> laptops = new ArrayList<>();
 
 
     public String getName() {
@@ -36,14 +35,6 @@ public class Student {
 
     public int getMarks() {
         return marks;
-    }
-
-    public List<Laptop> getLaptops() {
-        return laptops;
-    }
-
-    public void setLaptops(List<Laptop> laptops) {
-        this.laptops = laptops;
     }
 
     public void setMarks(int marks) {
