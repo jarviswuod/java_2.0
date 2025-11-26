@@ -5,10 +5,9 @@ package _03_Behavioral;
     NOTES:
     - Strategy Pattern:
         - Is a behavioral design pattern that defines a family of interchangeable algorithm and allows them to be selected and used dynamically at runtime
-        - This also enables algorithms to be encapsulated in separate classes
 
 
-    - 3 Main actors in Strategy;
+    - 3 Main actors in Strategy:
         a. Context:
             - A class that maintains a reference to the strategy object and delegates the algorithms execution to it
 
@@ -21,7 +20,7 @@ package _03_Behavioral;
 
     - Advantages and Disadvantages
         - Advantages:
-            - Flexibility: It enhances adaptability ans flexibility allowing the algorithms to be changes at runtime without modifying the client code
+            - Flexibility: It enhances adaptability and flexibility allowing the algorithms to be changes at runtime without modifying the client code
             - Separation of concerns: It encapsulates the algorithms in separate strategy classes from promoting a clear separation of tasks and simplifying maintenance
             - Open-closed principle: The strategy ensures that the system is open for extensions but closed for modifications adhering to the open-closed principle
 

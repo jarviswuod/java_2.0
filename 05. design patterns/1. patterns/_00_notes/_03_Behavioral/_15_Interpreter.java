@@ -7,7 +7,7 @@ package _03_Behavioral;
         - Is a behavior pattern that provides a way to evaluate sentences or formula/ expression in a language
 
 
-    - 3 Main actors in Interpreter;
+    - 3 Main actors in Interpreter:
         a. Abstract Expression:
             - In an interface that declares and interpret a method sued by concrete expressions to interpret the input
 

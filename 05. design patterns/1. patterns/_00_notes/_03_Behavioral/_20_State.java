@@ -4,11 +4,10 @@ package _03_Behavioral;
 
     NOTES:
     - State Pattern:
-        - Is a behavioral design pattern that allows an object to alter it's behavior when it's internal state changes 
-        - It encapsulates different behaviors as separate state objects allowing the object to move between states while keeping it's interface consistent
+        - Is a behavioral design pattern that allows an object to alter it's behavior when it's internal state changes
 
 
-    - 3  Main actors in State;
+    - 3  Main actors in State:
         a. Context:
             - Is a class that maintains an internal state and contains a reference to the current state object. It delegates request to the current state
 

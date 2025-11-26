@@ -4,9 +4,7 @@ package _03_Behavioral;
 
     NOTES:
     - Visitor Pattern:
-        - Is a behavioral pattern that allows you to add new operation to the existing classes without modifying there structure
-        - It separates the operations from the classes they operate on by encapsulating them in visitor object
-        - This pattern is handy when dealing with a structured hierarchy of classes and multiple operations that need to be performed on those classes 
+        - Is a behavioral pattern that separates algorithms from an object structure on which it operates on
 
 
     - 4 Main actors in Visitor;

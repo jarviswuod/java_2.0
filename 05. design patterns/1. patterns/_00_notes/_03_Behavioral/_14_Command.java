@@ -8,7 +8,7 @@ package _03_Behavioral;
         - This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations
 
 
-    - 4 Main actors in Command;
+    - 4 Main actors in Command:
         a. Command:
             - Defines all the common interface for all concrete command objects. It usually includes an execute*() method
 

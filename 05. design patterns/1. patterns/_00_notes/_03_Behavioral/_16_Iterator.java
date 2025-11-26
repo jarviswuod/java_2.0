@@ -4,10 +4,10 @@ package _03_Behavioral;
 
     NOTES:
     - Iterator Pattern:
-        - Is a behavioral pattern that provides a way of iterating over an object without exposing the object's internal structure plus changing the object's internals should not affect it's consumers
+        - Is a behavioral pattern that provides a way of iterating over an object without exposing the object's internal structure plus changing the object's internals does not affect it's consumers
 
 
-    - 4 Main actors in Iterator;
+    - 4 Main actors in Iterator:
         a. Iterator:
             - Is an interface that defines the methods for traversing a collections including operations like next() and hasNext()
 
