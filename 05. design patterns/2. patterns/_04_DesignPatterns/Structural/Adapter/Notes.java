@@ -13,9 +13,9 @@ package _04_DesignPatterns.Structural.Adapter;
         - Say we have a video editing application that allows users to upload a video and change the color of the video. The application provides preset color options for the user to select, such as black and white or midnight purple
 
                     ____________________                ____________________
-                    |  Original video  |  Black and     |   Edited video   |
-                    |  with multiple   |--------------> |    in black &    |
-                    |    colors        |     white      |      white       |
+                    |  Original video  |   Black and    |   Edited video   |
+                    |   with multiple  |--------------> |    in black &    |
+                    |      colors      |      white     |      white       |
                     |__________________|                |__________________|
 
         - The classes that change the color of the application are built by us and implement a Color interface

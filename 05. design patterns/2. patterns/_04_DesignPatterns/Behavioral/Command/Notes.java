@@ -29,7 +29,7 @@ package _04_DesignPatterns.Behavioral.Command;
 
 
 
-    - SOLUTION 2: Using the Command Pattern;
+    - SOLUTION 2: Using the Command Pattern:
         - Using the Command pattern we decouple RemoteControl class(sender) from Light class(receiver). Then, to add new functionality such as dimming the light, we just extend our codebase by adding a new DimCommand class without having to modify RemoteControl class
         - The concrete command classes TurnOn and TurnOff implement Command and store a reference to Light. The RemoteControl is composed of Command
 
@@ -43,13 +43,13 @@ package _04_DesignPatterns.Behavioral.Command;
                                            _________|__________
                                            |                  |
                                            V                  V
-                _____________          _____________     _____________
-                | Light     |          | TurnOn    |     | TurnOff   |
-                |___________|<--|      |___________|     |___________|
-                | turnOn()  |   |      | light     |     | light     |
-                | turnOff() |   |      |___________|     |___________|
-                | dim()     |   |      | execute() |     | execute() |
-                |___________|   |      |___________|     |___________|
+                _____________         _____________      _____________
+                | Light     |         | TurnOn    |      | TurnOff   |
+                |___________|<--|     |___________|      |___________|
+                | turnOn()  |   |     | light     |      | light     |
+                | turnOff() |   |     |___________|      |___________|
+                | dim()     |   |     | execute() |      | execute() |
+                |___________|   |     |___________|      |___________|
                                 |___________|__________________|
 
 

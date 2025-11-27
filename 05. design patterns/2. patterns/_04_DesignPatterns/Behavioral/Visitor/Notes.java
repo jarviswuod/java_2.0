@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
     NOTES:
     - Visitor pattern:
-        - It separates the algorithms/behaviours from an object structure on which it operates on
+        - Is a behavioral pattern that separates algorithms from an object structure on which it operates on
 
 
     - CHALLENGE:
@@ -23,15 +23,15 @@ package _04_DesignPatterns.Behavioral.Visitor;
     - SOLUTION 1:
         - It seems a good idea to add an abstract method sendEmail(), to Client then implement that method in each concrete client
 
-                _____________________           _____________________
-                |  Client           |           |  RetailClient     |
-                |___________________|<----------|___________________|-|
-                |  name()           |           |  sendEmail()      | |-|
-                |  email()          |           |  getEmail()       | |-|
-                |___________________|           |___________________| | |
-                |  sendEmail()      |             |___________________| |
-                |  getEmail()       |               |___________________|
-                |___________________|
+                ________________           ________________
+                | Client       |           | RetailClient |
+                |______________|<----------|______________|-|
+                | name()       |           | sendEmail()  | |-|
+                | email()      |           | getEmail()   | |-|
+                |______________|           |______________| | |
+                | sendEmail()  |             |______________| |
+                | getEmail()   |               |______________|
+                |______________|
 
 
         - This appears to be a nice elegant solution, but the manager comes back and says that they need a way to export clients as PDFs and XML. You realize that your mananger is going to keep coming to you asking more and more features for clients
@@ -51,25 +51,25 @@ package _04_DesignPatterns.Behavioral.Visitor;
         - The Visitor Pattern separates algorithms or behaviours from the objects on which they operate on hence a good solution for our problem
         - To solve for challenges in SOLUTION 1, we need to extract behaviours outside of the client classes on which they operate
 
-                ____________________                   _______________________________
-                | Client           |                   | Visitor                     |
-                |__________________|-----------------> |_____________________________|
-                | name()           |                   | visitLaw(Law)               |
-                | email()          |                   | visitRestaurant(Restaurant) |
-                |__________________|                   | visitRetail(Retail)         |
-                | sendEmail()      |                   |_____________________________|
-                | accept(Visitor)  |                           ^
-                |__________________|                           |
-                        ^                                      |
-                        |                             _______________________________
-                        |                             | EmailVisitor                |
-                ____________________                  |_____________________________|-|
-                | RetailClient     |                  | visitLaw(Law)               | |-|
-                |__________________|-|                | visitRestaurant(Restaurant) | | |
-                | accept(Visitor)  | |-|              | visitRetail(Retail)         | | |
-                |__________________| | |              |_____________________________| | |
-                  |__________________| |                |_____________________________| |
-                    |__________________|                  |_____________________________|
+                ___________________                _______________________________
+                | Client          |                | Visitor                     |
+                |_________________|--------------> |_____________________________|
+                | name()          |                | visitLaw(Law)               |
+                | email()         |                | visitRestaurant(Restaurant) |
+                |_________________|                | visitRetail(Retail)         |
+                | sendEmail()     |                |_____________________________|
+                | accept(Visitor) |                               ^
+                |_________________|                               |
+                        ^                                         |
+                        |                          _______________________________
+                        |                          | EmailVisitor                |
+                ___________________                |_____________________________|-|
+                | RetailClient    |                | visitLaw(Law)               | |-|
+                |_________________|-|              | visitRestaurant(Restaurant) | | |
+                | accept(Visitor) | |-|            | visitRetail(Retail)         | | |
+                |_________________| | |            |_____________________________| | |
+                  |_________________| |              |_____________________________| |
+                    |_________________|                |_____________________________|
 
 
         - The behaviors have been abstracted into the ConcreteVisitor classes, which can be passed to the objects that they operate on
@@ -78,23 +78,23 @@ package _04_DesignPatterns.Behavioral.Visitor;
 
     - VISITOR PATTERN UML: From GoF book:
 
-                ____________________                 ____________________________
-                | Element          |                 | Visitor                  |
-                |__________________|---------------> |__________________________|
-                | accept(Visitor)  |                 | visitA(ConcreteElementA) |
-                |__________________|                 | visitB(ConcreteElementB) |
-                        ^                            |__________________________|
-                        |                                        ^
-                        |                                        |
-                ____________________                             |
-                | ConcreteElementA |                  ____________________________
-                |__________________|-|                | ConcreteVisitorA         |
-                | accept(Visitor)  | |-|              |__________________________|-|
-                |__________________| | |              | visitA(ConcreteElementA) | |-|
-                  |__________________| |              | visitB(ConcreteElementB) | | |
-                    |__________________|              |__________________________| | |
-                                                        |__________________________| |
-                                                          |__________________________|
+                ___________________                 ____________________________
+                | Element         |                 | Visitor                  |
+                |_________________|---------------> |__________________________|
+                | accept(Visitor) |                 | visitA(ConcreteElementA) |
+                |_________________|                 | visitB(ConcreteElementB) |
+                         ^                          |__________________________|
+                         |                                      ^
+                         |                                      |
+                ____________________                            |
+                | ConcreteElementA |                 ____________________________
+                |__________________|-|               | ConcreteVisitorA         |
+                | accept(Visitor)  | |-|             |__________________________|-|
+                |__________________| | |             | visitA(ConcreteElementA) | |-|
+                  |__________________| |             | visitB(ConcreteElementB) | | |
+                    |__________________|             |__________________________| | |
+                                                       |__________________________| |
+                                                         |__________________________|
 
         - Note:
             - The design patterns are not super rigid; Example;

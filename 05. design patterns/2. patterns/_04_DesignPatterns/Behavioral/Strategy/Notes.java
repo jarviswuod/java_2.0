@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral.Strategy;
 
     NOTES:
     - Strategy Pattern:
-      - Is a behavioral pattern used to pass different algorithms or behaviours to an object
+      - Is a behavioral design pattern that defines a family of interchangeable algorithm and allows them to be selected and used dynamically at runtime
 
 
     - CHALLENGE:
@@ -21,44 +21,44 @@ package _04_DesignPatterns.Behavioral.Strategy;
         - This is polymorphism:
             - VideoStorage can accept many different forms of Compressor and Overlay objects. VideoStorage is composed of Compressor and Overlay objects with multiple concrete implementations that extend them
 
-            ________________            _______________
-            | VideoStorage |            | Compressor  |
-            |______________|<>--------->|_____________|
-            | compressor() |            | compress(): |
-            | overlay()    |            |_____________|
-            |______________|                   ^
-            | store():     |                   |
-            |______________|                   |
-                                        _________________
-                                        | CompressorMP4 |
-                                        |_______________|-|
-                                        | - context     | |-|
-                                        |_______________| | |
-                                        | + doThis():   | | |
-                                        | + doThat():   | | |
-                                        |_______________| | |
-                                          |_______________| |
-                                            |_______________|
+                ________________            _______________
+                | VideoStorage |            | Compressor  |
+                |______________|<>--------->|_____________|
+                | compressor() |            | compress(): |
+                | overlay()    |            |_____________|
+                |______________|                   ^
+                | store():     |                   |
+                |______________|                   |
+                                            _________________
+                                            | CompressorMP4 |
+                                            |_______________|-|
+                                            | - context     | |-|
+                                            |_______________| | |
+                                            | + doThis():   | | |
+                                            | + doThat():   | | |
+                                            |_______________| | |
+                                              |_______________| |
+                                                |_______________|
 
 
-            ________________            _________________
-            | VideoStorage |            |  Overlay      |
-            |______________|<>--------->|_______________|
-            | compressor   |            |  compress():  |
-            | overlay()    |            |_______________|
-            |______________|                   ^
-            | store():     |                   |
-            |______________|                   |
-                                        _________________
-                                        |  OverlayBlur  |
-                                        |_______________|-|
-                                        |  - context    | |-|
-                                        |_______________| | |
-                                        |  + doThis():  | | |
-                                        |  + doThat():  | | |
-                                        |_______________| | |
-                                          |_______________| |
-                                            |_______________|
+                ________________            _________________
+                | VideoStorage |            |  Overlay      |
+                |______________|<>--------->|_______________|
+                | compressor   |            |  compress():  |
+                | overlay()    |            |_______________|
+                |______________|                   ^
+                | store():     |                   |
+                |______________|                   |
+                                            _________________
+                                            |  OverlayBlur  |
+                                            |_______________|-|
+                                            |  - context    | |-|
+                                            |_______________| | |
+                                            |  + doThis():  | | |
+                                            |  + doThat():  | | |
+                                            |_______________| | |
+                                              |_______________| |
+                                                |_______________|
 
 
 

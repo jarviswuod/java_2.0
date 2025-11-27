@@ -4,7 +4,8 @@ package _04_DesignPatterns.Behavioral.Mediator;
 
     NOTES:
     - Mediator Pattern:
-        - It defines an object (the mediator) that describes how a set of objects interact with each other therefore reducing lots of chaotic dependencies between those objects
+        - Is a behavioral design pattern that facilitates communication between different objects without them necessarily being aware of each other
+        - The interaction is handled by a central point, the mediator
 
 
     - CHALLENGE:
@@ -71,20 +72,20 @@ package _04_DesignPatterns.Behavioral.Mediator;
         - Solutions:
             - One solution would be to use inheritance
 
-                _______________         _______________         _______________
-                | ListBox     |         | TextBox     |         | Button      |
-                |_____________|         |_____________|         |_____________|
-                |             |         |             |         |             |
-                |_____________|         |_____________|         |_____________|
-                      ^                       ^                        ^ 
-                      |                       |                        |               UI Framework
-            ----------|-----------------------|------------------------|-----------------------
-                      |                       |                        |               Our Classes
-                _______________         _______________         _______________
-                | PostListBox |         | TitleListBox|         | SaveButton  |
-                |_____________|         |_____________|         |_____________|
-                |             |         |             |         |             |
-                |_____________|         |_____________|         |_____________|
+                    _______________         _______________         _______________
+                    | ListBox     |         | TextBox     |         | Button      |
+                    |_____________|         |_____________|         |_____________|
+                    |             |         |             |         |             |
+                    |_____________|         |_____________|         |_____________|
+                          ^                       ^                        ^ 
+                          |                       |                        |          UI Framework
+           ---------------|-----------------------|------------------------|------------------
+                          |                       |                        |          Our Classes
+                    _______________         _______________         _______________
+                    | PostListBox |         | TitleListBox|         | SaveButton  |
+                    |_____________|         |_____________|         |_____________|
+                    |             |         |             |         |             |
+                    |_____________|         |_____________|         |_____________|
 
 
             - Then they could talk to each other, like so:
@@ -124,39 +125,39 @@ package _04_DesignPatterns.Behavioral.Mediator;
                 |_____________|           |       |             |_____________|
                                           |       | 
                                           v       v
-                                    _______________________
-                       |----------> | DialogBox           |<--------------|
-                       |            |_____________________|               |
-                       |            | changed(UIControl)  |               |
-                       |            |_____________________|               |
-                       |                                                  |
-                ______________________                               _______________
-                | PostDialogBox      |                               | Button      |
-                |____________________|                               |_____________|
-                | changed(UIControl) |                               |             |
-                |____________________|                               |_____________|
+                                    ______________________
+                       |----------> | DialogBox          |<--------------|
+                       |            |____________________|               |
+                       |            | changed(UIControl) |               |
+                       |            |____________________|               |
+                       |                                                 |
+                ______________________                             _______________
+                | PostDialogBox      |                             | Button      |
+                |____________________|                             |_____________|
+                | changed(UIControl) |                             |             |
+                |____________________|                             |_____________|
 
             - Whenever a UI component changes, it notifies it's owner, the DialogBox. This is done by calling the changed(UIControl) method and passing itself as argument. This then handles updating other components
 
 
 
     - MEMENTO PATTERN UML: From GoF book:
-                _______________                     _______________
-                | Mediator    |<--------------------| Collegue    |
-                |_____________|                     |_____________|
-                |             |                     |             |
-                |_____________|                     |_____________|
-                       ^                                  ^
-                       |                                  |
-                       |                                  |
-                       |                                  |
-                ______________________               ______________________
-                | ConcreteMediator   |               | ConcreteCollegue   |  
-                |____________________|-------------->|____________________|-|
-                |                    |               |                    | |-|
-                |____________________|               |____________________| | |
-                                                       |____________________| |
-                                                          |___________________|
+                    _______________                     _______________
+                    | Mediator    |<--------------------| Collegue    |
+                    |_____________|                     |_____________|
+                    |             |                     |             |
+                    |_____________|                     |_____________|
+                           ^                                  ^
+                           |                                  |
+                           |                                  |
+                           |                                  |
+                  ____________________               ____________________
+                  | ConcreteMediator |               | ConcreteCollegue |  
+                  |__________________|-------------->|__________________|-|
+                  |                  |               |                  | |-|
+                  |__________________|               |__________________| | |
+                                                       |__________________| |
+                                                          |_________________|
 
         - Here are the abstract names for our previous post-title-editing app:
             - Mediator = DialogueBox
@@ -188,42 +189,41 @@ package _04_DesignPatterns.Behavioral.Mediator;
         - To solve for this, we can implement the Mediator pattern using the Observer Pattern
             - The subject notifies the Observer when any changes happens
 
-                ___________________            _______________
-                | Subject         |            |  Observer   |
-                |_________________|<>--------->|_____________|
-                | attach(obj):    |            |  update()   |
-                | detatch(obj):   |            |_____________|
+                ___________________             _______________
+                | Subject         |             |  Observer   |
+                |_________________|<>---------->|_____________|
+                | attach(obj):    |             |  update()   |
+                | detatch(obj):   |             |_____________|
                 | notify():       |                    ^
                 |_________________|                    |
                         ^                              |
-                        |                      _____________________
-                        |                      |  ConcreteObserver |
-                        |                      |___________________|-|
-                ___________________            |  update()         | |-|
-                | ConcreteSubject |            |___________________| | |
-                |_________________|              |___________________| |
-                |                 |                |___________________|
-                |_________________|
+                        |                      ____________________
+                        |                      | ConcreteObserver |
+                ___________________            |__________________|-|
+                | ConcreteSubject |            | update()         | |-|
+                |_________________|            |__________________| | |
+                |                 |              |__________________| |
+                |_________________|                |__________________|
 
 
         - Below, the UI controls are the subjects, and the PostDialogBox is the observer. When a UI control changes, PostDialogBox gets notified
 
-                ______________________                    ______________________
-                | TitleBox           |----|       |-------| TextBox            |
-                |____________________|    |       |       |____________________|
-                | attach(observer)   |    |       |       | attach(observer)   |
-                |____________________|    |       |       |____________________|
+                  ____________________                    ____________________
+                  | TitleBox         |----|       |-------| TextBox          |
+                  |__________________|    |       |       |__________________|
+                  | attach(observer) |    |       |       | attach(observer) |
+                  |__________________|    |       |       |__________________|
                                           v       v
-                                    _______________________
-                       |----------> | PostsDialogBox      |
-                       |            |_____________________|
-                       |            | changed(UIControl)  |
-                       |            |_____________________|
-                ______________________
-                | Button             |
-                |____________________|
-                | attach(observer)   |
-                |____________________|
+                                   ______________________
+                         |-------> | PostsDialogBox     |
+                         |         |____________________|
+                         |         | changed(UIControl) |
+                         |         |____________________|
+                ____________________
+                | Button           |
+                |__________________|
+                | attach(observer) |
+                |__________________|
 
  */
 

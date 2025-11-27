@@ -4,9 +4,10 @@ package _04_DesignPatterns.Behavioral.Momento;
 
     NOTES:
     - Momento Design Pattern:
-        - Is used to restore an object to a previous state
-            - Example:
-                - Implementing an undo feature used in most text editors, such as Microsoft(MS) word
+        - Is a behavioral design pattern that captures and externalizes the internal state of an object without breaking it's encapsulation
+        - It allows you to save and restore state of an object providing the ability to undo or rollback changes and also save history of the state
+        - Example:
+            - Implementing an undo feature used in most text editors, such as Microsoft(MS) word
 
 
     - CHALLENGE:

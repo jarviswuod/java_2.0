@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral.State;
 
     NOTES:
     - State pattern:
-      - Allows an object to behave differently depending on the state it is in
+      - Is a behavioral design pattern that allows an object to change it's behavior when it's internal state changes 
 
 
     - CHALLENGE:
@@ -24,23 +24,23 @@ package _04_DesignPatterns.Behavioral.State;
         - Intro:
             - The State Pattern suggests that we should create state classes for each possible state of the Document object then have state-specific logic into the classes(Draft, Moderation, Published)
 
-                ____________________       ____________________
-                | Document         |       |  State           |
-                |__________________|<>---->|__________________|
-                | state: State     |       |  publish():      |
-                | currentUserRole  |       |__________________|
+                ____________________       _________________
+                | Document         |       | State         |
+                |__________________|<>---->|_______________|
+                | state: State     |       | publish():    |
+                | currentUserRole  |       |_______________|
                 |__________________|                ^
                 | publish():       |                |
                 |__________________|                |
-                                           ____________________
-                                           |  Draft           |
-                                           |__________________|-|
-                                           |  doc: Document   | |-|
-                                           |__________________| | |
-                                           |  publish():      | | |
-                                           |__________________| | |
-                                             |__________________| |
-                                               |__________________|
+                                             _________________
+                                             | Draft         |
+                                             |_______________|-|
+                                             | doc: Document | |-|
+                                             |_______________| | |
+                                             | publish():    | | |
+                                             |_______________| | |
+                                               |_______________| |
+                                                 |_______________|
 
 
             - Document class keeps reference to (is composed of) a State object. Notice that we are using polymorphism as the 'state' field can be any of the concrete state classes (Draft, Moderation, Published). We are coding against an interface not a concrete class
@@ -53,26 +53,26 @@ package _04_DesignPatterns.Behavioral.State;
 
     - STATE PATTERN UML: From GoF book:
 
-                ___________________            ___________________
-                |  Context        |            |  State          |
-                |_________________|<>--------->|_________________|
-                |  - state: State |            |  doThis():      |
-                |_________________|            |  doThat():      |
-                |  + context()    |            |_________________|
-                |  + setState():  |                   ^
-                |  + doThis():    |                   |
-                |  + doThat():    |                   |
-                |_________________|       ____________________________
-                                          |  ConcreteStates          |
-                                          |__________________________|-|
-                                          |  - context: Context      | |-|
-                                          |__________________________| | |
-                                          |  + setContext(context):  | | |
-                                          |  + doThis():             | | |
-                                          |  + doThat():             | | |
-                                          |__________________________| | |
-                                            |__________________________| |
-                                              |__________________________|
+                __________________           ___________________
+                | Context        |           |  State          |
+                |________________|<>-------->|_________________|
+                | - state: State |           |  doThis():      |
+                |________________|           |  doThat():      |
+                | + context()    |           |_________________|
+                | + setState():  |                   ^
+                | + doThis():    |                   |
+                | + doThat():    |                   |
+                |________________|        __________________________
+                                          | ConcreteStates         |
+                                          |________________________|-|
+                                          | - context: Context     | |-|
+                                          |________________________| | |
+                                          | + setContext(context): | | |
+                                          | + doThis():            | | |
+                                          | + doThat():            | | |
+                                          |________________________| | |
+                                            |________________________| |
+                                              |________________________|
 
 
     - WHEN TO USE A STATE PATTERN:

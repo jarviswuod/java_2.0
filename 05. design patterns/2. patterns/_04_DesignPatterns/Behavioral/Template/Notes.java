@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral.Template;
 
     NOTES:
     - Template pattern:
-        - Is a behavioral pattern that allows you to define a template method or skeleton for an operation with specific steps implemented in subclasses
+        - Is a behavioral pattern that allows you to define a template method or skeleton for an algorithm with specific steps implemented in subclasses
 
 
     - CHALLENGE:
@@ -17,8 +17,8 @@ package _04_DesignPatterns.Behavioral.Template;
             |________________|       |________________|       |________________|
 
             - makeBeverage():
-                - boilwater()       // same for all beverages
-                - pourIntoCup()     // same for all beverages
+                - boilwater()       // Same for all beverages
+                - pourIntoCup()     // Same for all beverages
                 - brew()            // Differs
                 - addcondiments()   // Differs
 
@@ -33,28 +33,29 @@ package _04_DesignPatterns.Behavioral.Template;
             - Polymorphism
             - Inheritance
 
-                _____________________            ______________
-                | BeverageMaker     |            | Beverage   |
-                |___________________|<>--------->|____________|
-                | prepareBeverage() |            | prepare(): |
-                |___________________|            |____________|
-                                                        ^
-                                                        |
-                                                        |
-                                                 ______________
-                                                 | Tea        |
-                                                 |____________|-|
-                                                 | prepare(): | |
-                                                 |____________| |
-                                                   |____________|
+                _____________________          ______________
+                | BeverageMaker     |          | Beverage   |
+                |___________________|<>------->|____________|
+                | prepareBeverage() |          | prepare(): |
+                |___________________|          |____________|
+                                                      ^
+                                                      |
+                                                      |
+                                                ______________
+                                                | Tea        |
+                                                |____________|-|
+                                                | prepare(): | |-|
+                                                |____________| | |
+                                                  |____________| |
+                                                    |____________|
 
                 - prepareBeverage():
-                    - boilingWater()    // commom
-                    - pourIntoCup()     // common
+                    - boilingWater()    // Common
+                    - pourIntoCup()     // Common
                     - beveragePrepare() // Unique
 
 
-        - We provided a commom Beverage interface to force all beverages to follow a specific structure
+        - We provided a common Beverage interface to force all beverages to follow a specific structure
         - We then have a BeverageMaker class that manages preparing different beverages
             - This class includes common operations for making all beverages, such as boiling water and pouring it into a cup, and also calls the specific operations to each delegated Beverage
             - Now when create a new beverage, we only have to include code unique to that beverage

@@ -13,6 +13,9 @@ public class Main {
         videoEditor.applyColor(new RainbowColorInheritance()); // Applying rainbow filter to video
         System.out.println();
 
+        videoEditor.applyColor(new Midnight()); // Applying Midnight-purple to the video
+        System.out.println();
+
         videoEditor.applyColor(new RainbowColorComposition(new Rainbow())); // Applying rainbow filter to video
     }
 }

@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral.Iterator;
 
     NOTES:
     - Iterator Pattern:
-        - Is a behavioral pattern that provides a way of iterating over an object without exposing the object's internal structure plus changing the object's internals should not affect it's consumers
+        - Is a behavioral pattern that provides a way of iterating over an object without exposing the object's internal structure plus changing the object's internals does not affect it's consumers
 
 
     - CHALLENGE:
@@ -70,13 +70,13 @@ package _04_DesignPatterns.Behavioral.Iterator;
                     |__________________|          |__________________|
                                                           ^
                                                           |
-                                            ______________|__________________
-                                            |                               |
-                                    ________|___________       _____________|______
-                                    | ListIterator     |       | ArrayIterator    |
-                                    |__________________|       |__________________|
-                                    |                  |       |                  |
-                                    |__________________|       |__________________|
+                                            ______________|______________
+                                            |                           |
+                                    ________|_________       _________|__________
+                                    | ListIterator   |       | ArrayIterator    |
+                                    |________________|       |__________________|
+                                    |                |       |                  |
+                                    |________________|       |__________________|
 
 
                 NOTE:

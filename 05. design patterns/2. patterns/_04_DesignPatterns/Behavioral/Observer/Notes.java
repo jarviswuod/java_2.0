@@ -4,7 +4,7 @@ package _04_DesignPatterns.Behavioral.Observer;
 
     NOTES:
     - Observer Pattern:
-        - It involves an object know as the subject that maintains a list of it's dependent object called observers, and notifying them automatically of any state changes
+        - Is a behavior pattern that defines a one to many relationship between objects where changes in one object are automatically communicated to and reflected in other objects
 
 
     - CHALLENGE:
@@ -88,21 +88,21 @@ package _04_DesignPatterns.Behavioral.Observer;
     - OBSERVER PATTERN UML: From GoF book:
         - The Observer Pattern is AKA the publisher and subscriber pattern: The Subject(publisher) publishes change in it's state and the subscribers(observers) subscriber to those events
 
-                ___________________            ______________
-                | Subject         |            | Observer   |
-                |_________________|<>--------->|____________|
-                | attach(obj):    |            | update()   |
-                | detatch(obj):   |            |____________|
-                | notify():       |                   ^
-                |_________________|                   |
-                           ^                          |
-                           |                   ____________________
-                           |                   | ConcreteObserver |
-                ___________________            |__________________|-|
-                | ConcreteSubject |            | update()         | |-|
-                |_________________|            |__________________| | |
-                |                 |              |__________________| |
-                |_________________|                |__________________|
+                    __________________            ______________
+                    | Subject        |            | Observer   |
+                    |________________|<>--------->|____________|
+                    | attach(obj):   |            | update()   |
+                    | detatch(obj):  |            |____________|
+                    | notify():      |                   ^
+                    |________________|                   |
+                            ^                            |
+                            |                    ____________________
+                            |                    | ConcreteObserver |
+                    ___________________          |__________________|-|
+                    | ConcreteSubject |          | update()         | |-|
+                    |_________________|          |__________________| | |
+                    |                 |            |__________________| |
+                    |_________________|              |__________________|
 
 
 
@@ -113,19 +113,19 @@ package _04_DesignPatterns.Behavioral.Observer;
                     - Value is "published" to observer
                     - For flexiliblty 'value' could be any 'Object' or generic type
 
-                ____________________            ______________
-                | Subject          |            | Observer   |
-                |__________________|<>--------->|____________|
-                |                  |            | update()   |
-                |__________________|            |____________|
-                        ^                          ^
-                        |                          |
-                        |                          |
-                ____________________            ____________________
-                | ConcreteSubject  |            | ConcreteObserver |
-                |__________________|            |__________________|
-                |                  |            | update()         |
-                |__________________|            |__________________|
+                        ____________________         ______________
+                        | Subject          |         | Observer   |
+                        |__________________|<>------>|____________|
+                        |                  |         | update()   |
+                        |__________________|         |____________|
+                                ^                          ^
+                                |                          |
+                                |                          |
+                        ____________________       ____________________
+                        | ConcreteSubject  |       | ConcreteObserver |
+                        |__________________|       |__________________|
+                        |                  |       | update()         |
+                        |__________________|       |__________________|
 
 
             - The push style has the advantage that the Concrete observer doesn't depend on (has no knowledge or 'coupling' to) the concrete subject
@@ -140,19 +140,19 @@ package _04_DesignPatterns.Behavioral.Observer;
             - NOTES:
                 - Value is 'pulled' from concrete subject
 
-                ___________________            _____________
-                | Subject         |            | Observer  |
-                |_________________|<>--------->|___________|
-                |                 |            | update()  |
-                |_________________|            |___________|
-                        ^                           ^
-                        |                           |
-                        |                           |
-                ___________________            ____________________
-                | ConcreteSubject |            | ConcreteObserver |
-                |_________________|<---------<>|__________________|
-                | getValue()      |            |                  |
-                |_________________|            |__________________|
+                        ___________________           _____________
+                        | Subject         |           | Observer  |
+                        |_________________|<>-------->|___________|
+                        |                 |           | update()  |
+                        |_________________|           |___________|
+                                ^                           ^
+                                |                           |
+                                |                           |
+                        ___________________         ____________________
+                        | ConcreteSubject |         | ConcreteObserver |
+                        |_________________|<------<>|__________________|
+                        | getValue()      |         |                  |
+                        |_________________|         |__________________|
 
 
             - The concrete observer stores a reference to the concrete subject. We give concrete subject a getValue() method, so a concrete observer can get the data it needs. This gives more fleibility; however, we have coupling between the concrete classes. But this is not a bad type of coupling
