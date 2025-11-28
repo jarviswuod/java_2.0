@@ -354,8 +354,15 @@
                     - Website entrace -> validation ... logging
 
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             Structural design pattern:
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////
             - Proxy
                 - Is a structural pattern that provides an object to control access to another object
                 - Key players
@@ -394,11 +401,11 @@
                     - Component interface
                     - Concrete Component
                 - Example:
-                    - Data storage: Encryption, Compression, Validation
+                    - Cloud Data storage: Encryption, Compression, Validation
 
 
             - Composite
-                - Is a structural pattern that enables you to creation of tree-like structure to represent collections of objects where both individual objects and groups of objects are treated  in a unified manner
+                - Is a structural pattern that enables creation of tree-like structure to represent collections of objects where both individual objects and groups of objects are treated  in a unified manner
                 - Key players
                     - Component
                     - Leaf
@@ -414,7 +421,7 @@
                     - Implementation
                     - Concrete Implementation
                 - Example:
-                    - Remote Control and Electronic device
+                    - Remote Control and Light Bulb
 
 
             - Adapter
@@ -425,7 +432,6 @@
                     - Adapter
                 - Example:
                     - 3rd party color library to video editor
-
 
 */
 
