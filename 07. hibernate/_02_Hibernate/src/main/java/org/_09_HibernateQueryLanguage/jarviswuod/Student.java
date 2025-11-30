@@ -3,12 +3,8 @@ package org._09_HibernateQueryLanguage.jarviswuod;
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Cacheable
@@ -19,7 +15,6 @@ public class Student {
     private int rollNo;
     private String name;
     private int marks;
-
 
     public String getName() {
         return name;
@@ -47,10 +42,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "rollNo=" + rollNo +
-                ", name='" + name + '\'' +
-                ", marks=" + marks +
-                '}';
+        return "Student [rollNo=" + rollNo + ", name=" + name + ", marks=" + marks + "]";
     }
 }

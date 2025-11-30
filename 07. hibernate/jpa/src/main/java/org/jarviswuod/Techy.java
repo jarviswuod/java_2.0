@@ -37,10 +37,6 @@ public class Techy {
 
     @Override
     public String toString() {
-        return "Techy{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", tech='" + tech + '\'' +
-                '}';
+        return "Techy [id=" + id + ", name=" + name + ", tech=" + tech + "]";
     }
 }

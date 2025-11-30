@@ -22,7 +22,6 @@ public class Student {
     @ManyToMany(mappedBy = "students")
     private List<Laptop> laptops = new ArrayList<>();
 
-
     public String getName() {
         return name;
     }

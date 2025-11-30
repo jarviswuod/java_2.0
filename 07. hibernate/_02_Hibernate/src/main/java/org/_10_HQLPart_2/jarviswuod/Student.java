@@ -16,7 +16,6 @@ public class Student {
     private String name;
     private int marks;
 
-
     public String getName() {
         return name;
     }
@@ -43,10 +42,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "rollNo=" + rollNo +
-                ", name='" + name + '\'' +
-                ", marks=" + marks +
-                '}';
+        return "Student [rollNo=" + rollNo + ", name=" + name + ", marks=" + marks + "]";
     }
+
 }

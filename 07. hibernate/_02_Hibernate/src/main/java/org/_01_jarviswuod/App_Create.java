@@ -4,13 +4,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-
 public class App_Create {
     public static void main(String[] args) {
 
         Alien jarvis = new Alien();
         jarvis.setAid(21);
-//        jarvis.setName("Jarvo Rebecca");
+        // jarvis.setName("Jarvo Rebecca");
         jarvis.setColor("Yellow");
 
         Configuration conf = new Configuration().configure().addAnnotatedClass(Alien.class);
@@ -18,7 +17,7 @@ public class App_Create {
         Session session = sf.openSession();
 
         session.beginTransaction();
-        session.persist(jarvis);   // instead of save()
+        session.persist(jarvis); // instead of save()
         session.getTransaction().commit();
 
         session.close();

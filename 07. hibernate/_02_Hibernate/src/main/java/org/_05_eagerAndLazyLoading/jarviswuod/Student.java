@@ -20,7 +20,6 @@ public class Student {
     @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
     private List<Laptop> laptops = new ArrayList<>();
 
-
     public String getName() {
         return name;
     }

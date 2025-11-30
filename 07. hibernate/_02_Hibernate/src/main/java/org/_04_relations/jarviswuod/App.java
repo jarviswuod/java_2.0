@@ -4,10 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-
 public class App {
     public static void main(String[] args) {
-
 
         Laptop laptop = new Laptop();
         laptop.setName("Macbook Pro");
@@ -26,8 +24,8 @@ public class App {
         laptop.getStudents().add(student);
         laptop2.getStudents().add(student);
 
-
-        Configuration conf = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
+        Configuration conf = new Configuration().configure().addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Laptop.class);
         SessionFactory sf = conf.buildSessionFactory();
         Session session = sf.openSession();
 

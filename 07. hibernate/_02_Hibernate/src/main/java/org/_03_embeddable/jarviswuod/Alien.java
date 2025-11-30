@@ -37,10 +37,6 @@ public class Alien {
 
     @Override
     public String toString() {
-        return "Alien{" +
-                "aid=" + aid +
-                ", alienName=" + alienName +
-                ", color='" + color + '\'' +
-                '}';
+        return "Alien [aid=" + aid + ", alienName=" + alienName + ", color=" + color + "]";
     }
 }

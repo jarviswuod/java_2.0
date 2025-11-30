@@ -23,7 +23,6 @@ public class Student {
     @OneToMany(mappedBy = "student")
     private List<Laptop> laptops = new ArrayList<>();
 
-
     public String getName() {
         return name;
     }
@@ -58,10 +57,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "rollNo=" + rollNo +
-                ", name='" + name + '\'' +
-                ", marks=" + marks +
-                '}';
+        return "Student [rollNo=" + rollNo + ", name=" + name + ", marks=" + marks + "]";
     }
 }

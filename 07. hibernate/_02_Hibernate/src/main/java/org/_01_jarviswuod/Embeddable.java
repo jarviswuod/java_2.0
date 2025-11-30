@@ -4,10 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-
 public class Embeddable {
     public static void main(String[] args) {
-
 
         AlienName alienName = new AlienName();
         alienName.setFirstName("Jarvis");
@@ -24,7 +22,7 @@ public class Embeddable {
         Session session = sf.openSession();
 
         session.beginTransaction();
-        session.persist(jarvis);   // instead of save()
+        session.persist(jarvis); // instead of save()
         session.getTransaction().commit();
 
         session.close();

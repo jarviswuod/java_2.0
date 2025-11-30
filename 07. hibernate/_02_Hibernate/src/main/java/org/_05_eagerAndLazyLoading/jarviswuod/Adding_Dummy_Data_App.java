@@ -4,10 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-
 public class Adding_Dummy_Data_App {
     public static void main(String[] args) {
-
 
         Laptop laptop = new Laptop();
         laptop.setLaptopId(4);
@@ -38,7 +36,8 @@ public class Adding_Dummy_Data_App {
         laptop2.setStudent(student);
         laptop3.setStudent(student1);
 
-        Configuration conf = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
+        Configuration conf = new Configuration().configure().addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Laptop.class);
         SessionFactory sf = conf.buildSessionFactory();
         Session session = sf.openSession();
 

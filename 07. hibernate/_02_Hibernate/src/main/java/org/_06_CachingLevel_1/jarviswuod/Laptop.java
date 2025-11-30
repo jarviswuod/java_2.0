@@ -49,11 +49,6 @@ public class Laptop {
 
     @Override
     public String toString() {
-        return "Laptop{" +
-                "laptopId=" + laptopId +
-                ", brand='" + brand + '\'' +
-                ", price=" + price +
-                ", student=" + student +
-                '}';
+        return "Laptop [laptopId=" + laptopId + ", brand=" + brand + ", price=" + price + ", student=" + student + "]";
     }
 }

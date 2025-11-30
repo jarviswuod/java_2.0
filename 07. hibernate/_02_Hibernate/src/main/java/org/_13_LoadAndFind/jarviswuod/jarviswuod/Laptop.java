@@ -11,7 +11,6 @@ public class Laptop {
     private String brand;
     private int price;
 
-
     public String getBrand() {
         return brand;
     }
@@ -38,10 +37,6 @@ public class Laptop {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "lapId=" + laptopId +
-                ", brand='" + brand + '\'' +
-                ", price=" + price +
-                '}';
+        return "Laptop [laptopId=" + laptopId + ", brand=" + brand + ", price=" + price + "]";
     }
 }

@@ -35,10 +35,6 @@ public class AlienName {
 
     @Override
     public String toString() {
-        return "AlienName{" +
-                "firstName='" + firstName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return "AlienName [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName + "]";
     }
 }
