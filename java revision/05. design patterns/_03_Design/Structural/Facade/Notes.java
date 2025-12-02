@@ -34,7 +34,7 @@ package _03_Design.Structural.Facade;
                             inventory.checkInventory(id);
                         }
 
-                        Payment payment = new Payment(orderRequest.getName(), orderRequest.getCardNumber(), orderRequest.getAmount());
+                        Payment payment = new Payment(orderRequest.getName(), orderRequest.getCardNumber(), orderRequest.getBalance());
                         payment.pay();
 
                         OrderFulfillment orderFulfillment = new OrderFulfillment(inventory);
@@ -46,7 +46,7 @@ package _03_Design.Structural.Facade;
 
                     private String name = "Danny";
                     private String cardNumber = "1234";
-                    private double amount = 20.99;
+                    private double balance = 20.99;
                     private String address = "123 Springfield Way, Texas";
 
                     // item ids user wants to order
@@ -60,8 +60,8 @@ package _03_Design.Structural.Facade;
                         return cardNumber;
                     }
 
-                    public double getAmount() {
-                        return amount;
+                    public double getBalance() {
+                        return balance;
                     }
 
                     public String getAddress() {
@@ -86,8 +86,8 @@ package _03_Design.Structural.Facade;
                         return true; // just return true to keep things simple
                     }
 
-                    public void reduceInventory(String itemId, int amount) {
-                        System.out.println("Reducing inventory of " + itemId + " by " + amount);
+                    public void reduceInventory(String itemId, int quantity) {
+                        System.out.println("Reducing inventory of " + itemId + " by " + quantity);
                     }
                 }
 
@@ -95,12 +95,12 @@ package _03_Design.Structural.Facade;
 
                     private String name;
                     private String cardNumber;
-                    private double amount;
+                    private double cost;
 
-                    public Payment(String name, String cardNumber, double amount) {
+                    public Payment(String name, String cardNumber, double cost) {
                         this.name = name;
                         this.cardNumber = cardNumber;
-                        this.amount = amount;
+                        this.cost = cost;
                     }
 
                     public void pay() {
