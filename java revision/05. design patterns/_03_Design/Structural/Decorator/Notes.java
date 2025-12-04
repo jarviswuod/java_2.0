@@ -6,6 +6,8 @@ package _03_Design.Structural.Decorator;
     - Decorator design pattern:
         - Is a structural design pattern that allows dynamic addition of behaviors or responsibilities without affecting their code
 
+    - https://claude.ai/chat/686ce628-3b42-4263-bd2e-36e757fde329
+
     - key players:
         - Decorator interface
         - Concrete Decorator
