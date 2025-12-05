@@ -492,20 +492,20 @@ interface Command_1 {
     void execute();
 }
 
-interface UndoableCommand_1 extends Command_1 {
+interface ReverseCommand_1 extends Command_1 {
 
     void unexecute();
 }
 
 class History_1 {
 
-    private Deque<UndoableCommand_1> commands = new ArrayDeque<>();
+    private Deque<ReverseCommand_1> commands = new ArrayDeque<>();
 
-    public void push(UndoableCommand_1 command) {
+    public void push(ReverseCommand_1 command) {
         commands.push(command);
     }
 
-    public UndoableCommand_1 pop() {
+    public ReverseCommand_1 pop() {
         if (commands.isEmpty()) {
             return null;
         }
@@ -529,13 +529,13 @@ class UndoCommand_1 implements Command_1 {
     public void execute() {
         if (history.size() > 0) {
 
-            UndoableCommand_1 lastCommand = history.pop();
+            ReverseCommand_1 lastCommand = history.pop();
             lastCommand.unexecute(); // Delegating the undo logic to undoable command object
         }
     }
 }
 
-class ItalicCommand_1 implements UndoableCommand_1 {
+class ItalicCommand_1 implements ReverseCommand_1 {
 
     private HtmlDocument_1 document;
     private String prevContent = "";

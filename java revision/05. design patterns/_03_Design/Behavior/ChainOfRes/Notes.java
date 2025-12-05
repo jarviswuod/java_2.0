@@ -38,7 +38,7 @@ package _03_Design.Behavior.ChainOfRes;
                 private String password;
 
                 public String validatedString;
-                public String validatedPassword;
+                public String validPass;
 
                 public HttpRequest(String username, String password) {
                     this.username = username;
@@ -61,12 +61,12 @@ package _03_Design.Behavior.ChainOfRes;
                     this.validatedString = validatedString;
                 }
 
-                public String getValidatedPassword() {
-                    return validatedPassword;
+                public String getValidPass() {
+                    return validPass;
                 }
 
-                public void setValidatedPassword(String validatedPassword) {
-                    this.validatedPassword = validatedPassword;
+                public void setValidPass(String validPass) {
+                    this.validPass = validPass;
                 }
             }
 
@@ -112,11 +112,11 @@ package _03_Design.Behavior.ChainOfRes;
                     String password = request.getPassword();
 
                     request.setValidatedString(username);
-                    request.setValidatedPassword(password);
+                    request.setValidPass(password);
 
                     System.out.println("Validation successful for " + username);
 
-                    return request.getValidatedString() == "" || request.getValidatedPassword() == "";
+                    return request.getValidatedString().isEmpty() || request.getValidPass().isEmpty();
                 }
             }
 
@@ -125,7 +125,7 @@ package _03_Design.Behavior.ChainOfRes;
                 @Override
                 public boolean doHandle(HttpRequest request) {
                     String username = request.getValidatedString();
-                    String password = request.getValidatedPassword();
+                    String password = request.getValidPass();
 
                     return !("admin".equals(username) && "admin@123".equals(password));
                 }
@@ -141,7 +141,6 @@ package _03_Design.Behavior.ChainOfRes;
                 }
             }
 
-
  */
 
 public class Notes {
@@ -156,9 +155,11 @@ public class Notes {
 
         HttpRequest request = new HttpRequest("admin", "admin@123");
         server.handle(request);
+        System.out.println();
 
         HttpRequest request2 = new HttpRequest("admin", "@123");
         server.handle(request2);
+        System.out.println();
 
         HttpRequest request3 = new HttpRequest("", "");
         server.handle(request3);
@@ -170,8 +171,8 @@ class HttpRequest {
     private String username;
     private String password;
 
-    public String validatedUsername;
-    public String validatedPassword;
+    public String validUsername;
+    public String validPass;
 
     public HttpRequest(String username, String password) {
         this.username = username;
@@ -186,20 +187,20 @@ class HttpRequest {
         return password;
     }
 
-    public String getValidatedUsername() {
-        return validatedUsername;
+    public String getValidUsername() {
+        return validUsername;
     }
 
-    public void setValidatedUsername(String validatedString) {
-        this.validatedUsername = validatedString;
+    public void setValidUsername(String validatedString) {
+        this.validUsername = validatedString;
     }
 
-    public String getValidatedPassword() {
-        return validatedPassword;
+    public String getValidPass() {
+        return validPass;
     }
 
-    public void setValidatedPassword(String validatedPassword) {
-        this.validatedPassword = validatedPassword;
+    public void setValidPass(String validPass) {
+        this.validPass = validPass;
     }
 }
 
@@ -226,7 +227,7 @@ abstract class Handler {
     }
 
     public void handle(HttpRequest request) {
-        if (doHandle(request))
+        if (!doHandle(request))
             return;
 
         if (nextHandler != null)
@@ -244,12 +245,14 @@ class Validator extends Handler {
         String username = request.getUsername();
         String password = request.getPassword();
 
-        request.setValidatedUsername(username);
-        request.setValidatedPassword(password);
+        request.setValidUsername(username);
+        request.setValidPass(password);
+        if (request.getValidUsername().isEmpty() || request.getValidPass().isEmpty())
+            return false;
 
         System.out.println("Validation successful for " + username);
 
-        return request.getValidatedUsername() == "" || request.getValidatedPassword() == "";
+        return true;
     }
 }
 
@@ -257,10 +260,10 @@ class Authenticator extends Handler {
 
     @Override
     public boolean doHandle(HttpRequest request) {
-        String username = request.getValidatedUsername();
-        String password = request.getValidatedPassword();
+        String username = request.getValidUsername();
+        String password = request.getValidPass();
 
-        return !("admin".equals(username) && "admin@123".equals(password));
+        return "admin".equals(username) && "admin@123".equals(password);
     }
 }
 
@@ -268,8 +271,8 @@ class Logger extends Handler {
 
     @Override
     public boolean doHandle(HttpRequest request) {
-        System.out.println("Logging request for " + request.getValidatedUsername());
+        System.out.println("Logging request for " + request.getValidUsername());
 
-        return false;
+        return true;
     }
 }
