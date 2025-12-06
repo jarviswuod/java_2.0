@@ -7,12 +7,12 @@ import java.util.List;
 
     NOTES:
     - Mediator pattern:
-        - Is a behavior design pattern that utelizes an object as a place of communication to other objects
+        - Is a behavior design pattern that utelizes an object as a place of communication for other objects
 
     - 4 key players:
-        - Mediator
+        - Mediator interface
         - Concrete Mediator
-        - Components
+        - Components interface
         - Concrete Components
 
 
@@ -284,8 +284,134 @@ import java.util.List;
 public class Notes {
     public static void main(String[] args) {
 
+        PostDialogBox_ postDialogBox = new PostDialogBox_();
+        postDialogBox.simulateUserInteration();
+    }
+}
+
+abstract class DialogBox_ {
+
+    public abstract void changed(UIControl_ UIControl);
+}
+
+class UIControl_ {
+
+    protected DialogBox_ owner;
+
+    public UIControl_(DialogBox_ owner) {
+        this.owner = owner;
+    }
+}
+
+class TextBox_ extends UIControl_ {
+
+    private String text = "";
+
+    public TextBox_(DialogBox_ owner) {
+        super(owner);
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+
+        owner.changed(this);
+    }
+}
+
+class ListBox_ extends UIControl_ {
+
+    private String selection = "";
+
+    public ListBox_(DialogBox_ owner) {
+        super(owner);
+    }
+
+    public String getSelection() {
+        return selection;
+    }
+
+    public void setSelection(String selection) {
+        this.selection = selection;
+
+        owner.changed(this);
+    }
+}
+
+class Button_ extends UIControl_ {
+
+    private boolean isEnabled;
+
+    public Button_(DialogBox_ owner) {
+        super(owner);
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean isEnabled) {
+        this.isEnabled = isEnabled;
+
+        owner.changed(this);
+    }
+}
+
+class PostDialogBox_ extends DialogBox_ {
+
+    private ListBox_ postListBox;
+    private TextBox_ titleTextBox;
+    private Button_ saveButton;
+
+    public PostDialogBox_() {
+        postListBox = new ListBox_(this);
+        titleTextBox = new TextBox_(this);
+        saveButton = new Button_(this);
+
+        saveButton.setEnabled(false);
+    }
+
+    public void simulateUserInteration() {
+        postListBox.setSelection("Post 2");
+        // titleTextBox.setText("");
+
+        System.out.println("** Title textbox : " + titleTextBox.getText());
+        System.out.println("** Button enabled : " + saveButton.isEnabled());
+    }
+
+    @Override
+    public void changed(UIControl_ uiControl) {
+        if (uiControl == postListBox) {
+            handlePostChange();
+        } else if (uiControl == titleTextBox) {
+            handleTitleChange();
+        }
+    }
+
+    private void handleTitleChange() {
+        boolean isTitleEmpty = titleTextBox.getText() != "";
+        saveButton.setEnabled(isTitleEmpty);
+    }
+
+    private void handlePostChange() {
+        titleTextBox.setText(postListBox.getSelection());
+        saveButton.setEnabled(true);
+    }
+}
+
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
+
+class Main {
+    public static void main(String[] args) {
+
         DialogBox dialogBox = new DialogBox();
-        dialogBox.simulated();
+        dialogBox.simulateUserInteration();
     }
 }
 
@@ -387,7 +513,7 @@ class DialogBox implements EventHandler {
         button.setEnabled(!textBox.getTitle().isEmpty());
     }
 
-    public void simulated() {
+    public void simulateUserInteration() {
 
         selectBox.setSelection("Box Selected");
         // textBox.setTitle("");

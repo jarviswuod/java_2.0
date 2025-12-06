@@ -1,5 +1,8 @@
 package _03_Design.Behavior.Command;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /*
 
     NOTES:
@@ -117,5 +120,168 @@ class _LightDim implements _Command {
 class _1_Notes {
     public static void main(String[] args) {
 
+        __HTMLDoc htmlDoc = new __HTMLDoc();
+        __History history = new __History();
+
+        htmlDoc.content = "Crazy world";
+        System.out.println(htmlDoc.content);
+        System.out.println();
+
+        __ItalicCommand italicCommand = new __ItalicCommand(history, htmlDoc);
+        italicCommand.execute();
+        System.out.println(htmlDoc.content);
+        System.out.println();
+
+        __BoldCommand boldCommand = new __BoldCommand(history, htmlDoc);
+        boldCommand.execute();
+        System.out.println(htmlDoc.content);
+        System.out.println();
+
+        __AddTextCommand texCommand = new __AddTextCommand(history, htmlDoc, "text ");
+        texCommand.execute();
+        System.out.println(htmlDoc.content);
+        System.out.println();
+
+        __undoCommand undoCommand = new __undoCommand(history);
+        undoCommand.execute();
+        System.out.println(htmlDoc.content);
+        System.out.println();
+
+        undoCommand.execute();
+        System.out.println(htmlDoc.content);
+        System.out.println();
+
+    }
+}
+
+interface __Command {
+    void execute();
+}
+
+interface __ReverseCommand extends __Command {
+    void unexecute();
+}
+
+class __HTMLDoc {
+    public String content;
+
+    public String italic() {
+
+        return "<i>" + content + "</i>";
+    }
+
+    public String bold() {
+
+        return "<b>" + content + "</b>";
+    }
+
+    public String addString(String text) {
+
+        return content + " " + text;
+    }
+}
+
+class __History {
+    private Deque<__ReverseCommand> reverseCommands = new ArrayDeque<>();
+
+    public void add(__ReverseCommand reverseCommand) {
+        reverseCommands.push(reverseCommand);
+    }
+
+    public __ReverseCommand pop() {
+        if (reverseCommands.isEmpty())
+            return null;
+        return reverseCommands.pop();
+    }
+}
+
+class __undoCommand implements __Command {
+    private __History history;
+
+    public __undoCommand(__History history) {
+        this.history = history;
+    }
+
+    public void undo() {
+        history.pop().unexecute();
+    }
+
+    @Override
+    public void execute() {
+        undo();
+    }
+}
+
+class __ItalicCommand implements __ReverseCommand {
+
+    private __History history;
+    private __HTMLDoc htmlDoc;
+    private String prevContent;
+
+    public __ItalicCommand(__History history, __HTMLDoc htmlDoc) {
+        this.history = history;
+        this.htmlDoc = htmlDoc;
+    }
+
+    @Override
+    public void execute() {
+        prevContent = htmlDoc.content;
+        htmlDoc.content = htmlDoc.italic();
+        history.add(this);
+    }
+
+    @Override
+    public void unexecute() {
+        htmlDoc.content = prevContent;
+    }
+}
+
+class __BoldCommand implements __ReverseCommand {
+
+    private __History history;
+    private __HTMLDoc htmlDoc;
+    private String prevContent;
+
+    public __BoldCommand(__History history, __HTMLDoc htmlDoc) {
+        this.history = history;
+        this.htmlDoc = htmlDoc;
+    }
+
+    @Override
+    public void execute() {
+        prevContent = htmlDoc.content;
+        htmlDoc.content = htmlDoc.bold();
+        history.add(this);
+    }
+
+    @Override
+    public void unexecute() {
+        htmlDoc.content = prevContent;
+    }
+}
+
+class __AddTextCommand implements __ReverseCommand {
+
+    private __History history;
+    private __HTMLDoc htmlDoc;
+    private String prevContent;
+    private String text;
+
+    public __AddTextCommand(__History history, __HTMLDoc htmlDoc, String text) {
+        this.history = history;
+        this.htmlDoc = htmlDoc;
+        this.text = text;
+    }
+
+    @Override
+    public void execute() {
+        prevContent = htmlDoc.content;
+        htmlDoc.content = htmlDoc.addString(text);
+        history.add(this);
+    }
+
+    @Override
+    public void unexecute() {
+        htmlDoc.content = prevContent;
     }
 }
