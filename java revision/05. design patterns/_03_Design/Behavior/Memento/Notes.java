@@ -1,5 +1,8 @@
 package _03_Design.Behavior.Memento;
 
+import java.time.Instant;
+import java.util.Stack;
+
 /*
 
     NOTES:
@@ -264,4 +267,159 @@ package _03_Design.Behavior.Memento;
  */
 
 public class Notes {
+    public static void main(String[] args) {
+
+        Originator blog = new Originator("", "");
+        CareTaker history = new CareTaker(blog);
+
+        history.save();
+
+        blog.setDetails("Jarvis is my name");
+
+        history.save();
+        blog.setTitle("Changed title for the 3rd time");
+
+        history.save();
+        System.out.println(blog.getTitle());
+        System.out.println(blog.getDetails());
+        System.out.println();
+
+        blog.setDetails("My name");
+        history.save();
+
+        System.out.println(blog.getTitle());
+        System.out.println(blog.getDetails());
+        System.out.println();
+
+        blog.setTitle("Title for the 3rd time");
+        history.save();
+
+        System.out.println(blog.getTitle());
+        System.out.println(blog.getDetails());
+        System.out.println();
+
+        history.undo();
+        System.out.println(blog.getTitle());
+        System.out.println(blog.getDetails());
+        System.out.println();
+
+        history.undo();
+        System.out.println(blog.getTitle());
+        System.out.println(blog.getDetails());
+        System.out.println();
+
+        history.undo();
+        System.out.println(blog.getTitle());
+        System.out.println(blog.getDetails());
+        System.out.println();
+
+        history.undo();
+        System.out.println(blog.getTitle());
+        System.out.println(blog.getDetails());
+        System.out.println();
+    }
+}
+
+class Originator {
+    private String title;
+    private String details;
+
+    public Originator(String title, String details) {
+        this.title = title;
+        this.details = details;
+    }
+
+    public Memento capture() {
+        return new Memento(title, details);
+    }
+
+    public void undo(Memento memento) {
+        title = memento.getTitle();
+        details = memento.getDetails();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    @Override
+    public String toString() {
+        return "Originator [title=" + title + ", details=" + details + "]";
+    }
+}
+
+class Memento {
+    private String title;
+    private String details;
+    private Instant createdAt;
+
+    public Memento(String title, String details) {
+        this.setTitle(title);
+        this.setDetails(details);
+        createdAt = Instant.now();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Memento [title=" + title + ", details=" + details + ", createdAt=" + createdAt + "]";
+    }
+}
+
+class CareTaker {
+
+    private Stack<Memento> mementos = new Stack<>();
+    private Originator originator;
+
+    public CareTaker(Originator originator) {
+        this.originator = originator;
+    }
+
+    public void save() {
+        mementos.push(originator.capture());
+    }
+
+    public void undo() {
+        if (mementos.isEmpty())
+            return;
+
+        originator.undo(mementos.pop());
+    }
+
+    public void showHistory() {
+        for (Memento memento : mementos) {
+            System.out.println(memento.toString());
+        }
+    }
 }

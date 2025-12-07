@@ -1,5 +1,8 @@
 package _03_Design.Behavior.Observer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 // import java.util.ArrayList;
 // import java.util.List;
 
@@ -234,4 +237,101 @@ package _03_Design.Behavior.Observer;
  */
 
 public class Notes {
+    public static void main(String[] args) {
+
+        Datasource datasource = new Datasource();
+
+        Sheet sheet = new Sheet(datasource);
+        BarChart barChart = new BarChart(datasource);
+
+        datasource.addObs(barChart);
+        datasource.addObs(sheet);
+
+        datasource.setIntList(List.of(21, 34, 56));
+        System.out.println();
+        datasource.setIntList(List.of(21, 2));
+
+    }
+}
+
+class Publisher {
+
+    private List<Observer> observers = new ArrayList<>();
+
+    public List<Observer> getObservers() {
+        return observers;
+    }
+
+    public void setObservers(List<Observer> observers) {
+        this.observers = observers;
+    }
+
+    public void addObs(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void removeObs(Observer observer) {
+        observers.remove(observer);
+    }
+
+    public void notifyObs() {
+        for (Observer observer : observers) {
+            observer.update();
+        }
+    }
+}
+
+class Datasource extends Publisher {
+
+    private List<Integer> intList = new ArrayList<>();
+
+    public List<Integer> getIntList() {
+        return intList;
+    }
+
+    public void setIntList(List<Integer> intList) {
+        this.intList = intList;
+        notifyObs();
+    }
+}
+
+interface Observer {
+
+    void update();
+}
+
+class Sheet implements Observer {
+    private Datasource datasource;
+    int total = 0;
+
+    public int getTotal() {
+        return total;
+    }
+
+    public Sheet(Datasource datasource) {
+        this.datasource = datasource;
+    }
+
+    @Override
+    public void update() {
+        total = 0;
+        for (int integer : datasource.getIntList()) {
+            total += integer;
+        }
+        System.out.println("Here with you'll loosers Sheet : " + total);
+    }
+}
+
+class BarChart implements Observer {
+    private Datasource datasource;
+
+    public BarChart(Datasource datasource) {
+        this.datasource = datasource;
+    }
+
+    @Override
+    public void update() {
+        datasource.hashCode();
+        System.out.println("Here with you'll loosers BarChart");
+    }
 }
