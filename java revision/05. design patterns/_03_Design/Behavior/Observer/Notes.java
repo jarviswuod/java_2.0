@@ -302,11 +302,6 @@ interface Observer {
 
 class Sheet implements Observer {
     private Datasource datasource;
-    int total = 0;
-
-    public int getTotal() {
-        return total;
-    }
 
     public Sheet(Datasource datasource) {
         this.datasource = datasource;
@@ -314,7 +309,7 @@ class Sheet implements Observer {
 
     @Override
     public void update() {
-        total = 0;
+        int total = 0;
         for (int integer : datasource.getIntList()) {
             total += integer;
         }

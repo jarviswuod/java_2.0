@@ -61,7 +61,6 @@ class VideoStorage {
     public void setCompressor(Compressor compressor) {
         this.compressor = compressor;
     }
-
 }
 
 class Blur implements Overlay {

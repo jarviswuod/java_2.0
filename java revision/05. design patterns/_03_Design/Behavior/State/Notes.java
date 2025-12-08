@@ -103,9 +103,9 @@ class ModerationState implements State {
 
     @Override
     public void publish() {
-        if (document.getCurrentUserRole() == UserRoles.Admin) {
+
+        if (document.getCurrentUserRole() == UserRoles.Admin)
             document.setState(new PublishedState(document));
-        }
     }
 }
 

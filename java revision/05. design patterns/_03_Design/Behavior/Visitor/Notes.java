@@ -362,7 +362,6 @@ abstract class Element {
     }
 
     public abstract void accept(Visitor visitor);
-
 }
 
 class Element1 extends Element {

@@ -75,7 +75,7 @@ package _03_Design.Behavior.TemplateMethod;
 
 
     // SECOND ATTEMPT::: ::: ::: :::
-    - Difference between inheritance and polymorphism interms of functionality
+    - Difference btwn inheritance and polymorphism interms of functionality
 
 
     // -- -- -- -- INHERITANCE -- -- -- -- 
