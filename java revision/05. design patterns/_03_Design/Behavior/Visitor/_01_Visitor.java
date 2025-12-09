@@ -21,12 +21,7 @@ public class _01_Visitor {
     }
 }
 
-interface _Visitor {
-
-    void visit(_Element element);
-}
-
-class _Element {
+abstract class _Element {
 
     private String name;
     private String email;
@@ -36,5 +31,26 @@ class _Element {
         this.email = email;
     }
 
-    // private _Visitor visitor;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public abstract void accept(_Visitor visitor);
+}
+
+interface _Visitor {
+
+    void visit(_Element element);
 }
