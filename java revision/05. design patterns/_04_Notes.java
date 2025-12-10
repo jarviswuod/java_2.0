@@ -136,10 +136,10 @@
             - Key players:
                 - Decorator interface
                 - Concrete Decorator
-                - Element interface
-                - Concrete Element
+                - Component interface
+                - Concrete Component
             - Example:
-                - 
+                - Cloud Storage
 
         - Composite:
             - Tree-like representation of object collection
@@ -153,11 +153,11 @@
         - Bridge:
             - Separation between abstraction and implementation, both grow independently
             - Key players:
-                - Bridge interface
-                - Concrete Bridge
-                - 
+                - Abstraction
+                - Implementation
+                - Concrete implementation
             - Example:
-                - 
+                - Remote Control; TV and Radio
 
         - Adapter
             - Pattern that makes it possible for different object interface interact

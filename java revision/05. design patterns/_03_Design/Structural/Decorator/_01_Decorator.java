@@ -32,8 +32,6 @@ public class _01_Decorator {
             data = new EncryptData(data);
 
         data.save("Hello World, this is my important data!");
-
-        // System.out.println("Final processed data is " + data);
     }
 }
 
