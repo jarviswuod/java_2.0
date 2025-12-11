@@ -87,6 +87,7 @@ class _BarChart implements _Subscriber {
 }
 
 class _BarChart2 implements _Subscriber {
+
     private _Datasource datasource;
 
     public _BarChart2(_Datasource datasource) {
