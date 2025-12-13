@@ -35,9 +35,9 @@ abstract class _02_Element {
         this.request = request;
     }
 
-    public _02_Element nextObj(_02_Element element) {
-        this.next = element;
-        return element;
+    public _02_Element nextObj(_02_Element next) {
+        this.next = next;
+        return next;
     }
 
     public void handle() {

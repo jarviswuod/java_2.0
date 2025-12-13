@@ -58,15 +58,15 @@
 
         - ChainOfRes
             - Example:
-                - 
+                - Validation, Authorization, Logging in a system
             - Key players:
-                - 
+                - Handler Interface, Concrete Handler
 
         - Command
             - Example:
-                - 
+                - LightOn, LightOff, DimLight
             - Key players:
-                - 
+                - Command interface, Concrete Command, Receiver, Invoker
 
 
     - Behavioral patterns:
