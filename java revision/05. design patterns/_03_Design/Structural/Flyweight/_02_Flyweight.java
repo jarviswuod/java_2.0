@@ -36,8 +36,8 @@ enum _02_CropType {
 
 class _02_CropIcon {
 
-    private _02_CropType cropType;
-    private byte[] icon;
+    private final _02_CropType cropType;
+    private final byte[] icon;
 
     public _02_CropIcon(_02_CropType cropType, byte[] icon) {
         this.cropType = cropType;

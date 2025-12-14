@@ -26,9 +26,9 @@ public class _02_Proxy {
 
         for (String id : list) {
 
-            // videoList.videoList(new _02_YoutubeVideo(id));
+            // videoList.add(new _02_YoutubeVideo(id));
 
-            videoList.videoList(new _02_YoutubeVideoProxy(id));
+            videoList.add(new _02_YoutubeVideoProxy(id));
         }
 
         System.out.println();
@@ -84,7 +84,7 @@ class _02_YoutubeVideoProxy implements _02_Video {
         if (youtubeVideo == null)
             youtubeVideo = new _02_YoutubeVideo(videoId);
 
-        System.out.println("Rendering video with an id of " + videoId);
+        youtubeVideo.render();
     }
 
     @Override
@@ -97,7 +97,7 @@ class _02_VideoList {
 
     private Map<String, _02_Video> videos = new HashMap<>();
 
-    public void videoList(_02_Video video) {
+    public void add(_02_Video video) {
 
         videos.put(video.getVideoId(), video);
     }

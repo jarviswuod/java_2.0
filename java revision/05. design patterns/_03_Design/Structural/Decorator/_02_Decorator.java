@@ -28,7 +28,7 @@ public class _02_Decorator {
             data = new _02_CompressDecorator(data);
 
         if (encrypt)
-            data = new _02_EncyptDecorator(data);
+            data = new _02_EncryptDecorator(data);
 
         data.save("Im here to not fight but talk");
     }
@@ -76,9 +76,9 @@ class _02_CompressDecorator extends _02_DataDecorator {
     }
 }
 
-class _02_EncyptDecorator extends _02_DataDecorator {
+class _02_EncryptDecorator extends _02_DataDecorator {
 
-    public _02_EncyptDecorator(_02_Data data) {
+    public _02_EncryptDecorator(_02_Data data) {
         super(data);
     }
 

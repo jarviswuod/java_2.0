@@ -72,46 +72,45 @@
     - Behavioral patterns:
         - Proxy
             - Example:
-                - 
+                - Youtube Video downloader
             - Key players:
-                - 
+                - Subject, Real subject, Proxy
 
         - Facade
             - Example:
-                - 
+                - Processing Order request
             - Key players:
-                - 
+                - Facade Interface, Concrete Facade, Objects
 
         - Flyweight
             - Example:
-                - 
+                - Farmer and Crop Icons
             - Key players:
-                - 
+                - Flyweight Class, Classes, Flyweight Factory
 
         - Composite
             - Example:
-                - 
+                - Delivery pricing
             - Key players:
-                - 
+                - Component, Leaf, and Composite
 
         - Decorator
             - Example:
-                - 
+                - Encryption, Compression and Overlay; Data, CloudData, DataDecorator
             - Key players:
-                - 
+                - Decorator Interface, Concrete Decorator, Component Interface, Concrete Component
 
         - Bridge
             - Example:
-                - 
+                - LGRemote And Device
             - Key players:
-                - 
+                - Abstract, Implementation Interface, Concrete Implementation
 
         - Adapter
             - Example:
-                - 
+                - VideoEditor, Color and Video
             - Key players:
-                - 
-
+                - Adapter, Adaptee, Target
 
 */
 

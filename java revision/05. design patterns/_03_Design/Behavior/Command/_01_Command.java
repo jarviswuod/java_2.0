@@ -163,25 +163,24 @@ interface __ReverseCommand extends __Command {
 }
 
 class __HTMLDoc {
+
     public String content;
 
     public String italic() {
-
         return "<i>" + content + "</i>";
     }
 
     public String bold() {
-
         return "<b>" + content + "</b>";
     }
 
     public String addString(String text) {
-
         return content + " " + text;
     }
 }
 
 class __History {
+
     private Deque<__ReverseCommand> reverseCommands = new ArrayDeque<>();
 
     public void add(__ReverseCommand reverseCommand) {
@@ -196,6 +195,7 @@ class __History {
 }
 
 class __undoCommand implements __Command {
+
     private __History history;
 
     public __undoCommand(__History history) {
@@ -203,7 +203,8 @@ class __undoCommand implements __Command {
     }
 
     public void undo() {
-        history.pop().unexecute();
+        __ReverseCommand prevCommand = history.pop();
+        prevCommand.unexecute();
     }
 
     @Override
@@ -214,9 +215,10 @@ class __undoCommand implements __Command {
 
 class __ItalicCommand implements __ReverseCommand {
 
+    private String prevContent;
+
     private __History history;
     private __HTMLDoc htmlDoc;
-    private String prevContent;
 
     public __ItalicCommand(__History history, __HTMLDoc htmlDoc) {
         this.history = history;
@@ -238,9 +240,10 @@ class __ItalicCommand implements __ReverseCommand {
 
 class __BoldCommand implements __ReverseCommand {
 
+    private String prevContent;
+
     private __History history;
     private __HTMLDoc htmlDoc;
-    private String prevContent;
 
     public __BoldCommand(__History history, __HTMLDoc htmlDoc) {
         this.history = history;
@@ -262,10 +265,11 @@ class __BoldCommand implements __ReverseCommand {
 
 class __AddTextCommand implements __ReverseCommand {
 
-    private __History history;
-    private __HTMLDoc htmlDoc;
     private String prevContent;
     private String text;
+
+    private __History history;
+    private __HTMLDoc htmlDoc;
 
     public __AddTextCommand(__History history, __HTMLDoc htmlDoc, String text) {
         this.history = history;
