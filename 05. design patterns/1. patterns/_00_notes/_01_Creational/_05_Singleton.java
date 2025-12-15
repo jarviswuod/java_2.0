@@ -5,10 +5,10 @@ package _01_Creational;
     NOTES:
     - Singleton Pattern:
         - Is a creational design pattern that ensures that a class only has one instance and provides a global access point to itself
-        - It ensures that the single instance of a class is created and shared through our the life of the application and prevents multiple instances from being unintentionally created
+        - It ensures that a single instance of a class is created and shared through out the life of the application preventing multiple instances creation
 
 
-    - 1 Main actor in Singleton;
+    - 1 Main actor in Singleton Design Pattern:
         a. Singleton:
             - Is a class that implements the singleton pattern ensuring only one instance of it can exist
 

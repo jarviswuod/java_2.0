@@ -8,7 +8,7 @@ package _02_Structural;
         - It involves creating a set of decorators classes to wrap specific components then add new functionalities or runtime behaviors
 
 
-    - 4 Main actors in Decorators;
+    - 4 Main actors in Decorators:
         a. Decorator:
             - Is an interface extending from the component, it maintains reference to the component instance
 
