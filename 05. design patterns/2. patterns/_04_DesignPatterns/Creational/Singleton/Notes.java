@@ -16,7 +16,7 @@ package _04_DesignPatterns.Creational.Singleton;
 
 
     - CHALLENGE:
-        - Here's a user making a request to fetch some products. There are two classes; UserAuthentication and Products. Both require fetching things from the same db
+        - A user making a request to fetch some products. There are two classes; UserAuthentication and Products. Both require fetching things from the same db
         - Notice:
             - We are not using the 'new' keyword to get the db object. We are using a method called getInstance() that returns the exact same db object throughout the application. This ensures that we always use a single db connection
 
@@ -34,9 +34,12 @@ package _04_DesignPatterns.Creational.Singleton;
 
         - You may be wondering why we can't just create a new db object everytime we need to connect to the db. Here are some good reasons to use a single global db object in all clients:
             1. Resource Efficiency: Db connections and resources are typically limited and can be expensive to establish. By using a single instance of a db object, you minimize the overhead of creating and managing multiple connections, optimizing resource utilization
+
             2. Consistency and State management: Having a single db instance ensures consistent state management and transactional handling across different parts of the application. Changes made to the db state are visible universally within the application, avoiding inconsistencies that could arise from mutliple db instances
+
             3. Simplified Configuration and Management: With a singleton db instance, configuration settings such as connection parameters, credentials and initializtion logic are centralized and managed in one place. This simplifies application setup and maintenance
-            4. Performance Optimization: By reusing a single db instance, you can optimize db query performance and reduce latency associated with establishing new connections or reinitializing db resources
+
+            4. Performance Optimization: By reusing a single db instance, you can optimize db query performance and reduce latency associated with establishing new connections or re-initializing db resources
 
 
 

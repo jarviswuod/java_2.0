@@ -80,6 +80,7 @@ package _04_DesignPatterns.Creational.Prototype;
                                     newShape.draw();
 
                                 } else {
+
                                     throw new NullPointerException("Invalid shape provided");
                                 }
                             }

@@ -32,9 +32,6 @@ package _04_DesignPatterns.Creational.Prototype;
 
         - We have concrete shapes classes that implement the Shape interface. The ShapeActions class contains the logic for duplicating each shape, and is dependent on all of the shapes that can be duplicated
 
-        - PROBLEM:
-            - 
-
 
 
     - SOLUTION 2: PROTOTYPE PATTERN;

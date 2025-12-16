@@ -5,7 +5,7 @@ package _04_DesignPatterns.Creational.Singleton;
     - CODE EXPLANATION:
 
     - CHALLENGE:
-        - Here's a user making a request to fetch some products. There are two classes; UserAuthentication and Products. Both require fetching things from the same db
+        - A user making a request to fetch some products. There are two classes; UserAuthentication and Products. Both require fetching things from the same db
         - Notice:
             - We are not using the 'new' keyword to get the db object. We are using a method called getInstance() that returns the exact same db object throughout the application. This ensures that we always use a single db connection
 
