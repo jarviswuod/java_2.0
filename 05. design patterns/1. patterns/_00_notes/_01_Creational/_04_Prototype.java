@@ -8,19 +8,19 @@ package _01_Creational;
         - It focuses on constructing new instances by duplicating existing ones, minimizing the object creation overhead
 
 
-    - 2 Main actors in Prototype;
-        a. Main interface Prototype:
-            - It defines a clone method
+    - 2 Main actors in Prototype:
+        a. Prototype Interface:
+            - It defines a clone() method
 
-        b. A Concrete Prototype:
-            - A subclass or prototype interface implements the clone methods to create it's copies
+        b. Concrete Prototype:
+            - A subclass or prototype interface implements the clone() method to create it's copies
 
 
     - Advantages and Disadvantages
         - Advantages:
             - Object creation efficiency: Cloning of objects reduces the overhead associated with recreating and initializing objects from scratch significantly, this results in more streamline and efficient process especially when object initialization is resource intensive
 
-            - Flexibility: It enhances flexibility of the development process. developers can create new object instances by simply cloning existing prototypes. This ability to generate new  objects on the fly contributes to a more agile and adaptable development environment.
+            - Flexibility: It enhances flexibility of the development proces. This ability to generate new objects on the fly contributes to a more agile and adaptable development environment
 
 
         - Disadvantages:
