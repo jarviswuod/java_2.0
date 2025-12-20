@@ -2,15 +2,25 @@
 
     NOTES:
     - Behavioral
-        - 
+        - Template
+        - State
+        - Strategy
+        - Visitor
+        - Mediator
+        - Memento
+        - Interpretor
+        - Iterator
+        - Chain
+        - Command
+        - Observer
 
     - Structural
-        - 
+        - Adapter
         - Bridge
-        - Command
-        - Chain
-        - Flyweight
+        - 
+        - Decorator
         - Facade
+        - Flyweight
         - Proxy
 
     - Creational
