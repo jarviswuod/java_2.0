@@ -1,7 +1,7 @@
 /*
 
     NOTES:
-    - Behavioral
+    - Behavioral design pattern
         - Template
         - State
         - Strategy
@@ -14,7 +14,7 @@
         - Command
         - Observer
 
-    - Structural
+    - Structural design pattern
         - Adapter
         - Bridge
         - Composite
@@ -23,14 +23,12 @@
         - Flyweight
         - Proxy
 
-    - Creational
+    - Creational design pattern
         - FactoryMethod
         - AbstractFactory
         - Singleton
         - Prototype
         - Builder 
-
-
 
 */
 
