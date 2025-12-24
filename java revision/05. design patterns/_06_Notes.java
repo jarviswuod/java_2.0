@@ -30,6 +30,25 @@
         - Prototype
         - Builder 
 
+
+        - Behavioral pattern
+            - Victor
+            - TemplateMethod
+            - State
+            - Strategy
+            - 
+
+        - Structural pattern
+            - 
+
+        - Creational pattern
+            - FactoryMethod
+            - AbstractFactory
+            - Singleton
+            - Builder
+            - Prototype
+
+
 */
 
 public class _06_Notes {
