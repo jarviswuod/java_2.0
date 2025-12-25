@@ -1,5 +1,5 @@
 package _03_Design.Creational.Prototype;
-
+ 
 /*
 
     NOTES:
@@ -29,11 +29,11 @@ public class Notes {
         System.out.println();
 
         ShapeActions shapeActions = new ShapeActions();
-        Shape newcircle = shapeActions.duplicate(circle);
-        newcircle.draw();
+        Shape newCircle = shapeActions.duplicate(circle);
+        newCircle.draw();
 
-        Shape newrectangle = shapeActions.duplicate(rectangle);
-        newrectangle.draw();
+        Shape newRectangle = shapeActions.duplicate(rectangle);
+        newRectangle.draw();
     }
 }
 
@@ -68,6 +68,7 @@ class Circle implements Shape {
 
         Circle newCircle = new Circle();
         newCircle.radius = radius;
+
         return newCircle;
     }
 }
@@ -89,6 +90,7 @@ class Rectangle implements Shape {
         Rectangle newRectangle = new Rectangle();
         newRectangle.width = width;
         newRectangle.height = height;
+
         return newRectangle;
     }
 }

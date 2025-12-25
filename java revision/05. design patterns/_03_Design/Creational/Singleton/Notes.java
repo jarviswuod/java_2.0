@@ -2,7 +2,7 @@ package _03_Design.Creational.Singleton;
 
 import java.util.HashMap;
 import java.util.Map;
-
+ 
 /*
 
     NOTES:
@@ -47,9 +47,8 @@ class AppSettings {
     }
 
     public static AppSettings getInstance() {
-        if (instance == null) {
+        if (instance == null)
             instance = new AppSettings();
-        }
 
         return instance;
     }
@@ -57,6 +56,7 @@ class AppSettings {
     public Object get(String key) {
         if (!settings.containsKey(key))
             return null;
+
         return settings.get(key);
     }
 

@@ -1,52 +1,34 @@
 /*
 
     NOTES:
-    - Behavioral design pattern
-        - Template
-        - State
-        - Strategy
+    - Behavioral pattern
         - Visitor
+        - TemplateMethod
+        - Strategy
+        - State
+        - Observer
         - Mediator
-        - Memento
         - Interpretor
         - Iterator
-        - Chain
+        - ChainofRes
         - Command
-        - Observer
+        - Memento
 
-    - Structural design pattern
+    - Structural pattern
+        - Proxy
+        - Facade
+        - Decorator
+        - Composite
         - Adapter
         - Bridge
-        - Composite
-        - Decorator
-        - Facade
         - Flyweight
-        - Proxy
 
-    - Creational design pattern
+    - Creational pattern
         - FactoryMethod
         - AbstractFactory
         - Singleton
+        - Builder
         - Prototype
-        - Builder 
-
-
-        - Behavioral pattern
-            - Victor
-            - TemplateMethod
-            - State
-            - Strategy
-            - 
-
-        - Structural pattern
-            - 
-
-        - Creational pattern
-            - FactoryMethod
-            - AbstractFactory
-            - Singleton
-            - Builder
-            - Prototype
 
 
 */
