@@ -4,7 +4,7 @@ package _04_DesignPatterns.Creational.Builder;
 
     NOTES:
     - The Builder Pattern:
-        - Is a design pattern used to construct complex objects step by step, providing clarity and flexilibity in the creation process
+        - Is a design pattern used to construct complex objects step by step, providing clarity and flexibility in the creation process
 
 
 
@@ -27,9 +27,9 @@ package _04_DesignPatterns.Creational.Builder;
                         |___________|    |_________|     |_______|    |________|
 
 
-                                               ___________
-                                               | Manual  |
-                                               |_________|
+                                                __________
+                                                | Manual |
+                                                |________|
                                                     ^
                                                     |
                               ______________________|_______________________
