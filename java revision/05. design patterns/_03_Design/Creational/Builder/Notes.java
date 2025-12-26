@@ -10,9 +10,10 @@
 
 */
 
-
 public class Notes {
-    public static void main {
+    public static void main(String[] args) {
+
+        System.out.println("Java is my language");
 
     }
 }

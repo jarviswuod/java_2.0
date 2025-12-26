@@ -1,5 +1,5 @@
 package _03_Design.Creational.Prototype;
- 
+
 /*
 
     NOTES:

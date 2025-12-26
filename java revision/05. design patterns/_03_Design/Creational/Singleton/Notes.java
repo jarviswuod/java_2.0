@@ -2,7 +2,7 @@ package _03_Design.Creational.Singleton;
 
 import java.util.HashMap;
 import java.util.Map;
- 
+
 /*
 
     NOTES:
