@@ -1,0 +1,52 @@
+01 Intro
+
+Database: Something that stores data 
+
+Relational Database:
+
+Entity: What we store data about: it can be a person, a customer, an order, a client, an employee
+Attribute: What we store about a specific related data
+
+We enter specific values for each attribute to make the relation between the attributes and the entity
+
+Rows and Columns:
+	Rows: are all attribute values for a specific entity, example: age, height, name, reg_no, address, username
+	Column: are all values for a specific attribute type. Example: billy, 1234Pass, 38089372
+	
+Entity Type and Attribute Type:
+	Entity Type is basically the category of the entities that we're storing
+	Attribute Type: Are basically categories of attributes; example: username, name, password
+	
+	
+02: Relational Database Management system:
+Ability to run fancy queries to give specific results
+Allows change in terms of data is presented (View mechanism)
+	- Basically different users interacting with database based on their permissions, example admins vs normal user 
+Consistency: maintain the frontend consistency
+Allows to handle transaction: a transaction is a situation where we either do something either completely all the way or does not work at-all. Example: deducting money from account, adding money to a different account, updating the database, and saving, if something happens before all the events take place then the transaction is canceled and nothing is saved
+Example:
+	MySQL
+	Oracle
+	Sqlite
+	
+Difference between DBMS and rDBMS:
+
+
+
+03: Introduction to SQL:
+- Sql is a mediator between db and human English
+- DB sections:
+    - DDL -> Data Definition Language: Used to define database structure
+                - CREATE
+    - DML -> Data Manipulation Language: Manipulates data between db
+                - UPDATE
+                - JOIN
+                - SELECT
+
+
+
+04: What is Database Design:
+Data integrity
+- Conceptual
+- Logical
+- Physical
