@@ -46,7 +46,83 @@ Difference between DBMS and rDBMS:
 
 
 04: What is Database Design:
-Data integrity
-- Conceptual
-- Logical
-- Physical
+Data integrity: Is a situation where all data is upto date and no repeating data
+- Sections of a database design: More general to more specific
+	- Conceptual schemas: How data is related example user and sales table
+	- Logical schemas: Structuring out all our columns, our data types, our relationships and finally just make an assumption on security i.e no security flause
+	- Physical schemas: What servr are we using, how are people going to access our data? actual programming of the database, build the webform, installing the server and testing, building the users who access the db, what different views we have, what data will be returned, we need to focus on security
+
+
+Database design:
+- This are skills that you know to build a database that is not having data integrity issues, update anomalies
+- Is a method to separate information over multiple tables rather than having one huge table to store all information
+
+
+
+05: Data Integrity:
+- Is having correct data in our database i.e no repeating values, no incorrect values, no broken relationships between tables
+- Entity integrity: Unique entities often implemented by different ids. id is used to enforce that is key, basically primary key
+- Referential integrity: Foreign key
+- Domain integrity: Range of what  values we are storing in a database example, data types, 10 digits, strings, boolean
+
+Data types:
+- integer
+- text
+- date
+- 
+
+06: Database terms:
+- Data
+- Database
+- Relational Database
+- DBMS
+- rDBMS
+- Null
+- Anomalies
+- Integrity
+- Entity
+- Referential
+- Domain
+
+
+- Entity
+- Attributes/ Columns/ Field
+- Relation/ Table/ File
+- Tuple/ Rows/ Record/ Entry
+- values
+- DBdesign
+- Schema
+- Normalization
+- Naming convention
+- Keys
+
+
+
+07: More Database terms:
+- SQL
+- DDL
+- DML
+- SQL keywords:
+	- SELECT
+- Frontend
+- Backend
+- Client side
+- Server side
+- Server side scripting Language
+- views
+- joins
+
+
+
+
+08: Atomic values:
+- Refers to the smallest values that can be stored in a database and makes sense
+
+
+09: Relationships
+- Multiple entities with multiple attibutes connected together
+- Types of relationships
+	- One to one
+	- One to many
+	- Many to Many
+
