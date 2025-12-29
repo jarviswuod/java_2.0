@@ -122,7 +122,32 @@ Data types:
 09: Relationships
 - Multiple entities with multiple attibutes connected together
 - Types of relationships
-	- One to one
-	- One to many
-	- Many to Many
+	- 1:1 -> One to one
+	- 1:N -> One to many
+	- M:N -> Many to Many
 
+
+
+
+09: Introduction to Keys
+	Rules of keys:
+		- Unique
+		- Never changing
+		- Never null
+
+	Primary Key Index:
+		- 
+
+	Look up table:
+		- 
+- Super and Candidate keys
+- Primary and foreign keys
+- Primary and alternate keys
+- Surrogate and Natural keys
+
+- Super key is ANY number of columns that forces a row to be unique
+- Candidate key is the LEAST number of columns needed to force every row to be unique
+- Alternate keys are all the other canditate keys we did not choose as the primary key
+- Surrogate and natural keys are categories of primary key
+- Natural key is something that is naturally in the table and can be used as a primary key e.g username, email etc
+- Surrogate keys are just column that's just added to your database to help identify a primary key e.g user_id, sale_id, comment_id
