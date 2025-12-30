@@ -126,6 +126,7 @@ Data types:
 	- 1:N -> One to many
 	- M:N -> Many to Many
 
+Intermediary table: A table that connects 2 separate tables in a many to many relationship
 
 
 
@@ -137,6 +138,9 @@ Data types:
 
 	Primary Key Index:
 		- 
+
+	Foreign key:
+		- Foreign key values can change while primany key values can never change
 
 	Look up table:
 		- 
@@ -151,3 +155,4 @@ Data types:
 - Surrogate and natural keys are categories of primary key
 - Natural key is something that is naturally in the table and can be used as a primary key e.g username, email etc
 - Surrogate keys are just column that's just added to your database to help identify a primary key e.g user_id, sale_id, comment_id
+
