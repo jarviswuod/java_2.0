@@ -156,3 +156,5 @@ Intermediary table: A table that connects 2 separate tables in a many to many re
 - Natural key is something that is naturally in the table and can be used as a primary key e.g username, email etc
 - Surrogate keys are just column that's just added to your database to help identify a primary key e.g user_id, sale_id, comment_id
 
+
+ New year with more theory classes
