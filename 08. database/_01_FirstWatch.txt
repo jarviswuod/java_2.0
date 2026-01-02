@@ -157,4 +157,13 @@ Intermediary table: A table that connects 2 separate tables in a many to many re
 - Surrogate keys are just column that's just added to your database to help identify a primary key e.g user_id, sale_id, comment_id
 
 
- New year with more theory classes
+
+10: Foreign Keys
+- Is a reference to primary key in a sparate table
+- Primary keys are what sort each individual tables, while foreign keys are what connect tables and help protect integrity
+
+
+NOT NULL Foreign Key
+- NOT NULL -> Every single row must have a value
+- If we require a relationship, we set it as not null it means that every foreign key value for that column is going to have a relationship
+- Primary keys are required all the time, they are never changing and never null, foreign keys however are different as we can have them to where they're not required i.e they can be empty
