@@ -167,3 +167,63 @@ NOT NULL Foreign Key
 - NOT NULL -> Every single row must have a value
 - If we require a relationship, we set it as not null it means that every foreign key value for that column is going to have a relationship
 - Primary keys are required all the time, they are never changing and never null, foreign keys however are different as we can have them to where they're not required i.e they can be empty
+
+
+
+
+11. Foreign key constraints:
+	<-> parent		<-> child
+	- ON DELETE		- RESTRICT(NO ACTION)
+	- ON UPDATE		- CASCADE
+				- SET NULL
+				
+12. Simple, Composite, Compound and keys:
+	- Simple -> pk consists of one column
+	- Composite -> pk consists of more than one column
+	- Compound -> pk that has multiple columns & they're all keys themselves
+	
+13. Review and key points:
+- Super key
+- Candidate key
+- Primary key
+- Alternate key
+- Foreign key
+
+
+14. Introduction to Entity Relationship Modeling:
+	EER - Enhanced Entity Relationship Model
+	ERD - Enhanced Relationship Diagram
+	ER Model - Entity Relationship Model
+
+
+15. Cardinality:
+- Is the relationship type between row of one table and row or rows of another table
+ 	one to one   |---------------|
+ 	one to many  |---------------<
+ 	many to one  <---------------|
+
+
+
+16. Modality:
+- Is weather or not a relationship is required
+
+ 	one to one   |--------------0-|
+ 	one to one   |--------------|-|  [NN- required]
+ 	one to many  |--------------0-<
+ 	one to many  <--------------|-<  [NN- required]
+
+
+17. Introduction to Database Normalization
+- Is the process of going through our database plan we have and start correcting things that might cause data integrity problems or repeating data
+- Is a checklist that you have to follow to end up with a good design db
+
+1 Normalization Form
+2 Normalization Form
+3 Normalization Form
+
+
+18. First Normal Form of Database Normalization:
+- Address -> Can be separated and broken down into columns
+- emails -> Multiple emails in one email column
+- duplicate data -> Same values for the column with only one email difference
+
