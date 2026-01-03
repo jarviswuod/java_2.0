@@ -227,3 +227,8 @@ NOT NULL Foreign Key
 - emails -> Multiple emails in one email column
 - duplicate data -> Same values for the column with only one email difference
 
+19. Second Normal Form of Database Normalization:
+- Deals with partial dependency i.e when a column only depends on part of the primary key(there is a composite or compound key)
+
+
+
