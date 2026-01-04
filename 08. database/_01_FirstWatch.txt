@@ -140,7 +140,7 @@ Intermediary table: A table that connects 2 separate tables in a many to many re
 		- 
 
 	Foreign key:
-		- Foreign key values can change while primany key values can never change
+		- Foreign key values can change while primary key values can never change
 
 	Look up table:
 		- 
@@ -226,9 +226,57 @@ NOT NULL Foreign Key
 - Address -> Can be separated and broken down into columns
 - emails -> Multiple emails in one email column
 - duplicate data -> Same values for the column with only one email difference
+- Only repeating foreign keys are allowed not entire rowss/ data
+
+
 
 19. Second Normal Form of Database Normalization:
-- Deals with partial dependency i.e when a column only depends on part of the primary key(there is a composite or compound key)
+- Deals with partial dependency i.e when a column only depends on part of the primary key (there's a composite or compound key)
+ - Example:
+		- author -> author_id, fn, ln, birthdate
+		- book_author -> book_id, author_id, author_position, * isbn
+		- book -> book_id, isbn
+
+	- ISBN doesnot make sense under book_author because it does only depend on book_id under book entity
+	- author_position depends on both the book and the author entity
+
+	- N/B: For the second normal form you have to be first in the first normal form and second remove all the dependecies by removing columns that depend on only one entity
 
 
+
+20. Third Normal Form of Database Normalization:
+- Deals with transitive dependency which is when a column depends on another column which depends on another column which depends on the primary key
+- Example:
+	- Review -> review_id, review, star, star_meaning, user_id
+
+	- Explanation:
+		-> In this case 'star_meaning' depends on 'star' and 'star' depends on 'review_id'. This is a bad design
+
+	- Fix:
+		-> To fix this you take the columns that take columns that are causing an issue and move them to a separate table and then create a foreign key to replace them in place of the actual column
+
+	- NOTE:
+		- The main idea of third normal form is to take transitive dependency and move them to a separate table then create a foreign key refer to that table
+
+
+- Example:
+	- Review -> review_id, review, star_id, user_id
+	- Star -> star_id, star, star_meaning
+
+- Summary:
+	- First normal form is making everything atomic
+	- Second normal form is removing any partial dependecies
+	- Third normal form is removing any transitive dependecies
+
+
+
+21: Clustered, Nonclustered and composite Indexes:
+- Non Clustered Index - This means that the data is not actually where the index is index is a separate thing and it actually sorts the data and is basically a point that that tells you how to get to the data
+	- Example:
+		- In a book where you find the index at the back then it leads you towards a page where the word is located
+
+- Clustered Index - Is like a phone book where it actually re-organizes the actual data in a way that is easy to use
+
+- Non-clustered points to the data. Clustered organises the actual data
+- We can have multiple non clustered indexes since it's basically a list that points 
 
