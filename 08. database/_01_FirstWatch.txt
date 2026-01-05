@@ -278,5 +278,5 @@ NOT NULL Foreign Key
 - Clustered Index - Is like a phone book where it actually re-organizes the actual data in a way that is easy to use
 
 - Non-clustered points to the data. Clustered organises the actual data
-- We can have multiple non clustered indexes since it's basically a list that points 
+- We can have multiple non clustered indexes since it's basically a list of references that point to the actual data so you can organise it in different ways while you can only have one clustered index because it actually organises the data that way
 
