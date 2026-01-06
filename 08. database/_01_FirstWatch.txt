@@ -278,5 +278,33 @@ NOT NULL Foreign Key
 - Clustered Index - Is like a phone book where it actually re-organizes the actual data in a way that is easy to use
 
 - Non-clustered points to the data. Clustered organises the actual data
-- We can have multiple non clustered indexes since it's basically a list of references that point to the actual data so you can organise it in different ways while you can only have one clustered index because it actually organises the data that way
+- We can have multiple non clustered indexes since it's basically a list of references that point to the actual data so you can organise it in different ways BUT for the clustered index you can only have one those because it actually organises the data that way example a phone book (it can't be listed A-Z and also by the size of the phone number sooohhh!!! its either sorted by name or sorted by phone number)
 
+
+
+When working with database we use certain columns for certain things
+When working with database we use index to help databases in making queries faster saving toones of resources because rather than having to scan through the whole database we go to a specific row range due to index 
+The downside is not does the database have to update when we update it but also we have to update the indexes (example when changing content within a book; logically think of it)
+
+In most cases the primary keys usually is cluster indexed and mostly preferred indexing over non-clustred indexing
+NOTE:
+	- Have indexes on columns you usually use
+	- Indexes increase the speed joins
+
+- Composite index: is index on 2 or more columns example first name and last name
+
+
+22: Data types
+	- date
+		- date
+		- time
+		- datetime
+		- timestamp
+
+	- numeric
+	- strings
+		char - rigid
+		varchar -  flexible
+
+
+23: Introduction to Joins:
