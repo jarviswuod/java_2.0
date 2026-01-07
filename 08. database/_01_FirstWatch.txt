@@ -307,4 +307,125 @@ NOTE:
 		varchar -  flexible
 
 
+
 23: Introduction to Joins:
+- Inner Join:
+	- Takes 2 tables and  where there's connected rows from both tables it presents them in a new generated table   
+	
+	* SELECT fn, ln, amount_paid FROM customer INNER JOIN card ON customer.customer_id = card.customer_id
+
+
+24: Inner join on 3 tables
+-  Example:
+	- User -> user_id, email, username, password
+	- video -> video_id, title, description
+	- comment -> comment_id, user_id, video_id, comment
+
+
+	- JOINT TABLE -> username, title, comment
+
+	- Syntax:
+		SELECT username, title, comment 
+		  FROM user 
+		  INNER JOIN comment
+		  ON user.user_id = comment.user_id
+		  INNER JOIN video
+		  ON video.video_id = comment.video_id
+
+
+
+24: Outer joins
+	Join condition
+	customer.customer_id = card.customer_id
+
+	- Inner join pushes away cards that has no customer and customers without any card combining only customers with cards and cards that are are having a customer
+	- Outer join however combines the entire rows from one of the tables weather or not they have an associated entity on the other side
+
+
+Types of outer join:
+	- Left outer join
+		- Left join allows for all rows on the left table and only associated rows from the right table
+
+	- Right outer join
+		- Right join allows for all rows on the right table and only associated rows from the left table
+
+	- Full outer join
+ 
+	- NOTE:
+		-  Having the customer_id column set to NOT NULL under the card entity this means under the right outer join all the cards will have associated customers with them which might bring about some confusion
+		- The whole point of having a right or left outer join is including all the rows of a specific entity weather their is a relationship between them or row i.e cards with customers and cards with customers or customers with cards and customers without cards, having a column set to NOT NULL brings the confusion worse
+
+
+		- In practise most people don't use the right outer join, what they do instead is to flip the entity placement statements when they are making up their queries
+			- Example:
+				- SELECT fn, ln, email, card_number 
+		  		  FROM card
+		  		  LEFT JOIN customer
+		  		  ON card.customer_id = customer.customer_id
+
+					---------------- INSTEAD OF ----------------
+
+				- SELECT fn, ln, email, card_number 
+		  		  FROM customer
+		  		  RIGHT JOIN card
+		  		  ON customer.customer_id = card.customer_id
+
+
+25: Join with NOT NULL Columns
+26: Outer Join Across 3 Tables
+- Example:
+	- User -> user_id
+	- Comment -> comment_id, user_id, video_id
+	- Video -> video_id
+
+
+		SELECT username, title, comment 
+		  FROM user 
+		  LEFT JOIN comment
+		  ON user.user_id = comment.user_id
+		  RIGHT JOIN video
+		  ON video.video_id = comment.video_id
+
+
+	- Explanation:
+		- User && comment: All users & All comments
+		- Video && Left Join result: All videos, All comments, some users
+
+
+
+27: Aliases (AS)
+- Alias refers to renaming something
+- Entity alias example:
+	 user AS customer
+
+- Column alias example:
+	SELECT email, first_name, last_name
+	  FROM user
+
+	---------------- TO ----------------
+
+	SELECT email as contact, first_name as "first name", last_name as "last name"
+	  FROM user
+
+
+
+28: Self Joins
+- It's basically duplicating the same table/entity we have and joining those 2 tables together
+- Example a referral option in a website or business where discounts are given out
+- Alias is important in playing a role on self join
+
+- Example:
+	- user -> user_id, pass, email, fn, ln, referred_by
+
+
+	SELECT v1.fn, v1.ln, v1.email, v2.email
+	  FROM user AS v1
+	  JOIN user AS v2
+	  ON v1.referred_by = v2.user_id
+
+	---------------- OR ----------------
+
+	SELECT v1.fn, v1.ln, v1.email, v2.email AS "Referred By"
+	  FROM user AS v1
+	  JOIN user AS v2
+	  ON v1.referred_by = v2.user_id
